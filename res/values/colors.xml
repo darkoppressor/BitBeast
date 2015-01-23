@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <color name="key_color">#ff00ff</color>
+	<color name="key_color_next">#ff00fe</color>
+	
+	<color name="font">#e6e6e6</color>
+	<color name="font_alert">#bf1313</color>
+	<color name="font_upgrade">#13bf13</color>
+	<color name="font_downgrade">#bf1313</color>
+	<color name="font_grayed">#8c8c8c</color>
+	
+	<color name="holiday_valentines">#f261f2</color>
+	<color name="holiday_st_patricks">#13bf13</color>
+	<color name="holiday_easter">#ffff4d</color>
+	<color name="holiday_halloween">#ed8218</color>
+	<color name="holiday_christmas">#bf1313</color>
+	
+	<color name="rarity_crap">#8c8c8c</color>
+	<color name="rarity_common">#e6e6e6</color>
+	<color name="rarity_uncommon">#13bf13</color>
+	<color name="rarity_rare">#557df2</color>
+	<color name="rarity_rarer">#7014cc</color>
+	<color name="rarity_rarest">#e6a117</color>
+	<color name="rarity_epic">#bf1313</color>
+	<color name="rarity_epicer">#f261f2</color>
+	<color name="rarity_legendary">#15cccc</color>
+	<color name="rarity_unique">#e6e623</color>
+	
+	<color name="status_bar_background">#1378bf</color>
+	<color name="status_bar_border">#159ecc</color>
+	<color name="status_happy">#12b212</color>
+	<color name="status_temp">#bf1313</color>
+	<color name="status_hunger">#99820f</color>
+	<color name="status_thirst">#159ecc</color>
+	<color name="status_strength">#260404</color>
+	<color name="status_dexterity">#e6a117</color>
+	<color name="status_stamina">#7014cc</color>
+	<color name="status_energy">#d9d916</color>
+	<color name="status_winloss">#808080</color>
+	<color name="status_winloss_sp">#808080</color>
+	<color name="status_experience">#808080</color>
+	
+	<color name="button_border">#159ecc</color>
+	<color name="button_1">#1378bf</color>
+	<color name="button_2">#0e2e8c</color>
+	
+	<color name="game_white">#e6e6e6</color>
+	
+	<color name="game_ball_noclip_2">#bf1313</color>
+	<color name="game_ball_noclip_1">#ed8218</color>
+	
+	<color name="game_bricks_1">#bf1313</color>
+	<color name="game_bricks_2">#f218f2</color>
+	<color name="game_bricks_3">#8613bf</color>
+	<color name="game_bricks_4">#0e2e8c</color>
+	<color name="game_bricks_5">#41d9d9</color>
+	<color name="game_bricks_6">#13bf13</color>
+	<color name="game_bricks_7">#d9d916</color>
+	<color name="game_bricks_8">#ed8218</color>
+	
+	<color name="config_header">#800e2e8c</color>
+	
+</resources>

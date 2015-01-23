@@ -1,0 +1,8 @@
+syntax: regexp
+
+^Development/
+
+^bin/
+^gen/
+^libs/
+^obj/

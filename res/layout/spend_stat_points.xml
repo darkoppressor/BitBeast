@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_spend_stat_points"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/button_1" >
+	
+    <LinearLayout
+	    android:orientation="vertical"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" >
+	    
+	    <TextView
+	        android:id="@+id/spend_stat_points"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center_vertical|center_horizontal"
+	        android:text="@string/spend_stat_points_title"
+			android:textSize="24dp"
+	        android:textColor="@color/font" />
+	    
+	    <TextView
+	        android:id="@+id/spend_stat_points_points"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center_vertical|center_horizontal"
+			android:textSize="24dp"
+	        android:textColor="@color/font" />
+	    
+	    <Button
+	        android:id="@+id/button_spend_stat_points_strength"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textSize="24dp"
+			android:textColor="@color/font"
+			android:background="@layout/button"
+			android:gravity="center_vertical|center_horizontal"
+			android:onClick="button_spend_strength" />
+	    
+	    <Button
+	        android:id="@+id/button_spend_stat_points_dexterity"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textSize="24dp"
+			android:textColor="@color/font"
+			android:background="@layout/button"
+			android:gravity="center_vertical|center_horizontal"
+			android:onClick="button_spend_dexterity" />
+	    
+	    <Button
+	        android:id="@+id/button_spend_stat_points_stamina"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textSize="24dp"
+			android:textColor="@color/font"
+			android:background="@layout/button"
+			android:gravity="center_vertical|center_horizontal"
+			android:onClick="button_spend_stamina" />
+	    
+	</LinearLayout>
+    
+</ScrollView>

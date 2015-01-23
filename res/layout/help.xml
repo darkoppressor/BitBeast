@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_help"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_blueprint" >
+    
+	<LinearLayout
+	    android:orientation="vertical"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" >
+	    
+	    <Button
+	        android:id="@+id/button_help_how_to_play"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center_vertical|center_horizontal"
+	        android:onClick="button_help_how_to_play"
+	        android:text="@string/button_help_how_to_play"
+	        android:textSize="24dp"
+	        android:textColor="@color/font"
+	        android:background="@layout/button" />
+	    
+	    <Button
+	        android:id="@+id/button_help_pet"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center_vertical|center_horizontal"
+	        android:onClick="button_help_pet"
+	        android:text="@string/button_help_pet"
+	        android:textSize="24dp"
+	        android:textColor="@color/font"
+	        android:background="@layout/button" />
+	    
+	    <Button
+	        android:id="@+id/button_help_store"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center_vertical|center_horizontal"
+	        android:onClick="button_help_store"
+	        android:text="@string/button_help_store"
+	        android:textSize="24dp"
+	        android:textColor="@color/font"
+	        android:background="@layout/button" />
+	    
+	    <Button
+	        android:id="@+id/button_help_play"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center_vertical|center_horizontal"
+	        android:onClick="button_help_play"
+	        android:text="@string/button_help_play"
+	        android:textSize="24dp"
+	        android:textColor="@color/font"
+	        android:background="@layout/button" />
+	    
+	    <Button
+	        android:id="@+id/button_help_train"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center_vertical|center_horizontal"
+	        android:onClick="button_help_train"
+	        android:text="@string/button_help_train"
+	        android:textSize="24dp"
+	        android:textColor="@color/font"
+	        android:background="@layout/button" />
+	    
+	    <Button
+	        android:id="@+id/button_help_battle"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center_vertical|center_horizontal"
+	        android:onClick="button_help_battle"
+	        android:text="@string/button_help_battle"
+	        android:textSize="24dp"
+	        android:textColor="@color/font"
+	        android:background="@layout/button" />
+	    
+	    <Button
+	        android:id="@+id/button_help_speech_recognition"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center_vertical|center_horizontal"
+	        android:onClick="button_help_speech_recognition"
+	        android:text="@string/button_help_speech_recognition"
+	        android:textSize="24dp"
+	        android:textColor="@color/font"
+	        android:background="@layout/button" />
+	    
+	    <Button
+	        android:id="@+id/button_help_app"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center_vertical|center_horizontal"
+	        android:onClick="button_help_app"
+	        android:text="@string/button_help_app"
+	        android:textSize="24dp"
+	        android:textColor="@color/font"
+	        android:background="@layout/button" />
+	    
+	    <Button
+	        android:id="@+id/button_help_legal"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center_vertical|center_horizontal"
+	        android:onClick="button_help_legal"
+	        android:text="@string/button_help_legal"
+	        android:textSize="24dp"
+	        android:textColor="@color/font"
+	        android:background="@layout/button" />
+	
+	</LinearLayout>
+	
+</ScrollView>

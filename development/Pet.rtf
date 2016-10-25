@@ -1,0 +1,116 @@
+{\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fnil\fcharset0 Courier New;}}
+{\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang1033\strike\f0\fs22 Name\strike0\par
+\par
+\strike Currency - starts at 0, 0 minimum, no maximum.\strike0\par
+\par
+\strike Age - in seconds, starts at 0 and increments forever based on time\strike0\par
+\par
+\strike Death counter - Starts at some very high value (always the same for all pets).\strike0\par
+\strike When below some defined "death point," each tick there is a tiny random chance that the pet will die.\strike0\par
+\strike The minimum/death point is 0.\strike0\par
+\strike Decreases at a fixed rate (kind of going along with age increasing).\strike0\par
+\strike Small random chance to decrease each tick that pet is starving. Can only happen a few times per age tier.\strike0\par
+\strike Small random chance to decrease each tick that pet is very thirsty. Can only happen a few times per age tier.\strike0\par
+\strike Small random chance to decrease each tick that pet is sick. Can only happen a few times per age tier.\strike0\par
+\strike Tiny random chance to decrease on battle loss.\strike0\par
+\strike Tiny random chance to decrease each tick that pet is obese. Can only happen a few times per age tier.\strike0\par
+\strike Tiny random chance to increase each tick that pet is not obese. Can only happen a few times per age tier.\strike0\par
+\strike Tiny random chance to increase on battle completion, regardless of outcome. Cannot occur if decrease due to battle loss just occurred.\strike0\par
+\strike Small random chance to increase each tick that pet is well fed. Can only happen a few times per age tier.\strike0\par
+\strike Small random chance to increase each tick that pet is well watered. Can only happen a few times per age tier.\strike0\par
+\strike Small random chance to increase each tick that pet is not sick. Can only happen a few times per age tier.\strike0\par
+\par
+\strike Sleep - A sleep meter, in ticks. Ranges from 0-32 (8 hours).\strike0\par
+\strike 0 - min allowed\par
+4 - fully tired (practical minimum, but not min allowed)\par
+28 - fully rested (practical maximum, but not max allowed)\par
+32 - max allowed\par
+Ignoring the light, a pet will ALWAYS fall asleep at 0.\strike0\par
+\strike Ignoring the light, a pet will ALWAYS wake up at 32.\strike0\par
+\strike If the light is off, the pet can fall asleep at 4.\strike0\par
+\strike If the light is on, the pet can wake up at 28.\strike0\par
+\strike Increases by 1 every tick when sleeping.\strike0\par
+\strike Decreases by 0.5 every tick when awake.\strike0\par
+\strike By turning the lights on and off, the player can get the pet to adapt to a new sleep schedule.\strike0\par
+\strike The player can touch the pet (or interact with it in any way) while it is sleeping to wake it.\par
+If woken by the player during a night's sleep, it will stay awake for 5 minutes, and then go back to sleep, if it is still sleep time.\par
+This 5 minute timer will be reset every time the player interacts with the pet in any way.\strike0\par
+\par
+\strike Happiness - Ranges from -100 - 100.\par
+-100 - very unhappy\par
+100 - very happy\par
+When a pet wakes up for the day, it randomly determines a small loss or gain for happiness and applies it immediately. This simulates the random mood of the pet from day to day.\strike0\par
+\strike Decreases on:\par
+battle loss\strike0\par
+\strike very rarely per tick on sickness, bathroom need, bath need, starving, or very thirsty\strike0\par
+\strike being woken up while sleeping\strike0\par
+\strike rarely per tick when temp is bad or really bad. worse temp equals higher chance\strike0\par
+\strike Increases on:\par
+battle win\strike0\par
+\strike minigame (aside from workout) played (winning minigame increases happiness more than losing)\strike0\par
+\strike rarely per tick when temp is optimum or good. better temp equals higher chance\strike0\par
+\strike you pet the pet. can only happen a set number of times between ticks. There should be feedback to show you are petting the pet and it likes it.\strike0\par
+\par
+\strike Temperature - the temperature of the pet's environment.\strike0\par
+\strike Range: 0-100\strike0\par
+\strike Can be displayed in either F or C.\strike0\par
+\strike In code, everything is in C.\strike0\par
+\strike The optimum temp is 20.\strike0\par
+\strike optimum +/- 1-3 is good.\par
+optimum +/- 4-9 is ok.\par
+optimum +/- 10-14 is bad.\par
+optimum +/- 15 or more is really bad.\strike0\par
+\strike When the game begins, a base value is determined, and the temp is set to this.\strike0\par
+\strike A new base value is randomly determined every 8 hours. This value should not fluctuate very much.\strike0\par
+\strike Only the AC, heater, or neither can be on.\strike0\par
+\strike Every tick, if the AC is on, the temperature decreases by 1.25. If the heater is on, the temp increases by 1.25.\strike0\par
+\strike If neither AC or heater is on, the temperature moves towards the base value by 1.25. If less than 1.25 away, temp moves exactly enough.\strike0\par
+\strike Regardless of AC or heater status, the temp moves towards the base value by 0.25.\strike0\par
+\par
+\strike Sick - boolean. If sick, player can give medicine to heal sickness.\strike0\par
+\strike Every tick, if pet is not sick, and it needs cleaning up or bathing, or is starving or very thirsty, or the temp is very bad, there is a tiny random chance of it becoming sick.\strike0\par
+\par
+\strike Bathroom need - Begins at 0. Increases by 1 every x ticks, and at 99 the pet poops.\strike0\par
+\strike If the pet has pooped, the player can clean up the yard to remove it.\strike0\par
+\par
+\strike Bath need - Begins at 0. Increases by 1 every x ticks if the pet is clean, and at 99 the pet becomes dirty.\strike0\par
+\strike If the pet is dirty, the player can bathe it to make it clean.\strike0\par
+\par
+\strike Type - Affects the pet's appearance/animations, and behaviors. May also affect some stats.\par
+When the pet reaches an age milestone, it becomes a new type in that tier of the age heirarchy. Which type\par
+it becomes depends on many variables.\strike0\par
+\par
+\strike Weight - no maximum, minimum is 1\strike0\par
+\strike Some value needs to be defined as the "obesity" point.\strike0\par
+\strike Increases based on feeding.\strike0\par
+\strike Decreases by training and battles.\strike0\par
+\par
+\strike Hunger - lower values mean hungrier, higher values mean more full. ranges from 0-depends on age tier.\strike0\par
+\strike 0 - completely starving\strike0\par
+\strike max - determined by age tier\strike0\par
+\strike starving - 0-25% of max\par
+well fed - 75% of max-max\strike0\par
+\par
+\strike Thirst - lower values mean thirstier, higher values mean less thirsty. ranges from 0-99.\strike0\par
+\strike The rate of thirst is fixed. The rate should be, in general, a bit faster than hunger.\strike0\par
+\strike 0 - completely thirsty\par
+99 - completely unthirsty\par
+very thirsty - 0-19\par
+well watered - 49-99.\strike0\par
+\par
+\strike Strength - acts as both attack damage and health points\par
+Health/strength can work like in Civ4. The pet has a strength value. This also acts as its health.\par
+So it has a max strength and current strength. As it fights, this determines how much damage it can do,\par
+and as it gets hit, it loses "health" by this number going down.\par
+Strength should also replenish at some fixed rate, but a bit slower than energy.\par
+To gain max strength, a pet must work out.\par
+Every type also has a strength modifier that is applied to strength as long as the pet is that type.\strike0\par
+\par
+\strike Energy - when depleted, the pet cannot battle or train\par
+Pets also have energy. This simply determines if they can battle or train currently. Every battle or\par
+training round uses up energy, and it replenishes at some fixed rate.\strike0\par
+\strike Energy has a max value, too. It is based on age tier.\strike0\par
+\par
+\strike When first born, the pet begins in an egg. This hatches after a few minutes.\strike0\par
+}
+ 

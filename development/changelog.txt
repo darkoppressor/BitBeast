@@ -1,0 +1,93 @@
+1.1.0 - 2013/12/14
+ - Two new stats added: Dexterity and Stamina. These each function kind of like one half of strength.
+   Strength is attack damage as well as health. Stamina provides extra health that must be removed before
+   strength can be damaged, thus acting like a "shield." Dexterity provides a damage bonus but gets used up
+   as you attack, thus giving you a large damage burst at the beginning of a battle.
+ - Training now increases max Dexterity and max Stamina in addition to max Strength.
+ - Each pet evolution branch now represents a distinct "class," with its own unique set of stat priorities.
+ - Added levels and experience. When you level up, you get stat points to spend on improving your stats.
+ - Split the store into 4 separate sections.
+ - Added "permanent" items which are one-time purchases kept in the yard. Rumor has it they have other benefits...
+ - Consumable items can now grant a wide variety of temporary buffs.
+ - Added some new consumable items.
+ - All consumable items now have a "primary affected stat," which is what limits their use.
+   I.e., most food items won't allow you to eat them once your food bar is full.
+   However, junk food won't allow you to eat it once your HAPPY bar is full.
+ - Weight now plays a larger role in things. Specifically, being obese (>30 kg) is penalized more.
+ - The old win/loss ratio is multiplayer win/loss, and there is now a new singleplayer win/loss ratio, too.
+   Note that old cemetery entries will look a little silly having "0" for so many new things.
+ - Rewards for various activities are now all merged into one system, in which a Rewards window pops up after
+   you are done playing. This means that everything has experience and bit rewards.
+ - Bit reward on battle victory scaled by max stat difference of opponents.
+ - Max stat increase on successful training now scales by AI opponent difficulty.
+ - Max stat gains from training are now capped on a per-tick basis.
+ - Increased the rate of max stat gain from training.
+ - Natural temperature change slowed dramatically.
+ - Machine temperature change increased dramatically.
+ - Temperature machines now shut off if they go very far past the optimum temperature.
+ - Rewards for bricks are scaled based on number of bricks.
+ - Added some more brick layouts.
+ - Added powerups to the paddle games.
+ - Added new sound effects throughout.
+ - Improved paddle game AI and physics.
+ - Added more brick layouts to Bricks.
+ - A lot more things regenerate in real time now instead of every tick (15 minutes).
+ - You can now watch your Bit Beast consume things that you give it.
+ - Changed a number of messages. They are theoretically more fun than ever!
+ - You can now view the status screen, clean the yard, and change the temperature setting even if your Bit Beast is dead.
+ - Fixed some issues with Bit Beast death.
+ - Bit Beasts are "cleaned" when they die.
+ - There is only one sound effect for thought bubbles now.
+ - Permanent items can now be dragged when Bit Beast is dead.
+ - Pets will now properly center on held items.
+ - Unusable buttons are now grayed out.
+ - Fixed egg and tombstone being solid colors in the widget.
+ - The widget will no longer create read error messages.
+ - The widget now updates once every hour.
+ - Added new information to the widget.
+ - Improved widget scaling.
+ - The widget now updates whenever pet data is saved.
+ - Changed optimum temperature from exactly 20 degrees C to 20 +/- 1.
+ - Reduced the age bonus for bits gained.
+ - Improved the variety of shadow opponents. They are also tougher now.
+ - Changed the way favorite food is stored in save data. Note that a Bit Beast from pre-1.1.0 will forget
+   its favorite food because of this.
+ - Removed the Auto option for screen orientation.
+ - Fixed numerous bugs where an Android configuration change would cause loss of data.
+ - Balance tweaks.
+ - Fixed bug with evolution branch choosing code.
+ - Fixed major bug with food categories.
+ - Fixed minor bug with food categories.
+ - Fixed a few instances where speech would not wake up the Bit Beast.
+ - Minor code cleanup and improvements.
+ - Minor graphical improvements.
+ - And more!
+
+1.0.5 - 2012/6/1
+ - Tweaked weight loss from training and battles... again.
+ - The Bit Beast's shadow is now randomly chosen from all forms of the Bit Beast at its age.
+
+1.0.4 - 2012/5/29
+ - Tweaked weight loss from training and battles again.
+ - Improved the way temperature changes.
+ - Tweaked temperature change rates.
+
+1.0.3 - 2012/5/27
+ - Fixed an OutOfMemoryError (hopefully).
+ - Reduced filesize and memory usage slightly.
+ - Increased weight loss from training and battling, and made it somewhat fuzzy.
+ - Slight improvement to the RNG.
+ - Tweaked some brick layouts.
+ - Accelerometer and GPS minigames now cause weight loss.
+ - Made shadowboxing opponent tougher.
+ - Bit gains now scale based on age tier.
+
+1.0.2 - 2012/5/24
+ - Fixed a pixel conversion function.
+ - Some minor tweaks.
+
+1.0.1 - 2012/5/24
+ - Graphical improvements.
+ 
+1.0.0 - 2012/5/22
+ - Initial release version!

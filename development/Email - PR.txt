@@ -1,0 +1,38 @@
+Hello!
+
+My name is Kevin Wells. I would like to submit to you my game: Bit Beast, for review.
+
+It's a virtual pet inspired by the great toys from the 90s.
+You raise and care for your Bit Beast by feeding him, cleaning him, giving him medicine when he is sick, playing with him, and so on.
+It is a singleplayer (with a dash of multiplayer) game for Android.
+
+If you are interested in reviewing the game (or want to know more), you can grab a copy of the game here: http://cheeseandbacon.org/review-copies/bit-beast.apk
+The user name is: reviewer
+The password is: correcthorsebatterystaple
+
+The game costs $1.99 and is available from a couple of sources:
+Google Play at http://play.google.com/store/apps/details?id=org.cheeseandbacon.bitbeast
+The Amazon App Store at http://www.amazon.com/gp/product/B008933QRY
+
+Here is the game's website: http://cheeseandbacon.org/bit-beast/
+
+Here are a couple of screenshots:
+http://cheeseandbacon.org/images/games/bit-beast/ss6.png
+http://cheeseandbacon.org/images/games/bit-beast/ss7.png
+
+Here are the system requirements:
+
+Minimum
+OS: Android 2.2 (API level 8) or greater
+Internal Storage Media: 2 MB
+External Storage Media: 2 MB
+
+Recommended
+OS: Android 2.2 (API level 8) or greater
+Internal Storage Media: 2 MB
+External Storage Media: 24 MB
+Other hardware features: touch screen, accelerometer, GPS, speech recognition/network, speaker, vibrator, Bluetooth
+
+Thanks! Please let me know what you think!
+Kevin Wells <kevin@cheeseandbacon.org>
+Cheese and Bacon Games, LLC <http://cheeseandbacon.org/>

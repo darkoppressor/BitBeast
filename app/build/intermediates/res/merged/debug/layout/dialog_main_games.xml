@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_dialog_main_games"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/button_1" >
+	
+    <LinearLayout
+	    android:orientation="vertical"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" >
+	    
+	    <TextView
+	        android:id="@+id/dialog_title_games"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center_vertical|center_horizontal"
+	        android:text="@string/dialog_title_games"
+			android:textSize="24dp"
+	        android:textColor="@color/font" />
+	    
+	    <Button
+	        android:id="@+id/button_dialog_main_games_training"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/name_game_training"
+			android:textSize="24dp"
+			android:textColor="@color/font"
+			android:background="@layout/button"
+			android:gravity="center_vertical|center_horizontal" />
+	    
+	    <Button
+	        android:id="@+id/button_dialog_main_games_bricks"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/name_game_bricks"
+			android:textSize="24dp"
+			android:textColor="@color/font"
+			android:background="@layout/button"
+			android:gravity="center_vertical|center_horizontal" />
+	    
+	    <Button
+	        android:id="@+id/button_dialog_main_games_rps"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/name_game_rps"
+			android:textSize="24dp"
+			android:textColor="@color/font"
+			android:background="@layout/button"
+			android:gravity="center_vertical|center_horizontal" />
+	    
+	    <Button
+	        android:id="@+id/button_dialog_main_games_accel"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/name_game_accel"
+			android:textSize="24dp"
+			android:textColor="@color/font"
+			android:background="@layout/button"
+			android:gravity="center_vertical|center_horizontal" />
+	    
+	    <Button
+	        android:id="@+id/button_dialog_main_games_gps"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/name_game_gps"
+			android:textSize="24dp"
+			android:textColor="@color/font"
+			android:background="@layout/button"
+			android:gravity="center_vertical|center_horizontal" />
+	    
+	    <Button
+	        android:id="@+id/button_dialog_main_games_speed_gps"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/name_game_speed_gps"
+			android:textSize="24dp"
+			android:textColor="@color/font"
+			android:background="@layout/button"
+			android:gravity="center_vertical|center_horizontal" />
+	    
+	</LinearLayout>
+    
+</ScrollView>

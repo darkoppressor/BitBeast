@@ -1,0 +1,694 @@
+[
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/equip_weapon_katana_stone.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/equip_weapon_katana_stone.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_duckie.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_duckie.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/object_brick.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/object_brick.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/background_blueprint.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/background_blueprint.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/pet_young_adult_3.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/pet_young_adult_3.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_potato.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_potato.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/pet_adult_4.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/pet_adult_4.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_key.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_key.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/equip_feet_boots_iron.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/equip_feet_boots_iron.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/pet_senior_5.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/pet_senior_5.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/object_powerup_spawner_off.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/object_powerup_spawner_off.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/equip_head_helm_bone.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/equip_head_helm_bone.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/bar_experience.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/bar_experience.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/equip_chest_cuirass_leather_patched.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/equip_chest_cuirass_leather_patched.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_lembas.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_lembas.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/pet_teen_2.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/pet_teen_2.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/unique_weapon_sword_of_destiny.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/unique_weapon_sword_of_destiny.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_grapes.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_grapes.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/bar_thirst.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/bar_thirst.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/equip_head_crown_bronze.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/equip_head_crown_bronze.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_cookie.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_cookie.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/stars_1.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/stars_1.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/poop.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/poop.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/pet_adult_5.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/pet_adult_5.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_cottage_cheese.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_cottage_cheese.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_holiday_easter.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_holiday_easter.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/equip_weapon_sword_stone.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/equip_weapon_sword_stone.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_computer.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_computer.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_pie.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_pie.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/object_powerup_ball_speed_down.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/object_powerup_ball_speed_down.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/unique_head_king_hubert.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/unique_head_king_hubert.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_turkey_leg.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_turkey_leg.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_wheat.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_wheat.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/pet_baby_1.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/pet_baby_1.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_soda.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_soda.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_berry_bush.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_berry_bush.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/pet_young_adult_2.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/pet_young_adult_2.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/pet_teen_3.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/pet_teen_3.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/bar_dexterity.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/bar_dexterity.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/pet_young_adult_5.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/pet_young_adult_5.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_trampoline.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_trampoline.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/stars_2.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/stars_2.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_holiday_halloween.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_holiday_halloween.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_vitamin.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_vitamin.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_weight_loss_shake.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_weight_loss_shake.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/thought_hot.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/thought_hot.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_holiday_christmas.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_holiday_christmas.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_orange.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_orange.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/equip_feet_boots_bone.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/equip_feet_boots_bone.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_towel.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_towel.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/equip_weapon_sword_bronze.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/equip_weapon_sword_bronze.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/equip_head_helm_iron.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/equip_head_helm_iron.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/equip_weapon_katana_bronze.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/equip_weapon_katana_bronze.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_holiday_st_patricks.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_holiday_st_patricks.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/pet_senior_3.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/pet_senior_3.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_carrot.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_carrot.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/pet_adult_1.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/pet_adult_1.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_shoes.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_shoes.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/equip_feet_boots_leather.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/equip_feet_boots_leather.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_medicine.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_medicine.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_potion_strength.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_potion_strength.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/thought_dirty.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/thought_dirty.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/pet_egg_1.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/pet_egg_1.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/pet_senior_2.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/pet_senior_2.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/object_ball.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/object_ball.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/pet_adult_2.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/pet_adult_2.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/thought_sad.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/thought_sad.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/equip_chest_cuirass_iron.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/equip_chest_cuirass_iron.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_bunny.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_bunny.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_cheese.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_cheese.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/ac.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/ac.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/pet_dead_1.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/pet_dead_1.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/evolution.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/evolution.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_banana.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_banana.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_broccoli.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_broccoli.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/thought_thirsty.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/thought_thirsty.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/rps_paper.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/rps_paper.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/pet_teen_1.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/pet_teen_1.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/equip_chest_cuirass_bronze.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/equip_chest_cuirass_bronze.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/bubble_thought.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/bubble_thought.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/equip_head_crown_gold.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/equip_head_crown_gold.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/pet_teen_4.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/pet_teen_4.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_barbell.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_barbell.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_apple.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_apple.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_oj.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_oj.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_stone.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_stone.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/equip_weapon_sword_wood.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/equip_weapon_sword_wood.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_potion_dexterity.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_potion_dexterity.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_cheeseburger.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_cheeseburger.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/thought_music.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/thought_music.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_holiday_valentines.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_holiday_valentines.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/equip_feet_boots_bronze.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/equip_feet_boots_bronze.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/lit_christmas_tree.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/lit_christmas_tree.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/equip_head_helm_leather.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/equip_head_helm_leather.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/bar_happy.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/bar_happy.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/object_powerup_ball_extra.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/object_powerup_ball_extra.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_water.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_water.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_cereal.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_cereal.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/overlay_clean_yard.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/overlay_clean_yard.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_energy_drink.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_energy_drink.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/bar_energy.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/bar_energy.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_potion_stamina.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_potion_stamina.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_leaf.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_leaf.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_at.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_at.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/equip_chest_cuirass_bone.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/equip_chest_cuirass_bone.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/object_paddle.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/object_paddle.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_beach_ball.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_beach_ball.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/stars.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/stars.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/bar_winloss.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/bar_winloss.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_pasta.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_pasta.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/equip_weapon_katana_wood.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/equip_weapon_katana_wood.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/thought_cold.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/thought_cold.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_ham.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_ham.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/bar_temp.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/bar_temp.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/logo_cheese_and_bacon.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/logo_cheese_and_bacon.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/overlay_clean_pet.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/overlay_clean_pet.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/lit_robot.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/lit_robot.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_cracker.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_cracker.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_bread.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_bread.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/equip_head_helm_bronze.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/equip_head_helm_bronze.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_french_fries.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_french_fries.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_milk.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_milk.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_jump_rope.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_jump_rope.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/equip_weapon_katana_bone.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/equip_weapon_katana_bone.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/object_powerup_spawner_on.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/object_powerup_spawner_on.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/thought_hungry.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/thought_hungry.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/equip_head_crown_bone.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/equip_head_crown_bone.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/sleep.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/sleep.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/equip_weapon_sword_iron.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/equip_weapon_sword_iron.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/bar_winloss_sp.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/bar_winloss_sp.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_rice_pudding.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_rice_pudding.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/object_powerup_life.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/object_powerup_life.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/dirty.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/dirty.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/equip_chest_cuirass_leather_fine.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/equip_chest_cuirass_leather_fine.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/rps_scissors.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/rps_scissors.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/equip_weapon_sword_bone.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/equip_weapon_sword_bone.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/thought_poop.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/thought_poop.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/rps_rock.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/rps_rock.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_tomato.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_tomato.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/stars_3.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/stars_3.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/thought_sick.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/thought_sick.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/heater.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/heater.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_tree.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_tree.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/widget_background_blueprint.9.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/widget_background_blueprint.9.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/pet_teen_5.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/pet_teen_5.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/bar_strength.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/bar_strength.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_chest.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_chest.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/pet_child_1.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/pet_child_1.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/object_powerup_ball_speed_up.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/object_powerup_ball_speed_up.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/ic_launcher.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/ic_launcher.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/pet_senior_4.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/pet_senior_4.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/object_powerup_ball_noclip.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/object_powerup_ball_noclip.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/pet_senior_1.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/pet_senior_1.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_candy.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_candy.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_chicken_soup.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_chicken_soup.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/pet_adult_3.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/pet_adult_3.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_robot.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_robot.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/equip_weapon_katana_iron.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/equip_weapon_katana_iron.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_sign.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_sign.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_steak.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_steak.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/bar_stamina.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/bar_stamina.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_golden_egg.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_golden_egg.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_piano.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_piano.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/lit_computer.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/lit_computer.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_ice_cream.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_ice_cream.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/unique_feet_speedy_shoes.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/unique_feet_speedy_shoes.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/equip_head_crown_iron.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/equip_head_crown_iron.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/bar_hunger.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/bar_hunger.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/unique_chest_green_tunic.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/unique_chest_green_tunic.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/pet_young_adult_4.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/pet_young_adult_4.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/pet_young_adult_1.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/pet_young_adult_1.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/thought_happy.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/thought_happy.png"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/drawable/food_icon_yogurt.png",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/drawable/food_icon_yogurt.png"
+    }
+]

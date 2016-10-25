@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_dialog_options_reset"
+    android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/button_1" >
+
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content" >
+	    
+	    <TextView
+			android:id="@+id/dialog_options_reset_message"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/dialog_title_reset"
+			android:textSize="24dp"
+		    android:textColor="@color/font"
+			android:gravity="center_vertical|center_horizontal" />
+	    
+	    <LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center_vertical|center_horizontal" >
+		    <Button
+		        android:id="@+id/button_dialog_options_reset_yes"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@android:string/yes"
+				android:textSize="24dp"
+				android:textColor="@color/font"
+				android:background="@layout/button" />
+		    <Button
+		        android:id="@+id/button_dialog_options_reset_no"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@android:string/no"
+				android:textSize="24dp"
+				android:textColor="@color/font"
+				android:background="@layout/button" />
+	    </LinearLayout>
+	    
+	</LinearLayout>
+
+</ScrollView>

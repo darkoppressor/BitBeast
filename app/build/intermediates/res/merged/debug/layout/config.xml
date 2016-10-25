@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_config"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_blueprint" >
+    
+	<LinearLayout
+	    android:orientation="vertical"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" >
+	    
+	    <TextView
+	        android:id="@+id/text_config_header_pet"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center_vertical|center_horizontal"
+	        android:text="@string/config_header_pet"
+			android:textSize="28dp"
+	        android:textColor="@color/font"
+	        android:padding="6dp"
+	        android:background="@color/config_header" />
+	    
+	    <CheckBox
+	        android:id="@+id/checkbox_config_pause"
+	        android:text="@string/config_pause"
+	        android:textSize="24dp"
+	        android:textColor="@color/font"
+	        android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:onClick="button_pause" />
+	    
+	    <Button
+	        android:id="@+id/button_config_desired_sleep_time"
+	        android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	        android:onClick="button_desired_sleep_time"
+	        android:textSize="24dp"
+	        android:textColor="@color/font"
+	        android:background="@layout/button" />
+	    
+	    <TextView
+	        android:id="@+id/text_config_header_android"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center_vertical|center_horizontal"
+	        android:text="@string/config_header_android"
+			android:textSize="28dp"
+	        android:textColor="@color/font"
+	        android:padding="6dp"
+	        android:background="@color/config_header" />
+	    
+	    <CheckBox
+	        android:id="@+id/checkbox_config_keep_screen_on"
+	        android:text="@string/config_keep_screen_on"
+	        android:textSize="24dp"
+	        android:textColor="@color/font"
+	        android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:onClick="button_keep_screen_on" />
+	    
+	    <CheckBox
+	        android:id="@+id/checkbox_config_vibrate"
+	        android:text="@string/config_vibrate"
+	        android:textSize="24dp"
+	        android:textColor="@color/font"
+	        android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:onClick="button_vibrate" />
+	    
+	    <TextView
+	        android:id="@+id/text_config_screen_orientation"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/config_screen_orientation"
+			android:textSize="24dp"
+	        android:textColor="@color/font" />
+	    <Spinner
+	        android:id="@+id/spinner_option_screen_orientation"
+	        android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:prompt="@string/config_screen_orientation" />
+	    
+	    <TextView
+	        android:id="@+id/text_config_gps_update_time"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/config_gps_update_time"
+			android:textSize="24dp"
+	        android:textColor="@color/font" />
+	    <Spinner
+	        android:id="@+id/spinner_option_gps_update_time"
+	        android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:prompt="@string/config_gps_update_time" />
+	    
+	    <TextView
+	        android:id="@+id/text_config_header_display"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center_vertical|center_horizontal"
+	        android:text="@string/config_header_display"
+			android:textSize="28dp"
+	        android:textColor="@color/font"
+	        android:padding="6dp"
+	        android:background="@color/config_header" />
+	    
+	    <CheckBox
+	        android:id="@+id/checkbox_config_show_stat_bars"
+	        android:text="@string/config_show_stat_bars"
+	        android:textSize="24dp"
+	        android:textColor="@color/font"
+	        android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:onClick="button_show_stat_bars" />
+	    
+	    <CheckBox
+	        android:id="@+id/checkbox_config_show_thermometer"
+	        android:text="@string/config_show_thermometer"
+	        android:textSize="24dp"
+	        android:textColor="@color/font"
+	        android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:onClick="button_show_thermometer" />
+	    
+	    <TextView
+	        android:id="@+id/text_config_temp_units"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/config_temp_units"
+			android:textSize="24dp"
+	        android:textColor="@color/font" />
+	    <Spinner
+	        android:id="@+id/spinner_option_temp_units"
+	        android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:prompt="@string/config_temp_units" />
+	    
+	    <TextView
+	        android:id="@+id/text_config_units"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/config_units"
+			android:textSize="24dp"
+	        android:textColor="@color/font" />
+	    <Spinner
+	        android:id="@+id/spinner_option_units"
+	        android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:prompt="@string/config_units" />
+	
+	</LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,158 @@
+[
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/game_accel.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/game_accel.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/main.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/main.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/store.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/store.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/nfc.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/nfc.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/inventory.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/inventory.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/game_speed_gps.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/game_speed_gps.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/button_thin.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/button_thin.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/help_page.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/help_page.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/equip.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/equip.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/dialog_inventory_sold.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/dialog_inventory_sold.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/credits.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/credits.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/battle_menu.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/battle_menu.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/dialog_main_store.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/dialog_main_store.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/battle.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/battle.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/dialog_main_die.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/dialog_main_die.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/dialog_main_temp.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/dialog_main_temp.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/records.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/records.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/name.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/name.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/about.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/about.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/dialog_game_rps.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/dialog_game_rps.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/options.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/options.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/dialog_store_consume.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/dialog_store_consume.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/widget.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/widget.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/config.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/config.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/dialog_options_reset.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/dialog_options_reset.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/list_item.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/list_item.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/dialog_main_games.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/dialog_main_games.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/status.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/status.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/list_item_battle_menu.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/list_item_battle_menu.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/button.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/button.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/list_item_inventory_item.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/list_item_inventory_item.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/game_gps.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/game_gps.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/help.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/help.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/dialog_inventory_details.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/dialog_inventory_details.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/spend_stat_points.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/spend_stat_points.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/rewards.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/rewards.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/game_rps.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/game_rps.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/list_item_store_food.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/list_item_store_food.xml"
+    },
+    {
+        "merged": "/home/kevin/StudioProjects/BitBeast/app/build/intermediates/res/merged/debug/layout/dialog_main_battle.xml",
+        "source": "/home/kevin/StudioProjects/BitBeast/app/src/main/res/layout/dialog_main_battle.xml"
+    }
+]

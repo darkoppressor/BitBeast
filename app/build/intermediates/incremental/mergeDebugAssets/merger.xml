@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/home/kevin/StudioProjects/BitBeast/app/src/main/assets"><file name="fonts/font1.ttf" path="/home/kevin/StudioProjects/BitBeast/app/src/main/assets/fonts/font1.ttf"/></source><source path="/home/kevin/StudioProjects/BitBeast/app/build/generated/assets/shaders/debug"/></dataSet><dataSet config="debug"><source path="/home/kevin/StudioProjects/BitBeast/app/src/debug/assets"/></dataSet></merger>

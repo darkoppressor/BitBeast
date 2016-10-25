@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="gps_update_time">
+        <item>Very Fast (1 second)</item>
+        <item>Fast (30 seconds)</item>
+        <item>Normal (60 seconds)</item>
+        <item>Slow (120 seconds)</item>
+    </string-array>
+    <string-array name="screen_orientation">
+        <!-- Disabled -->
+        <!-- <item>Auto</item> -->
+        <item>Landscape</item>
+        <item>Portrait</item>
+    </string-array>
+    <string-array name="temp_units">
+        <item>Celsius</item>
+        <item>Fahrenheit</item>
+        <item>Kelvin</item>
+    </string-array>
+    <string-array name="units">
+        <item>SI</item>
+        <item>US</item>
+    </string-array>
+    <color name="button_1">#1378bf</color>
+    <color name="button_2">#0e2e8c</color>
+    <color name="button_border">#159ecc</color>
+    <color name="config_header">#800e2e8c</color>
+    <color name="font">#e6e6e6</color>
+    <color name="font_alert">#bf1313</color>
+    <color name="font_downgrade">#bf1313</color>
+    <color name="font_grayed">#8c8c8c</color>
+    <color name="font_upgrade">#13bf13</color>
+    <color name="game_ball_noclip_1">#ed8218</color>
+    <color name="game_ball_noclip_2">#bf1313</color>
+    <color name="game_bricks_1">#bf1313</color>
+    <color name="game_bricks_2">#f218f2</color>
+    <color name="game_bricks_3">#8613bf</color>
+    <color name="game_bricks_4">#0e2e8c</color>
+    <color name="game_bricks_5">#41d9d9</color>
+    <color name="game_bricks_6">#13bf13</color>
+    <color name="game_bricks_7">#d9d916</color>
+    <color name="game_bricks_8">#ed8218</color>
+    <color name="game_white">#e6e6e6</color>
+    <color name="holiday_christmas">#bf1313</color>
+    <color name="holiday_easter">#ffff4d</color>
+    <color name="holiday_halloween">#ed8218</color>
+    <color name="holiday_st_patricks">#13bf13</color>
+    <color name="holiday_valentines">#f261f2</color>
+    <color name="key_color">#ff00ff</color>
+    <color name="key_color_next">#ff00fe</color>
+    <color name="rarity_common">#e6e6e6</color>
+    <color name="rarity_crap">#8c8c8c</color>
+    <color name="rarity_epic">#bf1313</color>
+    <color name="rarity_epicer">#f261f2</color>
+    <color name="rarity_legendary">#15cccc</color>
+    <color name="rarity_rare">#557df2</color>
+    <color name="rarity_rarer">#7014cc</color>
+    <color name="rarity_rarest">#e6a117</color>
+    <color name="rarity_uncommon">#13bf13</color>
+    <color name="rarity_unique">#e6e623</color>
+    <color name="status_bar_background">#1378bf</color>
+    <color name="status_bar_border">#159ecc</color>
+    <color name="status_dexterity">#e6a117</color>
+    <color name="status_energy">#d9d916</color>
+    <color name="status_experience">#808080</color>
+    <color name="status_happy">#12b212</color>
+    <color name="status_hunger">#99820f</color>
+    <color name="status_stamina">#7014cc</color>
+    <color name="status_strength">#260404</color>
+    <color name="status_temp">#bf1313</color>
+    <color name="status_thirst">#159ecc</color>
+    <color name="status_winloss">#808080</color>
+    <color name="status_winloss_sp">#808080</color>
+    <dimen name="widget_margin">8dp</dimen>
+    <string name="about">What are we about? Cheese, bacon, or games? We believe that a company can be about all three. Here are some more things we believe in:\n\nWe believe in gameplay over snazzy graphics. We work to create games that will be enjoyable for years to come, not just until the next cool technology comes out. That is not to say that we dislike fancy graphics, awesome music, etc., but gameplay is our top priority.\n\nWe believe that a game doesn\'t have enough polish until you can see your reflection in it.\n\nWe believe in creating games that are fun for the whole family!</string>
+    <string name="app_description">Raise your very own creature from the mysterious Bit World!</string>
+    <string name="app_name">Bit Beast</string>
+    <string name="battle_button_replay">Replay</string>
+    <string name="battle_menu_available_devices">Available devices:</string>
+    <string name="battle_menu_transmitting">Trading Bit Beast data...</string>
+    <string name="button_back">&lt;--</string>
+    <string name="button_bathe">Bathe</string>
+    <string name="button_battle">Battle</string>
+    <string name="button_battle_menu_make_discoverable">Make discoverable</string>
+    <string name="button_battle_menu_scan">Scan for devices</string>
+    <string name="button_clean">Clean Up</string>
+    <string name="button_equipment">Equip</string>
+    <string name="button_forward">--></string>
+    <string name="button_games">Play</string>
+    <string name="button_help_app">Application</string>
+    <string name="button_help_battle">Battle</string>
+    <string name="button_help_how_to_play">How to play</string>
+    <string name="button_help_legal">Legal mumbo jumbo</string>
+    <string name="button_help_pet">Bit Beast</string>
+    <string name="button_help_play">Play</string>
+    <string name="button_help_speech_recognition">Speech recognition</string>
+    <string name="button_help_store">Shop</string>
+    <string name="button_help_train">Train</string>
+    <string name="button_inventory_sell">Sell All Selected</string>
+    <string name="button_light">Lights</string>
+    <string name="button_nfc_send">Start broadcasting NFC tag</string>
+    <string name="button_options">Options</string>
+    <string name="button_options_exit">Exit</string>
+    <string name="button_options_reset">Reset</string>
+    <string name="button_status">Status</string>
+    <string name="button_store">Shop</string>
+    <string name="button_temp">Temp</string>
+    <string name="button_text_item_get">Item acquired: </string>
+    <string name="button_text_spend">Spend Stat Points</string>
+    <string name="checkbox_toggle_all">Toggle all:</string>
+    <string name="config_desired_sleep_time">"Bedtime: "</string>
+    <string name="config_gps_update_time">GPS update frequency:</string>
+    <string name="config_header_android">Android Features</string>
+    <string name="config_header_display">Display</string>
+    <string name="config_header_pet">Bit Beast Settings</string>
+    <string name="config_keep_screen_on">Keep screen on</string>
+    <string name="config_pause">Pause</string>
+    <string name="config_screen_orientation">Screen orientation:</string>
+    <string name="config_show_stat_bars">Show stat bars</string>
+    <string name="config_show_thermometer">Show thermometer</string>
+    <string name="config_temp_units">Temperature units:</string>
+    <string name="config_units">Units of measurement:</string>
+    <string name="config_vibrate">Allow vibration</string>
+    <string name="credits">Cheese and Bacon Games, LLC\n\nDesign\nKevin Wells\nAneissa Wells\n\nProgramming\nKevin Wells\n\nArtwork\nKevin Wells\nAneissa Wells\n\nSound\nKevin Wells\n\nStory\nKevin Wells\n\nAdditional thanks to:\n\nThe free software community\n\nSpecial thanks to:\n\nAneissa Wells\n\nAll of the awesome people who helped test the game</string>
+    <string name="dialog_button_battle_bluetooth">Bluetooth</string>
+    <string name="dialog_button_battle_cancel">Cancel</string>
+    <string name="dialog_button_battle_shadow">Shadow Battle</string>
+    <string name="dialog_button_inventory_equip">Equip</string>
+    <string name="dialog_button_inventory_sell">Sell</string>
+    <string name="dialog_button_inventory_unequip">Unequip</string>
+    <string name="dialog_button_store_drinks">Drinks</string>
+    <string name="dialog_button_store_food">Food</string>
+    <string name="dialog_button_store_perma">Stuff</string>
+    <string name="dialog_button_store_treatments">Remedies</string>
+    <string name="dialog_button_temp_ac">AC</string>
+    <string name="dialog_button_temp_heater">Heater</string>
+    <string name="dialog_button_temp_none">None</string>
+    <string name="dialog_title_battle">Select a method of battle:</string>
+    <string name="dialog_title_games">Select a game to play:</string>
+    <string name="dialog_title_reset">Are you sure you want to reset your Bit Beast?\nThis cannot be undone.</string>
+    <string name="dialog_title_store">Select a section of the shop:</string>
+    <string name="dialog_title_temp">Select a machine:</string>
+    <string name="equip_chest">Chest:</string>
+    <string name="equip_feet">Feet:</string>
+    <string name="equip_head">Head:</string>
+    <string name="equip_weapon">Weapon:</string>
+    <string name="game_rps_vs">VS.</string>
+    <string name="help_app">You can take a screenshot from anywhere in the app by pressing the Search key. Screenshots are saved to a folder called BitBeast located in the public Pictures folder on your external storage media.\n\nShould you, for any reason, want access to your save files, they are located in Android/data/org.cheeseandbacon.bitbeast/files on your external storage media.</string>
+    <string name="help_battle">You can connect to a Bit Beast on another device via Bluetooth to battle them!\n\nSimply connect to a device with another Bit Beast on it, and watch the battle play out!\n\nAdditionally, you can select the Shadow Battle option to have your Bit Beast face off against a computer opponent. Note that Shadow Battles do not count towards your Bit Beast\'s battle record.</string>
+    <string name="help_how_to_play">Interacting with your Bit Beast is easy! For most actions, you can simply use the buttons on the top and bottom of the screen.\n\nThe Status button opens a screen that tells you all about your Bit Beast.\n\nThe Shop button is where you go to give your Bit Beast food, water, and medicine.\n\nThe Clean Up button will clean up any poop from the yard.\n\nThe Bathe button will give your Bit Beast a bath.\n\nThe Temp button allows you to control the temperature. You can turn on either the air conditioner, the heater, or leave them both off.\n\nThe Play button is where you go when you want to play a game with your Bit Beast.\n\nThe Train button allows you to train your Bit Beast, preparing him for combat with other Bit Beasts.\n\nThe Battle button allows you to pit your Bit Beast against other Bit Beasts in battle!\n\nThe Lights button toggles the lights.\n\nThe Options button opens a menu with various options and information on the game.\n\nOf particular interest, the Configuration screen, accessed from the Options menu, allows you to pause your pet and adjust his bed time.\n\nYou can also pet your Bit Beast by petting him on the touch screen.\n\nBy tapping on the touch screen when viewing the yard (the main view), you can toggle speech recognition. For a list of commands your Bit Beast understands, see the Help page on speech recognition.</string>
+    <string name="help_legal">Bit Beast\n\nBit Beast Copyright © 2012 Cheese and Bacon Games, LLC\n\nAll rights reserved.\n\nThis software program, any documentation (whether printed or electronic), and all
+other related data files are the copyrighted work of Cheese and Bacon Games, LLC.\n\n0. Definitions.\n\n  "The Program" refers to all of the copyrighted materials listed above.\n\n1. Disclaimer of Warranty.\n\n  THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
+APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT
+HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY
+OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM
+IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF
+ALL NECESSARY SERVICING, REPAIR OR CORRECTION.\n\n2. Limitation of Liability.\n\n  IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
+WILL ANY COPYRIGHT HOLDER BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY
+GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE
+USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF
+DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD
+PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS),
+EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGES.\n\n3. Interpretation of Sections 1 and 2.\n\n  If the disclaimer of warranty and limitation of liability provided
+above cannot be given local legal effect according to their terms,
+reviewing courts shall apply local law that most closely approximates
+an absolute waiver of all civil liability in connection with the
+Program, unless a warranty or assumption of liability accompanies a
+copy of the Program in return for a fee.\n\nThird Party Licenses\n\nMersenneTwister\n\nLicense
+ \n\nCopyright (c) 2003 by Sean Luke.
+ \n\nPortions copyright (c) 1993 by Michael Lecuyer.
+ \n\nAll rights reserved.
+ \n\nRedistribution and use in source and binary forms, with or without 
+ modification, are permitted provided that the following conditions are met:
+ \n\nRedistributions of source code must retain the above copyright notice, 
+ this list of conditions and the following disclaimer.
+ Redistributions in binary form must reproduce the above copyright notice, 
+ this list of conditions and the following disclaimer in the documentation 
+ and/or other materials provided with the distribution.
+ Neither the name of the copyright owners, their employers, nor the 
+ names of its contributors may be used to endorse or promote products 
+ derived from this software without specific prior written permission.
+ \n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE 
+ DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNERS OR CONTRIBUTORS BE 
+ LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
+ CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
+ SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
+ INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
+ CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+ POSSIBILITY OF SUCH DAMAGE.
+ \n\n@version 17\n\nzxing\n\nCopyright 2009 ZXing authors\n\nhttp://www.apache.org/licenses/LICENSE-2.0</string>
+    <string name="help_pet">As your Bit Beast grows up, he will evolve into different forms based on what you feed him, among other things. Be careful not to feed him too much junk food, or he will become fat!\n\nYou can view all of your Bit Beast\'s stats on the Status screen. The Food, Water, and Happy bars show your Bit Beast\'s current hunger, thirst, and happiness status, respectively. Fill the bars all the way to take proper care of your Bit Beast!\n\nThe Temperature bar shows the current temperature. Bit Beasts seem happiest at exactly 20 °C.\n\nYour Bit Beast\'s strength is used when battling other Bit Beasts, and he needs energy to battle and train. To permanently raise your Bit Beast\'s strength, train him.</string>
+    <string name="help_play">Playing Bricks or Rock-Paper-Scissors with your Bit Beast will increase its happiness. If you win, you will also earn some bits.\n\nShake It!, Journey!, and Go Go Go! make use of various Android features (if your device has them). These games allow you to earn bits.\n- To play Shake It!, just shake your device.\n- To play Journey!, turn on your GPS and earn bits based on how far you travel.\n- To play Go Go Go!, turn on your GPS and earn bits based on how fast you can move!</string>
+    <string name="help_speech_recognition">By tapping on the screen when in the yard with your Bit Beast, you can toggle speech recognition mode. Your Bit Beast will then listen for keywords that he understands. Note that this uses Android\'s speech recognition system, so be sure to have it installed!\n\nYour Bit Beast understands the following voice commands:\n\n- His name.\n- Praise. Various phrases such as \"good boy\" will do.\n- Say the name of a button to \"press\" it.\n- Saying \"AC\", \"heater\", or \"neither\" will change the temperature setting.\n- Say the name of a game to play it.\n- Scolding. Various phrases such as \"bad boy\" will do.\n- Try asking your Bit Beast to sing you a song!\n- Say \"needs\" and your Bit Beast will tell you everything he needs.</string>
+    <string name="help_store">In the Shop, you can give your Bit Beast food, drinks, remedies, and more!\n\nWater is free, but everything else costs bits. You can earn bits by playing games with your Bit Beast. See the Help page on playing for more information.\n\nGive your Bit Beast a vitamin to restore his energy, medicine if he is sick, etc.\n\nWhen your Bit Beast becomes a child, he picks a favorite food. This is represented in the Shop by a star next to the food. Feeding your Bit Beast his favorite food makes him extra happy!</string>
+    <string name="help_train">To train your Bit Beast, you knock a ball back and forth against a computer opponent.\n\nThis requires energy, and will cause him to lose weight. If you win, he will also permanently gain strength.</string>
+    <string name="intro">Bit World is a digital realm full of digital eggs. No one knows how this world came into existence, or where the eggs come from.\n\nHowever, what we do know is that using an Android device, coupled with this software, you can acquire one of these eggs.\n\nOnce on your device, the egg will begin to mature and eventually hatch into a mysterious creature, known as a Bit Beast!\n\nRaise your Bit Beast well, pit it against other Bit Beasts in battle, and become an expert Bit Beast handler!</string>
+    <string name="name_about">About</string>
+    <string name="name_battle">Battle</string>
+    <string name="name_battle_menu">Battle Menu</string>
+    <string name="name_button_color">Select Color</string>
+    <string name="name_button_exit">Exit</string>
+    <string name="name_config">Configuration</string>
+    <string name="name_credits">Credits</string>
+    <string name="name_equip">Equipment</string>
+    <string name="name_game_accel">Shake It!</string>
+    <string name="name_game_bricks">Bricks</string>
+    <string name="name_game_gps">Journey!</string>
+    <string name="name_game_rps">Rock-Paper-Scissors</string>
+    <string name="name_game_speed_gps">Go Go Go!</string>
+    <string name="name_game_training">Training</string>
+    <string name="name_help">Help</string>
+    <string name="name_help_app">Application</string>
+    <string name="name_help_battle">Battle</string>
+    <string name="name_help_how_to_play">How to Play</string>
+    <string name="name_help_legal">Legal Mumbo Jumbo</string>
+    <string name="name_help_pet">Bit Beast</string>
+    <string name="name_help_play">Play</string>
+    <string name="name_help_speech_recognition">Speech Recognition</string>
+    <string name="name_help_store">Shop</string>
+    <string name="name_help_train">Train</string>
+    <string name="name_hint">Bit Beast name</string>
+    <string name="name_inventory_all">Inventory</string>
+    <string name="name_inventory_chest">Inventory - Chest Armor</string>
+    <string name="name_inventory_chest_equip">Equipping - Chest Armor</string>
+    <string name="name_inventory_feet">Inventory - Feet Armor</string>
+    <string name="name_inventory_feet_equip">Equipping - Feet Armor</string>
+    <string name="name_inventory_head">Inventory - Head Armor</string>
+    <string name="name_inventory_head_equip">Equipping - Head Armor</string>
+    <string name="name_inventory_weapons">Inventory - Weapons</string>
+    <string name="name_inventory_weapons_equip">Equipping - Weapon</string>
+    <string name="name_label">Please enter your Bit Beast\'s name:\n(1–14 characters)</string>
+    <string name="name_name_entry">Bit Beast</string>
+    <string name="name_nfc">Near-Field Communication</string>
+    <string name="name_options">Options</string>
+    <string name="name_records">Cemetery</string>
+    <string name="name_rewards">Rewards</string>
+    <string name="name_spend">Stat Points</string>
+    <string name="name_status">Status</string>
+    <string name="name_store_drinks">Shop - Drinks</string>
+    <string name="name_store_food">Shop - Food</string>
+    <string name="name_store_perma">Shop - Stuff</string>
+    <string name="name_store_treatments">Shop - Remedies</string>
+    <string name="spend_stat_points_title">Select a stat to improve:</string>
+    <string name="status_age">"Age: "</string>
+    <string name="status_bits">"Bits: "</string>
+    <string name="status_buffs">"Consumable Buffs"</string>
+    <string name="status_experience">"Experience: "</string>
+    <string name="status_level">"Level: "</string>
+    <string name="status_name">"Name: "</string>
+    <string name="status_temp">"Temperature: "</string>
+    <string name="status_type">"Type: "</string>
+    <string name="status_weight">"Weight: "</string>
+    <string name="status_winloss">"Multiplayer battle win/loss ratio: "</string>
+    <string name="status_winloss_sp">"Singleplayer battle win/loss ratio: "</string>
+    <string name="version">Version:</string>
+    <string name="widget_button_game">"Start"</string>
+    <string name="widget_temp">"Temp: "</string>
+</resources>

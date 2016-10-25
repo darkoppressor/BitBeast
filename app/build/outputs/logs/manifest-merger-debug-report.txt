@@ -1,0 +1,283 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:2:1-154:12
+	package
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:3:5-42
+		INJECTED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml
+		INJECTED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml
+	android:versionName
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:5:5-32
+		INJECTED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml
+		INJECTED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml
+	android:versionCode
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:4:5-29
+		INJECTED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml
+		INJECTED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:2:11-69
+	android:installLocation
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:6:5-35
+uses-sdk
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:8:5-10:41
+	android:targetSdkVersion
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:10:9-38
+		INJECTED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml
+		INJECTED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:9:9-34
+		INJECTED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml
+		INJECTED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:12:5-81
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:12:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:13:5-79
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:13:22-76
+uses-permission#android.permission.VIBRATE
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:14:5-66
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:14:22-63
+uses-permission#android.permission.BLUETOOTH
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:15:5-68
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:15:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:16:5-74
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:16:22-71
+uses-permission#android.permission.INTERNET
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:17:5-67
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:17:22-64
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:18:5-71
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:18:22-68
+uses-feature#android.hardware.bluetooth
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:21:5-88
+	android:required
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:21:61-85
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:21:19-60
+uses-feature#android.hardware.location
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:22:5-87
+	android:required
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:22:60-84
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:22:19-59
+uses-feature#android.hardware.location.gps
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:23:5-91
+	android:required
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:23:64-88
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:23:19-63
+uses-feature#android.hardware.microphone
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:24:5-89
+	android:required
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:24:62-86
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:24:19-61
+uses-feature#android.hardware.sensor.accelerometer
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:25:5-99
+	android:required
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:25:72-96
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:25:19-71
+uses-feature#android.hardware.screen.landscape
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:26:5-95
+	android:required
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:26:68-92
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:26:19-67
+uses-feature#android.hardware.screen.portrait
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:27:5-94
+	android:required
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:27:67-91
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:27:19-66
+uses-feature#android.hardware.faketouch
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:28:5-88
+	android:required
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:28:61-85
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:28:19-60
+uses-feature#android.hardware.touchscreen
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:29:5-90
+	android:required
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:29:63-87
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:29:19-62
+supports-screens
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:32:5-35:39
+	android:largeScreens
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:35:9-36
+	android:smallScreens
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:33:9-37
+	android:normalScreens
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:34:9-37
+application
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:37:5-152:19
+	android:label
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:39:9-41
+	android:allowBackup
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:41:9-35
+	android:icon
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:38:9-45
+	android:description
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:40:9-54
+receiver#org.cheeseandbacon.bitbeast.Widget_Provider
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:43:9-50:20
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:44:13-43
+intent-filter#android.appwidget.action.APPWIDGET_UPDATE
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:45:13-47:29
+action#android.appwidget.action.APPWIDGET_UPDATE
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:46:17-84
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:46:25-81
+meta-data#android.appwidget.provider
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:48:13-49:55
+	android:resource
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:49:17-52
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:48:24-65
+activity#org.cheeseandbacon.bitbeast.BitBeast
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:62:9-70:20
+	android:label
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:64:13-45
+	android:theme
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:65:13-60
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:63:13-37
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:66:13-69:29
+action#android.intent.action.MAIN
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:67:17-69
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:67:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:68:17-77
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:68:27-74
+activity#org.cheeseandbacon.bitbeast.Activity_Name
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:72:9-74:65
+	android:label
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:74:13-52
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:73:13-42
+activity#org.cheeseandbacon.bitbeast.Activity_Status
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:76:9-78:61
+	android:label
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:78:13-48
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:77:13-44
+activity#org.cheeseandbacon.bitbeast.Activity_Store
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:80:9-82:65
+	android:label
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:82:13-52
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:81:13-43
+activity#org.cheeseandbacon.bitbeast.Activity_Game_RPS
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:84:9-86:63
+	android:label
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:86:13-50
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:85:13-46
+activity#org.cheeseandbacon.bitbeast.Activity_Game_Accel
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:88:9-90:65
+	android:label
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:90:13-52
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:89:13-48
+activity#org.cheeseandbacon.bitbeast.Activity_Game_GPS
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:92:9-94:63
+	android:label
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:94:13-50
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:93:13-46
+activity#org.cheeseandbacon.bitbeast.Activity_Game_Speed_GPS
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:96:9-98:69
+	android:label
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:98:13-56
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:97:13-52
+activity#org.cheeseandbacon.bitbeast.Activity_Battle_Menu
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:100:9-102:66
+	android:label
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:102:13-53
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:101:13-49
+activity#org.cheeseandbacon.bitbeast.Activity_Battle
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:104:9-106:61
+	android:label
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:106:13-48
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:105:13-44
+activity#org.cheeseandbacon.bitbeast.Activity_Options
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:108:9-110:62
+	android:label
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:110:13-49
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:109:13-45
+activity#org.cheeseandbacon.bitbeast.Activity_Config
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:112:9-114:61
+	android:label
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:114:13-48
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:113:13-44
+activity#org.cheeseandbacon.bitbeast.Activity_Records
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:116:9-118:62
+	android:label
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:118:13-49
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:117:13-45
+activity#org.cheeseandbacon.bitbeast.Activity_Help
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:120:9-122:59
+	android:label
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:122:13-46
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:121:13-42
+activity#org.cheeseandbacon.bitbeast.Activity_Help_Page
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:124:9-126:71
+	android:label
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:126:13-58
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:125:13-47
+activity#org.cheeseandbacon.bitbeast.Activity_About
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:128:9-130:60
+	android:label
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:130:13-47
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:129:13-43
+activity#org.cheeseandbacon.bitbeast.Activity_Credits
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:132:9-134:62
+	android:label
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:134:13-49
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:133:13-45
+activity#org.cheeseandbacon.bitbeast.Activity_Spend_Stat_Points
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:136:9-138:60
+	android:label
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:138:13-47
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:137:13-55
+activity#org.cheeseandbacon.bitbeast.Activity_Rewards
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:140:9-142:62
+	android:label
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:142:13-49
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:141:13-45
+activity#org.cheeseandbacon.bitbeast.Activity_Inventory
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:144:9-146:68
+	android:label
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:146:13-55
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:145:13-47
+activity#org.cheeseandbacon.bitbeast.Activity_Equip
+ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:148:9-150:60
+	android:label
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:150:13-47
+	android:name
+		ADDED from /home/kevin/StudioProjects/BitBeast/app/src/main/AndroidManifest.xml:149:13-43

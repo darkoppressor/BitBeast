@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.cheeseandbacon.bitbeast"
+    android:installLocation="auto"
+    android:versionCode="23"
+    android:versionName="1.1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- <uses-permission android:name="android.permission.NFC" /> -->
+
+    <uses-feature
+        android:name="android.hardware.bluetooth"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.sensor.accelerometer"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.screen.landscape"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.screen.portrait"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.faketouch"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <!-- <uses-feature android:name="android.hardware.nfc" android:required="false" /> -->
+
+    <supports-screens
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="false" />
+
+    <application
+        android:allowBackup="true"
+        android:description="@string/app_description"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        <receiver android:name="org.cheeseandbacon.bitbeast.Widget_Provider" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info" />
+        </receiver>
+
+        <!--
+        <activity
+            android:name=".Activity_NFC"
+            android:label="@string/name_nfc" >
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="application/org.cheeseandbacon.bitbeast" />
+            </intent-filter>
+        </activity>
+        -->
+
+        <activity
+            android:name="org.cheeseandbacon.bitbeast.BitBeast"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="org.cheeseandbacon.bitbeast.Activity_Name"
+            android:label="@string/name_name_entry" />
+        <activity
+            android:name="org.cheeseandbacon.bitbeast.Activity_Status"
+            android:label="@string/name_status" />
+        <activity
+            android:name="org.cheeseandbacon.bitbeast.Activity_Store"
+            android:label="@string/name_store_food" />
+        <activity
+            android:name="org.cheeseandbacon.bitbeast.Activity_Game_RPS"
+            android:label="@string/name_game_rps" />
+        <activity
+            android:name="org.cheeseandbacon.bitbeast.Activity_Game_Accel"
+            android:label="@string/name_game_accel" />
+        <activity
+            android:name="org.cheeseandbacon.bitbeast.Activity_Game_GPS"
+            android:label="@string/name_game_gps" />
+        <activity
+            android:name="org.cheeseandbacon.bitbeast.Activity_Game_Speed_GPS"
+            android:label="@string/name_game_speed_gps" />
+        <activity
+            android:name="org.cheeseandbacon.bitbeast.Activity_Battle_Menu"
+            android:label="@string/name_battle_menu" />
+        <activity
+            android:name="org.cheeseandbacon.bitbeast.Activity_Battle"
+            android:label="@string/name_battle" />
+        <activity
+            android:name="org.cheeseandbacon.bitbeast.Activity_Options"
+            android:label="@string/name_options" />
+        <activity
+            android:name="org.cheeseandbacon.bitbeast.Activity_Config"
+            android:label="@string/name_config" />
+        <activity
+            android:name="org.cheeseandbacon.bitbeast.Activity_Records"
+            android:label="@string/name_records" />
+        <activity
+            android:name="org.cheeseandbacon.bitbeast.Activity_Help"
+            android:label="@string/name_help" />
+        <activity
+            android:name="org.cheeseandbacon.bitbeast.Activity_Help_Page"
+            android:label="@string/name_help_how_to_play" />
+        <activity
+            android:name="org.cheeseandbacon.bitbeast.Activity_About"
+            android:label="@string/name_about" />
+        <activity
+            android:name="org.cheeseandbacon.bitbeast.Activity_Credits"
+            android:label="@string/name_credits" />
+        <activity
+            android:name="org.cheeseandbacon.bitbeast.Activity_Spend_Stat_Points"
+            android:label="@string/name_spend" />
+        <activity
+            android:name="org.cheeseandbacon.bitbeast.Activity_Rewards"
+            android:label="@string/name_rewards" />
+        <activity
+            android:name="org.cheeseandbacon.bitbeast.Activity_Inventory"
+            android:label="@string/name_inventory_all" />
+        <activity
+            android:name="org.cheeseandbacon.bitbeast.Activity_Equip"
+            android:label="@string/name_equip" />
+    </application>
+
+</manifest>

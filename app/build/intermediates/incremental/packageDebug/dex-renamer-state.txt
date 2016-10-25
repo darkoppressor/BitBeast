@@ -1,7 +1,0 @@
-#Tue Oct 25 00:26:10 CDT 2016
-base.0=/home/kevin/StudioProjects/BitBeast/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_17a91a7d465217df57104342d28cc9b8b62eff87
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=/home/kevin/StudioProjects/BitBeast/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_2469b47ab4a158b2c24e7eab1093a9b250f13676/classes.dex
-base.1=/home/kevin/StudioProjects/BitBeast/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_2469b47ab4a158b2c24e7eab1093a9b250f13676
-file.0=/home/kevin/StudioProjects/BitBeast/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_17a91a7d465217df57104342d28cc9b8b62eff87/classes.dex

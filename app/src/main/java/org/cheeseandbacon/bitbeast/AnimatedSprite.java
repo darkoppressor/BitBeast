@@ -2,7 +2,6 @@ package org.cheeseandbacon.bitbeast;
 
 
 import android.content.res.Resources;
-import android.graphics.AvoidXfermode;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -118,7 +117,7 @@ public class AnimatedSprite{
 		
 		if(color!=key_color){
 			Paint paint=new Paint();
-			paint.setXfermode(new AvoidXfermode(key_color,0,AvoidXfermode.Mode.TARGET));
+			///QQQpaint.setXfermode(new AvoidXfermode(key_color,0,AvoidXfermode.Mode.TARGET));
 			paint.setColor(color);
 			canvas.drawRect(dest,paint);
 		}

@@ -5,6 +5,10 @@ This should mean the backup system below is not needed
 Keep widget? Or just get rid of it?
 I like the idea of removing it, and eventually adding a notifications feature instead
 
+Review permissions and features, and make sure they are being handled correctly
+
+Colors are still not applying to the widget and shadow battle pet images
+
 ----------------------------------------------------------------
 
 Bluetooth battles should check that the version of the two players is the same

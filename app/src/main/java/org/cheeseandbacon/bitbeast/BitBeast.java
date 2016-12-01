@@ -45,7 +45,7 @@ public class BitBeast extends Activity{
 	static final int REQUEST_OPTIONS=1;
 	static final int REQUEST_NAME=2;
 	static final int REQUEST_ENABLE_BLUETOOTH=3;
-	///POOPY
+	///QQQ
 	///static final int REQUEST_QR_CODE=4;
 	
 	private Image image;
@@ -386,7 +386,7 @@ public class BitBeast extends Activity{
     			///Toast.makeText(getApplicationContext(),"Bluetooth was not enabled. Not entering Battle mode.",Toast.LENGTH_SHORT).show();
     		}
     		break;
-    	///POOPY
+    	///QQQ
     	/**case REQUEST_QR_CODE:
     		if(get_result_code==RESULT_OK){
     			String contents=get_data.getStringExtra("SCAN_RESULT");
@@ -612,7 +612,7 @@ public class BitBeast extends Activity{
     		ll.setBackgroundResource(android.R.color.black);
     	}
     	
-    	///POOPY
+    	///QQQ
     	///game_view.get_pet().die(image,(View)game_view,BitBeast.this,game_view.get_records(),handler);
     	/**game_view.get_pet().get_status().bits+=9999;
     	game_view.get_pet().get_status().bits_bound();*/
@@ -1550,7 +1550,7 @@ public class BitBeast extends Activity{
     				Toast.makeText(getApplicationContext(),"Your device doesn't seem to support Bluetooth!",Toast.LENGTH_SHORT).show();
     			}
 				
-				///POOPY
+				///QQQ
 				/**Intent intent=new Intent("com.google.zxing.client.android.SCAN");
 				intent.putExtra("SCAN_MODE","QR_CODE_MODE");
 				startActivityForResult(intent,REQUEST_QR_CODE);*/

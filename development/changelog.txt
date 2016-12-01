@@ -1,4 +1,4 @@
-1.1.0 - 2013/12/14
+1.1.0 - 2016/11/30
  - Two new stats added: Dexterity and Stamina. These each function kind of like one half of strength.
    Strength is attack damage as well as health. Stamina provides extra health that must be removed before
    strength can be damaged, thus acting like a "shield." Dexterity provides a damage bonus but gets used up
@@ -88,6 +88,6 @@
 
 1.0.1 - 2012/5/24
  - Graphical improvements.
- 
+
 1.0.0 - 2012/5/22
  - Initial release version!

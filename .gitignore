@@ -9,4 +9,5 @@
 .externalNativeBuild
 
 /app/build
+/app/src/main/res/drawable/*.png
 *Thumbs.db

@@ -4,6 +4,7 @@ package org.cheeseandbacon.bitbeast;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.LightingColorFilter;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
@@ -29,7 +30,7 @@ public class AnimatedSprite{
     }
     
     public void Initialize(View view,Image image,int w,int h,Bitmap get_bitmap,int get_animation_speed,int get_frame_count,boolean get_anim_fuzzy){
-    	bitmap=get_bitmap;
+		bitmap=get_bitmap;
         rect.top=0;
         rect.bottom=h;
         rect.left=0;
@@ -110,16 +111,16 @@ public class AnimatedSprite{
 		canvas.save(Canvas.MATRIX_SAVE_FLAG);
 		
 		canvas.scale(horizontal,vertical,(float)canvas.getWidth()/2.0f,(float)canvas.getHeight()/2.0f);
-		
-		canvas.drawBitmap(bitmap,rect,dest,null);
-		
-		int key_color=res.getColor(R.color.key_color);
-		
+
+		final int key_color=res.getColor(R.color.key_color);
+
 		if(color!=key_color){
 			Paint paint=new Paint();
-			///QQQpaint.setXfermode(new AvoidXfermode(key_color,0,AvoidXfermode.Mode.TARGET));
-			paint.setColor(color);
-			canvas.drawRect(dest,paint);
+			paint.setColorFilter(new LightingColorFilter(color,0));
+			canvas.drawBitmap(bitmap,rect,dest,paint);
+		}
+		else{
+			canvas.drawBitmap(bitmap,rect,dest,null);
 		}
 		
 		canvas.restore();

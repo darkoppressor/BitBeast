@@ -1,9 +1,5 @@
 package org.cheeseandbacon.bitbeast;
 
-import java.text.DecimalFormat;
-import java.util.ArrayList;
-
-
 import android.content.res.Resources;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -12,6 +8,9 @@ import android.os.Handler;
 import android.os.Vibrator;
 import android.view.MotionEvent;
 import android.view.View;
+
+import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 public class Game_Workout{
 	ArrayList<Object_Ball> balls;

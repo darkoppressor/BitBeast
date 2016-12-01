@@ -1,13 +1,10 @@
 package org.cheeseandbacon.bitbeast;
 
-import java.util.ArrayList;
-
-
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.media.AudioManager;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +12,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Activity_Game_RPS extends Activity{
+import java.util.ArrayList;
+
+public class Activity_Game_RPS extends AppCompatActivity {
 	static final int ROCK=0;
 	static final int PAPER=1;
 	static final int SCISSORS=2;

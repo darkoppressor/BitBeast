@@ -1,7 +1,6 @@
 package org.cheeseandbacon.bitbeast;
 
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
@@ -10,6 +9,7 @@ import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +18,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Activity_Rewards extends Activity{
+public class Activity_Rewards extends AppCompatActivity {
 	static final int DIALOG_DETAILS=0;
 	
 	private Pet_Status pet_status;

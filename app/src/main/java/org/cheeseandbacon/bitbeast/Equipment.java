@@ -1,11 +1,10 @@
 package org.cheeseandbacon.bitbeast;
 
-import java.text.DecimalFormat;
-import java.util.ArrayList;
-
-
 import android.content.Context;
 import android.content.res.Resources;
+
+import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 
 public class Equipment{

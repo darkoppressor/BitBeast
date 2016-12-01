@@ -1,13 +1,9 @@
 package org.cheeseandbacon.bitbeast;
 
-import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-
-
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.DashPathEffect;
 import android.graphics.Paint;
 import android.graphics.RectF;
@@ -16,6 +12,10 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.Vibrator;
 import android.view.View;
+
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
 
 public class Pet{
 	private Pet_Status status;
@@ -1089,7 +1089,7 @@ public class Pet{
 		
 		if(status.needs_bath()){
 			if(sprite_dirty!=null){
-				sprite_dirty.draw(canvas,res,(int)(x+w/2-sprite_dirty.get_width()/2),(int)(y-sprite_dirty.get_height()*0.65f),sprite_dirty.get_width(),sprite_dirty.get_height(),Direction.LEFT,res.getColor(R.color.key_color),false,1.0f,1.0f);
+				sprite_dirty.draw(canvas,res,(int)(x+w/2-sprite_dirty.get_width()/2),(int)(y-sprite_dirty.get_height()*0.65f),sprite_dirty.get_width(),sprite_dirty.get_height(),Direction.LEFT,Color.WHITE,false,1.0f,1.0f);
 			}
 		}
 		
@@ -1127,7 +1127,7 @@ public class Pet{
 			if(sprite_lit_computer!=null){
 				Perma_Item item=status.get_item("computer");
 				if(item!=null){
-					sprite_lit_computer.draw(canvas,res,(int)item.x,(int)item.y,(int)item.w,(int)item.h,Direction.LEFT,res.getColor(R.color.key_color),false,1.0f,1.0f);
+					sprite_lit_computer.draw(canvas,res,(int)item.x,(int)item.y,(int)item.w,(int)item.h,Direction.LEFT,Color.WHITE,false,1.0f,1.0f);
 				}
 			}
 		}
@@ -1135,7 +1135,7 @@ public class Pet{
 			if(sprite_lit_robot!=null){
 				Perma_Item item=status.get_item("robot");
 				if(item!=null){
-					sprite_lit_robot.draw(canvas,res,(int)item.x,(int)item.y,(int)item.w,(int)item.h,Direction.LEFT,res.getColor(R.color.key_color),false,1.0f,1.0f);
+					sprite_lit_robot.draw(canvas,res,(int)item.x,(int)item.y,(int)item.w,(int)item.h,Direction.LEFT,Color.WHITE,false,1.0f,1.0f);
 				}
 			}
 		}
@@ -1143,7 +1143,7 @@ public class Pet{
 			if(sprite_lit_christmas_tree!=null){
 				Perma_Item item=status.get_item("holiday_christmas");
 				if(item!=null){
-					sprite_lit_christmas_tree.draw(canvas,res,(int)item.x,(int)item.y,(int)item.w,(int)item.h,Direction.LEFT,res.getColor(R.color.key_color),false,1.0f,1.0f);
+					sprite_lit_christmas_tree.draw(canvas,res,(int)item.x,(int)item.y,(int)item.w,(int)item.h,Direction.LEFT,Color.WHITE,false,1.0f,1.0f);
 				}
 			}
 		}
@@ -1151,7 +1151,7 @@ public class Pet{
 		if(status.sleeping && !status.sleeping_woken_up){
 			if(status.age_tier!=Age_Tier.EGG && status.age_tier!=Age_Tier.DEAD){
 				if(sprite_sleep!=null){
-					sprite_sleep.draw(canvas,res,(int)(x+w),(int)(y-sprite_sleep.get_height()),sprite_sleep.get_width(),sprite_sleep.get_height(),Direction.LEFT,res.getColor(R.color.key_color),false,1.0f,1.0f);
+					sprite_sleep.draw(canvas,res,(int)(x+w),(int)(y-sprite_sleep.get_height()),sprite_sleep.get_width(),sprite_sleep.get_height(),Direction.LEFT,Color.WHITE,false,1.0f,1.0f);
 				}
 			}
 		}
@@ -1331,12 +1331,12 @@ public class Pet{
 		
 		if(status.ac){
 			if(sprite_ac!=null){
-				sprite_ac.draw(canvas,res,canvas.getWidth()-sprite_ac.get_width()-(int)machine_offset,0,sprite_ac.get_width(),sprite_ac.get_height(),Direction.LEFT,res.getColor(R.color.key_color),false,1.0f,1.0f);
+				sprite_ac.draw(canvas,res,canvas.getWidth()-sprite_ac.get_width()-(int)machine_offset,0,sprite_ac.get_width(),sprite_ac.get_height(),Direction.LEFT,Color.WHITE,false,1.0f,1.0f);
 			}
 		}
 		else if(status.heater){
 			if(sprite_heater!=null){
-				sprite_heater.draw(canvas,res,canvas.getWidth()-sprite_heater.get_width()-(int)machine_offset,0,sprite_heater.get_width(),sprite_heater.get_height(),Direction.LEFT,res.getColor(R.color.key_color),false,1.0f,1.0f);
+				sprite_heater.draw(canvas,res,canvas.getWidth()-sprite_heater.get_width()-(int)machine_offset,0,sprite_heater.get_width(),sprite_heater.get_height(),Direction.LEFT,Color.WHITE,false,1.0f,1.0f);
 			}
 		}
 	}

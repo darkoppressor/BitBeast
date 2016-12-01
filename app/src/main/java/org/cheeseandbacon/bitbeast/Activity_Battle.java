@@ -1,14 +1,11 @@
 package org.cheeseandbacon.bitbeast;
 
-import java.text.DecimalFormat;
-import java.util.ArrayList;
-
-
-import android.app.Activity;
 import android.content.res.Resources;
+import android.graphics.LightingColorFilter;
 import android.graphics.drawable.AnimationDrawable;
 import android.media.AudioManager;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.view.View;
 import android.view.animation.AnimationUtils;
@@ -17,7 +14,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Activity_Battle extends Activity{
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+
+public class Activity_Battle extends AppCompatActivity {
 	Pet_Status us;
 	Pet_Status them;
 	Pet_Status us_at_start;
@@ -417,11 +417,13 @@ public class Activity_Battle extends Activity{
         ImageView iv=null;
         
         ivu=(ImageViewUs)findViewById(R.id.battle_image_us);
-        ivu.setBackgroundDrawable(Pet_Type.get_drawable(res,us.type,us.color,true,1.0f,1.0f));
+        ivu.setBackgroundDrawable(Pet_Type.get_drawable(res,us.type,true,1.0f,1.0f));
+		ivu.setColorFilter(new LightingColorFilter(us.color,0));
         ivu.set_ab(Activity_Battle.this);
         
         ivt=(ImageViewThem)findViewById(R.id.battle_image_them);
-        ivt.setBackgroundDrawable(Pet_Type.get_drawable(res,them.type,them.color,false,1.0f,1.0f));
+        ivt.setBackgroundDrawable(Pet_Type.get_drawable(res,them.type,false,1.0f,1.0f));
+		ivt.setColorFilter(new LightingColorFilter(them.color,0));
         ivt.set_ab(Activity_Battle.this);
         
         set_pet_stats(res,(TextView)findViewById(R.id.battle_text_us),(TextView)findViewById(R.id.battle_text_them),us,them,strength_us,dexterity_us,stamina_us,strength_them,dexterity_them,stamina_them);
@@ -486,10 +488,12 @@ public class Activity_Battle extends Activity{
         ImageView iv=null;
         
         ivu=(ImageViewUs)findViewById(R.id.battle_image_us);
-        ivu.setBackgroundDrawable(Pet_Type.get_drawable(res,us.type,us.color,true,1.0f,1.0f));
+        ivu.setBackgroundDrawable(Pet_Type.get_drawable(res,us.type,true,1.0f,1.0f));
+		ivu.setColorFilter(new LightingColorFilter(us.color,0));
         
         ivt=(ImageViewThem)findViewById(R.id.battle_image_them);
-        ivt.setBackgroundDrawable(Pet_Type.get_drawable(res,them.type,them.color,false,1.0f,1.0f));
+        ivt.setBackgroundDrawable(Pet_Type.get_drawable(res,them.type,false,1.0f,1.0f));
+		ivt.setColorFilter(new LightingColorFilter(them.color,0));
         
         iv=(ImageView)findViewById(R.id.battle_image_stars_us);
         if(!winner){

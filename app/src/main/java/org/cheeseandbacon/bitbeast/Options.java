@@ -1,10 +1,10 @@
 package org.cheeseandbacon.bitbeast;
 
-import java.util.Calendar;
-
 import android.content.pm.ActivityInfo;
 import android.view.Window;
 import android.view.WindowManager;
+
+import java.util.Calendar;
 
 
 public class Options{

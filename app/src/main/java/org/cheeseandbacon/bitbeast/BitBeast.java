@@ -1,16 +1,10 @@
 package org.cheeseandbacon.bitbeast;
 
-import java.util.ArrayList;
-import java.util.List;
-
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
-import android.appwidget.AppWidgetManager;
 import android.bluetooth.BluetoothAdapter;
-import android.content.ComponentName;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -33,6 +27,9 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BitBeast extends Activity{
 	static final int DIALOG_ID_PROGRESS=0;

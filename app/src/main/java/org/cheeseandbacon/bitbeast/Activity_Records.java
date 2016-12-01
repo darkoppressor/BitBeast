@@ -1,15 +1,14 @@
 package org.cheeseandbacon.bitbeast;
 
-import java.text.DecimalFormat;
-
-
-import android.app.Activity;
 import android.media.AudioManager;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Activity_Records extends Activity{
+import java.text.DecimalFormat;
+
+public class Activity_Records extends AppCompatActivity {
 	private Records records;
 	
 	@Override

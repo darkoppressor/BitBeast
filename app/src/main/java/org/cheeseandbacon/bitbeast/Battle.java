@@ -1,8 +1,8 @@
 package org.cheeseandbacon.bitbeast;
 
-import java.util.ArrayList;
-
 import android.content.Context;
+
+import java.util.ArrayList;
 
 public class Battle{
 	private static final int INITIATIVE_MIN=-99;

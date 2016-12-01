@@ -1,14 +1,11 @@
 package org.cheeseandbacon.bitbeast;
 
-import java.util.Calendar;
-
-
-import android.app.Activity;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -20,7 +17,9 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-public class Activity_Config extends Activity{
+import java.util.Calendar;
+
+public class Activity_Config extends AppCompatActivity {
 	static final int DIALOG_ID_TIME=0;
 	
 	TimePickerDialog dialog_time;

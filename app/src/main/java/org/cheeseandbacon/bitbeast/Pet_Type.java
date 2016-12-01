@@ -4,7 +4,6 @@ package org.cheeseandbacon.bitbeast;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
 
@@ -196,7 +195,7 @@ public enum Pet_Type{
 		}
 	}
 	
-	public static BitmapDrawable get_drawable(Resources res,Pet_Type type,int color,boolean flipped,float scale_x,float scale_y){
+	public static BitmapDrawable get_drawable(Resources res,Pet_Type type,boolean flipped,float scale_x,float scale_y){
 		Bitmap bitmap=null;
 		
 		//Most sprites will have the same count.
@@ -303,21 +302,6 @@ public enum Pet_Type{
 			m.preScale(scale_x,scale_y);
 			
 			bitmap_final=Bitmap.createBitmap(bitmap_final,0,0,bitmap_final.getWidth(),bitmap_final.getHeight(),m,false);
-		}
-				
-		int key_color=res.getColor(R.color.key_color);
-		
-		if(color!=key_color){
-			int[] pixels=new int[bitmap_final.getWidth()*bitmap_final.getHeight()];
-			bitmap_final.getPixels(pixels,0,bitmap_final.getWidth(),0,0,bitmap_final.getWidth()-1,bitmap_final.getHeight()-1);
-			
-			for(int i=0;i<pixels.length;i++){
-				if(Color.alpha(pixels[i])>0 && Color.red(pixels[i])==255 && Color.green(pixels[i])==0 && Color.blue(pixels[i])==255){
-					pixels[i]=Color.argb(Color.alpha(color),Color.red(color),Color.green(color),Color.blue(color));
-				}
-			}
-			
-			bitmap_final.setPixels(pixels,0,bitmap_final.getWidth(),0,0,bitmap_final.getWidth()-1,bitmap_final.getHeight()-1);
 		}
 		
 		BitmapDrawable bd=new BitmapDrawable(res,bitmap_final);

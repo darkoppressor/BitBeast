@@ -1,8 +1,6 @@
 package org.cheeseandbacon.bitbeast;
 
 
-import java.util.Calendar;
-
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;

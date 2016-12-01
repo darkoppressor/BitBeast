@@ -1,13 +1,13 @@
 package org.cheeseandbacon.bitbeast;
 
 
-import android.app.Activity;
 import android.media.AudioManager;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Activity_Help_Page extends Activity{
+public class Activity_Help_Page extends AppCompatActivity {
 	private int page;
 	
 	@Override

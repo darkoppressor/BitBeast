@@ -1,16 +1,12 @@
 package org.cheeseandbacon.bitbeast;
 
-import java.util.ArrayList;
-import java.util.List;
-
-
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,7 +22,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Activity_Inventory extends Activity{
+import java.util.ArrayList;
+import java.util.List;
+
+public class Activity_Inventory extends AppCompatActivity {
 	static final int DIALOG_SOLD=0;
 	static final int DIALOG_DETAILS=1;
 	

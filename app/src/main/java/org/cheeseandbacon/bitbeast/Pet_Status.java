@@ -1,13 +1,13 @@
 package org.cheeseandbacon.bitbeast;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+
+import java.util.ArrayList;
+import java.util.Calendar;
 
 public class Pet_Status{
 	//The last time a tick was processed.

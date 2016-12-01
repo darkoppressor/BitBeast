@@ -1,14 +1,14 @@
 package org.cheeseandbacon.bitbeast;
 
 
-import android.app.Activity;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.media.AudioManager;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Activity_About extends Activity{
+public class Activity_About extends AppCompatActivity {
 	@Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);

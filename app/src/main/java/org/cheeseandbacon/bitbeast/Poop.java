@@ -3,6 +3,7 @@ package org.cheeseandbacon.bitbeast;
 
 import android.content.res.Resources;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.view.View;
 
 public class Poop{
@@ -54,7 +55,7 @@ public class Poop{
 	
 	public void render(Canvas canvas,Resources res){
 		if(sprite!=null){
-			sprite.draw(canvas,res,(int)x,(int)y,w,h,Direction.LEFT,res.getColor(R.color.key_color),false,1.0f,1.0f);
+			sprite.draw(canvas,res,(int)x,(int)y,w,h,Direction.LEFT,Color.WHITE,false,1.0f,1.0f);
 		}
 	}
 }

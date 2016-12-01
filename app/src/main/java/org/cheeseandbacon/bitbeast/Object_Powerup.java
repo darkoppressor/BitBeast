@@ -1,12 +1,12 @@
 package org.cheeseandbacon.bitbeast;
 
-import java.util.ArrayList;
-
-
 import android.content.res.Resources;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.os.Vibrator;
 import android.view.View;
+
+import java.util.ArrayList;
 
 public class Object_Powerup{
 	private AnimatedSprite sprite;
@@ -433,7 +433,7 @@ public class Object_Powerup{
 	
 	public void render(Canvas canvas,Resources res){
 		if(sprite!=null){
-			sprite.draw(canvas,res,(int)x,(int)y,w,h,Direction.LEFT,res.getColor(R.color.key_color),false,1.0f,1.0f);
+			sprite.draw(canvas,res,(int)x,(int)y,w,h,Direction.LEFT,Color.WHITE,false,1.0f,1.0f);
 		}
 	}
 }

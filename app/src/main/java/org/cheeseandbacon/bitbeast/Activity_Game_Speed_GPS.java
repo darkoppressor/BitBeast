@@ -1,18 +1,17 @@
 package org.cheeseandbacon.bitbeast;
 
-import java.text.DecimalFormat;
-
-
-import android.app.Activity;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.media.AudioManager;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Activity_Game_Speed_GPS extends Activity implements LocationListener{
+import java.text.DecimalFormat;
+
+public class Activity_Game_Speed_GPS extends AppCompatActivity implements LocationListener{
 	private LocationManager locations;
 	
 	//The minimum accuracy a new location must have to be counted, in meters

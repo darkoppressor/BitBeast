@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    
-    <color name="key_color">#ff00ff</color>
-	<color name="key_color_next">#ff00fe</color>
-	
+
 	<color name="font">#e6e6e6</color>
 	<color name="font_alert">#bf1313</color>
 	<color name="font_upgrade">#13bf13</color>

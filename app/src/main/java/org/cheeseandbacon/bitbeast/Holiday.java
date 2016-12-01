@@ -1,10 +1,9 @@
 package org.cheeseandbacon.bitbeast;
 
-import java.util.Calendar;
-
-
 import android.content.res.Resources;
 import android.view.View;
+
+import java.util.Calendar;
 
 public class Holiday{
 	public static final short NONE=0;

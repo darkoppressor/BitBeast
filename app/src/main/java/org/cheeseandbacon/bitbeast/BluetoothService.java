@@ -1,10 +1,5 @@
 package org.cheeseandbacon.bitbeast;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.UUID;
-
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothServerSocket;
@@ -14,6 +9,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.widget.Toast;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.UUID;
 
 public class BluetoothService{
 	private static final UUID UUID_SECURE=UUID.fromString("5af0b1d0-9735-11e1-a8b0-0800200c9a66");

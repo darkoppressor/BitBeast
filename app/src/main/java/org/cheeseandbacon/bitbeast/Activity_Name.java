@@ -1,31 +1,23 @@
 package org.cheeseandbacon.bitbeast;
 
 
-import android.app.Activity;
 import android.app.Dialog;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.media.AudioManager;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Activity_Name extends Activity implements ColorPickerDialog.OnColorChangedListener{
+public class Activity_Name extends AppCompatActivity implements ColorPickerDialog.OnColorChangedListener{
 	static final int DIALOG_ID_COLOR=0;
 	
 	private Pet_Status pet_status;
 	
 	public void colorChanged(int color){
-		Resources res=getResources();
-		
-		//Don't allow the key color to be chosen.
-		if(color==res.getColor(R.color.key_color)){
-			color=res.getColor(R.color.key_color_next);
-		}
-		
         pet_status.color=color;
     }
 	
@@ -38,13 +30,6 @@ public class Activity_Name extends Activity implements ColorPickerDialog.OnColor
         
         pet_status=new Pet_Status();
         pet_status.color=Color.rgb(RNG.random_range(0,255),RNG.random_range(0,255),RNG.random_range(0,255));
-        
-        Resources res=getResources();
-		
-		//Don't allow the key color to be chosen.
-		if(pet_status.color==res.getColor(R.color.key_color)){
-			pet_status.color=res.getColor(R.color.key_color_next);
-		}
         
         Font.set_typeface((TextView)findViewById(R.id.text_name_label));
         Font.set_typeface((EditText)findViewById(R.id.text_name_entry));

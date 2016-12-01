@@ -1,8 +1,8 @@
 package org.cheeseandbacon.bitbeast;
 
-import java.util.ArrayList;
-
 import android.view.KeyEvent;
+
+import java.util.ArrayList;
 
 public class Key_States{
 	ArrayList<Boolean> keys;

@@ -1,8 +1,5 @@
 package org.cheeseandbacon.bitbeast;
 
-import java.util.ArrayList;
-
-
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Canvas;
@@ -12,6 +9,8 @@ import android.os.Handler;
 import android.os.Vibrator;
 import android.view.MotionEvent;
 import android.view.View;
+
+import java.util.ArrayList;
 
 public class Game_Bricks{
 	ArrayList<Object_Ball> balls;

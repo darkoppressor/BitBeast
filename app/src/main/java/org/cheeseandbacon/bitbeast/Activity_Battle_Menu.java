@@ -1,11 +1,5 @@
 package org.cheeseandbacon.bitbeast;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-
-
-import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
@@ -16,6 +10,7 @@ import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +22,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Activity_Battle_Menu extends Activity{
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+public class Activity_Battle_Menu extends AppCompatActivity {
 	static final int REQUEST_MAKE_DISCOVERABLE=1;
 	
 	private Pet_Status pet_status;

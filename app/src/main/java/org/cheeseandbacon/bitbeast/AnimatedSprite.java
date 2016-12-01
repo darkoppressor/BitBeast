@@ -4,6 +4,7 @@ package org.cheeseandbacon.bitbeast;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.LightingColorFilter;
 import android.graphics.Paint;
 import android.graphics.Rect;
@@ -112,9 +113,7 @@ public class AnimatedSprite{
 		
 		canvas.scale(horizontal,vertical,(float)canvas.getWidth()/2.0f,(float)canvas.getHeight()/2.0f);
 
-		final int key_color=res.getColor(R.color.key_color);
-
-		if(color!=key_color){
+		if(color!=Color.WHITE){
 			Paint paint=new Paint();
 			paint.setColorFilter(new LightingColorFilter(color,0));
 			canvas.drawBitmap(bitmap,rect,dest,paint);

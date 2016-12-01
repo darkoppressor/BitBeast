@@ -3,6 +3,7 @@ package org.cheeseandbacon.bitbeast;
 
 import android.content.res.Resources;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.view.View;
 
 public class Object_Powerup_Spawner{
@@ -137,10 +138,10 @@ public class Object_Powerup_Spawner{
 	
 	public void render(Canvas canvas,Resources res){
 		if(counter_reset==0 && sprite!=null){
-			sprite.draw(canvas,res,(int)x,(int)y,w,h,Direction.LEFT,res.getColor(R.color.key_color),false,1.0f,1.0f);
+			sprite.draw(canvas,res,(int)x,(int)y,w,h,Direction.LEFT,Color.WHITE,false,1.0f,1.0f);
 		}
 		else if(counter_reset>0 && sprite_off!=null){
-			sprite_off.draw(canvas,res,(int)x,(int)y,w,h,Direction.LEFT,res.getColor(R.color.key_color),false,1.0f,1.0f);
+			sprite_off.draw(canvas,res,(int)x,(int)y,w,h,Direction.LEFT,Color.WHITE,false,1.0f,1.0f);
 		}
 	}
 }

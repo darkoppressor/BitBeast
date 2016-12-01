@@ -1,12 +1,12 @@
 package org.cheeseandbacon.bitbeast;
 
-import java.util.ArrayList;
-
 import android.content.res.Resources;
 import android.graphics.Canvas;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+
+import java.util.ArrayList;
 
 public class Object_Paddle{
 	private AnimatedSprite sprite;

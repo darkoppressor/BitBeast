@@ -5,6 +5,8 @@ import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.LightingColorFilter;
+import android.graphics.drawable.BitmapDrawable;
 import android.widget.RemoteViews;
 
 public class Widget_Provider extends AppWidgetProvider{
@@ -72,9 +74,11 @@ public class Widget_Provider extends AppWidgetProvider{
     		
     		pet.get_status().last_tick=System.currentTimeMillis();
     	}
-    	
-    	views.setImageViewBitmap(R.id.image_widget_pet,Pet_Type.get_drawable(context.getResources(),pet.get_status().type,pet.get_status().color,true,0.5f,0.5f).getBitmap());
-    	
+
+		BitmapDrawable bitmapDrawable=Pet_Type.get_drawable(context.getResources(),pet.get_status().type,true,0.5f,0.5f);
+		bitmapDrawable.setColorFilter(new LightingColorFilter(pet.get_status().color,0));
+    	views.setImageViewBitmap(R.id.image_widget_pet,bitmapDrawable.getBitmap());
+
     	String sick_string="";
     	if(pet.get_status().sick){
     		sick_string=" (sick)";

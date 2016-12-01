@@ -1,12 +1,11 @@
 package org.cheeseandbacon.bitbeast;
 
-import java.util.ArrayList;
-
-
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.util.SparseIntArray;
+
+import java.util.ArrayList;
 
 public class Sound_Manager{
 	private static final int MAX_AUDIO_STREAMS=12;

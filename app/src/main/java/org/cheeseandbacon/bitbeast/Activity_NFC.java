@@ -19,7 +19,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Activity_NFC extends Activity{
+public class Activity_NFC extends AppCompatActivity{
 	private Pet_Status pet_status;
 	
 	private NfcAdapter adapter;

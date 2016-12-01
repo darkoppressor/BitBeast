@@ -3,6 +3,7 @@ package org.cheeseandbacon.bitbeast;
 
 import android.content.res.Resources;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.view.View;
 
 public class Thought{
@@ -129,7 +130,7 @@ public class Thought{
 			if(flip_x){
 				direction=Direction.RIGHT;
 			}
-			sprite_bubble.draw(canvas,res,(int)x,(int)y,w,h,direction,res.getColor(R.color.key_color),flip_y,1.0f,1.0f);
+			sprite_bubble.draw(canvas,res,(int)x,(int)y,w,h,direction,Color.WHITE,flip_y,1.0f,1.0f);
 		}
 		
 		if(sprite_thought!=null){

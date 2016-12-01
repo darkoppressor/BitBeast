@@ -1,15 +1,15 @@
 package org.cheeseandbacon.bitbeast;
 
 
-import android.app.Activity;
 import android.media.AudioManager;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Activity_Spend_Stat_Points extends Activity{
+public class Activity_Spend_Stat_Points extends AppCompatActivity {
 	private Pet_Status pet_status;
 	
     @Override

@@ -1,18 +1,16 @@
 package org.cheeseandbacon.bitbeast;
 
-import java.util.List;
-
-
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.LightingColorFilter;
 import android.graphics.drawable.BitmapDrawable;
 import android.media.AudioManager;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +26,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Activity_Store extends Activity{
+import java.util.List;
+
+public class Activity_Store extends AppCompatActivity {
 	static final int DIALOG_CONSUME=0;
 	
 	private Pet_Status pet_status;
@@ -443,7 +443,8 @@ public class Activity_Store extends Activity{
 	        	    	ImageViewFood ivf=(ImageViewFood)dialog_consume.findViewById(R.id.food_image_consume);
 	        	    	ImageView iv=(ImageView)dialog_consume.findViewById(R.id.image_food_consume_pet);
 	        	    	
-	        	    	iv.setBackgroundDrawable(Pet_Type.get_drawable(getResources(),pet_status.type,pet_status.color,false,1.0f,1.0f));
+	        	    	iv.setBackgroundDrawable(Pet_Type.get_drawable(getResources(),pet_status.type,false,1.0f,1.0f));
+						iv.setColorFilter(new LightingColorFilter(pet_status.color,0));
 	        	    	
 	        	    	Bitmap bitmap=null;
 	        	        bitmap=BitmapFactory.decodeResource(getResources(),Templates.get_food_list(section).get(position).resource_id);

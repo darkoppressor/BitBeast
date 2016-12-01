@@ -1,10 +1,10 @@
 package org.cheeseandbacon.bitbeast;
 
-import java.util.ArrayList;
-import java.util.Locale;
-
 import android.content.Context;
 import android.content.res.Resources;
+
+import java.util.ArrayList;
+import java.util.Locale;
 
 public class Templates{
 	private static Templates instance;

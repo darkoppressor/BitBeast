@@ -1,12 +1,9 @@
 package org.cheeseandbacon.bitbeast;
 
-import java.text.DecimalFormat;
-
-
-import android.app.Activity;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +11,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Activity_Status extends Activity{
+import java.text.DecimalFormat;
+
+public class Activity_Status extends AppCompatActivity{
 	private Pet_Status pet_status;
 	
     @Override

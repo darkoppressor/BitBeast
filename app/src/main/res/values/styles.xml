@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/status_bar_border</item>
+        <item name="colorPrimaryDark">@color/status_bar_background</item>
+        <item name="android:textColorTertiary">@color/font</item>
+        <item name="android:textColorTertiaryInverse">@color/font_grayed</item>
+    </style>
+
+</resources>

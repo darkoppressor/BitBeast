@@ -6,7 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.LightingColorFilter;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.BitmapDrawable;
 import android.media.AudioManager;
 import android.os.Bundle;
@@ -443,13 +443,13 @@ public class Activity_Store extends AppCompatActivity {
 	        	    	ImageViewFood ivf=(ImageViewFood)dialog_consume.findViewById(R.id.food_image_consume);
 	        	    	ImageView iv=(ImageView)dialog_consume.findViewById(R.id.image_food_consume_pet);
 	        	    	
-	        	    	iv.setBackgroundDrawable(Pet_Type.get_drawable(getResources(),pet_status.type,false,1.0f,1.0f));
-						iv.setColorFilter(new LightingColorFilter(pet_status.color,0));
+	        	    	iv.setImageDrawable(Pet_Type.get_drawable(getResources(),pet_status.type,false,1.0f,1.0f));
+						iv.setColorFilter(pet_status.color, PorterDuff.Mode.MULTIPLY);
 	        	    	
-	        	    	Bitmap bitmap=null;
+	        	    	Bitmap bitmap;
 	        	        bitmap=BitmapFactory.decodeResource(getResources(),Templates.get_food_list(section).get(position).resource_id);
 	        	        BitmapDrawable bd=new BitmapDrawable(getResources(),bitmap);
-	        	        ivf.setBackgroundDrawable(bd);
+	        	        ivf.setBackground(bd);
 	        	        ivf.set_as(Activity_Store.this);
 	        	        
 	        	        if(Templates.get_food_list(section).get(position).store_section==Store_Section.FOOD){

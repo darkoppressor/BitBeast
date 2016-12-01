@@ -196,7 +196,7 @@ public enum Pet_Type{
 	}
 	
 	public static BitmapDrawable get_drawable(Resources res,Pet_Type type,boolean flipped,float scale_x,float scale_y){
-		Bitmap bitmap=null;
+		Bitmap bitmap;
 		
 		//Most sprites will have the same count.
 		int sprite_count=3;
@@ -304,8 +304,6 @@ public enum Pet_Type{
 			bitmap_final=Bitmap.createBitmap(bitmap_final,0,0,bitmap_final.getWidth(),bitmap_final.getHeight(),m,false);
 		}
 		
-		BitmapDrawable bd=new BitmapDrawable(res,bitmap_final);
-		
-		return bd;
+		return new BitmapDrawable(res,bitmap_final);
 	}
 }

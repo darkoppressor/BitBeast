@@ -1,7 +1,7 @@
 package org.cheeseandbacon.bitbeast;
 
 import android.content.res.Resources;
-import android.graphics.LightingColorFilter;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.AnimationDrawable;
 import android.media.AudioManager;
 import android.os.Bundle;
@@ -411,19 +411,19 @@ public class Activity_Battle extends AppCompatActivity {
         //The battle has been fought, and should not be fought again if the activity is restarted.
         battle=false;
         
-        TextView tv=null;
-        ImageViewUs ivu=null;
-        ImageViewThem ivt=null;
-        ImageView iv=null;
+        TextView tv;
+        ImageViewUs ivu;
+        ImageViewThem ivt;
+        ImageView iv;
         
         ivu=(ImageViewUs)findViewById(R.id.battle_image_us);
-        ivu.setBackgroundDrawable(Pet_Type.get_drawable(res,us.type,true,1.0f,1.0f));
-		ivu.setColorFilter(new LightingColorFilter(us.color,0));
+        ivu.setImageDrawable(Pet_Type.get_drawable(res,us.type,true,1.0f,1.0f));
+		ivu.setColorFilter(us.color,PorterDuff.Mode.MULTIPLY);
         ivu.set_ab(Activity_Battle.this);
         
         ivt=(ImageViewThem)findViewById(R.id.battle_image_them);
-        ivt.setBackgroundDrawable(Pet_Type.get_drawable(res,them.type,false,1.0f,1.0f));
-		ivt.setColorFilter(new LightingColorFilter(them.color,0));
+        ivt.setImageDrawable(Pet_Type.get_drawable(res,them.type,false,1.0f,1.0f));
+		ivt.setColorFilter(them.color,PorterDuff.Mode.MULTIPLY);
         ivt.set_ab(Activity_Battle.this);
         
         set_pet_stats(res,(TextView)findViewById(R.id.battle_text_us),(TextView)findViewById(R.id.battle_text_them),us,them,strength_us,dexterity_us,stamina_us,strength_them,dexterity_them,stamina_them);
@@ -483,17 +483,17 @@ public class Activity_Battle extends AppCompatActivity {
         
         setTitle(us.name+" vs. "+them.name);
         
-        ImageViewUs ivu=null;
-        ImageViewThem ivt=null;
-        ImageView iv=null;
+        ImageViewUs ivu;
+        ImageViewThem ivt;
+        ImageView iv;
         
         ivu=(ImageViewUs)findViewById(R.id.battle_image_us);
-        ivu.setBackgroundDrawable(Pet_Type.get_drawable(res,us.type,true,1.0f,1.0f));
-		ivu.setColorFilter(new LightingColorFilter(us.color,0));
+        ivu.setImageDrawable(Pet_Type.get_drawable(res,us.type,true,1.0f,1.0f));
+		ivu.setColorFilter(us.color,PorterDuff.Mode.MULTIPLY);
         
         ivt=(ImageViewThem)findViewById(R.id.battle_image_them);
-        ivt.setBackgroundDrawable(Pet_Type.get_drawable(res,them.type,false,1.0f,1.0f));
-		ivt.setColorFilter(new LightingColorFilter(them.color,0));
+        ivt.setImageDrawable(Pet_Type.get_drawable(res,them.type,false,1.0f,1.0f));
+		ivt.setColorFilter(them.color,PorterDuff.Mode.MULTIPLY);
         
         iv=(ImageView)findViewById(R.id.battle_image_stars_us);
         if(!winner){

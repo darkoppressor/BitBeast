@@ -5,7 +5,7 @@ import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.LightingColorFilter;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.BitmapDrawable;
 import android.widget.RemoteViews;
 
@@ -76,7 +76,7 @@ public class Widget_Provider extends AppWidgetProvider{
     	}
 
 		BitmapDrawable bitmapDrawable=Pet_Type.get_drawable(context.getResources(),pet.get_status().type,true,0.5f,0.5f);
-		bitmapDrawable.setColorFilter(new LightingColorFilter(pet.get_status().color,0));
+		bitmapDrawable.setColorFilter(pet.get_status().color,PorterDuff.Mode.MULTIPLY);
     	views.setImageViewBitmap(R.id.image_widget_pet,bitmapDrawable.getBitmap());
 
     	String sick_string="";

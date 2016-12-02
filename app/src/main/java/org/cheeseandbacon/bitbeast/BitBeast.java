@@ -1,11 +1,13 @@
 package org.cheeseandbacon.bitbeast;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
@@ -18,6 +20,10 @@ import android.os.Vibrator;
 import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -31,6 +37,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BitBeast extends Activity{
+	private static final String TAG=BitBeast.class.getName();
+	private static final int PERMISSION_REQUEST_RECORD_AUDIO = 0;
+
 	static final int DIALOG_ID_PROGRESS=0;
 	static final int DIALOG_ID_TEMP=1;
 	static final int DIALOG_ID_GAMES=2;
@@ -623,20 +632,38 @@ public class BitBeast extends Activity{
     	Intent intent=new Intent(BitBeast.this,Activity_Battle_Menu.class);
     	startActivity(intent);
     }
+
+	@Override
+	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+		switch (requestCode) {
+			case PERMISSION_REQUEST_RECORD_AUDIO:
+				if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+					start_speech_recognition();
+				}
+				else{
+					Log.d(TAG, "RECORD_AUDIO permission not granted");
+				}
+				break;
+		}
+	}
     
     public void start_speech_recognition(){
     	if(speech==null){
-	    	speech=SpeechRecognizer.createSpeechRecognizer(this);
-	    	speech.setRecognitionListener(listener);
-	    	
-	    	Intent intent=new Intent();
-	    	intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE,getClass().getPackage().getName());
-	    	intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-	    	intent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS,5);
-	    	
-	    	speech.startListening(intent);
-	    	
-	    	game_view.set_speech_listening(true);
+			if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) {
+				speech = SpeechRecognizer.createSpeechRecognizer(this);
+				speech.setRecognitionListener(listener);
+
+				Intent intent = new Intent();
+				intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, getClass().getPackage().getName());
+				intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+				intent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 5);
+
+				speech.startListening(intent);
+
+				game_view.set_speech_listening(true);
+			} else {
+				ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO}, PERMISSION_REQUEST_RECORD_AUDIO);
+			}
     	}
     }
     

@@ -1,16 +1,25 @@
 package org.cheeseandbacon.bitbeast;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.media.AudioManager;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
 
 public class Activity_Game_GPS extends AppCompatActivity implements LocationListener{
+	private static final String TAG=Activity_Game_GPS.class.getName();
+	private static final int PERMISSION_REQUEST_ACCESS_FINE_LOCATION = 0;
+
 	private LocationManager locations;
 	
 	//The minimum accuracy a new location must have to be counted, in meters.
@@ -103,7 +112,7 @@ public class Activity_Game_GPS extends AppCompatActivity implements LocationList
     	StorageManager.load_pet_status(this,null,pet_status);
     	
     	locations=(LocationManager)getSystemService(LOCATION_SERVICE);
-    	locations.requestLocationUpdates(LocationManager.GPS_PROVIDER,Options.get_gps_update_time(),0.0f,this);
+    	startGps();
     	
     	last_location=null;
     	
@@ -115,7 +124,7 @@ public class Activity_Game_GPS extends AppCompatActivity implements LocationList
     	
     	overridePendingTransition(R.anim.transition_in,R.anim.transition_out);
     	
-    	locations.removeUpdates(this);
+    	stopGps();
     	
     	if(isFinishing()){
     		DecimalFormat df=new DecimalFormat("#.##");
@@ -150,6 +159,34 @@ public class Activity_Game_GPS extends AppCompatActivity implements LocationList
 			}
 		}
     }
+
+	@Override
+	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+		switch (requestCode) {
+			case PERMISSION_REQUEST_ACCESS_FINE_LOCATION:
+				if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+					startGps();
+				}
+				else{
+					Log.d(TAG, "ACCESS_FINE_LOCATION permission not granted");
+				}
+				break;
+		}
+	}
+
+	private void startGps() {
+		if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+			locations.requestLocationUpdates(LocationManager.GPS_PROVIDER, Options.get_gps_update_time(), 0.0f, this);
+		} else {
+			ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_REQUEST_ACCESS_FINE_LOCATION);
+		}
+	}
+
+	private void stopGps() {
+		if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+			locations.removeUpdates(this);
+		}
+	}
 	
 	public void set_text(float accuracy){
 		TextView tv=null;

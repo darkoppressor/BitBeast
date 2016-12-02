@@ -3,7 +3,6 @@ package org.cheeseandbacon.bitbeast;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -348,19 +347,6 @@ class GameView extends SurfaceView implements SurfaceHolder.Callback{
 			canvas.drawText(message,(getWidth()-text_paint.measureText(message))/2,getHeight()/2,text_paint);*/
 		}
 		
-		public synchronized void save_screenshot(Context context){
-			Bitmap bitmap=Bitmap.createBitmap(getWidth(),getHeight(),Bitmap.Config.ARGB_8888);
-			Canvas canvas=new Canvas(bitmap);
-			
-			render(canvas,0,0,0);
-			
-			//Send the bitmap.
-			Message msg=handler.obtainMessage();
-			msg.what=BitBeast.HANDLER_SCREENSHOT;
-			msg.obj=bitmap;
-			handler.sendMessage(msg);
-		}
-		
 		//So we can stop/pause the game loop
 		public synchronized void set_running(boolean b){
 			running=b;
@@ -427,10 +413,6 @@ class GameView extends SurfaceView implements SurfaceHolder.Callback{
 		
 		speech_listening=false;
 		want_speech=false;
-	}
-	
-	public void save_screenshot(Context context){
-		game_thread.save_screenshot(context);
 	}
 	
 	public void set_speech_listening(boolean get_speech_listening){

@@ -15,7 +15,6 @@ import android.widget.CheckBox;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
-import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -140,16 +139,6 @@ public class Activity_Config extends AppCompatActivity {
     	super.onPause();
     	
     	overridePendingTransition(R.anim.transition_in,R.anim.transition_out);
-    }
-	@Override
-    public boolean onSearchRequested(){
-    	String save_location=StorageManager.save_screenshot(this,findViewById(R.id.root_config));
-    	
-    	if(save_location.length()>0){
-    		Toast.makeText(getApplicationContext(),"Screenshot saved to "+save_location+".",Toast.LENGTH_SHORT).show();
-    	}
-    	
-    	return false;
     }
 	@Override
 	protected Dialog onCreateDialog(int id){

@@ -8,7 +8,6 @@ import android.media.AudioManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.text.DecimalFormat;
 
@@ -96,7 +95,7 @@ public class Activity_Game_Accel extends AppCompatActivity implements SensorEven
     	overridePendingTransition(R.anim.transition_in,R.anim.transition_out);
     	
     	pet_status=new Pet_Status();
-    	StorageManager.load_pet_status(this,null,pet_status,false);
+    	StorageManager.load_pet_status(this,null,pet_status);
     	
     	sensors=(SensorManager)getSystemService(SENSOR_SERVICE);
     	accelerometer=sensors.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
@@ -144,16 +143,6 @@ public class Activity_Game_Accel extends AppCompatActivity implements SensorEven
 	    		Activity_Rewards.give_rewards(this,getPackageName(),pet_status,sound,message_begin,message_end,experience_points,bits,true,item_chance,pet_status.level);
 	    	}
 		}
-    }
-	@Override
-    public boolean onSearchRequested(){
-    	String save_location=StorageManager.save_screenshot(this,findViewById(R.id.root_game_accel));
-    	
-    	if(save_location.length()>0){
-    		Toast.makeText(getApplicationContext(),"Screenshot saved to "+save_location+".",Toast.LENGTH_SHORT).show();
-    	}
-    	
-    	return false;
     }
 	
 	public void reset(){

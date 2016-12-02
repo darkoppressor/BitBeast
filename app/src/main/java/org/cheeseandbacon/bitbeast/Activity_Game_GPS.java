@@ -7,7 +7,6 @@ import android.media.AudioManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.text.DecimalFormat;
 
@@ -101,7 +100,7 @@ public class Activity_Game_GPS extends AppCompatActivity implements LocationList
     	overridePendingTransition(R.anim.transition_in,R.anim.transition_out);
     	
     	pet_status=new Pet_Status();
-    	StorageManager.load_pet_status(this,null,pet_status,false);
+    	StorageManager.load_pet_status(this,null,pet_status);
     	
     	locations=(LocationManager)getSystemService(LOCATION_SERVICE);
     	locations.requestLocationUpdates(LocationManager.GPS_PROVIDER,Options.get_gps_update_time(),0.0f,this);
@@ -150,16 +149,6 @@ public class Activity_Game_GPS extends AppCompatActivity implements LocationList
 				Activity_Rewards.give_rewards(this,getPackageName(),pet_status,sound,message_begin,message_end,experience_points,bits,true,item_chance,pet_status.level);
 			}
 		}
-    }
-	@Override
-    public boolean onSearchRequested(){
-    	String save_location=StorageManager.save_screenshot(this,findViewById(R.id.root_game_gps));
-    	
-    	if(save_location.length()>0){
-    		Toast.makeText(getApplicationContext(),"Screenshot saved to "+save_location+".",Toast.LENGTH_SHORT).show();
-    	}
-    	
-    	return false;
     }
 	
 	public void set_text(float accuracy){

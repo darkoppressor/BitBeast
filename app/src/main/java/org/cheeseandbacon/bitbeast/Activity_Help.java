@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class Activity_Help extends AppCompatActivity {
 	@Override
@@ -48,16 +47,6 @@ public class Activity_Help extends AppCompatActivity {
     	super.onPause();
     	
     	overridePendingTransition(R.anim.transition_in,R.anim.transition_out);
-    }
-	@Override
-    public boolean onSearchRequested(){
-    	String save_location=StorageManager.save_screenshot(this,findViewById(R.id.root_help));
-    	
-    	if(save_location.length()>0){
-    		Toast.makeText(getApplicationContext(),"Screenshot saved to "+save_location+".",Toast.LENGTH_SHORT).show();
-    	}
-    	
-    	return false;
     }
 	
 	public void button_help_how_to_play(View view){

@@ -20,7 +20,6 @@ import android.widget.CheckedTextView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,7 +84,7 @@ public class Activity_Inventory extends AppCompatActivity {
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
         
         pet_status=new Pet_Status();
-    	StorageManager.load_pet_status(this,null,pet_status,false);
+    	StorageManager.load_pet_status(this,null,pet_status);
     	
     	Bundle bundle=getIntent().getExtras();
     	section=bundle.getString(getPackageName()+"section");
@@ -174,7 +173,7 @@ public class Activity_Inventory extends AppCompatActivity {
     	move_direction=Direction.NONE;
     	
     	pet_status=new Pet_Status();
-    	StorageManager.load_pet_status(this,null,pet_status,false);
+    	StorageManager.load_pet_status(this,null,pet_status);
     	
     	rebuild_list();
     }
@@ -196,16 +195,6 @@ public class Activity_Inventory extends AppCompatActivity {
     	move_direction=Direction.NONE;
     	
     	StorageManager.save_pet_status(this,pet_status);
-    }
-	@Override
-    public boolean onSearchRequested(){
-    	String save_location=StorageManager.save_screenshot(this,findViewById(R.id.root_inventory));
-    	
-    	if(save_location.length()>0){
-    		Toast.makeText(getApplicationContext(),"Screenshot saved to "+save_location+".",Toast.LENGTH_SHORT).show();
-    	}
-    	
-    	return false;
     }
 	@Override
     protected Dialog onCreateDialog(int id){

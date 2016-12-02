@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -104,7 +103,7 @@ public class Activity_Game_RPS extends AppCompatActivity {
     	overridePendingTransition(R.anim.transition_in,R.anim.transition_out);
     	
     	pet_status=new Pet_Status();
-    	StorageManager.load_pet_status(this,null,pet_status,false);
+    	StorageManager.load_pet_status(this,null,pet_status);
     }
 	@Override
     protected void onPause(){
@@ -184,16 +183,6 @@ public class Activity_Game_RPS extends AppCompatActivity {
 				Activity_Rewards.give_rewards(this,getPackageName(),pet_status,sound,message_begin,message_end,experience_points,bits,true,item_chance,pet_status.level);
 			}
 		}
-    }
-	@Override
-    public boolean onSearchRequested(){
-    	String save_location=StorageManager.save_screenshot(this,findViewById(R.id.root_game_rps));
-    	
-    	if(save_location.length()>0){
-    		Toast.makeText(getApplicationContext(),"Screenshot saved to "+save_location+".",Toast.LENGTH_SHORT).show();
-    	}
-    	
-    	return false;
     }
 	@Override
     protected Dialog onCreateDialog(int id){

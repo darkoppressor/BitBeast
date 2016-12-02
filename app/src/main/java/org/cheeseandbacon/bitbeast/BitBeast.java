@@ -6,7 +6,6 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
@@ -70,7 +69,7 @@ public class BitBeast extends Activity{
         Font.startup(getAssets());
         RNG.startup();
         Options.startup();
-        StorageManager.load_options(this,false);
+        StorageManager.load_options(this);
         
         image=(Image)getLastNonConfigurationInstance();
         if(image==null){
@@ -235,12 +234,6 @@ public class BitBeast extends Activity{
     	}
     }
     @Override
-    public boolean onSearchRequested(){
-    	game_view.save_screenshot(this);
-    	
-    	return false;
-    }
-    @Override
     protected Dialog onCreateDialog(int id){
     	AlertDialog.Builder builder=null;
     	LayoutInflater inflater=null;
@@ -313,11 +306,11 @@ public class BitBeast extends Activity{
     	game_view.reset_pet();
     	game_view.reset_records();
     	
-    	long ms_last_run=StorageManager.load_pet_status(BitBeast.this,(View)game_view,game_view.get_pet().get_status(),false);
+    	long ms_last_run=StorageManager.load_pet_status(BitBeast.this,(View)game_view,game_view.get_pet().get_status());
     	setRequestedOrientation(Options.get_orientation(true));
     	Options.set_keep_screen_on(getWindow());
     	
-    	StorageManager.load_records(BitBeast.this,game_view.get_records(),false);
+    	StorageManager.load_records(BitBeast.this,game_view.get_records());
     	
     	LinearLayout ll=(LinearLayout)findViewById(R.id.root_main);
     	if(game_view.get_pet().get_status().light){
@@ -911,9 +904,8 @@ public class BitBeast extends Activity{
     static final int HANDLER_START_GAME_BRICKS=4;
     static final int HANDLER_DIE=5;
     static final int HANDLER_SPEECH_RECOGNITION=6;
-    static final int HANDLER_SCREENSHOT=7;
-    static final int HANDLER_REWARDS=8;
-    static final int HANDLER_SET_BUTTON_COLORS=9;
+    static final int HANDLER_REWARDS=7;
+    static final int HANDLER_SET_BUTTON_COLORS=8;
     
     private Handler handler=new Handler(){
     	@Override
@@ -1058,17 +1050,6 @@ public class BitBeast extends Activity{
     					}
     				}
     			}
-    			break;
-    		case HANDLER_SCREENSHOT:
-    			if(!isFinishing()){
-    				Bitmap bitmap=(Bitmap)msg.obj;
-    				
-    				String save_location=StorageManager.save_screenshot(BitBeast.this,bitmap,findViewById(R.id.root_main));
-    		    	
-    		    	if(save_location.length()>0){
-    		    		Toast.makeText(BitBeast.this,"Screenshot saved to "+save_location+".",Toast.LENGTH_SHORT).show();
-    		    	}
-			    }
     			break;
     		case HANDLER_SET_BUTTON_COLORS:
     			if(!isFinishing()){

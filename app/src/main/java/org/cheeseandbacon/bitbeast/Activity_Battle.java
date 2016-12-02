@@ -12,7 +12,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -136,7 +135,7 @@ public class Activity_Battle extends AppCompatActivity {
     	
     	if(isFinishing()){
     		Pet_Status pet_status=new Pet_Status();
-        	StorageManager.load_pet_status(this,null,pet_status,false);
+        	StorageManager.load_pet_status(this,null,pet_status);
         	
 			DecimalFormat df=new DecimalFormat("#.##");
 			
@@ -223,16 +222,6 @@ public class Activity_Battle extends AppCompatActivity {
     	savedInstanceState.putDouble("weight_loss_this_session",weight_loss_this_session);
     	
     	super.onSaveInstanceState(savedInstanceState);
-    }
-	@Override
-    public boolean onSearchRequested(){
-    	String save_location=StorageManager.save_screenshot(this,findViewById(R.id.root_battle));
-    	
-    	if(save_location.length()>0){
-    		Toast.makeText(getApplicationContext(),"Screenshot saved to "+save_location+".",Toast.LENGTH_SHORT).show();
-    	}
-    	
-    	return false;
     }
 	@Override
 	public void onWindowFocusChanged(boolean hasFocus){
@@ -337,11 +326,11 @@ public class Activity_Battle extends AppCompatActivity {
         if(battle){
         	//Load our pet data.
         	us=new Pet_Status();
-        	StorageManager.load_pet_status(this,null,us,false);
+        	StorageManager.load_pet_status(this,null,us);
         	
         	//Load our pet data into the initial pet data holder as well.
         	us_at_start=new Pet_Status();
-            StorageManager.load_pet_status(this,null,us_at_start,false);
+            StorageManager.load_pet_status(this,null,us_at_start);
         }
         else{
         	//Transfer the relevant data from the initial pet data holder to our pet data holder for the battle.
@@ -477,7 +466,7 @@ public class Activity_Battle extends AppCompatActivity {
 		Bundle bundle=getIntent().getExtras();
         
         us=new Pet_Status();
-        StorageManager.load_pet_status(this,null,us,false);
+        StorageManager.load_pet_status(this,null,us);
         them=new Pet_Status();
         them.read_bundle_battle_data(getPackageName(),bundle);
         

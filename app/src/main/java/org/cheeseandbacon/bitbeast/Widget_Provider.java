@@ -15,7 +15,7 @@ public class Widget_Provider extends AppWidgetProvider{
 		final int widget_count=appWidgetIds.length;
 		
 		Options.startup();
-        StorageManager.load_options(context,true);
+        StorageManager.load_options(context);
 		
 		for(int i=0;i<widget_count;i++){
 			int appWidgetId=appWidgetIds[i];
@@ -40,7 +40,7 @@ public class Widget_Provider extends AppWidgetProvider{
 		
 		Pet pet=new Pet();
 		
-		long ms_last_run=StorageManager.load_pet_status(context,null,pet.get_status(),true);
+		long ms_last_run=StorageManager.load_pet_status(context,null,pet.get_status());
     	
 		if(ms_last_run>=0){
 			//Determine the ms since the last run.

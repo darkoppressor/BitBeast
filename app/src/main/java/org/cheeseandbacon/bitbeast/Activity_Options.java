@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class Activity_Options extends AppCompatActivity {
 	static final int DIALOG_ID_RESET=0;
@@ -93,16 +92,6 @@ public class Activity_Options extends AppCompatActivity {
     	close_dialogs();
     	
     	overridePendingTransition(R.anim.transition_in,R.anim.transition_out);
-    }
-	@Override
-    public boolean onSearchRequested(){
-    	String save_location=StorageManager.save_screenshot(this,findViewById(R.id.root_options));
-    	
-    	if(save_location.length()>0){
-    		Toast.makeText(getApplicationContext(),"Screenshot saved to "+save_location+".",Toast.LENGTH_SHORT).show();
-    	}
-    	
-    	return false;
     }
 	
 	public void button_config(View view){

@@ -113,7 +113,7 @@ public class Activity_Battle_Menu extends AppCompatActivity {
     	overridePendingTransition(R.anim.transition_in,R.anim.transition_out);
     	
     	pet_status=new Pet_Status();
-    	StorageManager.load_pet_status(this,null,pet_status,false);
+    	StorageManager.load_pet_status(this,null,pet_status);
     	
     	IntentFilter filter=new IntentFilter(BluetoothDevice.ACTION_FOUND);
         filter.addAction(BluetoothDevice.ACTION_NAME_CHANGED);
@@ -159,16 +159,6 @@ public class Activity_Battle_Menu extends AppCompatActivity {
     		bluetooth_service=null;
     	}
 	}
-	@Override
-    public boolean onSearchRequested(){
-    	String save_location=StorageManager.save_screenshot(this,findViewById(R.id.root_battle_menu));
-    	
-    	if(save_location.length()>0){
-    		Toast.makeText(getApplicationContext(),"Screenshot saved to "+save_location+".",Toast.LENGTH_SHORT).show();
-    	}
-    	
-    	return false;
-    }
 	@Override
     protected void onActivityResult(int get_request_code,int get_result_code,Intent get_data){
     	super.onActivityResult(get_request_code,get_result_code,get_data);

@@ -16,7 +16,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class Activity_Rewards extends AppCompatActivity {
 	static final int DIALOG_DETAILS=0;
@@ -100,7 +99,7 @@ public class Activity_Rewards extends AppCompatActivity {
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
         
         Pet_Status pet_status=new Pet_Status();
-    	StorageManager.load_pet_status(this,null,pet_status,false);
+    	StorageManager.load_pet_status(this,null,pet_status);
         
         Bundle bundle=getIntent().getExtras();
         
@@ -194,7 +193,7 @@ public class Activity_Rewards extends AppCompatActivity {
     	overridePendingTransition(R.anim.transition_in,R.anim.transition_out);
         
         pet_status=new Pet_Status();
-    	StorageManager.load_pet_status(this,null,pet_status,false);
+    	StorageManager.load_pet_status(this,null,pet_status);
     	
     	Button b=null;
     	
@@ -227,16 +226,6 @@ public class Activity_Rewards extends AppCompatActivity {
     	overridePendingTransition(R.anim.transition_in,R.anim.transition_out);
     	
     	StorageManager.save_pet_status(this,pet_status);
-    }
-    @Override
-    public boolean onSearchRequested(){
-    	String save_location=StorageManager.save_screenshot(this,findViewById(R.id.root_rewards));
-    	
-    	if(save_location.length()>0){
-    		Toast.makeText(getApplicationContext(),"Screenshot saved to "+save_location+".",Toast.LENGTH_SHORT).show();
-    	}
-    	
-    	return false;
     }
     @Override
     protected Dialog onCreateDialog(int id){

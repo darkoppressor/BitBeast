@@ -61,16 +61,6 @@ public class Activity_Name extends AppCompatActivity implements ColorPickerDialo
     	overridePendingTransition(R.anim.transition_in,R.anim.transition_out);
     }
     @Override
-    public boolean onSearchRequested(){
-    	String save_location=StorageManager.save_screenshot(this,findViewById(R.id.root_name));
-    	
-    	if(save_location.length()>0){
-    		Toast.makeText(getApplicationContext(),"Screenshot saved to "+save_location+".",Toast.LENGTH_SHORT).show();
-    	}
-    	
-    	return false;
-    }
-    @Override
 	protected Dialog onCreateDialog(int id){
 		Dialog dialog;
 		
@@ -92,17 +82,15 @@ public class Activity_Name extends AppCompatActivity implements ColorPickerDialo
     	if(et.getEditableText().toString().trim().length()>0 && et.getEditableText().toString().trim().length()<=14){
     		pet_status.name=et.getEditableText().toString().trim();
     	
-    		//Attempt to save the newly created pet.
-    		//If successful, close this screen.
-    		if(StorageManager.save_pet_status(this,pet_status)){
-    			//New pets should always begin with pause off.
-    			Options.pause=false;
-    			StorageManager.save_options(this);
-    			
-    			setResult(RESULT_OK);
-        		this.finish();
-        		return;
-    		}
+    		//Attempt to save the newly created pet, then close this screen
+    		StorageManager.save_pet_status(this,pet_status);
+
+			//New pets should always begin with pause off.
+			Options.pause=false;
+			StorageManager.save_options(this);
+
+			setResult(RESULT_OK);
+			this.finish();
     	}
     	else if(et.getEditableText().toString().trim().length()==0){
     		Toast.makeText(this,"The name must be at least 1 character long.",Toast.LENGTH_SHORT).show();

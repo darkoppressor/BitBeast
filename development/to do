@@ -1,4 +1,4 @@
-Atomic saves
+Don't forget to make loading check for data on external first, from old versions
 Limit saving to improve performance
 This should mean the backup system below is not needed
 
@@ -8,6 +8,21 @@ I like the idea of removing it, and eventually adding a notifications feature in
 Review permissions and features, and make sure they are being handled correctly
 
 Colors are still not applying to the widget pet image
+
+Font is normal one on text and buttons for shop select, temperature, battle select, game select
+OK... also sometimes it is correctly the paper cuts font...
+
+Can text on action bar use custom font?
+
+Sometimes transitions seem slow
+
+Is GPS accuracy etc being used right?
+
+For the games with just info showing (gps games etc), maybe show some explanation for how they work
+
+Color picker is way too small
+
+NFC that works like Bluetooth for battles?
 
 ----------------------------------------------------------------
 
@@ -33,8 +48,6 @@ Sound effect half-volume yard cleaning sound?
 Little animation for cleaning up individual poop?
 
 The help pages need an overhaul. Wait until the new version is done though
-
-Shadow Battle froze the game and eventually crashed: out of memory?
 
 Hubert got added twice to the cemetery
 

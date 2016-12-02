@@ -80,7 +80,7 @@ public class Activity_Store extends AppCompatActivity {
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
         
         pet_status=new Pet_Status();
-    	StorageManager.load_pet_status(this,null,pet_status,false);
+    	StorageManager.load_pet_status(this,null,pet_status);
         
         Templates.rebuild_perma_list(pet_status);
     	
@@ -494,7 +494,7 @@ public class Activity_Store extends AppCompatActivity {
     	move_direction=Direction.NONE;
     	
     	pet_status=new Pet_Status();
-    	StorageManager.load_pet_status(this,null,pet_status,false);
+    	StorageManager.load_pet_status(this,null,pet_status);
     	
     	Font.set_typeface((Button)findViewById(R.id.button_store_back));
     	Font.set_typeface((Button)findViewById(R.id.button_store_forward));
@@ -675,16 +675,6 @@ public class Activity_Store extends AppCompatActivity {
     	move_direction=Direction.NONE;
     	
     	StorageManager.save_pet_status(this,pet_status);
-    }
-	@Override
-    public boolean onSearchRequested(){
-    	String save_location=StorageManager.save_screenshot(this,findViewById(R.id.root_store));
-    	
-    	if(save_location.length()>0){
-    		Toast.makeText(getApplicationContext(),"Screenshot saved to "+save_location+".",Toast.LENGTH_SHORT).show();
-    	}
-    	
-    	return false;
     }
 	@Override
     protected Dialog onCreateDialog(int id){

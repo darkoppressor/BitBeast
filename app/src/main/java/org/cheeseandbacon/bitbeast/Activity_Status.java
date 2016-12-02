@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.text.DecimalFormat;
 
@@ -40,7 +39,7 @@ public class Activity_Status extends AppCompatActivity{
     	overridePendingTransition(R.anim.transition_in,R.anim.transition_out);
     	
     	pet_status=new Pet_Status();
-    	StorageManager.load_pet_status(this,null,pet_status,false);
+    	StorageManager.load_pet_status(this,null,pet_status);
     	
     	update();
     }
@@ -49,16 +48,6 @@ public class Activity_Status extends AppCompatActivity{
     	super.onPause();
     	
     	overridePendingTransition(R.anim.transition_in,R.anim.transition_out);
-    }
-    @Override
-    public boolean onSearchRequested(){
-    	String save_location=StorageManager.save_screenshot(this,findViewById(R.id.root_status));
-    	
-    	if(save_location.length()>0){
-    		Toast.makeText(getApplicationContext(),"Screenshot saved to "+save_location+".",Toast.LENGTH_SHORT).show();
-    	}
-    	
-    	return false;
     }
     
     public void update(){

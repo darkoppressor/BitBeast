@@ -1,10 +1,5 @@
-Limit saving to improve performance
-This should mean the backup system below is not needed
-
 Keep widget? Or just get rid of it?
 I like the idea of removing it, and eventually adding a notifications feature instead
-
-Review permissions and features, and make sure they are being handled correctly
 
 Colors are still not applying to the widget pet image
 
@@ -15,22 +10,20 @@ Can text on action bar use custom font?
 
 Sometimes transitions seem slow
 
-Is GPS accuracy etc being used right?
-
 For the games with just info showing (gps games etc), maybe show some explanation for how they work
 
 Color picker is way too small
 
 NFC that works like Bluetooth for battles?
+Maybe this would just make connecting via Bluetooth easier
+
+Add support for the Android backup/restore system
 
 ----------------------------------------------------------------
 
-Bluetooth battles should check that the version of the two players is the same
-
 Battle button grayed out when it should not be
 
-When ticks are processed, they should use the same seed every time, assuming everything starts the same
-So maybe use the last tick thing or something as a seed
+Hubert got added twice to the cemetery
 
 See if any specific sounds are slowing loads
 
@@ -47,20 +40,3 @@ Sound effect half-volume yard cleaning sound?
 Little animation for cleaning up individual poop?
 
 The help pages need an overhaul. Wait until the new version is done though
-
-Hubert got added twice to the cemetery
-
-----------------------------------------------------------------
-
-Save data backup. Works much like Hubert
-Only save backup data on app close
-MAYBE switching activities? But nowhere else
-
-Catch save data corruption when loading, and force the game into a new activity for dealing with this issue
-Add a button for replacing save data with backup if one is available
-Add a button for erasing save data and starting fresh. Add instructions for if all fails
-For this stuff, "save data" should probably mean everything (options, records, pet data) to be safe
-Better yet, it could check all these different data files when starting the activity,
-and only operate on the offending file(s)
-
-Don't forget to update the Support FAQ on the forums when this is done

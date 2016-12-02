@@ -6,6 +6,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.Handler;
@@ -33,6 +35,7 @@ public class Activity_Battle_Menu extends AppCompatActivity {
 	private Pet_Status them;
 	private int our_seed;
 	private int their_seed;
+    private int theirVersionCode;
 	
 	BluetoothAdapter bluetooth_adapter;
 	BluetoothService bluetooth_service;
@@ -181,6 +184,8 @@ public class Activity_Battle_Menu extends AppCompatActivity {
 		
 		our_seed=0;
         their_seed=0;
+
+        theirVersionCode = -1;
 	}
 	
 	//Show the battle menu.
@@ -379,6 +384,17 @@ public class Activity_Battle_Menu extends AppCompatActivity {
 	    				data.remove(0);
 	    				
 	    				if(packet_id==Packet_ID.BATTLE_DATA){
+							// Peek at the next data element
+							// If it is the version code indicator string,
+							// the pet data comes from Bit Beast 1.1.0 or later
+							String hasVersionCode = data.get(0).trim();
+							if (hasVersionCode.equals(Network_IO.VERSION_CODE)) {
+								data.remove(0);
+
+								theirVersionCode = Integer.parseInt(data.get(0).trim());
+								data.remove(0);
+							}
+
 	    					//Read the pet's seed before passing the data on.
 		    				their_seed=Integer.parseInt(data.get(0).trim());
 		    				data.remove(0);
@@ -398,19 +414,30 @@ public class Activity_Battle_Menu extends AppCompatActivity {
     			if(!isFinishing()){
     				if(bluetooth_service!=null){
     					bluetooth_service.stop();
+
+                        int ourVersionCode = -1;
+                        try {
+                            PackageInfo packageInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+                            ourVersionCode = packageInfo.versionCode;
+                        } catch (PackageManager.NameNotFoundException e) {
+                        }
     					
-    					//Start the actual battle activity, passing it the two pets' data.
-    					Intent intent=new Intent(Activity_Battle_Menu.this,Activity_Battle.class);
-    					
-    					Bundle bundle=new Bundle();
-    					bundle.putBoolean(getPackageName()+".server",bluetooth_service.get_server());
-    					bundle.putBoolean(getPackageName()+".shadow",false);
-    					bundle.putInt(getPackageName()+".our_seed",our_seed);
-    					bundle.putInt(getPackageName()+".their_seed",their_seed);
-    					bundle.putAll(them.write_bundle_battle_data(getPackageName()));
-    					
-    					intent.putExtras(bundle);
-    			    	startActivity(intent);
+    					if (ourVersionCode == theirVersionCode) {
+                            //Start the actual battle activity, passing it the two pets' data.
+                            Intent intent = new Intent(Activity_Battle_Menu.this, Activity_Battle.class);
+
+                            Bundle bundle = new Bundle();
+                            bundle.putBoolean(getPackageName() + ".server", bluetooth_service.get_server());
+                            bundle.putBoolean(getPackageName() + ".shadow", false);
+                            bundle.putInt(getPackageName() + ".our_seed", our_seed);
+                            bundle.putInt(getPackageName() + ".their_seed", their_seed);
+                            bundle.putAll(them.write_bundle_battle_data(getPackageName()));
+
+                            intent.putExtras(bundle);
+                            startActivity(intent);
+                        } else {
+                            Toast.makeText(Activity_Battle_Menu.this, pet_status.name + " and " + them.name + " are different versions, so they can't battle...", Toast.LENGTH_SHORT).show();
+                        }
     				}
 			    }
     			break;
@@ -421,7 +448,7 @@ public class Activity_Battle_Menu extends AppCompatActivity {
 	    				
 	    				show_transmitting();
 	    				
-	    				our_seed=Network_IO.send_battle_data(bluetooth_service,pet_status);
+	    				our_seed=Network_IO.send_battle_data(Activity_Battle_Menu.this,bluetooth_service,pet_status);
 	    			}
     			}
     			break;

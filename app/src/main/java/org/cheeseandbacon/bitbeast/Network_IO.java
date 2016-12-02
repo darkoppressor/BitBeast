@@ -1,8 +1,14 @@
 package org.cheeseandbacon.bitbeast;
 
+import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+
 import java.util.ArrayList;
 
 public class Network_IO{
+	public static final String VERSION_CODE = "VERSION_CODE";
+
 	public static void send_done(BluetoothService bluetooth_service){
 		if(bluetooth_service.get_state()!=BluetoothService.STATE_CONNECTED){
 			return;
@@ -21,7 +27,7 @@ public class Network_IO{
 		}
 	}
 	
-	public static int send_battle_data(BluetoothService bluetooth_service,Pet_Status pet_status){
+	public static int send_battle_data(Context context,BluetoothService bluetooth_service, Pet_Status pet_status){
 		int seed=RNG.random_range(0,Integer.MAX_VALUE);
 		
 		if(bluetooth_service.get_state()!=BluetoothService.STATE_CONNECTED){
@@ -32,6 +38,15 @@ public class Network_IO{
 		
 		//First, add the packet id.
 		data+=""+Packet_ID.BATTLE_DATA+"\n";
+
+		// Add the version code
+		data+=""+VERSION_CODE+"\n";
+		try {
+			PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+			data+=""+packageInfo.versionCode+"\n";
+		} catch (PackageManager.NameNotFoundException e) {
+			data+=""+0+"\n";
+		}
 		
 		data+=""+seed+"\n";
 		

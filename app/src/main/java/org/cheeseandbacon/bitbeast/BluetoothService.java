@@ -119,7 +119,7 @@ public class BluetoothService{
 		set_state(STATE_CONNECTING);
 	}
 	
-	public synchronized void connected(BluetoothSocket socket,BluetoothDevice device,final String socket_type,boolean get_server){
+	private synchronized void connected(BluetoothSocket socket, BluetoothDevice device, final String socket_type, boolean get_server){
 		set_server(get_server);
 		
 		bluetooth_adapter.cancelDiscovery();

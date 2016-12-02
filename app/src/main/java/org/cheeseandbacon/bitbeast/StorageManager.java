@@ -240,188 +240,190 @@ public class StorageManager{
 	}
 	
 	public static long load_pet_status(Context context,View view,Pet_Status pet_status){
-		long ms_last_run;
+		long ms_last_run=-1L;
 
 		ArrayList<String> data=loadFile(context, "pet");
 
-		ms_last_run=Long.parseLong(data.get(0).trim());
-		data.remove(0);
+        if (data.size() > 0) {
+            ms_last_run = Long.parseLong(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.last_tick=Long.parseLong(data.get(0).trim());
-		data.remove(0);
+            pet_status.last_tick = Long.parseLong(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.type=Pet_Type.valueOf(data.get(0).trim());
-		data.remove(0);
+            pet_status.type = Pet_Type.valueOf(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.age_tier=Age_Tier.valueOf(data.get(0).trim());
-		data.remove(0);
+            pet_status.age_tier = Age_Tier.valueOf(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.name=data.get(0).trim();
-		data.remove(0);
+            pet_status.name = data.get(0).trim();
+            data.remove(0);
 
-		pet_status.bits=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.bits = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.age=Long.parseLong(data.get(0).trim());
-		data.remove(0);
+            pet_status.age = Long.parseLong(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.death_counter=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.death_counter = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.sleep_time.set(Calendar.HOUR_OF_DAY,Integer.parseInt(data.get(0).trim()));
-		data.remove(0);
+            pet_status.sleep_time.set(Calendar.HOUR_OF_DAY, Integer.parseInt(data.get(0).trim()));
+            data.remove(0);
 
-		pet_status.sleep_time.set(Calendar.MINUTE,Integer.parseInt(data.get(0).trim()));
-		data.remove(0);
+            pet_status.sleep_time.set(Calendar.MINUTE, Integer.parseInt(data.get(0).trim()));
+            data.remove(0);
 
-		pet_status.wake_time.set(Calendar.YEAR,Integer.parseInt(data.get(0).trim()));
-		data.remove(0);
+            pet_status.wake_time.set(Calendar.YEAR, Integer.parseInt(data.get(0).trim()));
+            data.remove(0);
 
-		pet_status.wake_time.set(Calendar.DAY_OF_YEAR,Integer.parseInt(data.get(0).trim()));
-		data.remove(0);
+            pet_status.wake_time.set(Calendar.DAY_OF_YEAR, Integer.parseInt(data.get(0).trim()));
+            data.remove(0);
 
-		pet_status.wake_time.set(Calendar.HOUR_OF_DAY,Integer.parseInt(data.get(0).trim()));
-		data.remove(0);
+            pet_status.wake_time.set(Calendar.HOUR_OF_DAY, Integer.parseInt(data.get(0).trim()));
+            data.remove(0);
 
-		pet_status.wake_time.set(Calendar.MINUTE,Integer.parseInt(data.get(0).trim()));
-		data.remove(0);
+            pet_status.wake_time.set(Calendar.MINUTE, Integer.parseInt(data.get(0).trim()));
+            data.remove(0);
 
-		pet_status.sleeping=Boolean.parseBoolean(data.get(0).trim());
-		data.remove(0);
+            pet_status.sleeping = Boolean.parseBoolean(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.sleeping_woken_up=Boolean.parseBoolean(data.get(0).trim());
-		data.remove(0);
+            pet_status.sleeping_woken_up = Boolean.parseBoolean(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.sleeping_woken_up_time=Long.parseLong(data.get(0).trim());
-		data.remove(0);
+            pet_status.sleeping_woken_up_time = Long.parseLong(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.light=Boolean.parseBoolean(data.get(0).trim());
-		data.remove(0);
+            pet_status.light = Boolean.parseBoolean(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.happy=Short.parseShort(data.get(0).trim());
-		data.remove(0);
+            pet_status.happy = Short.parseShort(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.base_temp=Double.parseDouble(data.get(0).trim());
-		data.remove(0);
+            pet_status.base_temp = Double.parseDouble(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.temp=Double.parseDouble(data.get(0).trim());
-		data.remove(0);
+            pet_status.temp = Double.parseDouble(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.last_base_temp=Long.parseLong(data.get(0).trim());
-		data.remove(0);
+            pet_status.last_base_temp = Long.parseLong(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.ac=Boolean.parseBoolean(data.get(0).trim());
-		data.remove(0);
+            pet_status.ac = Boolean.parseBoolean(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.heater=Boolean.parseBoolean(data.get(0).trim());
-		data.remove(0);
+            pet_status.heater = Boolean.parseBoolean(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.sick=Boolean.parseBoolean(data.get(0).trim());
-		data.remove(0);
+            pet_status.sick = Boolean.parseBoolean(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.poop=Short.parseShort(data.get(0).trim());
-		data.remove(0);
+            pet_status.poop = Short.parseShort(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.bath=Short.parseShort(data.get(0).trim());
-		data.remove(0);
+            pet_status.bath = Short.parseShort(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.weight=Double.parseDouble(data.get(0).trim());
-		data.remove(0);
+            pet_status.weight = Double.parseDouble(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.hunger=Short.parseShort(data.get(0).trim());
-		data.remove(0);
+            pet_status.hunger = Short.parseShort(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.thirst=Short.parseShort(data.get(0).trim());
-		data.remove(0);
+            pet_status.thirst = Short.parseShort(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.strength=Short.parseShort(data.get(0).trim());
-		data.remove(0);
+            pet_status.strength = Short.parseShort(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.strength_max=Short.parseShort(data.get(0).trim());
-		data.remove(0);
+            pet_status.strength_max = Short.parseShort(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.energy=Short.parseShort(data.get(0).trim());
-		data.remove(0);
+            pet_status.energy = Short.parseShort(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.color=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.color = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		//This is how favorite food was stored pre-1.1.0.
-		int fav_food_old=0;
-		fav_food_old=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            //This is how favorite food was stored pre-1.1.0.
+            int fav_food_old = 0;
+            fav_food_old = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.battles_won=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.battles_won = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.battles_lost=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.battles_lost = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.food_categories.clear();
-		for(int i=0;i<Food_Category.END;i++){
-			pet_status.food_categories.add(Integer.parseInt(data.get(0).trim()));
-			data.remove(0);
-		}
+            pet_status.food_categories.clear();
+            for (int i = 0; i < Food_Category.END; i++) {
+                pet_status.food_categories.add(Integer.parseInt(data.get(0).trim()));
+                data.remove(0);
+            }
 
-		int food_fed_size=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            int food_fed_size = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		for(int i=0;i<food_fed_size;i++){
-			//This is how food fed was stored pre-1.1.0.
-			int food_fed_old=0;
-			food_fed_old=Integer.parseInt(data.get(0).trim());
-			data.remove(0);
-		}
+            for (int i = 0; i < food_fed_size; i++) {
+                //This is how food fed was stored pre-1.1.0.
+                int food_fed_old = 0;
+                food_fed_old = Integer.parseInt(data.get(0).trim());
+                data.remove(0);
+            }
 
-		pet_status.poops.clear();
-		int poops_size=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.poops.clear();
+            int poops_size = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		for(int i=0;i<poops_size;i++){
-			float x=Float.parseFloat(data.get(0).trim());
-			data.remove(0);
+            for (int i = 0; i < poops_size; i++) {
+                float x = Float.parseFloat(data.get(0).trim());
+                data.remove(0);
 
-			float y=Float.parseFloat(data.get(0).trim());
-			data.remove(0);
+                float y = Float.parseFloat(data.get(0).trim());
+                data.remove(0);
 
-			pet_status.poops.add(new Poop(null,null,x,y));
-		}
+                pet_status.poops.add(new Poop(null, null, x, y));
+            }
 
-		pet_status.pettings=Short.parseShort(data.get(0).trim());
-		data.remove(0);
+            pet_status.pettings = Short.parseShort(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.thoughts.clear();
-		int thoughts_size=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.thoughts.clear();
+            int thoughts_size = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		for(int i=0;i<thoughts_size;i++){
-			pet_status.thoughts.add(Integer.parseInt(data.get(0).trim()));
-			data.remove(0);
-		}
+            for (int i = 0; i < thoughts_size; i++) {
+                pet_status.thoughts.add(Integer.parseInt(data.get(0).trim()));
+                data.remove(0);
+            }
 
-		pet_status.dc_starving=Short.parseShort(data.get(0).trim());
-		data.remove(0);
+            pet_status.dc_starving = Short.parseShort(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.dc_very_thirsty=Short.parseShort(data.get(0).trim());
-		data.remove(0);
+            pet_status.dc_very_thirsty = Short.parseShort(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.dc_sick=Short.parseShort(data.get(0).trim());
-		data.remove(0);
+            pet_status.dc_sick = Short.parseShort(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.dc_obese=Short.parseShort(data.get(0).trim());
-		data.remove(0);
+            pet_status.dc_obese = Short.parseShort(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.dc_not_obese=Short.parseShort(data.get(0).trim());
-		data.remove(0);
+            pet_status.dc_not_obese = Short.parseShort(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.dc_well_fed=Short.parseShort(data.get(0).trim());
-		data.remove(0);
+            pet_status.dc_well_fed = Short.parseShort(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.dc_well_watered=Short.parseShort(data.get(0).trim());
-		data.remove(0);
+            pet_status.dc_well_watered = Short.parseShort(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.dc_not_sick=Short.parseShort(data.get(0).trim());
-		data.remove(0);
+            pet_status.dc_not_sick = Short.parseShort(data.get(0).trim());
+            data.remove(0);
+        }
     	
     	load_pet_status_2(context,pet_status);
     	load_pet_status_equipment(context,pet_status);
@@ -502,128 +504,130 @@ public class StorageManager{
 	private static void load_pet_status_2(Context context, Pet_Status pet_status){
 		ArrayList<String> data=loadFile(context, "pet2");
 
-		int app_version=0;
-		String app_versionname="";
+        if (data.size() > 0) {
+            int app_version = 0;
+            String app_versionname = "";
 
-		app_version=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            app_version = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		app_versionname=data.get(0).trim();
-		data.remove(0);
+            app_versionname = data.get(0).trim();
+            data.remove(0);
 
-		pet_status.experience_gain=Long.parseLong(data.get(0).trim());
-		data.remove(0);
+            pet_status.experience_gain = Long.parseLong(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.favorite_food=data.get(0).trim();
-		data.remove(0);
+            pet_status.favorite_food = data.get(0).trim();
+            data.remove(0);
 
-		pet_status.food_fed.clear();
-		int food_fed_size=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.food_fed.clear();
+            int food_fed_size = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		for(int i=0;i<food_fed_size;i++){
-			pet_status.food_fed.add(data.get(0).trim());
-			data.remove(0);
-		}
+            for (int i = 0; i < food_fed_size; i++) {
+                pet_status.food_fed.add(data.get(0).trim());
+                data.remove(0);
+            }
 
-		pet_status.dexterity=Short.parseShort(data.get(0).trim());
-		data.remove(0);
+            pet_status.dexterity = Short.parseShort(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.dexterity_max=Short.parseShort(data.get(0).trim());
-		data.remove(0);
+            pet_status.dexterity_max = Short.parseShort(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.stamina=Short.parseShort(data.get(0).trim());
-		data.remove(0);
+            pet_status.stamina = Short.parseShort(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.stamina_max=Short.parseShort(data.get(0).trim());
-		data.remove(0);
+            pet_status.stamina_max = Short.parseShort(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.hunger_rise=Double.parseDouble(data.get(0).trim());
-		data.remove(0);
+            pet_status.hunger_rise = Double.parseDouble(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.thirst_rise=Double.parseDouble(data.get(0).trim());
-		data.remove(0);
+            pet_status.thirst_rise = Double.parseDouble(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.strength_rise=Double.parseDouble(data.get(0).trim());
-		data.remove(0);
+            pet_status.strength_rise = Double.parseDouble(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.dexterity_rise=Double.parseDouble(data.get(0).trim());
-		data.remove(0);
+            pet_status.dexterity_rise = Double.parseDouble(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.stamina_rise=Double.parseDouble(data.get(0).trim());
-		data.remove(0);
+            pet_status.stamina_rise = Double.parseDouble(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.energy_rise=Double.parseDouble(data.get(0).trim());
-		data.remove(0);
+            pet_status.energy_rise = Double.parseDouble(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.battles_won_sp=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.battles_won_sp = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.battles_lost_sp=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.battles_lost_sp = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.stat_points=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.stat_points = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.level=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.level = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.experience=Long.parseLong(data.get(0).trim());
-		data.remove(0);
+            pet_status.experience = Long.parseLong(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.experience_max=Long.parseLong(data.get(0).trim());
-		data.remove(0);
+            pet_status.experience_max = Long.parseLong(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.buff_hunger=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.buff_hunger = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.buff_thirst=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.buff_thirst = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.buff_poop=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.buff_poop = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.buff_dirty=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.buff_dirty = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.buff_weight=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.buff_weight = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.buff_sick=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.buff_sick = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.buff_happy=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.buff_happy = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.buff_energy_regen=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.buff_energy_regen = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.buff_strength_regen=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.buff_strength_regen = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.buff_dexterity_regen=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.buff_dexterity_regen = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.buff_stamina_regen=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.buff_stamina_regen = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.buff_energy_max=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.buff_energy_max = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.buff_strength_max=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.buff_strength_max = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.buff_dexterity_max=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.buff_dexterity_max = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.buff_stamina_max=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.buff_stamina_max = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.buff_death=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.buff_death = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		pet_status.buff_magic_find=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.buff_magic_find = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
+        }
 	}
 	
 	private static void save_pet_status_equipment(Context context, Pet_Status pet_status){
@@ -700,169 +704,170 @@ public class StorageManager{
 	private static void load_pet_status_equipment(Context context, Pet_Status pet_status){
 		ArrayList<String> data=loadFile(context, "equipment");
 
-		for(int i=Equipment.SLOT_BEGIN;i<Equipment.SLOT_END;i++){
-			boolean slot_filled=Boolean.parseBoolean(data.get(0).trim());
-			data.remove(0);
+        if (data.size() > 0) {
+            for (int i = Equipment.SLOT_BEGIN; i < Equipment.SLOT_END; i++) {
+                boolean slot_filled = Boolean.parseBoolean(data.get(0).trim());
+                data.remove(0);
 
-			if(slot_filled){
-				pet_status.equipment_slots.set(i,new Equipment());
+                if (slot_filled) {
+                    pet_status.equipment_slots.set(i, new Equipment());
 
-				pet_status.equipment_slots.get(i).name=data.get(0).trim();
-				data.remove(0);
+                    pet_status.equipment_slots.get(i).name = data.get(0).trim();
+                    data.remove(0);
 
-				pet_status.equipment_slots.get(i).full_name=data.get(0).trim();
-				data.remove(0);
+                    pet_status.equipment_slots.get(i).full_name = data.get(0).trim();
+                    data.remove(0);
 
-				pet_status.equipment_slots.get(i).description=data.get(0).trim();
-				data.remove(0);
+                    pet_status.equipment_slots.get(i).description = data.get(0).trim();
+                    data.remove(0);
 
-				pet_status.equipment_slots.get(i).level=Integer.parseInt(data.get(0).trim());
-				data.remove(0);
+                    pet_status.equipment_slots.get(i).level = Integer.parseInt(data.get(0).trim());
+                    data.remove(0);
 
-				pet_status.equipment_slots.get(i).bits=Integer.parseInt(data.get(0).trim());
-				data.remove(0);
+                    pet_status.equipment_slots.get(i).bits = Integer.parseInt(data.get(0).trim());
+                    data.remove(0);
 
-				pet_status.equipment_slots.get(i).branch=Short.parseShort(data.get(0).trim());
-				data.remove(0);
+                    pet_status.equipment_slots.get(i).branch = Short.parseShort(data.get(0).trim());
+                    data.remove(0);
 
-				pet_status.equipment_slots.get(i).weight=Double.parseDouble(data.get(0).trim());
-				data.remove(0);
+                    pet_status.equipment_slots.get(i).weight = Double.parseDouble(data.get(0).trim());
+                    data.remove(0);
 
-				pet_status.equipment_slots.get(i).buff_hunger=Short.parseShort(data.get(0).trim());
-				data.remove(0);
+                    pet_status.equipment_slots.get(i).buff_hunger = Short.parseShort(data.get(0).trim());
+                    data.remove(0);
 
-				pet_status.equipment_slots.get(i).buff_thirst=Short.parseShort(data.get(0).trim());
-				data.remove(0);
+                    pet_status.equipment_slots.get(i).buff_thirst = Short.parseShort(data.get(0).trim());
+                    data.remove(0);
 
-				pet_status.equipment_slots.get(i).buff_poop=Short.parseShort(data.get(0).trim());
-				data.remove(0);
+                    pet_status.equipment_slots.get(i).buff_poop = Short.parseShort(data.get(0).trim());
+                    data.remove(0);
 
-				pet_status.equipment_slots.get(i).buff_dirty=Short.parseShort(data.get(0).trim());
-				data.remove(0);
+                    pet_status.equipment_slots.get(i).buff_dirty = Short.parseShort(data.get(0).trim());
+                    data.remove(0);
 
-				pet_status.equipment_slots.get(i).buff_weight=Double.parseDouble(data.get(0).trim());
-				data.remove(0);
+                    pet_status.equipment_slots.get(i).buff_weight = Double.parseDouble(data.get(0).trim());
+                    data.remove(0);
 
-				pet_status.equipment_slots.get(i).buff_sick=Integer.parseInt(data.get(0).trim());
-				data.remove(0);
+                    pet_status.equipment_slots.get(i).buff_sick = Integer.parseInt(data.get(0).trim());
+                    data.remove(0);
 
-				pet_status.equipment_slots.get(i).buff_happy=Short.parseShort(data.get(0).trim());
-				data.remove(0);
+                    pet_status.equipment_slots.get(i).buff_happy = Short.parseShort(data.get(0).trim());
+                    data.remove(0);
 
-				pet_status.equipment_slots.get(i).buff_energy_regen=Float.parseFloat(data.get(0).trim());
-				data.remove(0);
+                    pet_status.equipment_slots.get(i).buff_energy_regen = Float.parseFloat(data.get(0).trim());
+                    data.remove(0);
 
-				pet_status.equipment_slots.get(i).buff_strength_regen=Float.parseFloat(data.get(0).trim());
-				data.remove(0);
+                    pet_status.equipment_slots.get(i).buff_strength_regen = Float.parseFloat(data.get(0).trim());
+                    data.remove(0);
 
-				pet_status.equipment_slots.get(i).buff_dexterity_regen=Float.parseFloat(data.get(0).trim());
-				data.remove(0);
+                    pet_status.equipment_slots.get(i).buff_dexterity_regen = Float.parseFloat(data.get(0).trim());
+                    data.remove(0);
 
-				pet_status.equipment_slots.get(i).buff_stamina_regen=Float.parseFloat(data.get(0).trim());
-				data.remove(0);
+                    pet_status.equipment_slots.get(i).buff_stamina_regen = Float.parseFloat(data.get(0).trim());
+                    data.remove(0);
 
-				pet_status.equipment_slots.get(i).buff_energy_max=Short.parseShort(data.get(0).trim());
-				data.remove(0);
+                    pet_status.equipment_slots.get(i).buff_energy_max = Short.parseShort(data.get(0).trim());
+                    data.remove(0);
 
-				pet_status.equipment_slots.get(i).buff_strength_max=Short.parseShort(data.get(0).trim());
-				data.remove(0);
+                    pet_status.equipment_slots.get(i).buff_strength_max = Short.parseShort(data.get(0).trim());
+                    data.remove(0);
 
-				pet_status.equipment_slots.get(i).buff_dexterity_max=Short.parseShort(data.get(0).trim());
-				data.remove(0);
+                    pet_status.equipment_slots.get(i).buff_dexterity_max = Short.parseShort(data.get(0).trim());
+                    data.remove(0);
 
-				pet_status.equipment_slots.get(i).buff_stamina_max=Short.parseShort(data.get(0).trim());
-				data.remove(0);
+                    pet_status.equipment_slots.get(i).buff_stamina_max = Short.parseShort(data.get(0).trim());
+                    data.remove(0);
 
-				pet_status.equipment_slots.get(i).buff_death=Integer.parseInt(data.get(0).trim());
-				data.remove(0);
+                    pet_status.equipment_slots.get(i).buff_death = Integer.parseInt(data.get(0).trim());
+                    data.remove(0);
 
-				pet_status.equipment_slots.get(i).buff_magic_find=Integer.parseInt(data.get(0).trim());
-				data.remove(0);
-			}
-			else{
-				pet_status.equipment_slots.set(i,null);
-			}
-		}
+                    pet_status.equipment_slots.get(i).buff_magic_find = Integer.parseInt(data.get(0).trim());
+                    data.remove(0);
+                } else {
+                    pet_status.equipment_slots.set(i, null);
+                }
+            }
 
-		pet_status.equipment.clear();
-		int equipment_size=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            pet_status.equipment.clear();
+            int equipment_size = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		for(int i=0;i<equipment_size;i++){
-			pet_status.equipment.add(new Equipment());
+            for (int i = 0; i < equipment_size; i++) {
+                pet_status.equipment.add(new Equipment());
 
-			pet_status.equipment.get(i).name=data.get(0).trim();
-			data.remove(0);
+                pet_status.equipment.get(i).name = data.get(0).trim();
+                data.remove(0);
 
-			pet_status.equipment.get(i).full_name=data.get(0).trim();
-			data.remove(0);
+                pet_status.equipment.get(i).full_name = data.get(0).trim();
+                data.remove(0);
 
-			pet_status.equipment.get(i).description=data.get(0).trim();
-			data.remove(0);
+                pet_status.equipment.get(i).description = data.get(0).trim();
+                data.remove(0);
 
-			pet_status.equipment.get(i).level=Integer.parseInt(data.get(0).trim());
-			data.remove(0);
+                pet_status.equipment.get(i).level = Integer.parseInt(data.get(0).trim());
+                data.remove(0);
 
-			pet_status.equipment.get(i).bits=Integer.parseInt(data.get(0).trim());
-			data.remove(0);
+                pet_status.equipment.get(i).bits = Integer.parseInt(data.get(0).trim());
+                data.remove(0);
 
-			pet_status.equipment.get(i).branch=Short.parseShort(data.get(0).trim());
-			data.remove(0);
+                pet_status.equipment.get(i).branch = Short.parseShort(data.get(0).trim());
+                data.remove(0);
 
-			pet_status.equipment.get(i).weight=Double.parseDouble(data.get(0).trim());
-			data.remove(0);
+                pet_status.equipment.get(i).weight = Double.parseDouble(data.get(0).trim());
+                data.remove(0);
 
-			pet_status.equipment.get(i).buff_hunger=Short.parseShort(data.get(0).trim());
-			data.remove(0);
+                pet_status.equipment.get(i).buff_hunger = Short.parseShort(data.get(0).trim());
+                data.remove(0);
 
-			pet_status.equipment.get(i).buff_thirst=Short.parseShort(data.get(0).trim());
-			data.remove(0);
+                pet_status.equipment.get(i).buff_thirst = Short.parseShort(data.get(0).trim());
+                data.remove(0);
 
-			pet_status.equipment.get(i).buff_poop=Short.parseShort(data.get(0).trim());
-			data.remove(0);
+                pet_status.equipment.get(i).buff_poop = Short.parseShort(data.get(0).trim());
+                data.remove(0);
 
-			pet_status.equipment.get(i).buff_dirty=Short.parseShort(data.get(0).trim());
-			data.remove(0);
+                pet_status.equipment.get(i).buff_dirty = Short.parseShort(data.get(0).trim());
+                data.remove(0);
 
-			pet_status.equipment.get(i).buff_weight=Double.parseDouble(data.get(0).trim());
-			data.remove(0);
+                pet_status.equipment.get(i).buff_weight = Double.parseDouble(data.get(0).trim());
+                data.remove(0);
 
-			pet_status.equipment.get(i).buff_sick=Integer.parseInt(data.get(0).trim());
-			data.remove(0);
+                pet_status.equipment.get(i).buff_sick = Integer.parseInt(data.get(0).trim());
+                data.remove(0);
 
-			pet_status.equipment.get(i).buff_happy=Short.parseShort(data.get(0).trim());
-			data.remove(0);
+                pet_status.equipment.get(i).buff_happy = Short.parseShort(data.get(0).trim());
+                data.remove(0);
 
-			pet_status.equipment.get(i).buff_energy_regen=Float.parseFloat(data.get(0).trim());
-			data.remove(0);
+                pet_status.equipment.get(i).buff_energy_regen = Float.parseFloat(data.get(0).trim());
+                data.remove(0);
 
-			pet_status.equipment.get(i).buff_strength_regen=Float.parseFloat(data.get(0).trim());
-			data.remove(0);
+                pet_status.equipment.get(i).buff_strength_regen = Float.parseFloat(data.get(0).trim());
+                data.remove(0);
 
-			pet_status.equipment.get(i).buff_dexterity_regen=Float.parseFloat(data.get(0).trim());
-			data.remove(0);
+                pet_status.equipment.get(i).buff_dexterity_regen = Float.parseFloat(data.get(0).trim());
+                data.remove(0);
 
-			pet_status.equipment.get(i).buff_stamina_regen=Float.parseFloat(data.get(0).trim());
-			data.remove(0);
+                pet_status.equipment.get(i).buff_stamina_regen = Float.parseFloat(data.get(0).trim());
+                data.remove(0);
 
-			pet_status.equipment.get(i).buff_energy_max=Short.parseShort(data.get(0).trim());
-			data.remove(0);
+                pet_status.equipment.get(i).buff_energy_max = Short.parseShort(data.get(0).trim());
+                data.remove(0);
 
-			pet_status.equipment.get(i).buff_strength_max=Short.parseShort(data.get(0).trim());
-			data.remove(0);
+                pet_status.equipment.get(i).buff_strength_max = Short.parseShort(data.get(0).trim());
+                data.remove(0);
 
-			pet_status.equipment.get(i).buff_dexterity_max=Short.parseShort(data.get(0).trim());
-			data.remove(0);
+                pet_status.equipment.get(i).buff_dexterity_max = Short.parseShort(data.get(0).trim());
+                data.remove(0);
 
-			pet_status.equipment.get(i).buff_stamina_max=Short.parseShort(data.get(0).trim());
-			data.remove(0);
+                pet_status.equipment.get(i).buff_stamina_max = Short.parseShort(data.get(0).trim());
+                data.remove(0);
 
-			pet_status.equipment.get(i).buff_death=Integer.parseInt(data.get(0).trim());
-			data.remove(0);
+                pet_status.equipment.get(i).buff_death = Integer.parseInt(data.get(0).trim());
+                data.remove(0);
 
-			pet_status.equipment.get(i).buff_magic_find=Integer.parseInt(data.get(0).trim());
-			data.remove(0);
-		}
+                pet_status.equipment.get(i).buff_magic_find = Integer.parseInt(data.get(0).trim());
+                data.remove(0);
+            }
+        }
 	}
 	
 	private static void save_pet_status_perma_items(Context context, Pet_Status pet_status){
@@ -884,24 +889,27 @@ public class StorageManager{
 	private static void load_pet_status_perma_items(Context context, View view, Pet_Status pet_status){
 		ArrayList<String> data=loadFile(context, "perma_items");
 
-		pet_status.perma_items.clear();
-		int perma_items_size=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+        pet_status.perma_items.clear();
 
-		for(int i=0;i<perma_items_size;i++){
-			float x=Float.parseFloat(data.get(0).trim());
-			data.remove(0);
+        if (data.size() > 0) {
+            int perma_items_size = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-			float y=Float.parseFloat(data.get(0).trim());
-			data.remove(0);
+            for (int i = 0; i < perma_items_size; i++) {
+                float x = Float.parseFloat(data.get(0).trim());
+                data.remove(0);
 
-			String name=data.get(0).trim();
-			data.remove(0);
+                float y = Float.parseFloat(data.get(0).trim());
+                data.remove(0);
 
-			pet_status.perma_items.add(new Perma_Item(null,null,name,x,y));
-		}
-    	
-    	Holiday.add_perma_item(view,pet_status);
+                String name = data.get(0).trim();
+                data.remove(0);
+
+                pet_status.perma_items.add(new Perma_Item(null, null, name, x, y));
+            }
+        }
+
+        Holiday.add_perma_item(view, pet_status);
 	}
 	
 	public static void save_options(Context context){
@@ -939,41 +947,43 @@ public class StorageManager{
 	public static void load_options(Context context){
 		ArrayList<String> data=loadFile(context, "options");
 
-		Options.pause=Boolean.parseBoolean(data.get(0).trim());
-		data.remove(0);
+        if (data.size() > 0) {
+            Options.pause = Boolean.parseBoolean(data.get(0).trim());
+            data.remove(0);
 
-		Options.temp_units=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            Options.temp_units = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		Options.units=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            Options.units = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		Options.screen_orientation=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            Options.screen_orientation = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		Options.keep_screen_on=Boolean.parseBoolean(data.get(0).trim());
-		data.remove(0);
+            Options.keep_screen_on = Boolean.parseBoolean(data.get(0).trim());
+            data.remove(0);
 
-		Options.vibrate=Boolean.parseBoolean(data.get(0).trim());
-		data.remove(0);
+            Options.vibrate = Boolean.parseBoolean(data.get(0).trim());
+            data.remove(0);
 
-		Options.show_thermometer=Boolean.parseBoolean(data.get(0).trim());
-		data.remove(0);
+            Options.show_thermometer = Boolean.parseBoolean(data.get(0).trim());
+            data.remove(0);
 
-		Options.gps_update_time=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+            Options.gps_update_time = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		Options.desired_sleep_time.set(Calendar.HOUR_OF_DAY,Integer.parseInt(data.get(0).trim()));
-		data.remove(0);
+            Options.desired_sleep_time.set(Calendar.HOUR_OF_DAY, Integer.parseInt(data.get(0).trim()));
+            data.remove(0);
 
-		Options.desired_sleep_time.set(Calendar.MINUTE,Integer.parseInt(data.get(0).trim()));
-		data.remove(0);
+            Options.desired_sleep_time.set(Calendar.MINUTE, Integer.parseInt(data.get(0).trim()));
+            data.remove(0);
 
-		Options.last_sleep_time_change.set(Calendar.YEAR,Integer.parseInt(data.get(0).trim()));
-		data.remove(0);
+            Options.last_sleep_time_change.set(Calendar.YEAR, Integer.parseInt(data.get(0).trim()));
+            data.remove(0);
 
-		Options.last_sleep_time_change.set(Calendar.DAY_OF_YEAR,Integer.parseInt(data.get(0).trim()));
-		data.remove(0);
+            Options.last_sleep_time_change.set(Calendar.DAY_OF_YEAR, Integer.parseInt(data.get(0).trim()));
+            data.remove(0);
+        }
     	
     	load_options_2(context);
 	}
@@ -989,8 +999,10 @@ public class StorageManager{
 	private static void load_options_2(Context context){
 		ArrayList<String> data=loadFile(context, "options2");
 
-		Options.show_stat_bars=Boolean.parseBoolean(data.get(0).trim());
-		data.remove(0);
+        if (data.size() > 0) {
+            Options.show_stat_bars = Boolean.parseBoolean(data.get(0).trim());
+            data.remove(0);
+        }
 	}
 	
 	public static void save_records(Context context,Records records){
@@ -1008,39 +1020,42 @@ public class StorageManager{
 		ArrayList<String> data=loadFile(context, "records");
 
 		records.pets.clear();
-		int pets_size=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
 
-		for(int i=0;i<pets_size;i++){
-			records.pets.add(new Record_Pet());
+        if (data.size() > 0) {
+            int pets_size = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-			records.pets.get(records.pets.size()-1).name=data.get(0).trim();
-			data.remove(0);
+            for (int i = 0; i < pets_size; i++) {
+                records.pets.add(new Record_Pet());
 
-			records.pets.get(records.pets.size()-1).bits=Integer.parseInt(data.get(0).trim());
-			data.remove(0);
+                records.pets.get(records.pets.size() - 1).name = data.get(0).trim();
+                data.remove(0);
 
-			records.pets.get(records.pets.size()-1).age=Long.parseLong(data.get(0).trim());
-			data.remove(0);
+                records.pets.get(records.pets.size() - 1).bits = Integer.parseInt(data.get(0).trim());
+                data.remove(0);
 
-			records.pets.get(records.pets.size()-1).type=Pet_Type.valueOf(data.get(0).trim());
-			data.remove(0);
+                records.pets.get(records.pets.size() - 1).age = Long.parseLong(data.get(0).trim());
+                data.remove(0);
 
-			records.pets.get(records.pets.size()-1).age_tier=Age_Tier.valueOf(data.get(0).trim());
-			data.remove(0);
+                records.pets.get(records.pets.size() - 1).type = Pet_Type.valueOf(data.get(0).trim());
+                data.remove(0);
 
-			records.pets.get(records.pets.size()-1).weight=Double.parseDouble(data.get(0).trim());
-			data.remove(0);
+                records.pets.get(records.pets.size() - 1).age_tier = Age_Tier.valueOf(data.get(0).trim());
+                data.remove(0);
 
-			records.pets.get(records.pets.size()-1).strength_max=Short.parseShort(data.get(0).trim());
-			data.remove(0);
+                records.pets.get(records.pets.size() - 1).weight = Double.parseDouble(data.get(0).trim());
+                data.remove(0);
 
-			records.pets.get(records.pets.size()-1).battles_won=Integer.parseInt(data.get(0).trim());
-			data.remove(0);
+                records.pets.get(records.pets.size() - 1).strength_max = Short.parseShort(data.get(0).trim());
+                data.remove(0);
 
-			records.pets.get(records.pets.size()-1).battles_lost=Integer.parseInt(data.get(0).trim());
-			data.remove(0);
-		}
+                records.pets.get(records.pets.size() - 1).battles_won = Integer.parseInt(data.get(0).trim());
+                data.remove(0);
+
+                records.pets.get(records.pets.size() - 1).battles_lost = Integer.parseInt(data.get(0).trim());
+                data.remove(0);
+            }
+        }
 
 		load_records_2(context,records);
 	}
@@ -1089,54 +1104,56 @@ public class StorageManager{
 	private static void load_records_2(Context context, Records records){
 		ArrayList<String> data=loadFile(context, "records2");
 
-		int pets_size=Integer.parseInt(data.get(0).trim());
-		data.remove(0);
+        if (data.size() > 0) {
+            int pets_size = Integer.parseInt(data.get(0).trim());
+            data.remove(0);
 
-		for(int i=0;i<pets_size;i++){
-			records.pets.add(new Record_Pet());
+            for (int i = 0; i < pets_size; i++) {
+                records.pets.add(new Record_Pet());
 
-			records.pets.get(records.pets.size()-1).name=data.get(0).trim();
-			data.remove(0);
+                records.pets.get(records.pets.size() - 1).name = data.get(0).trim();
+                data.remove(0);
 
-			records.pets.get(records.pets.size()-1).bits=Integer.parseInt(data.get(0).trim());
-			data.remove(0);
+                records.pets.get(records.pets.size() - 1).bits = Integer.parseInt(data.get(0).trim());
+                data.remove(0);
 
-			records.pets.get(records.pets.size()-1).age=Long.parseLong(data.get(0).trim());
-			data.remove(0);
+                records.pets.get(records.pets.size() - 1).age = Long.parseLong(data.get(0).trim());
+                data.remove(0);
 
-			records.pets.get(records.pets.size()-1).type=Pet_Type.valueOf(data.get(0).trim());
-			data.remove(0);
+                records.pets.get(records.pets.size() - 1).type = Pet_Type.valueOf(data.get(0).trim());
+                data.remove(0);
 
-			records.pets.get(records.pets.size()-1).age_tier=Age_Tier.valueOf(data.get(0).trim());
-			data.remove(0);
+                records.pets.get(records.pets.size() - 1).age_tier = Age_Tier.valueOf(data.get(0).trim());
+                data.remove(0);
 
-			records.pets.get(records.pets.size()-1).weight=Double.parseDouble(data.get(0).trim());
-			data.remove(0);
+                records.pets.get(records.pets.size() - 1).weight = Double.parseDouble(data.get(0).trim());
+                data.remove(0);
 
-			records.pets.get(records.pets.size()-1).strength_max=Short.parseShort(data.get(0).trim());
-			data.remove(0);
+                records.pets.get(records.pets.size() - 1).strength_max = Short.parseShort(data.get(0).trim());
+                data.remove(0);
 
-			records.pets.get(records.pets.size()-1).dexterity_max=Short.parseShort(data.get(0).trim());
-			data.remove(0);
+                records.pets.get(records.pets.size() - 1).dexterity_max = Short.parseShort(data.get(0).trim());
+                data.remove(0);
 
-			records.pets.get(records.pets.size()-1).stamina_max=Short.parseShort(data.get(0).trim());
-			data.remove(0);
+                records.pets.get(records.pets.size() - 1).stamina_max = Short.parseShort(data.get(0).trim());
+                data.remove(0);
 
-			records.pets.get(records.pets.size()-1).battles_won=Integer.parseInt(data.get(0).trim());
-			data.remove(0);
+                records.pets.get(records.pets.size() - 1).battles_won = Integer.parseInt(data.get(0).trim());
+                data.remove(0);
 
-			records.pets.get(records.pets.size()-1).battles_lost=Integer.parseInt(data.get(0).trim());
-			data.remove(0);
+                records.pets.get(records.pets.size() - 1).battles_lost = Integer.parseInt(data.get(0).trim());
+                data.remove(0);
 
-			records.pets.get(records.pets.size()-1).battles_won_sp=Integer.parseInt(data.get(0).trim());
-			data.remove(0);
+                records.pets.get(records.pets.size() - 1).battles_won_sp = Integer.parseInt(data.get(0).trim());
+                data.remove(0);
 
-			records.pets.get(records.pets.size()-1).battles_lost_sp=Integer.parseInt(data.get(0).trim());
-			data.remove(0);
+                records.pets.get(records.pets.size() - 1).battles_lost_sp = Integer.parseInt(data.get(0).trim());
+                data.remove(0);
 
-			records.pets.get(records.pets.size()-1).level=Integer.parseInt(data.get(0).trim());
-			data.remove(0);
-		}
+                records.pets.get(records.pets.size() - 1).level = Integer.parseInt(data.get(0).trim());
+                data.remove(0);
+            }
+        }
 	}
 	
 	public static boolean load_templates(Context context,Resources res){

@@ -36,7 +36,7 @@ public class Activity_Records extends AppCompatActivity {
     	overridePendingTransition(R.anim.transition_in,R.anim.transition_out);
     	
     	records=new Records();
-    	StorageManager.load_records(this,records,false);
+    	StorageManager.load_records(this,records);
     	
     	TextView tv=null;
     	String message="";

@@ -1,4 +1,3 @@
-Don't forget to make loading check for data on external first, from old versions
 Limit saving to improve performance
 This should mean the backup system below is not needed
 

@@ -294,7 +294,7 @@ public class Pet{
 		}
 	}
 	
-	public void die(Image image,View view,Context context,Records records,Handler handler){
+	private void die(Image image, View view, Context context, Records records, Handler handler){
 		if(records!=null){
 			//Add this pet to the records.
 			records.add_pet(status.name,status.bits,status.age,status.type,status.age_tier,status.get_weight(),status.get_strength_max(),status.get_dexterity_max(),status.get_stamina_max(),status.battles_won,status.battles_lost,status.battles_won_sp,status.battles_lost_sp,status.level);
@@ -346,6 +346,8 @@ public class Pet{
 	}
 	
 	public void process_time_tick(long get_age_increment,Image image,View view,Context context,Handler handler){
+		RNG.set_seed(RNG.STANDARD,(int)get_age_increment);
+
 		if(status.age_tier!=Age_Tier.DEAD){
 			status.age+=get_age_increment;
 			
@@ -385,6 +387,8 @@ public class Pet{
 	public void process_tick(long ticks,Image image,View view,Context context,Records records,Handler handler){
 		if(status.age_tier!=Age_Tier.EGG && status.age_tier!=Age_Tier.DEAD){
 			int poops_created=0;
+
+			RNG.set_seed(RNG.STANDARD,(int)status.last_tick);
 			
 			for(long i=0;i<ticks;i++){
 				// Petting //
@@ -662,7 +666,7 @@ public class Pet{
 		}
 	}
 	
-	public void add_thought(Image image,View view,Vibrator vibrator,int get_type){
+	private void add_thought(Image image, View view, Vibrator vibrator, int get_type){
 		if(status.age_tier!=Age_Tier.EGG && status.age_tier!=Age_Tier.DEAD && (!status.sleeping || (status.sleeping && status.sleeping_woken_up))){
 			boolean thought_already_present=false;
 			

@@ -21,7 +21,7 @@ import java.util.Calendar;
 import java.util.Locale;
 
 public class StorageManager{
-	private static final String TAG=StorageManager.class.getCanonicalName();
+	private static final String TAG=StorageManager.class.getName();
 	private static final String SAVE_SUFFIX_TEMPORARY="_TEMPORARY";
 
 	// Returns true if the file was saved successfully, else false

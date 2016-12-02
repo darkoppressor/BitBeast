@@ -1,6 +1,0 @@
-<application ...
-android:backupAgent="Backup_Agent"
-android:restoreAnyVersion="false"
-
-<meta-data android:name="com.google.android.backup.api_key"
-            android:value="AEdPqrEAAAAIORfu8b9kedPM5EIEZQnSNFQwSEfrlBpgvGnQHw" />

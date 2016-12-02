@@ -35,7 +35,7 @@ Here is how Bit Beast puts some of these features to good use:
 
 View the complete [changelog](development/changelog.txt).
 
-Here is an explanation of the permissions required to install the app, and why they are needed: http://cheeseandbacon.org/bit-beast/permissions.txt
+Here is an explanation of the permissions required to install the app, and why they are needed: [permissions](development/permissions.txt)
 
 While the app is already complete, there will almost certainly be updated versions released in the future to fix bugs, tweak numbers, etc. If you find a bug, or something that just doesn't seem right, please let us know! You can contact us via email, or head over to the forums, using the links found below.
 

@@ -63,6 +63,16 @@
  - Fixed major bug with food categories
  - Fixed minor bug with food categories
  - Fixed a few instances where speech would not wake up the Bit Beast
+ - Fixed a variety of image-related bugs
+ - Moved save data to internal storage
+ - Made file saving atomic
+ - Removed screenshot feature
+ - Improved permission handling
+ - Bit Beasts must be the same version to battle
+ - Made tick processing more deterministic
+ - Moved the project into Android Studio and updated build tools to latest versions
+ - Updated build target to latest version of Android (API level 25)
+ - Updated minimum API level to 19
  - Minor code cleanup and improvements
  - Minor graphical improvements
  - And more!

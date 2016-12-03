@@ -1,3 +1,5 @@
+Check for external storage data when loading, so as not to miss old version save data
+
 Keep widget? Or just get rid of it?
 I like the idea of removing it, and eventually adding a notifications feature instead
 
@@ -18,6 +20,32 @@ NFC that works like Bluetooth for battles?
 Maybe this would just make connecting via Bluetooth easier
 
 Add support for the Android backup/restore system
+
+Can the store pages be all one activity and just scroll to the side via dragging?
+
+After a battle, if you got an item and then sold it, it returns to the main screen, but it should return to the battle summary
+
+Brick game takes too long to complete
+
+More brick game templates?
+
+When you spend stat points, it should add the same amount to max and current
+
+Increase fps to 60?
+
+Add license comments to source files
+
+Can you see your non consumable buffs summarized somewhere?
+
+Consider creating a base activity that most of the activities inherit from
+
+Take a look at how sounds are being done
+
+Trying to play gps games without permission gives toast about not having a gps receiver
+
+Test gps games
+
+Test Bluetooth battles with same and different versions
 
 ----------------------------------------------------------------
 

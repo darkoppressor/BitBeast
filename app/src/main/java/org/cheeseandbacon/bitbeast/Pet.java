@@ -228,9 +228,9 @@ public class Pet{
 		//If the pet has become a child, choose its favorite food.
 		if(status.age_tier==Age_Tier.CHILD){
 			//If the pet was fed some food before now, and we pass a random check.
-			if(status.food_fed.size()>0 && RNG.random_range(0,99)<75){
+			if(status.food_fed.size()>0 && RNG.random_range(RNG.TICK,0,99)<75){
 				//Pick a food from the fed foods list randomly.
-				status.favorite_food=status.food_fed.get(RNG.random_range(0,status.food_fed.size()-1));
+				status.favorite_food=status.food_fed.get(RNG.random_range(RNG.TICK,0,status.food_fed.size()-1));
 			}
 			//Otherwise, we just assign a favorite food completely at random.
 			else{
@@ -243,7 +243,7 @@ public class Pet{
 				}
 				
 				//Randomly assign the favorite food from the created list.
-				status.favorite_food=eligible_foods.get(RNG.random_range(0,eligible_foods.size()-1));
+				status.favorite_food=eligible_foods.get(RNG.random_range(RNG.TICK,0,eligible_foods.size()-1));
 			}
 			
 			//We no longer need the fed foods list.
@@ -346,7 +346,7 @@ public class Pet{
 	}
 	
 	public void process_time_tick(long get_age_increment,Image image,View view,Context context,Handler handler){
-		RNG.set_seed(RNG.STANDARD,(int)get_age_increment);
+		RNG.set_seed(RNG.TICK,(int)get_age_increment);
 
 		if(status.age_tier!=Age_Tier.DEAD){
 			status.age+=get_age_increment;
@@ -388,7 +388,7 @@ public class Pet{
 		if(status.age_tier!=Age_Tier.EGG && status.age_tier!=Age_Tier.DEAD){
 			int poops_created=0;
 
-			RNG.set_seed(RNG.STANDARD,(int)status.last_tick);
+			RNG.set_seed(RNG.TICK,(int)status.last_tick);
 			
 			for(long i=0;i<ticks;i++){
 				// Petting //
@@ -426,11 +426,11 @@ public class Pet{
 						status.sleeping_woken_up=false;
 						status.sleeping_woken_up_time=-1L;
 						
-						if(RNG.random_range(0,99)<50){
-							status.happy+=(short)RNG.random_range((int)(Math.ceil((double)Pet_Status.HAPPY_MAX*0.10)),(int)(Math.ceil((double)Pet_Status.HAPPY_MAX*0.20)));
+						if(RNG.random_range(RNG.TICK,0,99)<50){
+							status.happy+=(short)RNG.random_range(RNG.TICK,(int)(Math.ceil((double)Pet_Status.HAPPY_MAX*0.10)),(int)(Math.ceil((double)Pet_Status.HAPPY_MAX*0.20)));
 						}
 						else{
-							status.happy-=(short)RNG.random_range((int)(Math.ceil((double)Pet_Status.HAPPY_MAX*0.10)),(int)(Math.ceil((double)Pet_Status.HAPPY_MAX*0.20)));
+							status.happy-=(short)RNG.random_range(RNG.TICK,(int)(Math.ceil((double)Pet_Status.HAPPY_MAX*0.10)),(int)(Math.ceil((double)Pet_Status.HAPPY_MAX*0.20)));
 						}
 						
 						status.happy_bound();
@@ -442,7 +442,7 @@ public class Pet{
 				if(!status.sick){
 					if(status.needs_poop_cleaned() || status.needs_bath() || status.is_starving() || status.is_very_thirsty() ||
 							status.temp_is_very_bad()){
-						if(RNG.random_range(0,999)<status.get_sick_chance()){
+						if(RNG.random_range(RNG.TICK,0,999)<status.get_sick_chance()){
 							status.sick=true;
 						}
 					}
@@ -468,8 +468,8 @@ public class Pet{
 						
 						if(x==-1000.0f && y==-1000.0f){
 							if(image!=null && view!=null){
-								poop_x=RNG.random_range(0,view.getWidth()-image.poop.get_width());
-								poop_y=RNG.random_range(0,view.getHeight()-image.poop.get_height());
+								poop_x=RNG.random_range(RNG.TICK,0,view.getWidth()-image.poop.get_width());
+								poop_y=RNG.random_range(RNG.TICK,0,view.getHeight()-image.poop.get_height());
 							}
 						}
 						
@@ -491,43 +491,43 @@ public class Pet{
 				//Decrease happiness based on various things.
 				
 				if(status.sick){
-					if(RNG.random_range(0,99)<25){
+					if(RNG.random_range(RNG.TICK,0,99)<25){
 						status.happy-=Pet_Status.HAPPY_LOSS_SICK;
 						status.happy_bound();
 					}
 				}
 				for(int n=0;n<status.poops.size();n++){
-					if(RNG.random_range(0,99)<25){
+					if(RNG.random_range(RNG.TICK,0,99)<25){
 						status.happy-=Pet_Status.HAPPY_LOSS_POOP;
 						status.happy_bound();
 					}
 				}
 				if(status.needs_bath()){
-					if(RNG.random_range(0,99)<25){
+					if(RNG.random_range(RNG.TICK,0,99)<25){
 						status.happy-=Pet_Status.HAPPY_LOSS_DIRTY;
 						status.happy_bound();
 					}
 				}
 				if(status.is_starving()){
-					if(RNG.random_range(0,99)<25){
+					if(RNG.random_range(RNG.TICK,0,99)<25){
 						status.happy-=Pet_Status.HAPPY_LOSS_HUNGER;
 						status.happy_bound();
 					}
 				}
 				if(status.is_very_thirsty()){
-					if(RNG.random_range(0,99)<25){
+					if(RNG.random_range(RNG.TICK,0,99)<25){
 						status.happy-=Pet_Status.HAPPY_LOSS_THIRST;
 						status.happy_bound();
 					}
 				}
 				if(status.temp_is_bad()){
-					if(RNG.random_range(0,99)<25){
+					if(RNG.random_range(RNG.TICK,0,99)<25){
 						status.happy-=Pet_Status.HAPPY_LOSS_TEMP;
 						status.happy_bound();
 					}
 				}
 				if(status.temp_is_very_bad()){
-					if(RNG.random_range(0,99)<50){
+					if(RNG.random_range(RNG.TICK,0,99)<50){
 						status.happy-=Pet_Status.HAPPY_LOSS_TEMP;
 						status.happy_bound();
 					}
@@ -536,13 +536,13 @@ public class Pet{
 				//Increase happiness based on various things.
 				
 				if(status.temp_is_good()){
-					if(RNG.random_range(0,99)<25){
+					if(RNG.random_range(RNG.TICK,0,99)<25){
 						status.happy+=Pet_Status.HAPPY_GAIN_TEMP;
 						status.happy_bound();
 					}
 				}
 				if(status.temp_is_optimum()){
-					if(RNG.random_range(0,99)<50){
+					if(RNG.random_range(RNG.TICK,0,99)<50){
 						status.happy+=Pet_Status.HAPPY_GAIN_TEMP;
 						status.happy_bound();
 					}
@@ -577,28 +577,28 @@ public class Pet{
 				//Decrease the counter based on various things.
 				
 				if(status.is_starving() && status.dc_starving>0){
-					if(RNG.random_range(0,99)<Pet_Status.CHANCE_SMALL){
+					if(RNG.random_range(RNG.TICK,0,99)<Pet_Status.CHANCE_SMALL){
 						status.death_counter--;
 						status.death_counter_bound();
 						status.dc_starving--;
 					}
 				}
 				if(status.is_very_thirsty() && status.dc_very_thirsty>0){
-					if(RNG.random_range(0,99)<Pet_Status.CHANCE_SMALL){
+					if(RNG.random_range(RNG.TICK,0,99)<Pet_Status.CHANCE_SMALL){
 						status.death_counter--;
 						status.death_counter_bound();
 						status.dc_very_thirsty--;
 					}
 				}
 				if(status.sick && status.dc_sick>0){
-					if(RNG.random_range(0,99)<Pet_Status.CHANCE_SMALL){
+					if(RNG.random_range(RNG.TICK,0,99)<Pet_Status.CHANCE_SMALL){
 						status.death_counter--;
 						status.death_counter_bound();
 						status.dc_sick--;
 					}
 				}
 				if(status.is_obese() && status.dc_obese>0){
-					if(RNG.random_range(0,99)<Pet_Status.CHANCE_SMALL){
+					if(RNG.random_range(RNG.TICK,0,99)<Pet_Status.CHANCE_SMALL){
 						status.death_counter--;
 						status.death_counter_bound();
 						status.dc_obese--;
@@ -608,35 +608,35 @@ public class Pet{
 				//Increase the counter based on various things.
 				
 				if(!status.is_obese() && status.dc_not_obese>0){
-					if(RNG.random_range(0,99)<Pet_Status.CHANCE_TINY){
+					if(RNG.random_range(RNG.TICK,0,99)<Pet_Status.CHANCE_TINY){
 						status.death_counter++;
 						status.death_counter_bound();
 						status.dc_not_obese--;
 					}
 				}
 				if(status.is_well_fed() && status.dc_well_fed>0){
-					if(RNG.random_range(0,99)<Pet_Status.CHANCE_SMALL){
+					if(RNG.random_range(RNG.TICK,0,99)<Pet_Status.CHANCE_SMALL){
 						status.death_counter++;
 						status.death_counter_bound();
 						status.dc_well_fed--;
 					}
 				}
 				if(status.is_well_watered() && status.dc_well_watered>0){
-					if(RNG.random_range(0,99)<Pet_Status.CHANCE_SMALL){
+					if(RNG.random_range(RNG.TICK,0,99)<Pet_Status.CHANCE_SMALL){
 						status.death_counter++;
 						status.death_counter_bound();
 						status.dc_well_watered--;
 					}
 				}
 				if(!status.sick && status.dc_not_sick>0){
-					if(RNG.random_range(0,99)<Pet_Status.CHANCE_SMALL){
+					if(RNG.random_range(RNG.TICK,0,99)<Pet_Status.CHANCE_SMALL){
 						status.death_counter++;
 						status.death_counter_bound();
 						status.dc_not_sick--;
 					}
 				}
 				for(int n=Equipment.SLOT_BEGIN;n<Equipment.SLOT_END;n++){
-					if(RNG.random_range(0,99)<Pet_Status.CHANCE_TINY){
+					if(RNG.random_range(RNG.TICK,0,99)<Pet_Status.CHANCE_TINY){
 						if(status.equipment_slots.get(n)!=null){
 							status.death_counter+=status.equipment_slots.get(n).buff_death;
 							status.death_counter_bound();
@@ -644,20 +644,20 @@ public class Pet{
 					}
 				}
 				if(status.buff_death>0){
-					if(RNG.random_range(0,99)<Pet_Status.CHANCE_TINY){
+					if(RNG.random_range(RNG.TICK,0,99)<Pet_Status.CHANCE_TINY){
 						status.death_counter+=Pet_Status.FOOD_BUFF_DEATH;
 						status.death_counter_bound();
 					}
 				}
 				if(status.has_perma_item("bunny")){
-					if(RNG.random_range(0,99)<Pet_Status.CHANCE_TINY){
+					if(RNG.random_range(RNG.TICK,0,99)<Pet_Status.CHANCE_TINY){
 						status.death_counter+=Pet_Status.ITEM_BUFF_BUNNY;
 						status.death_counter_bound();
 					}
 				}
 				
 				//Handle death.
-				if(status.death_counter<=0 && RNG.random_range(0,99)<5){
+				if(status.death_counter<=0 && RNG.random_range(RNG.TICK,0,99)<5){
 					die(image,view,context,records,handler);
 					
 					break;

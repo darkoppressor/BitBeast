@@ -1273,7 +1273,7 @@ public class Pet_Status{
 	}
 	
 	public static double determine_base_temp(){
-		return (double)RNG.random_range(15,25);
+		return (double)RNG.random_range(RNG.TICK,15,25);
 	}
 	
 	public void reset_poop_sprites(Image image,View view){
@@ -1592,7 +1592,7 @@ public class Pet_Status{
 				}
 				//If there is a tie.
 				else{
-					top_categories.remove(RNG.random_range(0,1));
+					top_categories.remove(RNG.random_range(RNG.TICK,0,1));
 				}
 			}
 			
@@ -1901,7 +1901,7 @@ public class Pet_Status{
 	}
 	
 	public short get_poop_rate(){
-		double number=(short)RNG.random_range(BASE_POOP_RATE_MIN,BASE_POOP_RATE_MAX);
+		double number=(short)RNG.random_range(RNG.TICK,BASE_POOP_RATE_MIN,BASE_POOP_RATE_MAX);
 		
 		for(int i=Equipment.SLOT_BEGIN;i<Equipment.SLOT_END;i++){
 			if(equipment_slots.get(i)!=null){
@@ -1923,7 +1923,7 @@ public class Pet_Status{
 	}
 	
 	public short get_dirty_rate(){
-		double number=(short)RNG.random_range(BASE_DIRTY_RATE_MIN,BASE_DIRTY_RATE_MAX);
+		double number=(short)RNG.random_range(RNG.TICK,BASE_DIRTY_RATE_MIN,BASE_DIRTY_RATE_MAX);
 		
 		for(int i=Equipment.SLOT_BEGIN;i<Equipment.SLOT_END;i++){
 			if(equipment_slots.get(i)!=null){

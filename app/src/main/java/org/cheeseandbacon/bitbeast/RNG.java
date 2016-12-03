@@ -6,8 +6,9 @@ public class RNG{
 	//The different RNGs.
 	static final int BEGIN=0;
 	static final int STANDARD=BEGIN;
-	static final int BATTLE=1;
-	static final int END=2;
+	static final int TICK=1;
+	static final int BATTLE=2;
+	static final int END=3;
 	
 	private static RNG instance;
 	private static ArrayList<MersenneTwister> rngs;

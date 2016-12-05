@@ -14,8 +14,6 @@ Sometimes transitions seem slow
 
 For the games with just info showing (gps games etc), maybe show some explanation for how they work
 
-Color picker is way too small
-
 NFC that works like Bluetooth for battles?
 Maybe this would just make connecting via Bluetooth easier
 
@@ -26,7 +24,6 @@ Can the store pages be all one activity and just scroll to the side via dragging
 After a battle, if you got an item and then sold it, it returns to the main screen, but it should return to the battle summary
 
 Brick game takes too long to complete
-
 More brick game templates?
 
 When you spend stat points, it should add the same amount to max and current
@@ -46,6 +43,25 @@ Trying to play gps games without permission gives toast about not having a gps r
 Test gps games
 
 Test Bluetooth battles with same and different versions
+
+Some indication of the pet's desired temperature
+
+Bluetooth says unable to connect every time you connect
+
+Is this my error:
+Couldn't pair with device because of an incorrect pin or passkey
+
+Battle menu should show nearby paired devices with bit beast running
+Battle requests can be sent to a bit beast regardless of whether it's on the battle screen
+When you receive a battle request, you must accept or deny it
+Add a setting to ignore battle requests
+Allow this setting to be toggled in config screen and also on battle accept screen
+Add a screen that the battle started waits on while the other person chooses whether to accept it
+When in battle screen, NFC to another device will auto pair them, regardless of whether second person is even running bit beast
+Battle screen should have explanation about NFC pairing stuff
+Help screens should explain pairing in case user needs to do it themselves, for instance if they don't have NFC
+
+Bluetooth low energy? Other types? Which should I use?
 
 ----------------------------------------------------------------
 

@@ -63,6 +63,7 @@
  - Fixed major bug with food categories
  - Fixed minor bug with food categories
  - Fixed a few instances where speech would not wake up the Bit Beast
+ - Improved color picker dialog
  - Fixed a variety of image-related bugs
  - Moved save data to internal storage
  - Made file saving atomic

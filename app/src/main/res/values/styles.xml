@@ -10,4 +10,9 @@
         <item name="android:textColorTertiaryInverse">@color/font_grayed</item>
     </style>
 
+    <style name="ColorPickerDialog" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:background">@color/status_bar_background</item>
+        <item name="android:textColorPrimary">@color/font</item>
+    </style>
+
 </resources>

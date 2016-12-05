@@ -53,7 +53,9 @@
     <string name="name_hint">Bit Beast name</string>
     <string name="name_button_exit">Exit</string>
     <string name="name_button_color">Select Color</string>
-    
+
+    <string name="name_color_picker">Select a color:</string>
+
     <string name="button_status">Status</string>
     <string name="button_store">Shop</string>
     <string name="button_clean">Clean Up</string>

@@ -57,5 +57,23 @@
 	<color name="game_bricks_8">#ed8218</color>
 	
 	<color name="config_header">#800e2e8c</color>
-	
+
+	<color name="pet_color_0">#bf1313</color>
+	<color name="pet_color_1">#f26118</color>
+	<color name="pet_color_2">#ffff4d</color>
+	<color name="pet_color_3">#b8d916</color>
+	<color name="pet_color_4">#98d916</color>
+	<color name="pet_color_5">#13bf13</color>
+	<color name="pet_color_6">#15cc8f</color>
+	<color name="pet_color_7">#15cccc</color>
+	<color name="pet_color_8">#159ecc</color>
+	<color name="pet_color_9">#0e2e8c</color>
+	<color name="pet_color_10">#620e8c</color>
+	<color name="pet_color_11">#f218f2</color>
+	<color name="pet_color_12">#73620b</color>
+	<color name="pet_color_13">#ffdf80</color>
+	<color name="pet_color_14">#e6e6e6</color>
+	<color name="pet_color_15">#8c8c8c</color>
+	<color name="pet_color_16">#260404</color>
+
 </resources>

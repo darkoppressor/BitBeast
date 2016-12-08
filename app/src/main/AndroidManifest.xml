@@ -12,7 +12,6 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <!-- <uses-permission android:name="android.permission.NFC" /> -->
 
 
     <!-- Dangerous permissions -->
@@ -30,7 +29,6 @@
     <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
     <uses-feature android:name="android.hardware.wifi.direct" android:required="false"/>
     <uses-feature android:name="android.software.app_widgets" android:required="false"/>
-    <!-- <uses-feature android:name="android.hardware.nfc" android:required="false" /> -->
 
     <supports-screens
         android:xlargeScreens="true"
@@ -53,18 +51,6 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/widget_info"/>
         </receiver>
-
-        <!--
-        <activity
-            android:name=".Activity_NFC"
-            android:label="@string/name_nfc" >
-            <intent-filter>
-                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="application/org.cheeseandbacon.bitbeast" />
-            </intent-filter>
-        </activity>
-        -->
 
         <activity
             android:name=".BitBeast"

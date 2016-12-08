@@ -37,7 +37,6 @@
     <string name="name_inventory_chest_equip">Equipping - Chest Armor</string>
     <string name="name_inventory_feet_equip">Equipping - Feet Armor</string>
     <string name="name_equip">Equipment</string>
-    <string name="name_nfc">Near-Field Communication</string>
 
     <string name="name_help_how_to_play">How to Play</string>
     <string name="name_help_pet">Bit Beast</string>
@@ -118,8 +117,6 @@
     <string name="widget_temp">"Temp: "</string>
 
     <string name="game_rps_vs">VS.</string>
-
-    <string name="button_nfc_send">Start broadcasting NFC tag</string>
 
     <!-- QQQ -->
     <string name="battle_menu_transmitting">Trading Bit Beast data...</string>

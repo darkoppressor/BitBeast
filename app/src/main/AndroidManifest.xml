@@ -1,53 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.cheeseandbacon.bitbeast"
-    android:installLocation="auto" >
+          package="org.cheeseandbacon.bitbeast"
+          android:installLocation="auto">
 
     <!-- Normal permissions -->
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <!-- <uses-permission android:name="android.permission.NFC" /> -->
+
 
     <!-- Dangerous permissions -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    
-    <uses-feature android:name="android.hardware.bluetooth" android:required="false" />
-    <uses-feature android:name="android.hardware.location" android:required="false" />
-    <uses-feature android:name="android.hardware.location.gps" android:required="false" />
-    <uses-feature android:name="android.hardware.microphone" android:required="false" />
-    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="false" />
-    <uses-feature android:name="android.hardware.screen.landscape" android:required="false" />
-    <uses-feature android:name="android.hardware.screen.portrait" android:required="false" />
-    <uses-feature android:name="android.hardware.faketouch" android:required="false" />
-    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <uses-feature android:name="android.hardware.microphone" android:required="false"/>
+    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="false"/>
+    <uses-feature android:name="android.hardware.screen.landscape" android:required="false"/>
+    <uses-feature android:name="android.hardware.screen.portrait" android:required="false"/>
+    <uses-feature android:name="android.hardware.faketouch" android:required="false"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi.direct" android:required="false"/>
+    <uses-feature android:name="android.software.app_widgets" android:required="false"/>
     <!-- <uses-feature android:name="android.hardware.nfc" android:required="false" /> -->
 
     <supports-screens
-        android:smallScreens="false"
-        android:normalScreens="true"
+        android:xlargeScreens="true"
         android:largeScreens="true"
-        android:xlargeScreens="true" />
+        android:normalScreens="true"
+        android:smallScreens="false" />
 
     <application
+        android:allowBackup="true"
+        android:description="@string/app_description"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:description="@string/app_description"
-        android:allowBackup="true"
         android:theme="@style/AppTheme">
-        
-        <receiver
-            android:name="Widget_Provider" >
+        <receiver android:name=".Widget_Provider">
             <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>
-            <meta-data android:name="android.appwidget.provider"
-                android:resource="@xml/widget_info" />
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info"/>
         </receiver>
-        
-        <!-- <activity
+
+        <!--
+        <activity
             android:name=".Activity_NFC"
             android:label="@string/name_nfc" >
             <intent-filter>
@@ -55,98 +63,88 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:mimeType="application/org.cheeseandbacon.bitbeast" />
             </intent-filter>
-        </activity> -->
-        
+        </activity>
+        -->
+
         <activity
             android:name=".BitBeast"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.NoTitleBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        
         <activity
-           	android:name=".Activity_Name"
-           	android:label="@string/name_name_entry" />
-        
+            android:name=".Activity_Name"
+            android:label="@string/name_name_entry"/>
         <activity
-           	android:name=".Activity_Status" 
-           	android:label="@string/name_status" />
-        
+            android:name=".Activity_Status"
+            android:label="@string/name_status"/>
         <activity
-           	android:name=".Activity_Store"
-           	android:label="@string/name_store_food" />
-        
+            android:name=".Activity_Store"
+            android:label="@string/name_store_food"/>
         <activity
-           	android:name=".Activity_Game_RPS"
-           	android:label="@string/name_game_rps" />
-        
+            android:name=".Activity_Game_RPS"
+            android:label="@string/name_game_rps"/>
         <activity
-           	android:name=".Activity_Game_Accel"
-           	android:label="@string/name_game_accel" />
-        
+            android:name=".Activity_Game_Accel"
+            android:label="@string/name_game_accel"/>
         <activity
-           	android:name=".Activity_Game_GPS"
-           	android:label="@string/name_game_gps" />
-        
+            android:name=".Activity_Game_GPS"
+            android:label="@string/name_game_gps"/>
         <activity
-           	android:name=".Activity_Game_Speed_GPS"
-           	android:label="@string/name_game_speed_gps" />
-        
+            android:name=".Activity_Game_Speed_GPS"
+            android:label="@string/name_game_speed_gps"/>
         <activity
-           	android:name=".Activity_Battle_Menu"
-           	android:label="@string/name_battle_menu" />
-        
+            android:name=".Activity_Battle_Menu"
+            android:label="@string/name_battle_menu"/>
         <activity
-           	android:name=".Activity_Battle"
-           	android:label="@string/name_battle" />
-        
+            android:name=".Activity_Battle_Menu_Wifi"
+            android:label="@string/name_battle_menu"/>
         <activity
-           	android:name=".Activity_Options"
-           	android:label="@string/name_options" />
-        
+            android:name=".Activity_Battle"
+            android:label="@string/name_battle"/>
         <activity
-           	android:name=".Activity_Config"
-           	android:label="@string/name_config" />
-        
+            android:name=".Activity_Options"
+            android:label="@string/name_options"/>
         <activity
-           	android:name=".Activity_Records"
-           	android:label="@string/name_records" />
-        
+            android:name=".Activity_Config"
+            android:label="@string/name_config"/>
         <activity
-           	android:name=".Activity_Help"
-           	android:label="@string/name_help" />
-        
+            android:name=".Activity_Records"
+            android:label="@string/name_records"/>
         <activity
-           	android:name=".Activity_Help_Page"
-           	android:label="@string/name_help_how_to_play" />
-        
+            android:name=".Activity_Help"
+            android:label="@string/name_help"/>
         <activity
-           	android:name=".Activity_About"
-           	android:label="@string/name_about" />
-        
+            android:name=".Activity_Help_Page"
+            android:label="@string/name_help_how_to_play"/>
         <activity
-           	android:name=".Activity_Credits"
-           	android:label="@string/name_credits" />
-        
+            android:name=".Activity_About"
+            android:label="@string/name_about"/>
         <activity
-           	android:name=".Activity_Spend_Stat_Points"
-           	android:label="@string/name_spend" />
-        
+            android:name=".Activity_Credits"
+            android:label="@string/name_credits"/>
         <activity
-           	android:name=".Activity_Rewards"
-           	android:label="@string/name_rewards" />
-        
+            android:name=".Activity_Spend_Stat_Points"
+            android:label="@string/name_spend"/>
         <activity
-           	android:name=".Activity_Inventory"
-           	android:label="@string/name_inventory_all" />
-        
+            android:name=".Activity_Rewards"
+            android:label="@string/name_rewards"/>
         <activity
-           	android:name=".Activity_Equip"
-           	android:label="@string/name_equip" />
-        
+            android:name=".Activity_Inventory"
+            android:label="@string/name_inventory_all"/>
+        <activity
+            android:name=".Activity_Equip"
+            android:label="@string/name_equip"/>
+
+        <receiver
+            android:name=".WiFiDirectReceiver"
+            android:enabled="true"
+            android:exported="true">
+        </receiver>
     </application>
 
 </manifest>

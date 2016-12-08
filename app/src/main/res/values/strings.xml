@@ -4,7 +4,7 @@
     <string name="app_name">Bit Beast</string>
     <string name="app_description">Raise your very own creature from the mysterious Bit World!</string>
     <string name="version">Version:</string>
-    
+
     <string name="name_name_entry">Bit Beast</string>
     <string name="name_status">Status</string>
     <string name="name_store_food">Shop - Food</string>
@@ -38,7 +38,7 @@
     <string name="name_inventory_feet_equip">Equipping - Feet Armor</string>
     <string name="name_equip">Equipment</string>
     <string name="name_nfc">Near-Field Communication</string>
-    
+
     <string name="name_help_how_to_play">How to Play</string>
     <string name="name_help_pet">Bit Beast</string>
     <string name="name_help_store">Shop</string>
@@ -48,7 +48,7 @@
     <string name="name_help_speech_recognition">Speech Recognition</string>
     <string name="name_help_app">Application</string>
     <string name="name_help_legal">Legal Mumbo Jumbo</string>
-    
+
     <string name="name_label">Please enter your Bit Beast\'s name:\n(1&#8211;14 characters)</string>
     <string name="name_hint">Bit Beast name</string>
     <string name="name_button_exit">Exit</string>
@@ -66,42 +66,43 @@
     <string name="button_battle">Battle</string>
     <string name="button_light">Lights</string>
     <string name="button_options">Options</string>
-    
+
     <string name="button_back">&lt;--</string>
     <string name="button_forward">--&gt;</string>
-    
+
     <string name="dialog_button_inventory_equip">Equip</string>
     <string name="dialog_button_inventory_unequip">Unequip</string>
     <string name="dialog_button_inventory_sell">Sell</string>
-    
+
     <string name="dialog_title_store">Select a section of the shop:</string>
     <string name="dialog_button_store_food">Food</string>
     <string name="dialog_button_store_drinks">Drinks</string>
     <string name="dialog_button_store_treatments">Remedies</string>
     <string name="dialog_button_store_perma">Stuff</string>
-    
+
     <string name="dialog_title_temp">Select a machine:</string>
     <string name="dialog_button_temp_ac">AC</string>
     <string name="dialog_button_temp_heater">Heater</string>
     <string name="dialog_button_temp_none">None</string>
-    
+
     <string name="dialog_title_games">Select a game to play:</string>
-    
+
     <string name="dialog_title_battle">Select a method of battle:</string>
     <string name="dialog_button_battle_shadow">Shadow Battle</string>
     <string name="dialog_button_battle_bluetooth">Bluetooth</string>
+    <string name="dialog_button_battle_wifi">Wi-Fi Direct</string>
     <string name="dialog_button_battle_cancel">Cancel</string>
-    
+
     <string name="dialog_title_reset">Are you sure you want to reset your Bit Beast?\nThis cannot be undone.</string>
-    
+
     <string name="button_text_item_get">Item acquired: </string>
     <string name="button_text_spend">Spend Stat Points</string>
-    
+
     <string name="spend_stat_points_title">Select a stat to improve:</string>
-    
+
     <string name="button_inventory_sell">Sell All Selected</string>
     <string name="checkbox_toggle_all">Toggle all:</string>
-    
+
     <string name="status_name">"Name: "</string>
     <string name="status_level">"Level: "</string>
     <string name="status_experience">"Experience: "</string>
@@ -113,29 +114,35 @@
     <string name="status_winloss">"Multiplayer battle win/loss ratio: "</string>
     <string name="status_winloss_sp">"Singleplayer battle win/loss ratio: "</string>
     <string name="status_buffs">"Consumable Buffs"</string>
-    
+
     <string name="widget_button_game">"Start"</string>
     <string name="widget_temp">"Temp: "</string>
-    
+
     <string name="game_rps_vs">VS.</string>
-    
+
     <string name="button_nfc_send">Start broadcasting NFC tag</string>
-    
+
     <string name="button_battle_menu_scan">Scan for devices</string>
     <string name="button_battle_menu_make_discoverable">Make discoverable</string>
     <string name="battle_menu_available_devices">Available devices:</string>
     <string name="battle_menu_transmitting">Trading Bit Beast data...</string>
-    
+
+    <string name="battle_menu_wifi_available_pets">Available Bit Beasts:</string>
+    <string name="battle_menu_wifi_refresh">Look for Bit Beasts</string>
+    <string name="battle_menu_wifi_p2p_unsupported">This device does not support Wi-Fi P2P</string>
+    <string name="battle_menu_wifi_p2p_busy">This device is too busy to process any Wi-Fi P2P requests</string>
+    <string name="battle_menu_wifi_p2p_error">An error occurred while processing a Wi-Fi P2P request</string>
+
     <string name="battle_button_replay">Replay</string>
-    
+
     <string name="equip_weapon">Weapon:</string>
     <string name="equip_head">Head:</string>
     <string name="equip_chest">Chest:</string>
     <string name="equip_feet">Feet:</string>
-    
+
     <string name="button_options_reset">Reset</string>
     <string name="button_options_exit">Exit</string>
-    
+
     <string name="button_help_how_to_play">How to play</string>
     <string name="button_help_pet">Bit Beast</string>
     <string name="button_help_store">Shop</string>
@@ -145,11 +152,11 @@
     <string name="button_help_speech_recognition">Speech recognition</string>
     <string name="button_help_app">Application</string>
     <string name="button_help_legal">Legal mumbo jumbo</string>
-    
+
     <string name="config_header_pet">Bit Beast Settings</string>
     <string name="config_header_android">Android Features</string>
     <string name="config_header_display">Display</string>
-    
+
     <string name="config_pause">Pause</string>
     <string name="config_keep_screen_on">Keep screen on</string>
     <string name="config_vibrate">Allow vibration</string>
@@ -160,34 +167,34 @@
     <string name="config_units">Units of measurement:</string>
     <string name="config_gps_update_time">GPS update frequency:</string>
     <string name="config_desired_sleep_time">"Bedtime: "</string>
-    
+
     <string-array name="screen_orientation">
         <!-- Disabled -->
         <!-- <item>Auto</item> -->
         <item>Landscape</item>
         <item>Portrait</item>
     </string-array>
-    
+
     <string-array name="temp_units">
         <item>Celsius</item>
         <item>Fahrenheit</item>
         <item>Kelvin</item>
     </string-array>
-    
+
     <string-array name="units">
         <item>SI</item>
         <item>US</item>
     </string-array>
-    
+
     <string-array name="gps_update_time">
         <item>Very Fast (1 second)</item>
         <item>Fast (30 seconds)</item>
         <item>Normal (60 seconds)</item>
         <item>Slow (120 seconds)</item>
     </string-array>
-    
+
     <string name="intro">Bit World is a digital realm full of digital eggs. No one knows how this world came into existence, or where the eggs come from.\n\nHowever, what we do know is that using an Android device, coupled with this software, you can acquire one of these eggs.\n\nOnce on your device, the egg will begin to mature and eventually hatch into a mysterious creature, known as a Bit Beast!\n\nRaise your Bit Beast well, pit it against other Bit Beasts in battle, and become an expert Bit Beast handler!</string>
-    
+
     <string name="help_how_to_play">Interacting with your Bit Beast is easy! For most actions, you can simply use the buttons on the top and bottom of the screen.\n\nThe Status button opens a screen that tells you all about your Bit Beast.\n\nThe Shop button is where you go to give your Bit Beast food, water, and medicine.\n\nThe Clean Up button will clean up any poop from the yard.\n\nThe Bathe button will give your Bit Beast a bath.\n\nThe Temp button allows you to control the temperature. You can turn on either the air conditioner, the heater, or leave them both off.\n\nThe Play button is where you go when you want to play a game with your Bit Beast.\n\nThe Train button allows you to train your Bit Beast, preparing him for combat with other Bit Beasts.\n\nThe Battle button allows you to pit your Bit Beast against other Bit Beasts in battle!\n\nThe Lights button toggles the lights.\n\nThe Options button opens a menu with various options and information on the game.\n\nOf particular interest, the Configuration screen, accessed from the Options menu, allows you to pause your pet and adjust his bed time.\n\nYou can also pet your Bit Beast by petting him on the touch screen.\n\nBy tapping on the touch screen when viewing the yard (the main view), you can toggle speech recognition. For a list of commands your Bit Beast understands, see the Help page on speech recognition.</string>
     <string name="help_pet">As your Bit Beast grows up, he will evolve into different forms based on what you feed him, among other things. Be careful not to feed him too much junk food, or he will become fat!\n\nYou can view all of your Bit Beast\'s stats on the Status screen. The Food, Water, and Happy bars show your Bit Beast\'s current hunger, thirst, and happiness status, respectively. Fill the bars all the way to take proper care of your Bit Beast!\n\nThe Temperature bar shows the current temperature. Bit Beasts seem happiest at exactly 20 &#176;C.\n\nYour Bit Beast\'s strength is used when battling other Bit Beasts, and he needs energy to battle and train. To permanently raise your Bit Beast\'s strength, train him.</string>
     <string name="help_store">In the Shop, you can give your Bit Beast food, drinks, remedies, and more!\n\nWater is free, but everything else costs bits. You can earn bits by playing games with your Bit Beast. See the Help page on playing for more information.\n\nGive your Bit Beast a vitamin to restore his energy, medicine if he is sick, etc.\n\nWhen your Bit Beast becomes a child, he picks a favorite food. This is represented in the Shop by a star next to the food. Feeding your Bit Beast his favorite food makes him extra happy!</string>
@@ -242,9 +249,9 @@ copy of the Program in return for a fee.\n\nThird Party Licenses\n\nMersenneTwis
  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
  POSSIBILITY OF SUCH DAMAGE.
  \n\n@version 17\n\nzxing\n\nCopyright 2009 ZXing authors\n\nhttp://www.apache.org/licenses/LICENSE-2.0</string>
-    
+
     <string name="about">What are we about? Cheese, bacon, or games? We believe that a company can be about all three. Here are some more things we believe in:\n\nWe believe in gameplay over snazzy graphics. We work to create games that will be enjoyable for years to come, not just until the next cool technology comes out. That is not to say that we dislike fancy graphics, awesome music, etc., but gameplay is our top priority.\n\nWe believe that a game doesn\'t have enough polish until you can see your reflection in it.\n\nWe believe in creating games that are fun for the whole family!</string>
 
     <string name="credits">Cheese and Bacon Games, LLC\n\nDesign\nKevin Wells\nAneissa Wells\n\nProgramming\nKevin Wells\n\nArtwork\nKevin Wells\nAneissa Wells\n\nSound\nKevin Wells\n\nStory\nKevin Wells\n\nAdditional thanks to:\n\nThe free software community\n\nSpecial thanks to:\n\nAneissa Wells\n\nAll of the awesome people who helped test the game</string>
-    
+
 </resources>

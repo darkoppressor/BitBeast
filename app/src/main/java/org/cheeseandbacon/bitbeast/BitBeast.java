@@ -142,6 +142,7 @@ public class BitBeast extends Activity{
         Font.set_typeface((TextView)dialog_battle.findViewById(R.id.dialog_title_battle));
         Font.set_typeface((Button)dialog_battle.findViewById(R.id.button_dialog_main_battle_shadow));
         Font.set_typeface((Button)dialog_battle.findViewById(R.id.button_dialog_main_battle_bluetooth));
+        Font.set_typeface((Button)dialog_battle.findViewById(R.id.button_dialog_main_battle_wifi));
         Font.set_typeface((Button)dialog_battle.findViewById(R.id.button_dialog_main_battle_cancel));
         
         Button b=null;
@@ -610,11 +611,6 @@ public class BitBeast extends Activity{
     	else{
     		ll.setBackgroundResource(android.R.color.black);
     	}
-    	
-    	///QQQ
-    	///game_view.get_pet().die(image,(View)game_view,BitBeast.this,game_view.get_records(),handler);
-    	/**game_view.get_pet().get_status().bits+=9999;
-    	game_view.get_pet().get_status().bits_bound();*/
     }
     public void button_options(View view){
     	StorageManager.save_pet_status(this,game_view.get_pet().get_status());
@@ -632,6 +628,15 @@ public class BitBeast extends Activity{
     	Intent intent=new Intent(BitBeast.this,Activity_Battle_Menu.class);
     	startActivity(intent);
     }
+
+	public void start_battle_menu_wifi(){
+		game_view.get_pet().get_status().sleeping_wake_up();
+
+		StorageManager.save_pet_status(BitBeast.this,game_view.get_pet().get_status());
+
+		Intent intent=new Intent(BitBeast.this,Activity_Battle_Menu_Wifi.class);
+		startActivity(intent);
+	}
 
 	@Override
 	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -1564,6 +1569,20 @@ public class BitBeast extends Activity{
 				if(dialog_battle.isShowing()){
 					dismissDialog(DIALOG_ID_BATTLE);
 			    }
+			}
+		});
+		((Button)dialog_battle.findViewById(R.id.button_dialog_main_battle_wifi)).setOnClickListener(new View.OnClickListener(){
+			@Override
+			public void onClick(View v){
+				if (getPackageManager().hasSystemFeature(PackageManager.FEATURE_WIFI_DIRECT)) {
+					start_battle_menu_wifi();
+				} else {
+					Toast.makeText(BitBeast.this,"Your device doesn't seem to support WiFi Direct!",Toast.LENGTH_SHORT).show();
+				}
+
+				if(dialog_battle.isShowing()){
+					dismissDialog(DIALOG_ID_BATTLE);
+				}
 			}
 		});
         ((Button)dialog_battle.findViewById(R.id.button_dialog_main_battle_cancel)).setOnClickListener(new View.OnClickListener(){

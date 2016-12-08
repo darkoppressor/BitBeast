@@ -466,6 +466,322 @@ public class Pet_Status{
 		dc_well_watered=0;
 		dc_not_sick=0;
 	}
+
+	public String getBattleData () {
+		String data="";
+
+		data+=""+type.toString()+"\n";
+
+		data+=""+age_tier.toString()+"\n";
+
+		data+=""+name+"\n";
+
+		data+=""+sick+"\n";
+
+		data+=""+weight+"\n";
+
+		data+=""+hunger+"\n";
+
+		data+=""+thirst+"\n";
+
+		data+=""+strength+"\n";
+
+		data+=""+strength_max+"\n";
+
+		data+=""+dexterity+"\n";
+
+		data+=""+dexterity_max+"\n";
+
+		data+=""+stamina+"\n";
+
+		data+=""+stamina_max+"\n";
+
+		data+=""+energy+"\n";
+
+		data+=""+color+"\n";
+
+		data+=""+battles_won+"\n";
+
+		data+=""+battles_lost+"\n";
+
+		data+=""+battles_won_sp+"\n";
+
+		data+=""+battles_lost_sp+"\n";
+
+		data+=""+level+"\n";
+
+		data+=""+buff_hunger+"\n";
+		data+=""+buff_thirst+"\n";
+		data+=""+buff_poop+"\n";
+		data+=""+buff_dirty+"\n";
+		data+=""+buff_weight+"\n";
+		data+=""+buff_sick+"\n";
+		data+=""+buff_happy+"\n";
+		data+=""+buff_energy_regen+"\n";
+		data+=""+buff_strength_regen+"\n";
+		data+=""+buff_dexterity_regen+"\n";
+		data+=""+buff_stamina_regen+"\n";
+		data+=""+buff_energy_max+"\n";
+		data+=""+buff_strength_max+"\n";
+		data+=""+buff_dexterity_max+"\n";
+		data+=""+buff_stamina_max+"\n";
+		data+=""+buff_death+"\n";
+		data+=""+buff_magic_find+"\n";
+
+		data+=""+perma_items.size()+"\n";
+		for(int i=0;i<perma_items.size();i++){
+			data+=""+perma_items.get(i).name+"\n";
+		}
+
+		for(int i=Equipment.SLOT_BEGIN;i<Equipment.SLOT_END;i++){
+			if(equipment_slots.get(i)==null){
+				data+=""+false+"\n";
+			}
+			else{
+				data+=""+true+"\n";
+
+				data+=""+equipment_slots.get(i).name+"\n";
+				data+=""+equipment_slots.get(i).full_name+"\n";
+				data+=""+equipment_slots.get(i).description+"\n";
+				data+=""+equipment_slots.get(i).level+"\n";
+				data+=""+equipment_slots.get(i).bits+"\n";
+				data+=""+equipment_slots.get(i).branch+"\n";
+				data+=""+equipment_slots.get(i).weight+"\n";
+
+				data+=""+equipment_slots.get(i).buff_hunger+"\n";
+				data+=""+equipment_slots.get(i).buff_thirst+"\n";
+				data+=""+equipment_slots.get(i).buff_poop+"\n";
+				data+=""+equipment_slots.get(i).buff_dirty+"\n";
+				data+=""+equipment_slots.get(i).buff_weight+"\n";
+				data+=""+equipment_slots.get(i).buff_sick+"\n";
+				data+=""+equipment_slots.get(i).buff_happy+"\n";
+				data+=""+equipment_slots.get(i).buff_energy_regen+"\n";
+				data+=""+equipment_slots.get(i).buff_strength_regen+"\n";
+				data+=""+equipment_slots.get(i).buff_dexterity_regen+"\n";
+				data+=""+equipment_slots.get(i).buff_stamina_regen+"\n";
+				data+=""+equipment_slots.get(i).buff_energy_max+"\n";
+				data+=""+equipment_slots.get(i).buff_strength_max+"\n";
+				data+=""+equipment_slots.get(i).buff_dexterity_max+"\n";
+				data+=""+equipment_slots.get(i).buff_stamina_max+"\n";
+				data+=""+equipment_slots.get(i).buff_death+"\n";
+				data+=""+equipment_slots.get(i).buff_magic_find+"\n";
+			}
+		}
+
+		return data;
+	}
+
+	public static Pet_Status createPetFromBattleData (ArrayList<String> data) {
+		Pet_Status pet_status = new Pet_Status();
+
+		pet_status.type=Pet_Type.valueOf(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.age_tier=Age_Tier.valueOf(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.name=data.get(0).trim();
+		data.remove(0);
+
+		pet_status.sick=Boolean.parseBoolean(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.weight=Double.parseDouble(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.hunger=Short.parseShort(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.thirst=Short.parseShort(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.strength=Short.parseShort(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.strength_max=Short.parseShort(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.dexterity=Short.parseShort(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.dexterity_max=Short.parseShort(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.stamina=Short.parseShort(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.stamina_max=Short.parseShort(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.energy=Short.parseShort(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.color=Integer.parseInt(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.battles_won=Integer.parseInt(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.battles_lost=Integer.parseInt(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.battles_won_sp=Integer.parseInt(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.battles_lost_sp=Integer.parseInt(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.level=Integer.parseInt(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.buff_hunger=Integer.parseInt(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.buff_thirst=Integer.parseInt(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.buff_poop=Integer.parseInt(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.buff_dirty=Integer.parseInt(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.buff_weight=Integer.parseInt(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.buff_sick=Integer.parseInt(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.buff_happy=Integer.parseInt(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.buff_energy_regen=Integer.parseInt(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.buff_strength_regen=Integer.parseInt(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.buff_dexterity_regen=Integer.parseInt(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.buff_stamina_regen=Integer.parseInt(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.buff_energy_max=Integer.parseInt(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.buff_strength_max=Integer.parseInt(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.buff_dexterity_max=Integer.parseInt(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.buff_stamina_max=Integer.parseInt(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.buff_death=Integer.parseInt(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.buff_magic_find=Integer.parseInt(data.get(0).trim());
+		data.remove(0);
+
+		pet_status.perma_items.clear();
+		int perma_items_size=Integer.parseInt(data.get(0).trim());
+		data.remove(0);
+
+		for(int i=0;i<perma_items_size;i++){
+			String name=data.get(0).trim();
+			data.remove(0);
+
+			pet_status.perma_items.add(new Perma_Item(null,null,name,0.0f,0.0f));
+		}
+
+		for(int i=Equipment.SLOT_BEGIN;i<Equipment.SLOT_END;i++){
+			boolean slot_filled=Boolean.parseBoolean(data.get(0).trim());
+			data.remove(0);
+
+			if(slot_filled){
+				pet_status.equipment_slots.set(i,new Equipment());
+
+				pet_status.equipment_slots.get(i).name=data.get(0).trim();
+				data.remove(0);
+
+				pet_status.equipment_slots.get(i).full_name=data.get(0).trim();
+				data.remove(0);
+
+				pet_status.equipment_slots.get(i).description=data.get(0).trim();
+				data.remove(0);
+
+				pet_status.equipment_slots.get(i).level=Integer.parseInt(data.get(0).trim());
+				data.remove(0);
+
+				pet_status.equipment_slots.get(i).bits=Integer.parseInt(data.get(0).trim());
+				data.remove(0);
+
+				pet_status.equipment_slots.get(i).branch=Short.parseShort(data.get(0).trim());
+				data.remove(0);
+
+				pet_status.equipment_slots.get(i).weight=Double.parseDouble(data.get(0).trim());
+				data.remove(0);
+
+				pet_status.equipment_slots.get(i).buff_hunger=Short.parseShort(data.get(0).trim());
+				data.remove(0);
+
+				pet_status.equipment_slots.get(i).buff_thirst=Short.parseShort(data.get(0).trim());
+				data.remove(0);
+
+				pet_status.equipment_slots.get(i).buff_poop=Short.parseShort(data.get(0).trim());
+				data.remove(0);
+
+				pet_status.equipment_slots.get(i).buff_dirty=Short.parseShort(data.get(0).trim());
+				data.remove(0);
+
+				pet_status.equipment_slots.get(i).buff_weight=Double.parseDouble(data.get(0).trim());
+				data.remove(0);
+
+				pet_status.equipment_slots.get(i).buff_sick=Integer.parseInt(data.get(0).trim());
+				data.remove(0);
+
+				pet_status.equipment_slots.get(i).buff_happy=Short.parseShort(data.get(0).trim());
+				data.remove(0);
+
+				pet_status.equipment_slots.get(i).buff_energy_regen=Float.parseFloat(data.get(0).trim());
+				data.remove(0);
+
+				pet_status.equipment_slots.get(i).buff_strength_regen=Float.parseFloat(data.get(0).trim());
+				data.remove(0);
+
+				pet_status.equipment_slots.get(i).buff_dexterity_regen=Float.parseFloat(data.get(0).trim());
+				data.remove(0);
+
+				pet_status.equipment_slots.get(i).buff_stamina_regen=Float.parseFloat(data.get(0).trim());
+				data.remove(0);
+
+				pet_status.equipment_slots.get(i).buff_energy_max=Short.parseShort(data.get(0).trim());
+				data.remove(0);
+
+				pet_status.equipment_slots.get(i).buff_strength_max=Short.parseShort(data.get(0).trim());
+				data.remove(0);
+
+				pet_status.equipment_slots.get(i).buff_dexterity_max=Short.parseShort(data.get(0).trim());
+				data.remove(0);
+
+				pet_status.equipment_slots.get(i).buff_stamina_max=Short.parseShort(data.get(0).trim());
+				data.remove(0);
+
+				pet_status.equipment_slots.get(i).buff_death=Integer.parseInt(data.get(0).trim());
+				data.remove(0);
+
+				pet_status.equipment_slots.get(i).buff_magic_find=Integer.parseInt(data.get(0).trim());
+				data.remove(0);
+			}
+			else{
+				pet_status.equipment_slots.set(i,null);
+			}
+		}
+
+		return pet_status;
+	}
 	
 	public Bundle write_bundle_battle_data(String key_prefix){
 		Bundle bundle=new Bundle();

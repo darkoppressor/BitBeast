@@ -14,9 +14,6 @@ Sometimes transitions seem slow
 
 For the games with just info showing (gps games etc), maybe show some explanation for how they work
 
-NFC that works like Bluetooth for battles?
-Maybe this would just make connecting via Bluetooth easier
-
 Add support for the Android backup/restore system
 
 Can the store pages be all one activity and just scroll to the side via dragging?
@@ -46,17 +43,20 @@ Looks like thought bubble need pics have wrong colors
 
 Wifi battle with no wifi gives an error about system being too busy
 Should say wifi is off or unavailable
+Can I prompt to enable wi fi?
+Show connection info in the activity
+I.e., show when connecting, show when transmitting battle data
 
 A bit beast should use its pet data AS SENT when battling, not load it from storage in the battle activity
 
-Test Bluetooth battles with same and different versions
+Test wi fi battles with same and different versions
+
+Remove QR code?
+
+Update readme.md
+Update permissions.txt and system requirements
 
 Some indication of the pet's desired temperature
-
-Bluetooth says unable to connect every time you connect
-
-Is this my error:
-Couldn't pair with device because of an incorrect pin or passkey
 
 Battle menu should show nearby paired devices with bit beast running
 Battle requests can be sent to a bit beast regardless of whether it's on the battle screen

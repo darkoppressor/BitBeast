@@ -26,16 +26,16 @@ public class Network_IO{
 			bluetooth_service.write(data.getBytes());
 		}
 	}
-	
+
 	public static int send_battle_data(Context context,BluetoothService bluetooth_service, Pet_Status pet_status){
 		int seed=RNG.random_range(0,Integer.MAX_VALUE);
-		
+
 		if(bluetooth_service.get_state()!=BluetoothService.STATE_CONNECTED){
 			return seed;
 		}
-		
+
 		String data="";
-		
+
 		//First, add the packet id.
 		data+=""+Packet_ID.BATTLE_DATA+"\n";
 
@@ -47,49 +47,49 @@ public class Network_IO{
 		} catch (PackageManager.NameNotFoundException e) {
 			data+=""+0+"\n";
 		}
-		
+
 		data+=""+seed+"\n";
-		
+
 		data+=""+pet_status.type.toString()+"\n";
-		
+
 		data+=""+pet_status.age_tier.toString()+"\n";
-		
+
 		data+=""+pet_status.name+"\n";
-		
+
 		data+=""+pet_status.sick+"\n";
-		
+
 		data+=""+pet_status.weight+"\n";
-		
+
 		data+=""+pet_status.hunger+"\n";
-		
+
 		data+=""+pet_status.thirst+"\n";
-		
+
 		data+=""+pet_status.strength+"\n";
-		
+
 		data+=""+pet_status.strength_max+"\n";
-		
+
 		data+=""+pet_status.dexterity+"\n";
-		
+
 		data+=""+pet_status.dexterity_max+"\n";
-		
+
 		data+=""+pet_status.stamina+"\n";
-		
+
 		data+=""+pet_status.stamina_max+"\n";
-		
+
 		data+=""+pet_status.energy+"\n";
-		
+
 		data+=""+pet_status.color+"\n";
-		
+
 		data+=""+pet_status.battles_won+"\n";
-		
+
 		data+=""+pet_status.battles_lost+"\n";
-		
+
 		data+=""+pet_status.battles_won_sp+"\n";
-		
+
 		data+=""+pet_status.battles_lost_sp+"\n";
-		
+
 		data+=""+pet_status.level+"\n";
-		
+
 		data+=""+pet_status.buff_hunger+"\n";
 		data+=""+pet_status.buff_thirst+"\n";
 		data+=""+pet_status.buff_poop+"\n";
@@ -107,19 +107,19 @@ public class Network_IO{
 		data+=""+pet_status.buff_stamina_max+"\n";
 		data+=""+pet_status.buff_death+"\n";
 		data+=""+pet_status.buff_magic_find+"\n";
-		
+
 		data+=""+pet_status.perma_items.size()+"\n";
 		for(int i=0;i<pet_status.perma_items.size();i++){
 			data+=""+pet_status.perma_items.get(i).name+"\n";
 		}
-		
+
 		for(int i=Equipment.SLOT_BEGIN;i<Equipment.SLOT_END;i++){
 			if(pet_status.equipment_slots.get(i)==null){
 				data+=""+false+"\n";
 			}
 			else{
 				data+=""+true+"\n";
-				
+
 				data+=""+pet_status.equipment_slots.get(i).name+"\n";
 				data+=""+pet_status.equipment_slots.get(i).full_name+"\n";
 				data+=""+pet_status.equipment_slots.get(i).description+"\n";
@@ -127,7 +127,7 @@ public class Network_IO{
 				data+=""+pet_status.equipment_slots.get(i).bits+"\n";
 				data+=""+pet_status.equipment_slots.get(i).branch+"\n";
 				data+=""+pet_status.equipment_slots.get(i).weight+"\n";
-				
+
 				data+=""+pet_status.equipment_slots.get(i).buff_hunger+"\n";
 				data+=""+pet_status.equipment_slots.get(i).buff_thirst+"\n";
 				data+=""+pet_status.equipment_slots.get(i).buff_poop+"\n";
@@ -147,14 +147,14 @@ public class Network_IO{
 				data+=""+pet_status.equipment_slots.get(i).buff_magic_find+"\n";
 			}
 		}
-		
+
 		//Send the end of text character.
 		data+="\u0003";
-		
+
 		if(data.length()>0){
 			bluetooth_service.write(data.getBytes());
 		}
-		
+
 		return seed;
 	}
 	

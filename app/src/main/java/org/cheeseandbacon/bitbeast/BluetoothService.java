@@ -270,7 +270,7 @@ public class BluetoothService{
 		}
 		
 		public void run(){
-			BluetoothSocket socket=null;
+			BluetoothSocket socket;
 			
 			while(state!=STATE_CONNECTED){
 				try{

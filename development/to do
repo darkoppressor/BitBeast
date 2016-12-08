@@ -42,6 +42,13 @@ Trying to play gps games without permission gives toast about not having a gps r
 
 Test gps games
 
+Looks like thought bubble need pics have wrong colors
+
+Wifi battle with no wifi gives an error about system being too busy
+Should say wifi is off or unavailable
+
+A bit beast should use its pet data AS SENT when battling, not load it from storage in the battle activity
+
 Test Bluetooth battles with same and different versions
 
 Some indication of the pet's desired temperature
@@ -60,8 +67,6 @@ Add a screen that the battle started waits on while the other person chooses whe
 When in battle screen, NFC to another device will auto pair them, regardless of whether second person is even running bit beast
 Battle screen should have explanation about NFC pairing stuff
 Help screens should explain pairing in case user needs to do it themselves, for instance if they don't have NFC
-
-Bluetooth low energy? Other types? Which should I use?
 
 ----------------------------------------------------------------
 

@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
-import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -49,7 +48,6 @@ public class BitBeast extends Activity{
 	
 	static final int REQUEST_OPTIONS=1;
 	static final int REQUEST_NAME=2;
-	static final int REQUEST_ENABLE_BLUETOOTH=3;
 	///QQQ
 	///static final int REQUEST_QR_CODE=4;
 	
@@ -378,14 +376,6 @@ public class BitBeast extends Activity{
     			return;
     		}
     		break;
-    	case REQUEST_ENABLE_BLUETOOTH:
-    		if(get_result_code==RESULT_OK){
-    			start_battle_menu();
-    		}
-    		else if(get_result_code==RESULT_CANCELED){
-    			///Toast.makeText(getApplicationContext(),"Bluetooth was not enabled. Not entering Battle mode.",Toast.LENGTH_SHORT).show();
-    		}
-    		break;
     	///QQQ
     	/**case REQUEST_QR_CODE:
     		if(get_result_code==RESULT_OK){
@@ -618,15 +608,6 @@ public class BitBeast extends Activity{
     	Intent intent=new Intent(this,Activity_Options.class);
 		intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
     	startActivityForResult(intent,REQUEST_OPTIONS);
-    }
-    
-    public void start_battle_menu(){
-    	game_view.get_pet().get_status().sleeping_wake_up();
-		
-		StorageManager.save_pet_status(BitBeast.this,game_view.get_pet().get_status());
-    	
-    	Intent intent=new Intent(BitBeast.this,Activity_Battle_Menu.class);
-    	startActivity(intent);
     }
 
 	public void start_battle_menu_wifi(){
@@ -1536,35 +1517,6 @@ public class BitBeast extends Activity{
 				
 				intent.putExtras(bundle);
 		    	startActivity(intent);
-				
-				if(dialog_battle.isShowing()){
-					dismissDialog(DIALOG_ID_BATTLE);
-			    }
-			}
-		});
-        ((Button)dialog_battle.findViewById(R.id.button_dialog_main_battle_bluetooth)).setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v){
-				BluetoothAdapter bluetooth_adapter=BluetoothAdapter.getDefaultAdapter();
-    			
-    			if(bluetooth_adapter!=null){
-    				if(!bluetooth_adapter.isEnabled()){
-    					Intent intent=new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-    			    	startActivityForResult(intent,REQUEST_ENABLE_BLUETOOTH);
-    				}
-    				else{
-    					start_battle_menu();
-    				}
-    			}
-    			else{
-    				Toast.makeText(getApplicationContext(),"Your device doesn't seem to support Bluetooth!",Toast.LENGTH_SHORT).show();
-    			}
-				
-				///QQQ
-				/**Intent intent=new Intent("com.google.zxing.client.android.SCAN");
-				intent.putExtra("SCAN_MODE","QR_CODE_MODE");
-				startActivityForResult(intent,REQUEST_QR_CODE);*/
-				///
 				
 				if(dialog_battle.isShowing()){
 					dismissDialog(DIALOG_ID_BATTLE);

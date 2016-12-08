@@ -28,16 +28,6 @@
 			android:textColor="@color/font"
 			android:background="@layout/button"
 			android:gravity="center_vertical|center_horizontal" />
-	    
-	    <Button
-	        android:id="@+id/button_dialog_main_battle_bluetooth"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:text="@string/dialog_button_battle_bluetooth"
-			android:textSize="24dp"
-			android:textColor="@color/font"
-			android:background="@layout/button"
-			android:gravity="center_vertical|center_horizontal" />
 
 		<Button
 			android:id="@+id/button_dialog_main_battle_wifi"

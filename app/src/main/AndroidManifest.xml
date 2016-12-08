@@ -98,9 +98,6 @@
             android:name=".Activity_Game_Speed_GPS"
             android:label="@string/name_game_speed_gps"/>
         <activity
-            android:name=".Activity_Battle_Menu"
-            android:label="@string/name_battle_menu"/>
-        <activity
             android:name=".Activity_Battle_Menu_Wifi"
             android:label="@string/name_battle_menu"/>
         <activity

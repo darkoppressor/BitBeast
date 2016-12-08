@@ -89,7 +89,6 @@
 
     <string name="dialog_title_battle">Select a method of battle:</string>
     <string name="dialog_button_battle_shadow">Shadow Battle</string>
-    <string name="dialog_button_battle_bluetooth">Bluetooth</string>
     <string name="dialog_button_battle_wifi">Wi-Fi Direct</string>
     <string name="dialog_button_battle_cancel">Cancel</string>
 
@@ -122,9 +121,7 @@
 
     <string name="button_nfc_send">Start broadcasting NFC tag</string>
 
-    <string name="button_battle_menu_scan">Scan for devices</string>
-    <string name="button_battle_menu_make_discoverable">Make discoverable</string>
-    <string name="battle_menu_available_devices">Available devices:</string>
+    <!-- QQQ -->
     <string name="battle_menu_transmitting">Trading Bit Beast data...</string>
 
     <string name="battle_menu_wifi_available_pets">Available Bit Beasts:</string>

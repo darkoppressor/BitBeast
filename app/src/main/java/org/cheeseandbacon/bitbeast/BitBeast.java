@@ -139,7 +139,6 @@ public class BitBeast extends Activity{
         
         Font.set_typeface((TextView)dialog_battle.findViewById(R.id.dialog_title_battle));
         Font.set_typeface((Button)dialog_battle.findViewById(R.id.button_dialog_main_battle_shadow));
-        Font.set_typeface((Button)dialog_battle.findViewById(R.id.button_dialog_main_battle_bluetooth));
         Font.set_typeface((Button)dialog_battle.findViewById(R.id.button_dialog_main_battle_wifi));
         Font.set_typeface((Button)dialog_battle.findViewById(R.id.button_dialog_main_battle_cancel));
         
@@ -802,8 +801,8 @@ public class BitBeast extends Activity{
 			Button b=(Button)findViewById(R.id.button_equipment);
 			button_equipment(b);
 		}
-		else if(speech_command==Speech.BATTLE_BLUETOOTH){
-			((Button)dialog_battle.findViewById(R.id.button_dialog_main_battle_bluetooth)).performClick();
+		else if(speech_command==Speech.BATTLE_WIFI){
+			((Button)dialog_battle.findViewById(R.id.button_dialog_main_battle_wifi)).performClick();
 		}
 		else if(speech_command==Speech.LIGHTS){
 			Button b=(Button)findViewById(R.id.button_light);

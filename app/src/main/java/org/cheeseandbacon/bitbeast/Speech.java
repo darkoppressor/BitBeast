@@ -15,7 +15,7 @@ public class Speech{
 	static final int TEMPERATURE=6;
 	static final int GAMES=7;
 	static final int EQUIPMENT=8;
-	static final int BATTLE_BLUETOOTH=9;
+	static final int BATTLE_WIFI=9;
 	static final int LIGHTS=10;
 	static final int OPTIONS=11;
 	static final int AC=12;
@@ -82,7 +82,7 @@ public class Speech{
 			commands.add("items");
 			commands.add("inventory");
 			break;
-		case BATTLE_BLUETOOTH:
+		case BATTLE_WIFI:
 			commands.add("battle");
 			commands.add("fight");
 			break;

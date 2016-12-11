@@ -2,9 +2,8 @@ package org.cheeseandbacon.bitbeast;
 
 import android.Manifest;
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.ProgressDialog;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -23,10 +22,8 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -35,16 +32,16 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BitBeast extends Activity{
+public class BitBeast extends Activity implements BitBeastDialogFragment.DialogViewCallback {
 	private static final String TAG=BitBeast.class.getName();
 	private static final int PERMISSION_REQUEST_RECORD_AUDIO = 0;
 
-	static final int DIALOG_ID_PROGRESS=0;
-	static final int DIALOG_ID_TEMP=1;
-	static final int DIALOG_ID_GAMES=2;
-	static final int DIALOG_ID_DIE=3;
-	static final int DIALOG_ID_BATTLE=4;
-	static final int DIALOG_ID_STORE=5;
+	static final String DIALOG_PROGRESS="dialogProgress";
+	static final String DIALOG_TEMP="dialogTemp";
+	static final String DIALOG_GAMES="dialogGames";
+	static final String DIALOG_DIE="dialogDie";
+	static final String DIALOG_BATTLE="dialogBattle";
+	static final String DIALOG_STORE="dialogStore";
 	
 	static final int REQUEST_OPTIONS=1;
 	static final int REQUEST_NAME=2;
@@ -54,12 +51,12 @@ public class BitBeast extends Activity{
 	private Image image;
 	GameView game_view;
 	
-	ProgressDialog dialog_progress;
-	AlertDialog dialog_store;
-	AlertDialog dialog_temp;
-	AlertDialog dialog_games;
-	AlertDialog dialog_battle;
-	AlertDialog dialog_die;
+	BitBeastDialogFragment dialog_progress;
+	BitBeastDialogFragment dialog_store;
+	BitBeastDialogFragment dialog_temp;
+	BitBeastDialogFragment dialog_games;
+	BitBeastDialogFragment dialog_battle;
+	BitBeastDialogFragment dialog_die;
 	
 	SpeechRecognizer speech;
 	
@@ -89,19 +86,6 @@ public class BitBeast extends Activity{
         game_view=(GameView)findViewById(R.id.view_game);
         game_view.bitbeast=BitBeast.this;
         
-        showDialog(DIALOG_ID_PROGRESS);
-        dismissDialog(DIALOG_ID_PROGRESS);
-        showDialog(DIALOG_ID_STORE);
-        dismissDialog(DIALOG_ID_STORE);
-        showDialog(DIALOG_ID_TEMP);
-        dismissDialog(DIALOG_ID_TEMP);
-        showDialog(DIALOG_ID_GAMES);
-        dismissDialog(DIALOG_ID_GAMES);
-        showDialog(DIALOG_ID_DIE);
-        dismissDialog(DIALOG_ID_DIE);
-        showDialog(DIALOG_ID_BATTLE);
-        dismissDialog(DIALOG_ID_BATTLE);
-        
         speech=null;
         
         Font.set_typeface((Button)findViewById(R.id.button_status));
@@ -114,33 +98,6 @@ public class BitBeast extends Activity{
         Font.set_typeface((Button)findViewById(R.id.button_battle));
         Font.set_typeface((Button)findViewById(R.id.button_light));
         Font.set_typeface((Button)findViewById(R.id.button_options));
-        
-        Font.set_typeface((TextView)dialog_store.findViewById(R.id.dialog_title_store));
-        Font.set_typeface((Button)dialog_store.findViewById(R.id.button_dialog_main_store_food));
-        Font.set_typeface((Button)dialog_store.findViewById(R.id.button_dialog_main_store_drinks));
-        Font.set_typeface((Button)dialog_store.findViewById(R.id.button_dialog_main_store_treatments));
-        Font.set_typeface((Button)dialog_store.findViewById(R.id.button_dialog_main_store_perma));
-        
-        Font.set_typeface((TextView)dialog_temp.findViewById(R.id.dialog_title_temp));
-        Font.set_typeface((Button)dialog_temp.findViewById(R.id.button_dialog_main_temp_ac));
-        Font.set_typeface((Button)dialog_temp.findViewById(R.id.button_dialog_main_temp_heater));
-        Font.set_typeface((Button)dialog_temp.findViewById(R.id.button_dialog_main_temp_none));
-        
-        Font.set_typeface((TextView)dialog_games.findViewById(R.id.dialog_title_games));
-        Font.set_typeface((Button)dialog_games.findViewById(R.id.button_dialog_main_games_training));
-        Font.set_typeface((Button)dialog_games.findViewById(R.id.button_dialog_main_games_bricks));
-        Font.set_typeface((Button)dialog_games.findViewById(R.id.button_dialog_main_games_rps));
-        Font.set_typeface((Button)dialog_games.findViewById(R.id.button_dialog_main_games_accel));
-        Font.set_typeface((Button)dialog_games.findViewById(R.id.button_dialog_main_games_gps));
-        Font.set_typeface((Button)dialog_games.findViewById(R.id.button_dialog_main_games_speed_gps));
-        
-        Font.set_typeface((TextView)dialog_die.findViewById(R.id.dialog_die_message));
-        Font.set_typeface((Button)dialog_die.findViewById(R.id.button_dialog_die_ok));
-        
-        Font.set_typeface((TextView)dialog_battle.findViewById(R.id.dialog_title_battle));
-        Font.set_typeface((Button)dialog_battle.findViewById(R.id.button_dialog_main_battle_shadow));
-        Font.set_typeface((Button)dialog_battle.findViewById(R.id.button_dialog_main_battle_wifi));
-        Font.set_typeface((Button)dialog_battle.findViewById(R.id.button_dialog_main_battle_cancel));
         
         Button b=null;
         
@@ -155,30 +112,6 @@ public class BitBeast extends Activity{
         
         b=(Button)findViewById(R.id.button_options);
         b.setNextFocusRightId(R.id.button_status);
-        
-        b=(Button)dialog_store.findViewById(R.id.button_dialog_main_store_food);
-        b.setNextFocusUpId(R.id.button_dialog_main_store_perma);
-        
-        b=(Button)dialog_store.findViewById(R.id.button_dialog_main_store_perma);
-        b.setNextFocusDownId(R.id.button_dialog_main_store_food);
-        
-        b=(Button)dialog_temp.findViewById(R.id.button_dialog_main_temp_ac);
-        b.setNextFocusUpId(R.id.button_dialog_main_temp_none);
-        
-        b=(Button)dialog_temp.findViewById(R.id.button_dialog_main_temp_none);
-        b.setNextFocusDownId(R.id.button_dialog_main_temp_ac);
-        
-        b=(Button)dialog_games.findViewById(R.id.button_dialog_main_games_training);
-        b.setNextFocusUpId(R.id.button_dialog_main_games_speed_gps);
-        
-        b=(Button)dialog_games.findViewById(R.id.button_dialog_main_games_speed_gps);
-        b.setNextFocusDownId(R.id.button_dialog_main_games_training);
-        
-        b=(Button)dialog_battle.findViewById(R.id.button_dialog_main_battle_shadow);
-        b.setNextFocusUpId(R.id.button_dialog_main_battle_cancel);
-        
-        b=(Button)dialog_battle.findViewById(R.id.button_dialog_main_battle_cancel);
-        b.setNextFocusDownId(R.id.button_dialog_main_battle_shadow);
     }
     @Override
     protected void onDestroy(){
@@ -197,8 +130,7 @@ public class BitBeast extends Activity{
     }
     @Override
     public Object onRetainNonConfigurationInstance(){
-    	final Image keep_image=image;
-    	return keep_image;
+		return image;
     }
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState){
@@ -241,71 +173,10 @@ public class BitBeast extends Activity{
     	}
     }
     @Override
-    protected Dialog onCreateDialog(int id){
-    	AlertDialog.Builder builder=null;
-    	LayoutInflater inflater=null;
-    	View layout=null;
-    	
-        switch(id){
-        case DIALOG_ID_PROGRESS:
-        	dialog_progress=new ProgressDialog(BitBeast.this);
-        	dialog_progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        	dialog_progress.setMessage("Updating pet...");
-        	dialog_progress.setCancelable(false);
-            return dialog_progress;
-        case DIALOG_ID_STORE:
-        	inflater=(LayoutInflater)getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
-        	layout=inflater.inflate(R.layout.dialog_main_store,(ViewGroup)findViewById(R.id.root_dialog_main_store));
-        	builder=new AlertDialog.Builder(this);
-        	builder.setView(layout);
-			builder.setCancelable(true);
-			dialog_store=builder.create();
-			return dialog_store;
-        case DIALOG_ID_TEMP:
-        	inflater=(LayoutInflater)getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
-        	layout=inflater.inflate(R.layout.dialog_main_temp,(ViewGroup)findViewById(R.id.root_dialog_main_temp));
-        	builder=new AlertDialog.Builder(this);
-        	builder.setView(layout);
-			builder.setCancelable(true);
-			dialog_temp=builder.create();
-			return dialog_temp;
-        case DIALOG_ID_GAMES:
-        	inflater=(LayoutInflater)getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
-        	layout=inflater.inflate(R.layout.dialog_main_games,(ViewGroup)findViewById(R.id.root_dialog_main_games));
-        	builder=new AlertDialog.Builder(this);
-        	builder.setView(layout);
-			builder.setCancelable(true);
-			dialog_games=builder.create();
-			return dialog_games;
-        case DIALOG_ID_DIE:
-        	inflater=(LayoutInflater)getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
-        	layout=inflater.inflate(R.layout.dialog_main_die,(ViewGroup)findViewById(R.id.root_dialog_main_die));
-        	builder=new AlertDialog.Builder(this);
-        	builder.setView(layout);
-			builder.setCancelable(true);
-			dialog_die=builder.create();
-			return dialog_die;
-        case DIALOG_ID_BATTLE:
-        	inflater=(LayoutInflater)getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
-        	layout=inflater.inflate(R.layout.dialog_main_battle,(ViewGroup)findViewById(R.id.root_dialog_main_battle));
-        	builder=new AlertDialog.Builder(this);
-        	builder.setView(layout);
-			builder.setCancelable(true);
-			dialog_battle=builder.create();
-			return dialog_battle;
-        default:
-            return null;
-        }
-    }
-    @Override
     protected void onResume(){
     	super.onResume();
-    	
-    	set_dialog_buttons();
 
-    	if(dialog_die.isShowing()){
-        	dismissDialog(DIALOG_ID_DIE);
-        }
+		dismissDialogFragment(dialog_die);
     	
     	overridePendingTransition(R.anim.transition_in,R.anim.transition_out);
     	
@@ -481,7 +352,7 @@ public class BitBeast extends Activity{
     }
     public void button_store(View view){
     	if(!Options.pause && game_view.get_pet().get_status().age_tier!=Age_Tier.EGG && game_view.get_pet().get_status().age_tier!=Age_Tier.DEAD){
-    		showDialog(DIALOG_ID_STORE);
+			dialog_store = showDialogFragment(DIALOG_STORE, BitBeastDialogFragment.DIALOG_TYPE_ALERT, R.layout.dialog_main_store, "");
     	}
     	else if(game_view.get_pet().get_status().age_tier==Age_Tier.EGG){
     		deny_egg();
@@ -528,7 +399,7 @@ public class BitBeast extends Activity{
     }
     public void button_temp(View view){
     	if(!Options.pause){
-    		showDialog(DIALOG_ID_TEMP);
+			dialog_temp = showDialogFragment(DIALOG_TEMP, BitBeastDialogFragment.DIALOG_TYPE_ALERT, R.layout.dialog_main_temp, "");
     	}
     	else if(Options.pause){
     		deny_paused();
@@ -536,7 +407,7 @@ public class BitBeast extends Activity{
     }
     public void button_games(View view){
     	if(!Options.pause && game_view.get_pet().get_status().age_tier!=Age_Tier.EGG && game_view.get_pet().get_status().age_tier!=Age_Tier.DEAD){
-    		showDialog(DIALOG_ID_GAMES);
+			dialog_games = showDialogFragment(DIALOG_GAMES, BitBeastDialogFragment.DIALOG_TYPE_ALERT, R.layout.dialog_main_games, "");
     	}
     	else if(game_view.get_pet().get_status().age_tier==Age_Tier.EGG){
     		deny_egg();
@@ -569,7 +440,7 @@ public class BitBeast extends Activity{
     public void button_battle(View view){
     	if(!Options.pause && game_view.get_pet().get_status().age_tier!=Age_Tier.EGG && game_view.get_pet().get_status().age_tier!=Age_Tier.DEAD){
     		if(game_view.get_pet().get_status().get_energy()>=Pet_Status.ENERGY_LOSS_BATTLE){
-    			showDialog(DIALOG_ID_BATTLE);
+				dialog_battle = showDialogFragment(DIALOG_BATTLE, BitBeastDialogFragment.DIALOG_TYPE_ALERT, R.layout.dialog_main_battle, "");
     		}
     		else{
     			Sound_Manager.play_sound(Sound.NO_STAT_POINTS);
@@ -802,7 +673,7 @@ public class BitBeast extends Activity{
 			button_equipment(b);
 		}
 		else if(speech_command==Speech.BATTLE_WIFI){
-			((Button)dialog_battle.findViewById(R.id.button_dialog_main_battle_wifi)).performClick();
+			dialogButtonBattleWifiDirect();
 		}
 		else if(speech_command==Speech.LIGHTS){
 			Button b=(Button)findViewById(R.id.button_light);
@@ -813,43 +684,43 @@ public class BitBeast extends Activity{
 			button_options(b);
 		}
 		else if(speech_command==Speech.STORE_FOOD){
-			((Button)dialog_store.findViewById(R.id.button_dialog_main_store_food)).performClick();
+			dialogButtonStoreFood();
 		}
 		else if(speech_command==Speech.STORE_DRINKS){
-			((Button)dialog_store.findViewById(R.id.button_dialog_main_store_drinks)).performClick();
+			dialogButtonStoreDrinks();
 		}
 		else if(speech_command==Speech.STORE_TREATMENTS){
-			((Button)dialog_store.findViewById(R.id.button_dialog_main_store_treatments)).performClick();
+			dialogButtonStoreTreatments();
 		}
 		else if(speech_command==Speech.STORE_PERMA){
-			((Button)dialog_store.findViewById(R.id.button_dialog_main_store_perma)).performClick();
+			dialogButtonStorePerma();
 		}
 		else if(speech_command==Speech.AC){
-			((Button)dialog_temp.findViewById(R.id.button_dialog_main_temp_ac)).performClick();
+			dialogButtonTempAc();
 		}
 		else if(speech_command==Speech.HEATER){
-			((Button)dialog_temp.findViewById(R.id.button_dialog_main_temp_heater)).performClick();
+			dialogButtonTempHeater();
 		}
 		else if(speech_command==Speech.NO_TEMP){
-			((Button)dialog_temp.findViewById(R.id.button_dialog_main_temp_none)).performClick();
+			dialogButtonTempNone();
 		}
 		else if(speech_command==Speech.BRICKS){
-			((Button)dialog_games.findViewById(R.id.button_dialog_main_games_bricks)).performClick();
+			dialogButtonGameBricks();
 		}
 		else if(speech_command==Speech.RPS){
-			((Button)dialog_games.findViewById(R.id.button_dialog_main_games_rps)).performClick();
+			dialogButtonGameRps();
 		}
 		else if(speech_command==Speech.ACCEL){
-			((Button)dialog_games.findViewById(R.id.button_dialog_main_games_accel)).performClick();
+			dialogButtonGameAccel();
 		}
 		else if(speech_command==Speech.GPS){
-			((Button)dialog_games.findViewById(R.id.button_dialog_main_games_gps)).performClick();
+			dialogButtonGameGps();
 		}
 		else if(speech_command==Speech.SPEED_GPS){
-			((Button)dialog_games.findViewById(R.id.button_dialog_main_games_speed_gps)).performClick();
+			dialogButtonGameSpeedGps();
 		}
 		else if(speech_command==Speech.TRAINING){
-			((Button)dialog_games.findViewById(R.id.button_dialog_main_games_training)).performClick();
+			dialogButtonGameTraining();
 		}
 		else if(speech_command==Speech.SAD){
 			game_view.get_pet().get_status().sleeping_wake_up();
@@ -873,7 +744,7 @@ public class BitBeast extends Activity{
     		}
 		}
 		else if(speech_command==Speech.BATTLE_SHADOW){
-			((Button)dialog_battle.findViewById(R.id.button_dialog_main_battle_shadow)).performClick();
+			dialogButtonBattleShadow();
 		}
     }
     
@@ -928,12 +799,12 @@ public class BitBeast extends Activity{
     		switch(msg.what){
     		case HANDLER_SHOW_PROGRESS:
     			if(!isFinishing()){
-    				showDialog(DIALOG_ID_PROGRESS);
+					dialog_progress = showDialogFragment(DIALOG_PROGRESS, BitBeastDialogFragment.DIALOG_TYPE_PROGRESS, 0, "Updating pet...");
 			    }
     			break;
     		case HANDLER_HIDE_PROGRESS:
-    			if(!isFinishing() && dialog_progress.isShowing()){
-    				dismissDialog(DIALOG_ID_PROGRESS);
+    			if(!isFinishing()){
+					dismissDialogFragment(dialog_progress);
 			    }
     			break;
     		case HANDLER_REWARDS:
@@ -1024,11 +895,8 @@ public class BitBeast extends Activity{
     	        	String message="";
     	        	
     	        	message+=name+" has died!";
-    	        	
-    	        	tv=(TextView)dialog_die.findViewById(R.id.dialog_die_message);
-    	        	tv.setText(message);
-    	        	
-    				showDialog(DIALOG_ID_DIE);
+
+					dialog_die = showDialogFragment(DIALOG_DIE, BitBeastDialogFragment.DIALOG_TYPE_ALERT, R.layout.dialog_main_die, message);
 			    }
     			break;
     		case HANDLER_SPEECH_RECOGNITION:
@@ -1069,480 +937,579 @@ public class BitBeast extends Activity{
     			}
     			break;
     		}
-    	}
+ 	   	}
 	};
-	
-	public void close_dialogs(){
-		if(dialog_progress.isShowing()){
-			dismissDialog(DIALOG_ID_PROGRESS);
-	    }
-		
-		if(dialog_store.isShowing()){
-			dismissDialog(DIALOG_ID_STORE);
-	    }
-		
-		if(dialog_temp.isShowing()){
-			dismissDialog(DIALOG_ID_TEMP);
-	    }
-		
-		if(dialog_games.isShowing()){
-			dismissDialog(DIALOG_ID_GAMES);
-	    }
-		
-		if(dialog_die.isShowing()){
-			dismissDialog(DIALOG_ID_DIE);
-	    }
-		
-		if(dialog_battle.isShowing()){
-			dismissDialog(DIALOG_ID_BATTLE);
-	    }
-	}
-	
-	public void set_dialog_buttons(){
-		((Button)dialog_store.findViewById(R.id.button_dialog_main_store_food)).setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v){
-				StorageManager.save_pet_status(BitBeast.this,game_view.get_pet().get_status());
-		    	
-		    	Intent intent=new Intent(BitBeast.this,Activity_Store.class);
-		    	
-		    	Bundle bundle=new Bundle();
-		    	bundle.putInt(getPackageName()+"section",Store_Section.FOOD);
-		    	bundle.putInt(getPackageName()+"move_direction",Direction.NONE);
-		    	
-		    	intent.putExtras(bundle);
-		    	startActivity(intent);
-				
-				if(dialog_store.isShowing()){
-					dismissDialog(DIALOG_ID_STORE);
-			    }
-			}
-		});
-		((Button)dialog_store.findViewById(R.id.button_dialog_main_store_drinks)).setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v){
-				StorageManager.save_pet_status(BitBeast.this,game_view.get_pet().get_status());
-		    	
-		    	Intent intent=new Intent(BitBeast.this,Activity_Store.class);
-		    	
-		    	Bundle bundle=new Bundle();
-		    	bundle.putInt(getPackageName()+"section",Store_Section.DRINKS);
-		    	bundle.putInt(getPackageName()+"move_direction",Direction.NONE);
-		    	
-		    	intent.putExtras(bundle);
-		    	startActivity(intent);
-				
-				if(dialog_store.isShowing()){
-					dismissDialog(DIALOG_ID_STORE);
-			    }
-			}
-		});
-		((Button)dialog_store.findViewById(R.id.button_dialog_main_store_treatments)).setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v){
-				StorageManager.save_pet_status(BitBeast.this,game_view.get_pet().get_status());
-		    	
-		    	Intent intent=new Intent(BitBeast.this,Activity_Store.class);
-		    	
-		    	Bundle bundle=new Bundle();
-		    	bundle.putInt(getPackageName()+"section",Store_Section.TREATMENTS);
-		    	bundle.putInt(getPackageName()+"move_direction",Direction.NONE);
-		    	
-		    	intent.putExtras(bundle);
-		    	startActivity(intent);
-				
-				if(dialog_store.isShowing()){
-					dismissDialog(DIALOG_ID_STORE);
-			    }
-			}
-		});
-		((Button)dialog_store.findViewById(R.id.button_dialog_main_store_perma)).setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v){
-				StorageManager.save_pet_status(BitBeast.this,game_view.get_pet().get_status());
-		    	
-		    	Intent intent=new Intent(BitBeast.this,Activity_Store.class);
-		    	
-		    	Bundle bundle=new Bundle();
-		    	bundle.putInt(getPackageName()+"section",Store_Section.PERMA);
-		    	bundle.putInt(getPackageName()+"move_direction",Direction.NONE);
-		    	
-		    	intent.putExtras(bundle);
-		    	startActivity(intent);
-				
-				if(dialog_store.isShowing()){
-					dismissDialog(DIALOG_ID_STORE);
-			    }
-			}
-		});
-		
-		((Button)dialog_temp.findViewById(R.id.button_dialog_main_temp_ac)).setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v){
-				Sound_Manager.play_sound(Sound.AC);
-				
-				game_view.get_pet().get_status().ac=true;
-				game_view.get_pet().get_status().heater=false;
-				
-				if(dialog_temp.isShowing()){
-					dismissDialog(DIALOG_ID_TEMP);
-			    }
-			}
-		});
-        ((Button)dialog_temp.findViewById(R.id.button_dialog_main_temp_heater)).setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v){
-				Sound_Manager.play_sound(Sound.HEATER);
-				
-				game_view.get_pet().get_status().ac=false;
-				game_view.get_pet().get_status().heater=true;
-				
-				if(dialog_temp.isShowing()){
-					dismissDialog(DIALOG_ID_TEMP);
-			    }
-			}
-		});
-        ((Button)dialog_temp.findViewById(R.id.button_dialog_main_temp_none)).setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v){
-				game_view.get_pet().get_status().ac=false;
-				game_view.get_pet().get_status().heater=false;
-				
-				if(dialog_temp.isShowing()){
-					dismissDialog(DIALOG_ID_TEMP);
-			    }
-			}
-		});
-        
-        ((Button)dialog_games.findViewById(R.id.button_dialog_main_games_training)).setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v){
-	    		if(game_view.get_pet().get_status().get_energy()>=Pet_Status.ENERGY_LOSS_WORKOUT){
-		    		game_view.get_pet().get_status().sleeping_wake_up();
-		    		
-		    		set_game_mode(Game_Mode.WORKOUT,null);
-		    		
-		    		if(dialog_games.isShowing()){
-						dismissDialog(DIALOG_ID_GAMES);
-				    }
-	    		}
-	    		else{
-	    			Sound_Manager.play_sound(Sound.NO_STAT_POINTS);
-	    			int energy_short=Pet_Status.ENERGY_LOSS_WORKOUT-game_view.get_pet().get_status().get_energy();
-	    			Toast.makeText(getApplicationContext(),game_view.get_pet().get_status().name+" needs "+energy_short+" more energy to train!",Toast.LENGTH_SHORT).show();
-	    		}
-			}
-		});
-        ((Button)dialog_games.findViewById(R.id.button_dialog_main_games_bricks)).setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v){
-				game_view.get_pet().get_status().sleeping_wake_up();
-	    		
-	    		set_game_mode(Game_Mode.BRICKS,null);
-				
-				if(dialog_games.isShowing()){
-					dismissDialog(DIALOG_ID_GAMES);
-			    }
-			}
-		});
-        ((Button)dialog_games.findViewById(R.id.button_dialog_main_games_rps)).setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v){
-				game_view.get_pet().get_status().sleeping_wake_up();
-	    		
-				StorageManager.save_pet_status(BitBeast.this,game_view.get_pet().get_status());
-		    	
-		    	Intent intent=new Intent(BitBeast.this,Activity_Game_RPS.class);
-		    	startActivity(intent);
-				
-				if(dialog_games.isShowing()){
-					dismissDialog(DIALOG_ID_GAMES);
-			    }
-			}
-		});
-        ((Button)dialog_games.findViewById(R.id.button_dialog_main_games_accel)).setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v){
-				SensorManager sensors=(SensorManager)getSystemService(SENSOR_SERVICE);
-				List<Sensor> sensor_list=sensors.getSensorList(Sensor.TYPE_ACCELEROMETER);
-				
-				if(!sensor_list.isEmpty()){
-					game_view.get_pet().get_status().sleeping_wake_up();
-		    		
-					StorageManager.save_pet_status(BitBeast.this,game_view.get_pet().get_status());
-			    	
-			    	Intent intent=new Intent(BitBeast.this,Activity_Game_Accel.class);
-			    	startActivity(intent);
-					
-					if(dialog_games.isShowing()){
-						dismissDialog(DIALOG_ID_GAMES);
-				    }
-				}
-				else{
-					Toast.makeText(getApplicationContext(),"Your device doesn't seem to have an accelerometer!",Toast.LENGTH_SHORT).show();
-				}
-			}
-		});
-        ((Button)dialog_games.findViewById(R.id.button_dialog_main_games_gps)).setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v){
-				LocationManager locations=(LocationManager)getSystemService(LOCATION_SERVICE);
-				List<String> provider_list=locations.getProviders(false);
-				
-				if(provider_list.contains(LocationManager.GPS_PROVIDER)){
-					game_view.get_pet().get_status().sleeping_wake_up();
-		    		
-					StorageManager.save_pet_status(BitBeast.this,game_view.get_pet().get_status());
-			    	
-			    	Intent intent=new Intent(BitBeast.this,Activity_Game_GPS.class);
-			    	startActivity(intent);
-					
-					if(dialog_games.isShowing()){
-						dismissDialog(DIALOG_ID_GAMES);
-				    }
-				}
-				else{
-					Toast.makeText(getApplicationContext(),"Your device doesn't seem to have a GPS receiver!",Toast.LENGTH_SHORT).show();
-				}
-			}
-		});
-        ((Button)dialog_games.findViewById(R.id.button_dialog_main_games_speed_gps)).setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v){
-				LocationManager locations=(LocationManager)getSystemService(LOCATION_SERVICE);
-				List<String> provider_list=locations.getProviders(false);
-				
-				if(provider_list.contains(LocationManager.GPS_PROVIDER)){
-					game_view.get_pet().get_status().sleeping_wake_up();
-		    		
-					StorageManager.save_pet_status(BitBeast.this,game_view.get_pet().get_status());
-			    	
-			    	Intent intent=new Intent(BitBeast.this,Activity_Game_Speed_GPS.class);
-			    	startActivity(intent);
-					
-					if(dialog_games.isShowing()){
-						dismissDialog(DIALOG_ID_GAMES);
-				    }
-				}
-				else{
-					Toast.makeText(getApplicationContext(),"Your device doesn't seem to have a GPS receiver!",Toast.LENGTH_SHORT).show();
-				}
-			}
-		});
-        
-        ((Button)dialog_die.findViewById(R.id.button_dialog_die_ok)).setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v){
-				if(dialog_die.isShowing()){
-					dismissDialog(DIALOG_ID_DIE);
-			    }
-			}
-		});
-        
-        ((Button)dialog_battle.findViewById(R.id.button_dialog_main_battle_shadow)).setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v){
-				game_view.get_pet().get_status().sleeping_wake_up();
-	    		
-				StorageManager.save_pet_status(BitBeast.this,game_view.get_pet().get_status());
-				
-				Pet_Status them=new Pet_Status();
-				
-				//Randomly determine which perma items the shadow has.
-				for(int i=0;i<game_view.get_pet().get_status().perma_items.size();i++){
-					if(RNG.random_range(0,99)<65){
-						them.perma_items.add(new Perma_Item(null,null,game_view.get_pet().get_status().perma_items.get(i).name,0.0f,0.0f));
-					}
-				}
-				
-				//Randomly determine which food buffs the shadow has.
-				if(game_view.get_pet().get_status().buff_energy_max>0 && RNG.random_range(0,99)<65){
-					them.buff_energy_max=1;
-				}
-				if(game_view.get_pet().get_status().buff_strength_max>0 && RNG.random_range(0,99)<65){
-					them.buff_strength_max=1;
-				}
-				if(game_view.get_pet().get_status().buff_dexterity_max>0 && RNG.random_range(0,99)<65){
-					them.buff_dexterity_max=1;
-				}
-				if(game_view.get_pet().get_status().buff_stamina_max>0 && RNG.random_range(0,99)<65){
-					them.buff_stamina_max=1;
-				}
-				if(game_view.get_pet().get_status().buff_magic_find>0 && RNG.random_range(0,99)<65){
-					them.buff_magic_find=1;
-				}
-				
-				//Set the shadow's age tier to +/- 1 from the pet's age tier.
-				int age_change=RNG.random_range(0,99);
-				them.age_tier=game_view.get_pet().get_status().age_tier;
-				if(age_change>=0 && age_change<85){
-					//Age tier stays the same.
-				}
-				else if(age_change>=85 && age_change<95 && them.age_tier.get_previous()!=Age_Tier.EGG){
-					them.age_tier=them.age_tier.get_previous();
-				}
-				else if(age_change>=95 && age_change<100 && them.age_tier.get_next()!=Age_Tier.DEAD){
-					them.age_tier=them.age_tier.get_next();
-				}
-				
-				//Randomly determine a pet type within the shadow's age tier.
-		    	them.type=Age_Tier.get_random_pet_type(them.age_tier);
-		    	
-		    	//Set the shadow's name and color.
-		    	them.name=game_view.get_pet().get_status().name+"'s shadow";
-		    	them.color=Color.rgb(0,0,0);
-		    	
-		    	//Randomly determine the shadow's hunger and thirst levels.
-		    	them.hunger=(short)RNG.random_range((int)Age_Tier.get_hunger_max(them.age_tier)/4,(int)Age_Tier.get_hunger_max(them.age_tier));
-		    	them.thirst=(short)RNG.random_range((int)Pet_Status.THIRST_MAX/4,(int)Pet_Status.THIRST_MAX);
-		    	
-		    	//Randomly determine if the shadow is sick.
-		    	if(RNG.random_range(0,99)<them.get_sick_chance()){
-		    		them.sick=true;
-		    	}
-		    	
-		    	//Randomly determine the shadow's weight.
-		    	them.weight=0.01*(double)RNG.random_range((int)(Pet_Status.WEIGHT_MIN*100.0),(int)((Pet_Status.OBESITY/2.0)*1.25*100.0));
-		    	
-		    	//Determine shadow's energy.
-		    	them.energy=(short)RNG.random_range(Age_Tier.get_energy_max(them.age_tier)/2,Age_Tier.get_energy_max(them.age_tier));
-		    	
-		    	//Determine shadow's level.
-		    	int level_min=-3;
-		    	int level_max=1;
-		    	if(them.age_tier.ordinal()<game_view.get_pet().get_status().age_tier.ordinal()){
-		    		level_max=-1;
-		    	}
-		    	else if(them.age_tier.ordinal()>game_view.get_pet().get_status().age_tier.ordinal()){
-		    		level_min=0;
-		    	}
-		    	int random_level=RNG.random_range(game_view.get_pet().get_status().level+level_min,game_view.get_pet().get_status().level+level_max);
-		    	if(random_level<1){
-		    		random_level=1;
-		    	}
-		    	else if(random_level>Pet_Status.MAX_LEVEL){
-		    		random_level=Pet_Status.MAX_LEVEL;
-		    	}
-		    	for(int i=1;i<random_level;i++){
-		    		them.gain_experience(them.experience_max-them.experience,true);
-		    	}
-		    	
-		    	//Spend shadow's stat points.
-		    	while(them.stat_points>0){
-		    		short branch=Pet_Type.get_pet_branch(them.type);
-		    		
-		    		int random=RNG.random_range(0,99);
-		    		
-		    		//Spend stat point on primary stat.
-		    		if(random>=0 && random<80){
-		    			if(branch==Pet_Type.BRANCH_NONE || branch==Pet_Type.BRANCH_TYRANNO || branch==Pet_Type.BRANCH_APATO){
-		    				them.strength_max+=Pet_Status.STAT_GAIN_SELECTION;
-		    				them.strength_max_bound();
-		    				them.stat_points--;
-		    			}
-		    			else if(branch==Pet_Type.BRANCH_PTERO){
-		    				them.dexterity_max+=Pet_Status.STAT_GAIN_SELECTION;
-		    				them.dexterity_max_bound();
-		    				them.stat_points--;
-		    			}
-		    			else if(branch==Pet_Type.BRANCH_STEGO || branch==Pet_Type.BRANCH_TRICERA){
-		    				them.stamina_max+=Pet_Status.STAT_GAIN_SELECTION;
-		    				them.stamina_max_bound();
-		    				them.stat_points--;
-		    			}
-		    		}
-		    		//Spend stat point on secondary stat.
-		    		else if(random>=80 && random<95){
-		    			if(branch==Pet_Type.BRANCH_NONE || branch==Pet_Type.BRANCH_STEGO || branch==Pet_Type.BRANCH_PTERO){
-		    				them.strength_max+=Pet_Status.STAT_GAIN_SELECTION;
-		    				them.strength_max_bound();
-		    				them.stat_points--;
-		    			}
-		    			else if(branch==Pet_Type.BRANCH_TYRANNO || branch==Pet_Type.BRANCH_TRICERA){
-		    				them.dexterity_max+=Pet_Status.STAT_GAIN_SELECTION;
-		    				them.dexterity_max_bound();
-		    				them.stat_points--;
-		    			}
-		    			else if(branch==Pet_Type.BRANCH_APATO){
-		    				them.stamina_max+=Pet_Status.STAT_GAIN_SELECTION;
-		    				them.stamina_max_bound();
-		    				them.stat_points--;
-		    			}
-		    		}
-		    		//Spend stat point on tertiary stat.
-		    		else{
-		    			if(branch==Pet_Type.BRANCH_NONE || branch==Pet_Type.BRANCH_TRICERA){
-		    				them.strength_max+=Pet_Status.STAT_GAIN_SELECTION;
-		    				them.strength_max_bound();
-		    				them.stat_points--;
-		    			}
-		    			else if(branch==Pet_Type.BRANCH_APATO || branch==Pet_Type.BRANCH_STEGO){
-		    				them.dexterity_max+=Pet_Status.STAT_GAIN_SELECTION;
-		    				them.dexterity_max_bound();
-		    				them.stat_points--;
-		    			}
-		    			else if(branch==Pet_Type.BRANCH_PTERO || branch==Pet_Type.BRANCH_TYRANNO){
-		    				them.stamina_max+=Pet_Status.STAT_GAIN_SELECTION;
-		    				them.stamina_max_bound();
-		    				them.stat_points--;
-		    			}
-		    		}
-		    	}
-		    	
-		    	them.strength=them.strength_max;
-		    	them.dexterity=them.dexterity_max;
-		    	them.stamina=them.stamina_max;
-		    	
-		    	///Once equipment has been added, randomly add equipment here, scaled near the player, and using the shadow's magic find.
-		    	for(int i=Equipment.SLOT_BEGIN;i<Equipment.SLOT_END;i++){
-		    		String equipment_gained=them.new_equipment(65,them.level,Equipment.slot_to_string((short)i));
-		    		
-		    		if(equipment_gained.length()>0){
-		    			them.equipment_slots.set(i,them.equipment.get(0));
-		    			
-		    			them.equipment.remove(0);
-		    		}
-		    	}
-		    	
-		    	//Start the actual battle activity, passing it the two pets' data.
-				Intent intent=new Intent(BitBeast.this,Activity_Battle.class);
-				
-				Bundle bundle=new Bundle();
-				bundle.putBoolean(getPackageName()+".server",false);
-				bundle.putBoolean(getPackageName()+".shadow",true);
-				bundle.putInt(getPackageName()+".our_seed",RNG.random_range(0,Integer.MAX_VALUE));
-				bundle.putInt(getPackageName()+".their_seed",RNG.random_range(0,Integer.MAX_VALUE));
-				bundle.putAll(them.write_bundle_battle_data(getPackageName()));
-				
-				intent.putExtras(bundle);
-		    	startActivity(intent);
-				
-				if(dialog_battle.isShowing()){
-					dismissDialog(DIALOG_ID_BATTLE);
-			    }
-			}
-		});
-		((Button)dialog_battle.findViewById(R.id.button_dialog_main_battle_wifi)).setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v){
-				if (getPackageManager().hasSystemFeature(PackageManager.FEATURE_WIFI_DIRECT)) {
-					start_battle_menu_wifi();
-				} else {
-					Toast.makeText(BitBeast.this,"Your device doesn't seem to support WiFi Direct!",Toast.LENGTH_SHORT).show();
-				}
 
-				if(dialog_battle.isShowing()){
-					dismissDialog(DIALOG_ID_BATTLE);
+	public void dialogButtonStoreFood () {
+		StorageManager.save_pet_status(BitBeast.this,game_view.get_pet().get_status());
+
+		Intent intent=new Intent(BitBeast.this,Activity_Store.class);
+
+		Bundle bundle=new Bundle();
+		bundle.putInt(getPackageName()+"section",Store_Section.FOOD);
+		bundle.putInt(getPackageName()+"move_direction",Direction.NONE);
+
+		intent.putExtras(bundle);
+		startActivity(intent);
+
+		dismissDialogFragment(dialog_store);
+	}
+
+	public void dialogButtonStoreDrinks () {
+		StorageManager.save_pet_status(BitBeast.this,game_view.get_pet().get_status());
+
+		Intent intent=new Intent(BitBeast.this,Activity_Store.class);
+
+		Bundle bundle=new Bundle();
+		bundle.putInt(getPackageName()+"section",Store_Section.DRINKS);
+		bundle.putInt(getPackageName()+"move_direction",Direction.NONE);
+
+		intent.putExtras(bundle);
+		startActivity(intent);
+
+		dismissDialogFragment(dialog_store);
+	}
+
+	public void dialogButtonStoreTreatments () {
+		StorageManager.save_pet_status(BitBeast.this,game_view.get_pet().get_status());
+
+		Intent intent=new Intent(BitBeast.this,Activity_Store.class);
+
+		Bundle bundle=new Bundle();
+		bundle.putInt(getPackageName()+"section",Store_Section.TREATMENTS);
+		bundle.putInt(getPackageName()+"move_direction",Direction.NONE);
+
+		intent.putExtras(bundle);
+		startActivity(intent);
+
+		dismissDialogFragment(dialog_store);
+	}
+
+	public void dialogButtonStorePerma () {
+		StorageManager.save_pet_status(BitBeast.this,game_view.get_pet().get_status());
+
+		Intent intent=new Intent(BitBeast.this,Activity_Store.class);
+
+		Bundle bundle=new Bundle();
+		bundle.putInt(getPackageName()+"section",Store_Section.PERMA);
+		bundle.putInt(getPackageName()+"move_direction",Direction.NONE);
+
+		intent.putExtras(bundle);
+		startActivity(intent);
+
+		dismissDialogFragment(dialog_store);
+	}
+
+	public void dialogButtonTempAc () {
+		Sound_Manager.play_sound(Sound.AC);
+
+		game_view.get_pet().get_status().ac=true;
+		game_view.get_pet().get_status().heater=false;
+
+		dismissDialogFragment(dialog_temp);
+	}
+
+	public void dialogButtonTempHeater () {
+		Sound_Manager.play_sound(Sound.HEATER);
+
+		game_view.get_pet().get_status().ac=false;
+		game_view.get_pet().get_status().heater=true;
+
+		dismissDialogFragment(dialog_temp);
+	}
+
+	public void dialogButtonTempNone () {
+		game_view.get_pet().get_status().ac=false;
+		game_view.get_pet().get_status().heater=false;
+
+		dismissDialogFragment(dialog_temp);
+	}
+
+	public void dialogButtonGameTraining () {
+		if(game_view.get_pet().get_status().get_energy()>=Pet_Status.ENERGY_LOSS_WORKOUT){
+			game_view.get_pet().get_status().sleeping_wake_up();
+
+			set_game_mode(Game_Mode.WORKOUT,null);
+
+			dismissDialogFragment(dialog_games);
+		}
+		else{
+			Sound_Manager.play_sound(Sound.NO_STAT_POINTS);
+			int energy_short=Pet_Status.ENERGY_LOSS_WORKOUT-game_view.get_pet().get_status().get_energy();
+			Toast.makeText(getApplicationContext(),game_view.get_pet().get_status().name+" needs "+energy_short+" more energy to train!",Toast.LENGTH_SHORT).show();
+		}
+	}
+
+	public void dialogButtonGameBricks () {
+		game_view.get_pet().get_status().sleeping_wake_up();
+
+		set_game_mode(Game_Mode.BRICKS,null);
+
+		dismissDialogFragment(dialog_games);
+	}
+
+	public void dialogButtonGameRps () {
+		game_view.get_pet().get_status().sleeping_wake_up();
+
+		StorageManager.save_pet_status(BitBeast.this,game_view.get_pet().get_status());
+
+		Intent intent=new Intent(BitBeast.this,Activity_Game_RPS.class);
+		startActivity(intent);
+
+		dismissDialogFragment(dialog_games);
+	}
+
+	public void dialogButtonGameAccel () {
+		SensorManager sensors=(SensorManager)getSystemService(SENSOR_SERVICE);
+		List<Sensor> sensor_list=sensors.getSensorList(Sensor.TYPE_ACCELEROMETER);
+
+		if(!sensor_list.isEmpty()){
+			game_view.get_pet().get_status().sleeping_wake_up();
+
+			StorageManager.save_pet_status(BitBeast.this,game_view.get_pet().get_status());
+
+			Intent intent=new Intent(BitBeast.this,Activity_Game_Accel.class);
+			startActivity(intent);
+
+			dismissDialogFragment(dialog_games);
+		}
+		else{
+			Toast.makeText(getApplicationContext(),"Your device doesn't seem to have an accelerometer!",Toast.LENGTH_SHORT).show();
+		}
+	}
+
+	public void dialogButtonGameGps () {
+		LocationManager locations=(LocationManager)getSystemService(LOCATION_SERVICE);
+		List<String> provider_list=locations.getProviders(false);
+
+		if(provider_list.contains(LocationManager.GPS_PROVIDER)){
+			game_view.get_pet().get_status().sleeping_wake_up();
+
+			StorageManager.save_pet_status(BitBeast.this,game_view.get_pet().get_status());
+
+			Intent intent=new Intent(BitBeast.this,Activity_Game_GPS.class);
+			startActivity(intent);
+
+			dismissDialogFragment(dialog_games);
+		}
+		else{
+			Toast.makeText(getApplicationContext(),"Your device doesn't seem to have a GPS receiver!",Toast.LENGTH_SHORT).show();
+		}
+	}
+
+	public void dialogButtonGameSpeedGps () {
+		LocationManager locations=(LocationManager)getSystemService(LOCATION_SERVICE);
+		List<String> provider_list=locations.getProviders(false);
+
+		if(provider_list.contains(LocationManager.GPS_PROVIDER)){
+			game_view.get_pet().get_status().sleeping_wake_up();
+
+			StorageManager.save_pet_status(BitBeast.this,game_view.get_pet().get_status());
+
+			Intent intent=new Intent(BitBeast.this,Activity_Game_Speed_GPS.class);
+			startActivity(intent);
+
+			dismissDialogFragment(dialog_games);
+		}
+		else{
+			Toast.makeText(getApplicationContext(),"Your device doesn't seem to have a GPS receiver!",Toast.LENGTH_SHORT).show();
+		}
+	}
+
+	public void dialogButtonDie () {
+		dismissDialogFragment(dialog_die);
+	}
+
+	public void dialogButtonBattleShadow () {
+		game_view.get_pet().get_status().sleeping_wake_up();
+
+		StorageManager.save_pet_status(BitBeast.this,game_view.get_pet().get_status());
+
+		Pet_Status them=new Pet_Status();
+
+		//Randomly determine which perma items the shadow has.
+		for(int i=0;i<game_view.get_pet().get_status().perma_items.size();i++){
+			if(RNG.random_range(0,99)<65){
+				them.perma_items.add(new Perma_Item(null,null,game_view.get_pet().get_status().perma_items.get(i).name,0.0f,0.0f));
+			}
+		}
+
+		//Randomly determine which food buffs the shadow has.
+		if(game_view.get_pet().get_status().buff_energy_max>0 && RNG.random_range(0,99)<65){
+			them.buff_energy_max=1;
+		}
+		if(game_view.get_pet().get_status().buff_strength_max>0 && RNG.random_range(0,99)<65){
+			them.buff_strength_max=1;
+		}
+		if(game_view.get_pet().get_status().buff_dexterity_max>0 && RNG.random_range(0,99)<65){
+			them.buff_dexterity_max=1;
+		}
+		if(game_view.get_pet().get_status().buff_stamina_max>0 && RNG.random_range(0,99)<65){
+			them.buff_stamina_max=1;
+		}
+		if(game_view.get_pet().get_status().buff_magic_find>0 && RNG.random_range(0,99)<65){
+			them.buff_magic_find=1;
+		}
+
+		//Set the shadow's age tier to +/- 1 from the pet's age tier.
+		int age_change=RNG.random_range(0,99);
+		them.age_tier=game_view.get_pet().get_status().age_tier;
+		if(age_change>=0 && age_change<85){
+			//Age tier stays the same.
+		}
+		else if(age_change>=85 && age_change<95 && them.age_tier.get_previous()!=Age_Tier.EGG){
+			them.age_tier=them.age_tier.get_previous();
+		}
+		else if(age_change>=95 && age_change<100 && them.age_tier.get_next()!=Age_Tier.DEAD){
+			them.age_tier=them.age_tier.get_next();
+		}
+
+		//Randomly determine a pet type within the shadow's age tier.
+		them.type=Age_Tier.get_random_pet_type(them.age_tier);
+
+		//Set the shadow's name and color.
+		them.name=game_view.get_pet().get_status().name+"'s shadow";
+		them.color=Color.rgb(0,0,0);
+
+		//Randomly determine the shadow's hunger and thirst levels.
+		them.hunger=(short)RNG.random_range((int)Age_Tier.get_hunger_max(them.age_tier)/4,(int)Age_Tier.get_hunger_max(them.age_tier));
+		them.thirst=(short)RNG.random_range((int)Pet_Status.THIRST_MAX/4,(int)Pet_Status.THIRST_MAX);
+
+		//Randomly determine if the shadow is sick.
+		if(RNG.random_range(0,99)<them.get_sick_chance()){
+			them.sick=true;
+		}
+
+		//Randomly determine the shadow's weight.
+		them.weight=0.01*(double)RNG.random_range((int)(Pet_Status.WEIGHT_MIN*100.0),(int)((Pet_Status.OBESITY/2.0)*1.25*100.0));
+
+		//Determine shadow's energy.
+		them.energy=(short)RNG.random_range(Age_Tier.get_energy_max(them.age_tier)/2,Age_Tier.get_energy_max(them.age_tier));
+
+		//Determine shadow's level.
+		int level_min=-3;
+		int level_max=1;
+		if(them.age_tier.ordinal()<game_view.get_pet().get_status().age_tier.ordinal()){
+			level_max=-1;
+		}
+		else if(them.age_tier.ordinal()>game_view.get_pet().get_status().age_tier.ordinal()){
+			level_min=0;
+		}
+		int random_level=RNG.random_range(game_view.get_pet().get_status().level+level_min,game_view.get_pet().get_status().level+level_max);
+		if(random_level<1){
+			random_level=1;
+		}
+		else if(random_level>Pet_Status.MAX_LEVEL){
+			random_level=Pet_Status.MAX_LEVEL;
+		}
+		for(int i=1;i<random_level;i++){
+			them.gain_experience(them.experience_max-them.experience,true);
+		}
+
+		//Spend shadow's stat points.
+		while(them.stat_points>0){
+			short branch=Pet_Type.get_pet_branch(them.type);
+
+			int random=RNG.random_range(0,99);
+
+			//Spend stat point on primary stat.
+			if(random>=0 && random<80){
+				if(branch==Pet_Type.BRANCH_NONE || branch==Pet_Type.BRANCH_TYRANNO || branch==Pet_Type.BRANCH_APATO){
+					them.strength_max+=Pet_Status.STAT_GAIN_SELECTION;
+					them.strength_max_bound();
+					them.stat_points--;
+				}
+				else if(branch==Pet_Type.BRANCH_PTERO){
+					them.dexterity_max+=Pet_Status.STAT_GAIN_SELECTION;
+					them.dexterity_max_bound();
+					them.stat_points--;
+				}
+				else if(branch==Pet_Type.BRANCH_STEGO || branch==Pet_Type.BRANCH_TRICERA){
+					them.stamina_max+=Pet_Status.STAT_GAIN_SELECTION;
+					them.stamina_max_bound();
+					them.stat_points--;
 				}
 			}
-		});
-        ((Button)dialog_battle.findViewById(R.id.button_dialog_main_battle_cancel)).setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v){
-				if(dialog_battle.isShowing()){
-					dismissDialog(DIALOG_ID_BATTLE);
-			    }
+			//Spend stat point on secondary stat.
+			else if(random>=80 && random<95){
+				if(branch==Pet_Type.BRANCH_NONE || branch==Pet_Type.BRANCH_STEGO || branch==Pet_Type.BRANCH_PTERO){
+					them.strength_max+=Pet_Status.STAT_GAIN_SELECTION;
+					them.strength_max_bound();
+					them.stat_points--;
+				}
+				else if(branch==Pet_Type.BRANCH_TYRANNO || branch==Pet_Type.BRANCH_TRICERA){
+					them.dexterity_max+=Pet_Status.STAT_GAIN_SELECTION;
+					them.dexterity_max_bound();
+					them.stat_points--;
+				}
+				else if(branch==Pet_Type.BRANCH_APATO){
+					them.stamina_max+=Pet_Status.STAT_GAIN_SELECTION;
+					them.stamina_max_bound();
+					them.stat_points--;
+				}
 			}
-		});
+			//Spend stat point on tertiary stat.
+			else{
+				if(branch==Pet_Type.BRANCH_NONE || branch==Pet_Type.BRANCH_TRICERA){
+					them.strength_max+=Pet_Status.STAT_GAIN_SELECTION;
+					them.strength_max_bound();
+					them.stat_points--;
+				}
+				else if(branch==Pet_Type.BRANCH_APATO || branch==Pet_Type.BRANCH_STEGO){
+					them.dexterity_max+=Pet_Status.STAT_GAIN_SELECTION;
+					them.dexterity_max_bound();
+					them.stat_points--;
+				}
+				else if(branch==Pet_Type.BRANCH_PTERO || branch==Pet_Type.BRANCH_TYRANNO){
+					them.stamina_max+=Pet_Status.STAT_GAIN_SELECTION;
+					them.stamina_max_bound();
+					them.stat_points--;
+				}
+			}
+		}
+
+		them.strength=them.strength_max;
+		them.dexterity=them.dexterity_max;
+		them.stamina=them.stamina_max;
+
+		///Once equipment has been added, randomly add equipment here, scaled near the player, and using the shadow's magic find.
+		for(int i=Equipment.SLOT_BEGIN;i<Equipment.SLOT_END;i++){
+			String equipment_gained=them.new_equipment(65,them.level,Equipment.slot_to_string((short)i));
+
+			if(equipment_gained.length()>0){
+				them.equipment_slots.set(i,them.equipment.get(0));
+
+				them.equipment.remove(0);
+			}
+		}
+
+		//Start the actual battle activity, passing it the two pets' data.
+		Intent intent=new Intent(BitBeast.this,Activity_Battle.class);
+
+		Bundle bundle=new Bundle();
+		bundle.putBoolean(getPackageName()+".server",false);
+		bundle.putBoolean(getPackageName()+".shadow",true);
+		bundle.putInt(getPackageName()+".our_seed",RNG.random_range(0,Integer.MAX_VALUE));
+		bundle.putInt(getPackageName()+".their_seed",RNG.random_range(0,Integer.MAX_VALUE));
+		bundle.putAll(them.write_bundle_battle_data(getPackageName()));
+
+		intent.putExtras(bundle);
+		startActivity(intent);
+
+		dismissDialogFragment(dialog_battle);
+	}
+
+	public void dialogButtonBattleWifiDirect () {
+		if (getPackageManager().hasSystemFeature(PackageManager.FEATURE_WIFI_DIRECT)) {
+			start_battle_menu_wifi();
+		} else {
+			Toast.makeText(BitBeast.this,"Your device doesn't seem to support WiFi Direct!",Toast.LENGTH_SHORT).show();
+		}
+
+		dismissDialogFragment(dialog_battle);
+	}
+
+	public void dialogButtonBattleCancel () {
+		dismissDialogFragment(dialog_battle);
+	}
+
+	public BitBeastDialogFragment showDialogFragment (String tag, int dialogType, int dialogLayout, String dialogMessage) {
+		FragmentTransaction transaction = getFragmentManager().beginTransaction();
+		Fragment previous = getFragmentManager().findFragmentByTag(tag);
+
+		if (previous != null) {
+			transaction.remove(previous);
+		}
+		transaction.addToBackStack(null);
+
+		BitBeastDialogFragment dialogFragment = BitBeastDialogFragment.newInstance(dialogType, dialogLayout, dialogMessage, this);
+		dialogFragment.show(transaction, tag);
+
+		return dialogFragment;
+	}
+
+	@Override
+	public void onViewLoaded (int dialogLayout, String dialogMessage, View view) {
+		/**QQQ b=(Button)dialog_store.findViewById(R.id.button_dialog_main_store_food);
+		 b.setNextFocusUpId(R.id.button_dialog_main_store_perma);
+
+		 b=(Button)dialog_store.findViewById(R.id.button_dialog_main_store_perma);
+		 b.setNextFocusDownId(R.id.button_dialog_main_store_food);
+
+		 b=(Button)dialog_temp.findViewById(R.id.button_dialog_main_temp_ac);
+		 b.setNextFocusUpId(R.id.button_dialog_main_temp_none);
+
+		 b=(Button)dialog_temp.findViewById(R.id.button_dialog_main_temp_none);
+		 b.setNextFocusDownId(R.id.button_dialog_main_temp_ac);
+
+		 b=(Button)dialog_games.findViewById(R.id.button_dialog_main_games_training);
+		 b.setNextFocusUpId(R.id.button_dialog_main_games_speed_gps);
+
+		 b=(Button)dialog_games.findViewById(R.id.button_dialog_main_games_speed_gps);
+		 b.setNextFocusDownId(R.id.button_dialog_main_games_training);
+
+		 b=(Button)dialog_battle.findViewById(R.id.button_dialog_main_battle_shadow);
+		 b.setNextFocusUpId(R.id.button_dialog_main_battle_cancel);
+
+		 b=(Button)dialog_battle.findViewById(R.id.button_dialog_main_battle_cancel);
+		 b.setNextFocusDownId(R.id.button_dialog_main_battle_shadow);*/
+
+		if (dialogLayout == R.layout.dialog_main_store) {
+			Font.set_typeface((TextView) view.findViewById(R.id.dialog_title_store));
+			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_store_food));
+			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_store_drinks));
+			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_store_treatments));
+			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_store_perma));
+
+			view.findViewById(R.id.button_dialog_main_store_food).setOnClickListener(new View.OnClickListener(){
+				@Override
+				public void onClick(View v){
+					dialogButtonStoreFood();
+				}
+			});
+			view.findViewById(R.id.button_dialog_main_store_drinks).setOnClickListener(new View.OnClickListener(){
+				@Override
+				public void onClick(View v){
+					dialogButtonStoreDrinks();
+				}
+			});
+			view.findViewById(R.id.button_dialog_main_store_treatments).setOnClickListener(new View.OnClickListener(){
+				@Override
+				public void onClick(View v){
+					dialogButtonStoreTreatments();
+				}
+			});
+			view.findViewById(R.id.button_dialog_main_store_perma).setOnClickListener(new View.OnClickListener(){
+				@Override
+				public void onClick(View v){
+					dialogButtonStorePerma();
+				}
+			});
+		} else if (dialogLayout == R.layout.dialog_main_temp) {
+			Font.set_typeface((TextView) view.findViewById(R.id.dialog_title_temp));
+			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_temp_ac));
+			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_temp_heater));
+			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_temp_none));
+
+			view.findViewById(R.id.button_dialog_main_temp_ac).setOnClickListener(new View.OnClickListener(){
+				@Override
+				public void onClick(View v){
+					dialogButtonTempAc();
+				}
+			});
+			view.findViewById(R.id.button_dialog_main_temp_heater).setOnClickListener(new View.OnClickListener(){
+				@Override
+				public void onClick(View v){
+					dialogButtonTempHeater();
+				}
+			});
+			view.findViewById(R.id.button_dialog_main_temp_none).setOnClickListener(new View.OnClickListener(){
+				@Override
+				public void onClick(View v){
+					dialogButtonTempNone();
+				}
+			});
+		} else if (dialogLayout == R.layout.dialog_main_games) {
+			Font.set_typeface((TextView) view.findViewById(R.id.dialog_title_games));
+			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_games_training));
+			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_games_bricks));
+			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_games_rps));
+			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_games_accel));
+			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_games_gps));
+			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_games_speed_gps));
+
+			view.findViewById(R.id.button_dialog_main_games_training).setOnClickListener(new View.OnClickListener(){
+				@Override
+				public void onClick(View v){
+					dialogButtonGameTraining();
+				}
+			});
+			view.findViewById(R.id.button_dialog_main_games_bricks).setOnClickListener(new View.OnClickListener(){
+				@Override
+				public void onClick(View v){
+					dialogButtonGameBricks();
+				}
+			});
+			view.findViewById(R.id.button_dialog_main_games_rps).setOnClickListener(new View.OnClickListener(){
+				@Override
+				public void onClick(View v){
+					dialogButtonGameRps();
+				}
+			});
+			view.findViewById(R.id.button_dialog_main_games_accel).setOnClickListener(new View.OnClickListener(){
+				@Override
+				public void onClick(View v){
+					dialogButtonGameAccel();
+				}
+			});
+			view.findViewById(R.id.button_dialog_main_games_gps).setOnClickListener(new View.OnClickListener(){
+				@Override
+				public void onClick(View v){
+					dialogButtonGameGps();
+				}
+			});
+			view.findViewById(R.id.button_dialog_main_games_speed_gps).setOnClickListener(new View.OnClickListener(){
+				@Override
+				public void onClick(View v){
+					dialogButtonGameSpeedGps();
+				}
+			});
+		} else if (dialogLayout == R.layout.dialog_main_die) {
+			Font.set_typeface((TextView) view.findViewById(R.id.dialog_die_message));
+			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_die_ok));
+
+			view.findViewById(R.id.button_dialog_die_ok).setOnClickListener(new View.OnClickListener(){
+				@Override
+				public void onClick(View v){
+					dialogButtonDie();
+				}
+			});
+
+			((TextView) view.findViewById(R.id.button_dialog_die_ok)).setText(dialogMessage);
+		} else if (dialogLayout == R.layout.dialog_main_battle) {
+			Font.set_typeface((TextView) view.findViewById(R.id.dialog_title_battle));
+			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_battle_shadow));
+			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_battle_wifi));
+			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_battle_cancel));
+
+			view.findViewById(R.id.button_dialog_main_battle_shadow).setOnClickListener(new View.OnClickListener(){
+				@Override
+				public void onClick(View v){
+					dialogButtonBattleShadow();
+				}
+			});
+			view.findViewById(R.id.button_dialog_main_battle_wifi).setOnClickListener(new View.OnClickListener(){
+				@Override
+				public void onClick(View v){
+					dialogButtonBattleWifiDirect();
+				}
+			});
+			view.findViewById(R.id.button_dialog_main_battle_cancel).setOnClickListener(new View.OnClickListener(){
+				@Override
+				public void onClick(View v){
+					dialogButtonBattleCancel();
+				}
+			});
+		}
+	}
+
+	public void dismissDialogFragment (BitBeastDialogFragment dialogFragment) {
+		if (dialogFragment != null && dialogFragment.isAdded()) {
+			dialogFragment.dismiss();
+		}
+	}
+
+	public void close_dialogs(){
+		dismissDialogFragment(dialog_progress);
+
+		dismissDialogFragment(dialog_store);
+
+		dismissDialogFragment(dialog_temp);
+
+		dismissDialogFragment(dialog_games);
+
+		dismissDialogFragment(dialog_die);
+
+		dismissDialogFragment(dialog_battle);
 	}
 }

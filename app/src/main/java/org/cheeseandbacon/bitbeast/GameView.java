@@ -201,12 +201,12 @@ class GameView extends SurfaceView implements SurfaceHolder.Callback{
         		}
         		
         		pet.get_status().last_tick=System.currentTimeMillis();
-        		
-        		//Dismiss the progress dialog.
-    			msg=handler.obtainMessage();
-    			msg.what=BitBeast.HANDLER_HIDE_PROGRESS;
-    			handler.sendMessage(msg);
         	}
+
+			//Dismiss the progress dialog.
+			Message msg=handler.obtainMessage();
+			msg.what=BitBeast.HANDLER_HIDE_PROGRESS;
+			handler.sendMessage(msg);
 		}
 		
 		private void input(){

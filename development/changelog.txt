@@ -65,6 +65,7 @@
  - Fixed a few instances where speech would not wake up the Bit Beast
  - Improved color picker dialog
  - Improved RNG
+ - Fixed a bug where dialogs would display text in the wrong font
  - Fixed a variety of image-related bugs
  - Moved save data to internal storage
  - Made file saving atomic

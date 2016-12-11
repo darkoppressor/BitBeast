@@ -1314,16 +1314,22 @@ public class BitBeast extends Activity implements BitBeastDialogFragment.DialogV
 	}
 
 	public BitBeastDialogFragment showDialogFragment (String tag, int dialogType, int dialogLayout, String dialogMessage) {
-		FragmentTransaction transaction = getFragmentManager().beginTransaction();
-		Fragment previous = getFragmentManager().findFragmentByTag(tag);
-
-		if (previous != null) {
-			transaction.remove(previous);
-		}
-		transaction.addToBackStack(null);
-
 		BitBeastDialogFragment dialogFragment = BitBeastDialogFragment.newInstance(dialogType, dialogLayout, dialogMessage, this);
-		dialogFragment.show(transaction, tag);
+
+		if (dialogType == BitBeastDialogFragment.DIALOG_TYPE_PROGRESS) {
+			dialogFragment.show(getFragmentManager(), tag);
+		} else {
+			FragmentTransaction transaction = getFragmentManager().beginTransaction();
+			Fragment previous = getFragmentManager().findFragmentByTag(tag);
+
+			if (previous != null) {
+				transaction.remove(previous);
+			}
+			
+			transaction.addToBackStack(null);
+
+			dialogFragment.show(transaction, tag);
+		}
 
 		return dialogFragment;
 	}

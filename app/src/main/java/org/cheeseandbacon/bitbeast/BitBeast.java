@@ -1330,36 +1330,15 @@ public class BitBeast extends Activity implements BitBeastDialogFragment.DialogV
 
 	@Override
 	public void onViewLoaded (int dialogLayout, String dialogMessage, View view) {
-		/**QQQ b=(Button)dialog_store.findViewById(R.id.button_dialog_main_store_food);
-		 b.setNextFocusUpId(R.id.button_dialog_main_store_perma);
-
-		 b=(Button)dialog_store.findViewById(R.id.button_dialog_main_store_perma);
-		 b.setNextFocusDownId(R.id.button_dialog_main_store_food);
-
-		 b=(Button)dialog_temp.findViewById(R.id.button_dialog_main_temp_ac);
-		 b.setNextFocusUpId(R.id.button_dialog_main_temp_none);
-
-		 b=(Button)dialog_temp.findViewById(R.id.button_dialog_main_temp_none);
-		 b.setNextFocusDownId(R.id.button_dialog_main_temp_ac);
-
-		 b=(Button)dialog_games.findViewById(R.id.button_dialog_main_games_training);
-		 b.setNextFocusUpId(R.id.button_dialog_main_games_speed_gps);
-
-		 b=(Button)dialog_games.findViewById(R.id.button_dialog_main_games_speed_gps);
-		 b.setNextFocusDownId(R.id.button_dialog_main_games_training);
-
-		 b=(Button)dialog_battle.findViewById(R.id.button_dialog_main_battle_shadow);
-		 b.setNextFocusUpId(R.id.button_dialog_main_battle_cancel);
-
-		 b=(Button)dialog_battle.findViewById(R.id.button_dialog_main_battle_cancel);
-		 b.setNextFocusDownId(R.id.button_dialog_main_battle_shadow);*/
-
 		if (dialogLayout == R.layout.dialog_main_store) {
 			Font.set_typeface((TextView) view.findViewById(R.id.dialog_title_store));
 			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_store_food));
 			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_store_drinks));
 			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_store_treatments));
 			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_store_perma));
+
+			view.findViewById(R.id.button_dialog_main_store_food).setNextFocusUpId(R.id.button_dialog_main_store_perma);
+			view.findViewById(R.id.button_dialog_main_store_perma).setNextFocusDownId(R.id.button_dialog_main_store_food);
 
 			view.findViewById(R.id.button_dialog_main_store_food).setOnClickListener(new View.OnClickListener(){
 				@Override
@@ -1391,6 +1370,9 @@ public class BitBeast extends Activity implements BitBeastDialogFragment.DialogV
 			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_temp_heater));
 			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_temp_none));
 
+			view.findViewById(R.id.button_dialog_main_temp_ac).setNextFocusUpId(R.id.button_dialog_main_temp_none);
+			view.findViewById(R.id.button_dialog_main_temp_none).setNextFocusDownId(R.id.button_dialog_main_temp_ac);
+
 			view.findViewById(R.id.button_dialog_main_temp_ac).setOnClickListener(new View.OnClickListener(){
 				@Override
 				public void onClick(View v){
@@ -1417,6 +1399,9 @@ public class BitBeast extends Activity implements BitBeastDialogFragment.DialogV
 			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_games_accel));
 			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_games_gps));
 			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_games_speed_gps));
+
+			view.findViewById(R.id.button_dialog_main_games_training).setNextFocusUpId(R.id.button_dialog_main_games_speed_gps);
+			view.findViewById(R.id.button_dialog_main_games_speed_gps).setNextFocusDownId(R.id.button_dialog_main_games_training);
 
 			view.findViewById(R.id.button_dialog_main_games_training).setOnClickListener(new View.OnClickListener(){
 				@Override
@@ -1471,6 +1456,9 @@ public class BitBeast extends Activity implements BitBeastDialogFragment.DialogV
 			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_battle_shadow));
 			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_battle_wifi));
 			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_battle_cancel));
+
+			view.findViewById(R.id.button_dialog_main_battle_shadow).setNextFocusUpId(R.id.button_dialog_main_battle_cancel);
+			view.findViewById(R.id.button_dialog_main_battle_cancel).setNextFocusDownId(R.id.button_dialog_main_battle_shadow);
 
 			view.findViewById(R.id.button_dialog_main_battle_shadow).setOnClickListener(new View.OnClickListener(){
 				@Override

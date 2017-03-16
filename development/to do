@@ -25,6 +25,12 @@ More brick game templates?
 
 When you spend stat points, it should add the same amount to max and current
 
+When dead, do not allow stat screen button for spending points
+When dying, make sure the age is stopped where they died
+Carry over perma items when a new pet is made
+Chance to get sick seems too high
+Maybe also look at chance to die when I do this
+
 Increase fps to 60?
 
 Add license comments to source files

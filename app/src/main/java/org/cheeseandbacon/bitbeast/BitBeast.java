@@ -1325,7 +1325,7 @@ public class BitBeast extends Activity implements BitBeastDialogFragment.DialogV
 			if (previous != null) {
 				transaction.remove(previous);
 			}
-			
+
 			transaction.addToBackStack(null);
 
 			dialogFragment.show(transaction, tag);

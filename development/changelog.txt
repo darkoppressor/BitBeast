@@ -74,8 +74,8 @@
  - Bit Beasts must be the same version to battle
  - Made tick processing more deterministic
  - Moved the project into Android Studio and updated build tools to latest versions
- - Updated build target to latest version of Android (API level 25)
- - Updated minimum API level to 19
+ - Updated build target to latest version of Android (API level 27)
+ - Updated minimum API level to 21
  - Minor code cleanup and improvements
  - Minor graphical improvements
  - And more!

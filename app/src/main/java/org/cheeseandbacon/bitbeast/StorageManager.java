@@ -3,6 +3,7 @@ package org.cheeseandbacon.bitbeast;
 import android.content.Context;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 
@@ -85,11 +86,79 @@ public class StorageManager{
 		return data;
 	}
 
-	// Returns true if the file was deleted successfully, else false
-	private static boolean deleteFile(Context context, String fileName) {
-		return context.deleteFile(fileName);
+	private static void deleteFile(Context context, String fileName) {
+        context.deleteFile(fileName);
+    }
+
+    // Check for external save data, which may be left behind by pre-1.1.0
+	public static void checkForExternalSaveData (Context context) {
+        ArrayList<String> data=loadFile(context, "options");
+
+        // If the options file could not be loaded, this may be the first time running 1.1.0
+        if (data.size() == 0) {
+            String state = Environment.getExternalStorageState();
+
+            if (state.equals(Environment.MEDIA_MOUNTED) && !state.equals(Environment.MEDIA_MOUNTED_READ_ONLY)) {
+                ArrayList<String> fileNames = new ArrayList<>();
+                fileNames.add("options");
+                fileNames.add("options2");
+                fileNames.add("pet");
+                fileNames.add("pet2");
+                fileNames.add("equipment");
+                fileNames.add("perma_items");
+                fileNames.add("records");
+                fileNames.add("records2");
+
+                File externalDir = context.getExternalFilesDir(null);
+
+                if (externalDir != null) {
+                    for (String fileName : fileNames) {
+                        File file = new File(externalDir, fileName);
+
+                        if (file.isFile()) {
+                            boolean fileExistsInternal = false;
+
+                            try {
+                                FileInputStream fileInputStream = context.openFileInput(fileName);
+                                fileInputStream.close();
+
+                                fileExistsInternal = true;
+                            } catch (FileNotFoundException e) {
+                                Log.w(TAG, "FileNotFoundException occurred while loading data from internal storage", e);
+                            } catch (IOException e) {
+                                Log.w(TAG, "IOException occurred while loading data from internal storage", e);
+                            }
+
+                            if (!fileExistsInternal) {
+                                try {
+                                    BufferedInputStream in = new BufferedInputStream(new FileInputStream(file));
+
+                                    byte[] buffer = new byte[2048];
+                                    int bytes_read = 0;
+                                    String raw_data = "";
+
+                                    // Read the file's bytes into a string
+                                    while ((bytes_read = in.read(buffer)) != -1) {
+                                        String chunk = new String(buffer, 0, bytes_read);
+                                        raw_data += chunk;
+                                    }
+
+                                    in.close();
+
+                                    if (saveFile(context, fileName, raw_data, false)) {
+                                        file.delete();
+                                    }
+                                } catch(IOException e){
+                                    Log.w(TAG, "Error reading "+file, e);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
 	}
-	
+
 	public static void delete_pet_status(Context context){
 		deleteFile(context, "pet");
 		deleteFile(context, "pet2");

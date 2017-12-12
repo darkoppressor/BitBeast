@@ -73,6 +73,9 @@ public class BitBeast extends Activity implements BitBeastDialogFragment.DialogV
         Font.startup(getAssets());
         RNG.startup();
         Options.startup();
+
+        StorageManager.checkForExternalSaveData(this);
+
         StorageManager.load_options(this);
         
         image=(Image)getLastNonConfigurationInstance();

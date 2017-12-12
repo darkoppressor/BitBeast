@@ -1,9 +1,6 @@
 package org.cheeseandbacon.bitbeast;
 
-import android.appwidget.AppWidgetManager;
-import android.content.ComponentName;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
 import android.util.Log;
@@ -227,15 +224,6 @@ public class StorageManager{
 	    	save_pet_status_2(context,pet_status);
 	    	save_pet_status_equipment(context,pet_status);
 	    	save_pet_status_perma_items(context,pet_status);
-	    	
-	    	AppWidgetManager appWidgetManager=AppWidgetManager.getInstance(context);
-			int[] ids=appWidgetManager.getAppWidgetIds(new ComponentName(context,org.cheeseandbacon.bitbeast.Widget_Provider.class));
-			
-			Intent intent=new Intent(context,Widget_Provider.class);
-			intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
-			intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS,ids);
-			
-			context.sendBroadcast(intent);
 		}
 	}
 	

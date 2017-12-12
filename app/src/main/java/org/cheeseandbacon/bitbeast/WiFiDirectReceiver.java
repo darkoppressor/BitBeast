@@ -14,6 +14,9 @@ public class WiFiDirectReceiver extends BroadcastReceiver {
     private WifiP2pManager.Channel channel;
     private Activity_Battle_Menu_Wifi activity;
 
+    public WiFiDirectReceiver () {
+    }
+
     public WiFiDirectReceiver (WifiP2pManager manager, WifiP2pManager.Channel channel, Activity_Battle_Menu_Wifi activity) {
         super();
 

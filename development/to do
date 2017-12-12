@@ -1,10 +1,5 @@
 Check for external storage data when loading, so as not to miss old version save data
 
-Keep widget? Or just get rid of it?
-I like the idea of removing it, and eventually adding a notifications feature instead
-
-Colors are still not applying to the widget pet image
-
 Font is normal one on text and buttons for shop select, temperature, battle select, game select
 OK... also sometimes it is correctly the paper cuts font...
 

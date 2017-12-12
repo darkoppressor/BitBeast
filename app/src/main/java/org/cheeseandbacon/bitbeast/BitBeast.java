@@ -45,8 +45,6 @@ public class BitBeast extends Activity implements BitBeastDialogFragment.DialogV
 	
 	static final int REQUEST_OPTIONS=1;
 	static final int REQUEST_NAME=2;
-	///QQQ
-	///static final int REQUEST_QR_CODE=4;
 	
 	private Image image;
 	GameView game_view;
@@ -249,16 +247,6 @@ public class BitBeast extends Activity implements BitBeastDialogFragment.DialogV
     			return;
     		}
     		break;
-    	///QQQ
-    	/**case REQUEST_QR_CODE:
-    		if(get_result_code==RESULT_OK){
-    			String contents=get_data.getStringExtra("SCAN_RESULT");
-    			//String format=get_data.getStringExtra("SCAN_RESULT_FORMAT");
-    			
-    			Toast.makeText(getApplicationContext(),contents,Toast.LENGTH_SHORT).show();
-    		}
-    		break;*/
-    	///
     	}
     }
     

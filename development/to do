@@ -1,17 +1,8 @@
-Can text on action bar use custom font?
+Important for 1.1.0:
 
-Sometimes transitions seem slow
-
-For the games with just info showing (gps games etc), maybe show some explanation for how they work
-
-Add support for the Android backup/restore system
-
-Can the store pages be all one activity and just scroll to the side via dragging?
+A bit beast should use its pet data AS SENT when battling, not load it from storage in the battle activity
 
 After a battle, if you got an item and then sold it, it returns to the main screen, but it should return to the battle summary
-
-Brick game takes too long to complete
-More brick game templates?
 
 When you spend stat points, it should add the same amount to max and current
 
@@ -21,9 +12,33 @@ Carry over perma items when a new pet is made
 Chance to get sick seems too high
 Maybe also look at chance to die when I do this
 
-Increase fps to 60?
+Looks like thought bubble need pics have wrong colors
+
+Test wi fi battles with same and different versions
 
 Add license comments to source files
+
+Update readme.md
+Update permissions.txt and system requirements
+
+For the games with just info showing (gps games etc), maybe show some explanation for how they work
+
+The help pages need an overhaul. Wait until the new version is done though
+
+Not as important:
+
+Can text on action bar use custom font?
+
+Sometimes transitions seem slow
+
+Add support for the Android backup/restore system
+
+Can the store pages be all one activity and just scroll to the side via dragging?
+
+Brick game takes too long to complete
+More brick game templates?
+
+Increase fps to 60?
 
 Can you see your non consumable buffs summarized somewhere?
 
@@ -35,22 +50,11 @@ Trying to play gps games without permission gives toast about not having a gps r
 
 Test gps games
 
-Looks like thought bubble need pics have wrong colors
-
 Wifi battle with no wifi gives an error about system being too busy
 Should say wifi is off or unavailable
 Can I prompt to enable wi fi?
 Show connection info in the activity
 I.e., show when connecting, show when transmitting battle data
-
-A bit beast should use its pet data AS SENT when battling, not load it from storage in the battle activity
-
-Test wi fi battles with same and different versions
-
-Remove QR code?
-
-Update readme.md
-Update permissions.txt and system requirements
 
 Some indication of the pet's desired temperature
 
@@ -64,24 +68,6 @@ When in battle screen, NFC to another device will auto pair them, regardless of 
 Battle screen should have explanation about NFC pairing stuff
 Help screens should explain pairing in case user needs to do it themselves, for instance if they don't have NFC
 
-----------------------------------------------------------------
-
-Battle button grayed out when it should not be
-
-Hubert got added twice to the cemetery
-
-See if any specific sounds are slowing loads
-
-Widget definitely needs to scale better
-Can I make it change what it displays based on its size, or scale the whole thing?
-If I do whole scaling might need multiple sized Widgets
-
-Widget background should scale better
-Current widget becomes large version
-Add a smaller one
-
 Click or swipe poop to clean up individual poops?
 Sound effect half-volume yard cleaning sound?
 Little animation for cleaning up individual poop?
-
-The help pages need an overhaul. Wait until the new version is done though

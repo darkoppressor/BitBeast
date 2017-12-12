@@ -91,16 +91,16 @@ public class BitBeast extends Activity implements BitBeastDialogFragment.DialogV
         
         speech=null;
         
-        Font.set_typeface((Button)findViewById(R.id.button_status));
-        Font.set_typeface((Button)findViewById(R.id.button_store));
-        Font.set_typeface((Button)findViewById(R.id.button_clean));
-        Font.set_typeface((Button)findViewById(R.id.button_bathe));
-        Font.set_typeface((Button)findViewById(R.id.button_temp));
-        Font.set_typeface((Button)findViewById(R.id.button_games));
-        Font.set_typeface((Button)findViewById(R.id.button_equipment));
-        Font.set_typeface((Button)findViewById(R.id.button_battle));
-        Font.set_typeface((Button)findViewById(R.id.button_light));
-        Font.set_typeface((Button)findViewById(R.id.button_options));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_status));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_store));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_clean));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_bathe));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_temp));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_games));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_equipment));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_battle));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_light));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_options));
         
         Button b=null;
         
@@ -1340,11 +1340,11 @@ public class BitBeast extends Activity implements BitBeastDialogFragment.DialogV
 	@Override
 	public void onViewLoaded (int dialogLayout, String dialogMessage, View view) {
 		if (dialogLayout == R.layout.dialog_main_store) {
-			Font.set_typeface((TextView) view.findViewById(R.id.dialog_title_store));
-			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_store_food));
-			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_store_drinks));
-			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_store_treatments));
-			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_store_perma));
+			Font.set_typeface(getAssets(), (TextView) view.findViewById(R.id.dialog_title_store));
+			Font.set_typeface(getAssets(), (Button) view.findViewById(R.id.button_dialog_main_store_food));
+			Font.set_typeface(getAssets(), (Button) view.findViewById(R.id.button_dialog_main_store_drinks));
+			Font.set_typeface(getAssets(), (Button) view.findViewById(R.id.button_dialog_main_store_treatments));
+			Font.set_typeface(getAssets(), (Button) view.findViewById(R.id.button_dialog_main_store_perma));
 
 			view.findViewById(R.id.button_dialog_main_store_food).setNextFocusUpId(R.id.button_dialog_main_store_perma);
 			view.findViewById(R.id.button_dialog_main_store_perma).setNextFocusDownId(R.id.button_dialog_main_store_food);
@@ -1374,10 +1374,10 @@ public class BitBeast extends Activity implements BitBeastDialogFragment.DialogV
 				}
 			});
 		} else if (dialogLayout == R.layout.dialog_main_temp) {
-			Font.set_typeface((TextView) view.findViewById(R.id.dialog_title_temp));
-			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_temp_ac));
-			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_temp_heater));
-			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_temp_none));
+			Font.set_typeface(getAssets(), (TextView) view.findViewById(R.id.dialog_title_temp));
+			Font.set_typeface(getAssets(), (Button) view.findViewById(R.id.button_dialog_main_temp_ac));
+			Font.set_typeface(getAssets(), (Button) view.findViewById(R.id.button_dialog_main_temp_heater));
+			Font.set_typeface(getAssets(), (Button) view.findViewById(R.id.button_dialog_main_temp_none));
 
 			view.findViewById(R.id.button_dialog_main_temp_ac).setNextFocusUpId(R.id.button_dialog_main_temp_none);
 			view.findViewById(R.id.button_dialog_main_temp_none).setNextFocusDownId(R.id.button_dialog_main_temp_ac);
@@ -1401,13 +1401,13 @@ public class BitBeast extends Activity implements BitBeastDialogFragment.DialogV
 				}
 			});
 		} else if (dialogLayout == R.layout.dialog_main_games) {
-			Font.set_typeface((TextView) view.findViewById(R.id.dialog_title_games));
-			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_games_training));
-			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_games_bricks));
-			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_games_rps));
-			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_games_accel));
-			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_games_gps));
-			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_games_speed_gps));
+			Font.set_typeface(getAssets(), (TextView) view.findViewById(R.id.dialog_title_games));
+			Font.set_typeface(getAssets(), (Button) view.findViewById(R.id.button_dialog_main_games_training));
+			Font.set_typeface(getAssets(), (Button) view.findViewById(R.id.button_dialog_main_games_bricks));
+			Font.set_typeface(getAssets(), (Button) view.findViewById(R.id.button_dialog_main_games_rps));
+			Font.set_typeface(getAssets(), (Button) view.findViewById(R.id.button_dialog_main_games_accel));
+			Font.set_typeface(getAssets(), (Button) view.findViewById(R.id.button_dialog_main_games_gps));
+			Font.set_typeface(getAssets(), (Button) view.findViewById(R.id.button_dialog_main_games_speed_gps));
 
 			view.findViewById(R.id.button_dialog_main_games_training).setNextFocusUpId(R.id.button_dialog_main_games_speed_gps);
 			view.findViewById(R.id.button_dialog_main_games_speed_gps).setNextFocusDownId(R.id.button_dialog_main_games_training);
@@ -1449,8 +1449,8 @@ public class BitBeast extends Activity implements BitBeastDialogFragment.DialogV
 				}
 			});
 		} else if (dialogLayout == R.layout.dialog_main_die) {
-			Font.set_typeface((TextView) view.findViewById(R.id.dialog_die_message));
-			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_die_ok));
+			Font.set_typeface(getAssets(), (TextView) view.findViewById(R.id.dialog_die_message));
+			Font.set_typeface(getAssets(), (Button) view.findViewById(R.id.button_dialog_die_ok));
 
 			view.findViewById(R.id.button_dialog_die_ok).setOnClickListener(new View.OnClickListener(){
 				@Override
@@ -1461,10 +1461,10 @@ public class BitBeast extends Activity implements BitBeastDialogFragment.DialogV
 
 			((TextView) view.findViewById(R.id.button_dialog_die_ok)).setText(dialogMessage);
 		} else if (dialogLayout == R.layout.dialog_main_battle) {
-			Font.set_typeface((TextView) view.findViewById(R.id.dialog_title_battle));
-			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_battle_shadow));
-			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_battle_wifi));
-			Font.set_typeface((Button) view.findViewById(R.id.button_dialog_main_battle_cancel));
+			Font.set_typeface(getAssets(), (TextView) view.findViewById(R.id.dialog_title_battle));
+			Font.set_typeface(getAssets(), (Button) view.findViewById(R.id.button_dialog_main_battle_shadow));
+			Font.set_typeface(getAssets(), (Button) view.findViewById(R.id.button_dialog_main_battle_wifi));
+			Font.set_typeface(getAssets(), (Button) view.findViewById(R.id.button_dialog_main_battle_cancel));
 
 			view.findViewById(R.id.button_dialog_main_battle_shadow).setNextFocusUpId(R.id.button_dialog_main_battle_cancel);
 			view.findViewById(R.id.button_dialog_main_battle_cancel).setNextFocusDownId(R.id.button_dialog_main_battle_shadow);

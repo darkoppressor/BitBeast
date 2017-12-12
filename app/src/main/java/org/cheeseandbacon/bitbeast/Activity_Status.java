@@ -64,14 +64,14 @@ public class Activity_Status extends AppCompatActivity{
     	
     	tv=(TextView)findViewById(R.id.text_status_name);
     	tv.setText(this.getString(R.string.status_name)+pet_status.name+sick_string);
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	
     	tv=(TextView)findViewById(R.id.text_status_level);
     	tv.setText(this.getString(R.string.status_level)+pet_status.level);
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	
     	b=(Button)findViewById(R.id.button_status_spend);
-    	Font.set_typeface(b);
+    	Font.set_typeface(getAssets(), b);
     	if(pet_status.stat_points>0){
     		b.setVisibility(Button.VISIBLE);
     	}
@@ -83,32 +83,32 @@ public class Activity_Status extends AppCompatActivity{
     	pb.setMax((int)pet_status.experience_max);
     	pb.setProgress((int)pet_status.experience);
     	tv=(TextView)findViewById(R.id.text_status_title_experience);
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	tv=(TextView)findViewById(R.id.text_status_experience);
     	tv.setText(pet_status.experience+"/"+pet_status.experience_max);
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	
     	tv=(TextView)findViewById(R.id.text_status_type);
     	tv.setText(this.getString(R.string.status_type)+Strings.first_letter_capital(pet_status.type.toString()));
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	
     	tv=(TextView)findViewById(R.id.text_status_bits);
     	tv.setText(this.getString(R.string.status_bits)+pet_status.bits);
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
 
     	tv=(TextView)findViewById(R.id.text_status_age);
     	tv.setText(this.getString(R.string.status_age)+Time_String.seconds_to_years(pet_status.age));
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	
     	pb=(ProgressBar)findViewById(R.id.bar_status_happy);
     	pb.setMax(Pet_Status.HAPPY_MAX+Pet_Status.HAPPY_MAX);
     	pb.setProgress(pet_status.happy+Pet_Status.HAPPY_MAX);
     	tv=(TextView)findViewById(R.id.text_status_title_happy);
     	tv.setText(Pet_Status.get_buff_name("happy")+": ");
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	tv=(TextView)findViewById(R.id.text_status_happy);
     	tv.setText(pet_status.happy+"/"+Pet_Status.HAPPY_MAX);
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	tv.setVisibility(TextView.INVISIBLE);
     	
     	pb=(ProgressBar)findViewById(R.id.bar_status_temp);
@@ -120,10 +120,10 @@ public class Activity_Status extends AppCompatActivity{
     	pb.setMax((int)TEMP_BAR_MAX);
     	pb.setProgress((int)shrunk_temp);
     	tv=(TextView)findViewById(R.id.text_status_title_temp);
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	tv=(TextView)findViewById(R.id.text_status_temp);
     	tv.setText(UnitConverter.get_temperature_string(pet_status.temp,df));
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	
     	tv=(TextView)findViewById(R.id.text_status_weight);
     	message="<font color='"+String.format("#%06x",0xFFFFFF&getResources().getColor(R.color.font))+"'>"+this.getString(R.string.status_weight)+"</font>";
@@ -142,17 +142,17 @@ public class Activity_Status extends AppCompatActivity{
     	}
     	message+="</font>";
     	tv.setText(Html.fromHtml(Strings.newline_to_br(message)));
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	
     	pb=(ProgressBar)findViewById(R.id.bar_status_hunger);
     	pb.setMax(Age_Tier.get_hunger_max(pet_status.age_tier));
     	pb.setProgress(pet_status.hunger);
     	tv=(TextView)findViewById(R.id.text_status_title_hunger);
     	tv.setText(Pet_Status.get_buff_name("hunger")+": ");
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	tv=(TextView)findViewById(R.id.text_status_hunger);
     	tv.setText(pet_status.hunger+"/"+Age_Tier.get_hunger_max(pet_status.age_tier));
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	tv.setVisibility(TextView.INVISIBLE);
     	
     	pb=(ProgressBar)findViewById(R.id.bar_status_thirst);
@@ -160,10 +160,10 @@ public class Activity_Status extends AppCompatActivity{
     	pb.setProgress(pet_status.thirst);
     	tv=(TextView)findViewById(R.id.text_status_title_thirst);
     	tv.setText(Pet_Status.get_buff_name("thirst")+": ");
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	tv=(TextView)findViewById(R.id.text_status_thirst);
     	tv.setText(pet_status.thirst+"/"+Pet_Status.THIRST_MAX);
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	tv.setVisibility(TextView.INVISIBLE);
     	
     	pb=(ProgressBar)findViewById(R.id.bar_status_strength);
@@ -171,7 +171,7 @@ public class Activity_Status extends AppCompatActivity{
     	pb.setProgress(pet_status.get_strength());
     	tv=(TextView)findViewById(R.id.text_status_title_strength);
     	tv.setText(Pet_Status.get_buff_name("strength_max")+": ");
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	tv=(TextView)findViewById(R.id.text_status_strength);
     	message=pet_status.get_strength()+"/"+pet_status.get_strength_max();
     	if(pet_status.get_strength_upgrade()>0){
@@ -183,14 +183,14 @@ public class Activity_Status extends AppCompatActivity{
     		tv.setTextColor(getResources().getColor(R.color.font));
     	}
     	tv.setText(message);
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	
     	pb=(ProgressBar)findViewById(R.id.bar_status_dexterity);
     	pb.setMax(pet_status.get_dexterity_max());
     	pb.setProgress(pet_status.get_dexterity());
     	tv=(TextView)findViewById(R.id.text_status_title_dexterity);
     	tv.setText(Pet_Status.get_buff_name("dexterity_max")+": ");
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	tv=(TextView)findViewById(R.id.text_status_dexterity);
     	message=pet_status.get_dexterity()+"/"+pet_status.get_dexterity_max();
     	if(pet_status.get_dexterity_upgrade()>0){
@@ -202,14 +202,14 @@ public class Activity_Status extends AppCompatActivity{
     		tv.setTextColor(getResources().getColor(R.color.font));
     	}
     	tv.setText(message);
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	
     	pb=(ProgressBar)findViewById(R.id.bar_status_stamina);
     	pb.setMax(pet_status.get_stamina_max());
     	pb.setProgress(pet_status.get_stamina());
     	tv=(TextView)findViewById(R.id.text_status_title_stamina);
     	tv.setText(Pet_Status.get_buff_name("stamina_max")+": ");
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	tv=(TextView)findViewById(R.id.text_status_stamina);
     	message=pet_status.get_stamina()+"/"+pet_status.get_stamina_max();
     	if(pet_status.get_stamina_upgrade()>0){
@@ -221,14 +221,14 @@ public class Activity_Status extends AppCompatActivity{
     		tv.setTextColor(getResources().getColor(R.color.font));
     	}
     	tv.setText(message);
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	
     	pb=(ProgressBar)findViewById(R.id.bar_status_energy);
     	pb.setMax(pet_status.get_energy_max());
     	pb.setProgress(pet_status.get_energy());
     	tv=(TextView)findViewById(R.id.text_status_title_energy);
     	tv.setText(Pet_Status.get_buff_name("energy_max")+": ");
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	tv=(TextView)findViewById(R.id.text_status_energy);
     	message=pet_status.get_energy()+"/"+pet_status.get_energy_max();
     	if(pet_status.get_energy_upgrade()>0){
@@ -240,25 +240,25 @@ public class Activity_Status extends AppCompatActivity{
     		tv.setTextColor(getResources().getColor(R.color.font));
     	}
     	tv.setText(message);
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	
     	pb=(ProgressBar)findViewById(R.id.bar_status_winloss_sp);
     	pb.setMax(pet_status.battles_won_sp+pet_status.battles_lost_sp);
     	pb.setProgress(pet_status.battles_won_sp);
     	tv=(TextView)findViewById(R.id.text_status_title_winloss_sp);
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	tv=(TextView)findViewById(R.id.text_status_winloss_sp);
     	tv.setText(pet_status.battles_won_sp+":"+pet_status.battles_lost_sp);
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	
     	pb=(ProgressBar)findViewById(R.id.bar_status_winloss);
     	pb.setMax(pet_status.battles_won+pet_status.battles_lost);
     	pb.setProgress(pet_status.battles_won);
     	tv=(TextView)findViewById(R.id.text_status_title_winloss);
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	tv=(TextView)findViewById(R.id.text_status_winloss);
     	tv.setText(pet_status.battles_won+":"+pet_status.battles_lost);
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	
     	String buffs_begin=this.getString(R.string.status_buffs);
     	buffs_begin+="<font color='"+String.format("#%06x",0xFFFFFF&getResources().getColor(R.color.font_upgrade))+"'>";
@@ -320,7 +320,7 @@ public class Activity_Status extends AppCompatActivity{
     	
     	tv=(TextView)findViewById(R.id.text_status_buffs);
     	tv.setText(Html.fromHtml(Strings.newline_to_br(buffs_begin+buffs+buffs_end)));
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	if(buffs.length()==0){
     		tv.setVisibility(TextView.GONE);
     	}

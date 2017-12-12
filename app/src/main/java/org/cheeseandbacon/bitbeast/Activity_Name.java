@@ -50,12 +50,12 @@ public class Activity_Name extends AppCompatActivity implements ColorPickerSwatc
         pet_status=new Pet_Status();
         pet_status.color = colors[RNG.random_range(0, COLORS - 1)];
         
-        Font.set_typeface((TextView)findViewById(R.id.text_name_label));
-        Font.set_typeface((EditText)findViewById(R.id.text_name_entry));
-        Font.set_typeface((Button)findViewById(R.id.button_name_ok));
-        Font.set_typeface((Button)findViewById(R.id.button_name_exit));
-        Font.set_typeface((Button)findViewById(R.id.button_name_color));
-        Font.set_typeface((TextView)findViewById(R.id.text_name_intro));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_name_label));
+        Font.set_typeface(getAssets(), (EditText)findViewById(R.id.text_name_entry));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_name_ok));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_name_exit));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_name_color));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_name_intro));
     }
 
     @Override

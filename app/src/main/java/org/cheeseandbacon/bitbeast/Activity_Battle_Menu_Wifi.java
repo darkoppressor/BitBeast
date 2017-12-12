@@ -131,8 +131,8 @@ public class Activity_Battle_Menu_Wifi extends AppCompatActivity implements Wifi
 
         setupAdapter();
 
-        Font.set_typeface((TextView)findViewById(R.id.button_battle_menu_wifi_refresh));
-        Font.set_typeface((TextView)findViewById(R.id.text_battle_menu_available_devices));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.button_battle_menu_wifi_refresh));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_battle_menu_available_devices));
 
         reset();
     }

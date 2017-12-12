@@ -17,7 +17,7 @@ public class Activity_Records extends AppCompatActivity {
         
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
         
-        Font.set_typeface((TextView)findViewById(R.id.message_records));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.message_records));
     }
 	@Override
     protected void onDestroy(){

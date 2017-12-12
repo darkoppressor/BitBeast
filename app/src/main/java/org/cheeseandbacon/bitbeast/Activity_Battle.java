@@ -67,11 +67,11 @@ public class Activity_Battle extends AppCompatActivity {
         our_level=0;
         their_level=0;
         
-        Font.set_typeface((TextView)findViewById(R.id.battle_text_us));
-        Font.set_typeface((TextView)findViewById(R.id.battle_text_them));
-        Font.set_typeface((TextView)findViewById(R.id.battle_text_numbers));
-        Font.set_typeface((TextView)findViewById(R.id.battle_text_result));
-        Font.set_typeface((Button)findViewById(R.id.battle_button_replay));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.battle_text_us));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.battle_text_them));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.battle_text_numbers));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.battle_text_result));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.battle_button_replay));
         
         if(savedInstanceState!=null){
 	        TextView tv=null;

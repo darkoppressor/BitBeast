@@ -57,7 +57,7 @@ public class Activity_Help_Page extends AppCompatActivity {
         	tv.setText(getResources().getString(R.string.help_legal));
         }
         
-        Font.set_typeface((TextView)findViewById(R.id.message_help_page));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.message_help_page));
     }
 	@Override
     protected void onDestroy(){

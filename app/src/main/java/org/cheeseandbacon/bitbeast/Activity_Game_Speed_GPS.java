@@ -71,12 +71,12 @@ public class Activity_Game_Speed_GPS extends AppCompatActivity implements Locati
         
         speed_pool=0.0f;
         
-        Font.set_typeface((TextView)findViewById(R.id.text_game_speed_gps_bits_this_session));
-        Font.set_typeface((TextView)findViewById(R.id.text_game_speed_gps_weight_loss_this_session));
-        Font.set_typeface((TextView)findViewById(R.id.text_game_speed_gps_notice_off));
-        Font.set_typeface((TextView)findViewById(R.id.text_game_speed_gps_notice_accuracy));
-        Font.set_typeface((TextView)findViewById(R.id.text_game_speed_gps_accuracy));
-        Font.set_typeface((TextView)findViewById(R.id.text_game_speed_gps_speed));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_game_speed_gps_bits_this_session));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_game_speed_gps_weight_loss_this_session));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_game_speed_gps_notice_off));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_game_speed_gps_notice_accuracy));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_game_speed_gps_accuracy));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_game_speed_gps_speed));
         
         if(savedInstanceState!=null){
         	bits_this_session=savedInstanceState.getInt("bits_this_session");

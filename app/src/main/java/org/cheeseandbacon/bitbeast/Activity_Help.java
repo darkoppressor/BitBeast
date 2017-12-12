@@ -16,15 +16,15 @@ public class Activity_Help extends AppCompatActivity {
         
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
         
-        Font.set_typeface((Button)findViewById(R.id.button_help_how_to_play));
-        Font.set_typeface((Button)findViewById(R.id.button_help_pet));
-        Font.set_typeface((Button)findViewById(R.id.button_help_store));
-        Font.set_typeface((Button)findViewById(R.id.button_help_play));
-        Font.set_typeface((Button)findViewById(R.id.button_help_train));
-        Font.set_typeface((Button)findViewById(R.id.button_help_battle));
-        Font.set_typeface((Button)findViewById(R.id.button_help_speech_recognition));
-        Font.set_typeface((Button)findViewById(R.id.button_help_app));
-        Font.set_typeface((Button)findViewById(R.id.button_help_legal));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_help_how_to_play));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_help_pet));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_help_store));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_help_play));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_help_train));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_help_battle));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_help_speech_recognition));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_help_app));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_help_legal));
     }
 	@Override
     protected void onDestroy(){

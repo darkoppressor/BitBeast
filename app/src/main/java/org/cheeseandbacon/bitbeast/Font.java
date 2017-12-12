@@ -13,7 +13,9 @@ public class Font{
 		}
 	}
 	
-	public static synchronized void set_typeface(TextView...params){
+	public static synchronized void set_typeface(AssetManager assets, TextView...params){
+	    startup(assets);
+
 		if(font1!=null){
 			for(TextView view:params){
 				view.setTypeface(font1);

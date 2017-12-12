@@ -61,12 +61,12 @@ public class Activity_Game_GPS extends AppCompatActivity implements LocationList
         accuracies=0.0f;
         accuracy_count=0;
         
-        Font.set_typeface((TextView)findViewById(R.id.text_game_gps_bits_this_session));
-        Font.set_typeface((TextView)findViewById(R.id.text_game_gps_weight_loss_this_session));
-        Font.set_typeface((TextView)findViewById(R.id.text_game_gps_distance_this_session));
-        Font.set_typeface((TextView)findViewById(R.id.text_game_gps_notice_off));
-        Font.set_typeface((TextView)findViewById(R.id.text_game_gps_notice_accuracy));
-        Font.set_typeface((TextView)findViewById(R.id.text_game_gps_accuracy));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_game_gps_bits_this_session));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_game_gps_weight_loss_this_session));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_game_gps_distance_this_session));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_game_gps_notice_off));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_game_gps_notice_accuracy));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_game_gps_accuracy));
         
         if(savedInstanceState!=null){
         	bits_this_session=savedInstanceState.getInt("bits_this_session");

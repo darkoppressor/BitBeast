@@ -496,8 +496,8 @@ public class Activity_Store extends AppCompatActivity {
     	pet_status=new Pet_Status();
     	StorageManager.load_pet_status(this,null,pet_status);
     	
-    	Font.set_typeface((Button)findViewById(R.id.button_store_back));
-    	Font.set_typeface((Button)findViewById(R.id.button_store_forward));
+    	Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_store_back));
+    	Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_store_forward));
     	
     	TextView tv=null;
     	ProgressBar pb=null;
@@ -511,11 +511,11 @@ public class Activity_Store extends AppCompatActivity {
     	
     	tv=(TextView)findViewById(R.id.text_store_bits);
     	tv.setText(this.getString(R.string.status_bits)+pet_status.bits);
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	
     	tv=(TextView)findViewById(R.id.text_store_sick);
     	tv.setText(sick_string);
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	if(section!=Store_Section.TREATMENTS || !pet_status.sick){
     		tv.setVisibility(TextView.GONE);
     	}
@@ -525,10 +525,10 @@ public class Activity_Store extends AppCompatActivity {
     	pb.setProgress(pet_status.hunger);
     	tv=(TextView)findViewById(R.id.text_store_title_hunger);
     	tv.setText(Pet_Status.get_buff_name("hunger")+": ");
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	tv=(TextView)findViewById(R.id.text_store_hunger);
     	tv.setText(pet_status.hunger+"/"+Age_Tier.get_hunger_max(pet_status.age_tier));
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	tv.setVisibility(TextView.INVISIBLE);
     	if(section!=Store_Section.FOOD){
     		ll=(LinearLayout)findViewById(R.id.ll_store_hunger);
@@ -540,10 +540,10 @@ public class Activity_Store extends AppCompatActivity {
     	pb.setProgress(pet_status.happy+Pet_Status.HAPPY_MAX);
     	tv=(TextView)findViewById(R.id.text_store_title_happy);
     	tv.setText(Pet_Status.get_buff_name("happy")+": ");
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	tv=(TextView)findViewById(R.id.text_store_happy);
     	tv.setText(pet_status.happy+"/"+Pet_Status.HAPPY_MAX);
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	tv.setVisibility(TextView.INVISIBLE);
     	if(section!=Store_Section.FOOD){
     		ll=(LinearLayout)findViewById(R.id.ll_store_happy);
@@ -555,10 +555,10 @@ public class Activity_Store extends AppCompatActivity {
     	pb.setProgress(pet_status.thirst);
     	tv=(TextView)findViewById(R.id.text_store_title_thirst);
     	tv.setText(Pet_Status.get_buff_name("thirst")+": ");
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	tv=(TextView)findViewById(R.id.text_store_thirst);
     	tv.setText(pet_status.thirst+"/"+Pet_Status.THIRST_MAX);
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	tv.setVisibility(TextView.INVISIBLE);
     	if(section!=Store_Section.DRINKS){
     		ll=(LinearLayout)findViewById(R.id.ll_store_thirst);
@@ -570,7 +570,7 @@ public class Activity_Store extends AppCompatActivity {
     	pb.setProgress(pet_status.get_strength());
     	tv=(TextView)findViewById(R.id.text_store_title_strength);
     	tv.setText(Pet_Status.get_buff_name("strength_max")+": ");
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	tv=(TextView)findViewById(R.id.text_store_strength);
     	message=pet_status.get_strength()+"/"+pet_status.get_strength_max();
     	if(pet_status.get_strength_upgrade()>0){
@@ -582,7 +582,7 @@ public class Activity_Store extends AppCompatActivity {
     		tv.setTextColor(getResources().getColor(R.color.font));
     	}
     	tv.setText(message);
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	if(section!=Store_Section.TREATMENTS){
     		ll=(LinearLayout)findViewById(R.id.ll_store_strength);
     		ll.setVisibility(LinearLayout.GONE);
@@ -593,7 +593,7 @@ public class Activity_Store extends AppCompatActivity {
     	pb.setProgress(pet_status.get_dexterity());
     	tv=(TextView)findViewById(R.id.text_store_title_dexterity);
     	tv.setText(Pet_Status.get_buff_name("dexterity_max")+": ");
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	tv=(TextView)findViewById(R.id.text_store_dexterity);
     	message=pet_status.get_dexterity()+"/"+pet_status.get_dexterity_max();
     	if(pet_status.get_dexterity_upgrade()>0){
@@ -605,7 +605,7 @@ public class Activity_Store extends AppCompatActivity {
     		tv.setTextColor(getResources().getColor(R.color.font));
     	}
     	tv.setText(message);
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	if(section!=Store_Section.TREATMENTS){
     		ll=(LinearLayout)findViewById(R.id.ll_store_dexterity);
     		ll.setVisibility(LinearLayout.GONE);
@@ -616,7 +616,7 @@ public class Activity_Store extends AppCompatActivity {
     	pb.setProgress(pet_status.get_stamina());
     	tv=(TextView)findViewById(R.id.text_store_title_stamina);
     	tv.setText(Pet_Status.get_buff_name("stamina_max")+": ");
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	tv=(TextView)findViewById(R.id.text_store_stamina);
     	message=pet_status.get_stamina()+"/"+pet_status.get_stamina_max();
     	if(pet_status.get_stamina_upgrade()>0){
@@ -628,7 +628,7 @@ public class Activity_Store extends AppCompatActivity {
     		tv.setTextColor(getResources().getColor(R.color.font));
     	}
     	tv.setText(message);
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	if(section!=Store_Section.TREATMENTS){
     		ll=(LinearLayout)findViewById(R.id.ll_store_stamina);
     		ll.setVisibility(LinearLayout.GONE);
@@ -639,7 +639,7 @@ public class Activity_Store extends AppCompatActivity {
     	pb.setProgress(pet_status.get_energy());
     	tv=(TextView)findViewById(R.id.text_store_title_energy);
     	tv.setText(Pet_Status.get_buff_name("energy_max")+": ");
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	tv=(TextView)findViewById(R.id.text_store_energy);
     	message=pet_status.get_energy()+"/"+pet_status.get_energy_max();
     	if(pet_status.get_energy_upgrade()>0){
@@ -651,7 +651,7 @@ public class Activity_Store extends AppCompatActivity {
     		tv.setTextColor(getResources().getColor(R.color.font));
     	}
     	tv.setText(message);
-    	Font.set_typeface(tv);
+    	Font.set_typeface(getAssets(), tv);
     	if(section!=Store_Section.TREATMENTS){
     		ll=(LinearLayout)findViewById(R.id.ll_store_energy);
     		ll.setVisibility(LinearLayout.GONE);

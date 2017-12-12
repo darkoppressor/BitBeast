@@ -30,17 +30,17 @@ public class Activity_Options extends AppCompatActivity {
         showDialog(DIALOG_ID_RESET);
         dismissDialog(DIALOG_ID_RESET);
         
-        Font.set_typeface((TextView)findViewById(R.id.text_options_holiday));
-        Font.set_typeface((Button)findViewById(R.id.button_options_config));
-        Font.set_typeface((Button)findViewById(R.id.button_options_records));
-        Font.set_typeface((Button)findViewById(R.id.button_options_help));
-        Font.set_typeface((Button)findViewById(R.id.button_options_about));
-        Font.set_typeface((Button)findViewById(R.id.button_options_credits));
-        Font.set_typeface((Button)findViewById(R.id.button_options_reset));
-        Font.set_typeface((Button)findViewById(R.id.button_options_exit));
-        Font.set_typeface((TextView)dialog_reset.findViewById(R.id.dialog_options_reset_message));
-        Font.set_typeface((Button)dialog_reset.findViewById(R.id.button_dialog_options_reset_yes));
-        Font.set_typeface((Button)dialog_reset.findViewById(R.id.button_dialog_options_reset_no));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_options_holiday));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_options_config));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_options_records));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_options_help));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_options_about));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_options_credits));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_options_reset));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_options_exit));
+        Font.set_typeface(getAssets(), (TextView)dialog_reset.findViewById(R.id.dialog_options_reset_message));
+        Font.set_typeface(getAssets(), (Button)dialog_reset.findViewById(R.id.button_dialog_options_reset_yes));
+        Font.set_typeface(getAssets(), (Button)dialog_reset.findViewById(R.id.button_dialog_options_reset_no));
     }
 	@Override
     protected void onDestroy(){

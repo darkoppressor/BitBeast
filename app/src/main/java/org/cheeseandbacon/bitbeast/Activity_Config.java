@@ -64,19 +64,19 @@ public class Activity_Config extends AppCompatActivity {
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(new Spinner_Listener_Gps_Update_Time());
         
-        Font.set_typeface((CheckBox)findViewById(R.id.checkbox_config_pause));
-        Font.set_typeface((CheckBox)findViewById(R.id.checkbox_config_keep_screen_on));
-        Font.set_typeface((CheckBox)findViewById(R.id.checkbox_config_vibrate));
-        Font.set_typeface((CheckBox)findViewById(R.id.checkbox_config_show_stat_bars));
-        Font.set_typeface((CheckBox)findViewById(R.id.checkbox_config_show_thermometer));
-        Font.set_typeface((TextView)findViewById(R.id.text_config_screen_orientation));
-        Font.set_typeface((TextView)findViewById(R.id.text_config_temp_units));
-        Font.set_typeface((TextView)findViewById(R.id.text_config_units));
-        Font.set_typeface((TextView)findViewById(R.id.text_config_gps_update_time));
-        Font.set_typeface((TextView)findViewById(R.id.text_config_header_pet));
-        Font.set_typeface((TextView)findViewById(R.id.text_config_header_android));
-        Font.set_typeface((TextView)findViewById(R.id.text_config_header_display));
-        Font.set_typeface((Button)findViewById(R.id.button_config_desired_sleep_time));
+        Font.set_typeface(getAssets(), (CheckBox)findViewById(R.id.checkbox_config_pause));
+        Font.set_typeface(getAssets(), (CheckBox)findViewById(R.id.checkbox_config_keep_screen_on));
+        Font.set_typeface(getAssets(), (CheckBox)findViewById(R.id.checkbox_config_vibrate));
+        Font.set_typeface(getAssets(), (CheckBox)findViewById(R.id.checkbox_config_show_stat_bars));
+        Font.set_typeface(getAssets(), (CheckBox)findViewById(R.id.checkbox_config_show_thermometer));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_config_screen_orientation));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_config_temp_units));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_config_units));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_config_gps_update_time));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_config_header_pet));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_config_header_android));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_config_header_display));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_config_desired_sleep_time));
         
         CheckBox cb=null;
         

@@ -38,11 +38,11 @@ public class Activity_Spend_Stat_Points extends AppCompatActivity {
     	pet_status=new Pet_Status();
     	StorageManager.load_pet_status(this,null,pet_status);
     	
-    	Font.set_typeface((TextView)findViewById(R.id.spend_stat_points));
-        Font.set_typeface((TextView)findViewById(R.id.spend_stat_points_points));
-        Font.set_typeface((Button)findViewById(R.id.button_spend_stat_points_strength));
-        Font.set_typeface((Button)findViewById(R.id.button_spend_stat_points_dexterity));
-        Font.set_typeface((Button)findViewById(R.id.button_spend_stat_points_stamina));
+    	Font.set_typeface(getAssets(), (TextView)findViewById(R.id.spend_stat_points));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.spend_stat_points_points));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_spend_stat_points_strength));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_spend_stat_points_dexterity));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_spend_stat_points_stamina));
     	
 		Button b=null;
 		

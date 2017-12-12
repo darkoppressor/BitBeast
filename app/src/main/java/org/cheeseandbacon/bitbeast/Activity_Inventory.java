@@ -129,19 +129,19 @@ public class Activity_Inventory extends AppCompatActivity {
         showDialog(DIALOG_DETAILS);
         dismissDialog(DIALOG_DETAILS);
     	
-    	Font.set_typeface((Button)findViewById(R.id.button_inventory_sell));
-    	Font.set_typeface((CheckedTextView)findViewById(R.id.checkbox_inventory_all));
-    	Font.set_typeface((Button)findViewById(R.id.button_inventory_back));
-    	Font.set_typeface((Button)findViewById(R.id.button_inventory_forward));
+    	Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_inventory_sell));
+    	Font.set_typeface(getAssets(), (CheckedTextView)findViewById(R.id.checkbox_inventory_all));
+    	Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_inventory_back));
+    	Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_inventory_forward));
     	
-    	Font.set_typeface((TextView)dialog_sold.findViewById(R.id.dialog_inventory_sold_message));
-    	Font.set_typeface((Button)dialog_sold.findViewById(R.id.button_dialog_inventory_sold_ok));
+    	Font.set_typeface(getAssets(), (TextView)dialog_sold.findViewById(R.id.dialog_inventory_sold_message));
+    	Font.set_typeface(getAssets(), (Button)dialog_sold.findViewById(R.id.button_dialog_inventory_sold_ok));
     	
-    	Font.set_typeface((TextView)dialog_details.findViewById(R.id.dialog_inventory_details_message));
-    	Font.set_typeface((Button)dialog_details.findViewById(R.id.button_dialog_inventory_details_ok));
-    	Font.set_typeface((Button)dialog_details.findViewById(R.id.button_dialog_inventory_details_equip));
-    	Font.set_typeface((Button)dialog_details.findViewById(R.id.button_dialog_inventory_details_unequip));
-    	Font.set_typeface((Button)dialog_details.findViewById(R.id.button_dialog_inventory_details_sell));
+    	Font.set_typeface(getAssets(), (TextView)dialog_details.findViewById(R.id.dialog_inventory_details_message));
+    	Font.set_typeface(getAssets(), (Button)dialog_details.findViewById(R.id.button_dialog_inventory_details_ok));
+    	Font.set_typeface(getAssets(), (Button)dialog_details.findViewById(R.id.button_dialog_inventory_details_equip));
+    	Font.set_typeface(getAssets(), (Button)dialog_details.findViewById(R.id.button_dialog_inventory_details_unequip));
+    	Font.set_typeface(getAssets(), (Button)dialog_details.findViewById(R.id.button_dialog_inventory_details_sell));
 	}
 	@Override
     protected void onDestroy(){

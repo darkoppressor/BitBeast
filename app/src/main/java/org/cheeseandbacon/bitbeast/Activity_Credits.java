@@ -14,7 +14,7 @@ public class Activity_Credits extends AppCompatActivity {
         
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
         
-        Font.set_typeface((TextView)findViewById(R.id.message_credits));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.message_credits));
     }
 	@Override
     protected void onDestroy(){

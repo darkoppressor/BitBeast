@@ -46,9 +46,9 @@ public class Activity_Game_RPS extends AppCompatActivity {
         showDialog(DIALOG_ID_GAME_DONE);
         dismissDialog(DIALOG_ID_GAME_DONE);
         
-        Font.set_typeface((TextView)dialog_game_done.findViewById(R.id.dialog_rps_vs));
-        Font.set_typeface((TextView)dialog_game_done.findViewById(R.id.dialog_rps_message));
-        Font.set_typeface((Button)dialog_game_done.findViewById(R.id.button_dialog_game_rps_ok));
+        Font.set_typeface(getAssets(), (TextView)dialog_game_done.findViewById(R.id.dialog_rps_vs));
+        Font.set_typeface(getAssets(), (TextView)dialog_game_done.findViewById(R.id.dialog_rps_message));
+        Font.set_typeface(getAssets(), (Button)dialog_game_done.findViewById(R.id.button_dialog_game_rps_ok));
         
         Button b=null;
         

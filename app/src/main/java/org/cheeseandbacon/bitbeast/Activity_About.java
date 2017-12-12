@@ -15,9 +15,9 @@ public class Activity_About extends AppCompatActivity {
         
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
         
-        Font.set_typeface((TextView)findViewById(R.id.about_title));
-        Font.set_typeface((TextView)findViewById(R.id.about_version));
-        Font.set_typeface((TextView)findViewById(R.id.message_about));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.about_title));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.about_version));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.message_about));
         
         String app_version="";
         try{

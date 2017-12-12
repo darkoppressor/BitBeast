@@ -142,17 +142,17 @@ public class Activity_Rewards extends AppCompatActivity {
         showDialog(DIALOG_DETAILS);
         dismissDialog(DIALOG_DETAILS);
         
-        Font.set_typeface((TextView)findViewById(R.id.rewards_info));
-    	Font.set_typeface((TextView)findViewById(R.id.rewards_text_item));
-    	Font.set_typeface((Button)findViewById(R.id.button_rewards_item));
-    	Font.set_typeface((Button)findViewById(R.id.button_rewards_spend));
-        Font.set_typeface((Button)findViewById(R.id.button_rewards_ok));
+        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.rewards_info));
+    	Font.set_typeface(getAssets(), (TextView)findViewById(R.id.rewards_text_item));
+    	Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_rewards_item));
+    	Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_rewards_spend));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_rewards_ok));
         
-        Font.set_typeface((TextView)dialog_details.findViewById(R.id.dialog_inventory_details_message));
-    	Font.set_typeface((Button)dialog_details.findViewById(R.id.button_dialog_inventory_details_ok));
-    	Font.set_typeface((Button)dialog_details.findViewById(R.id.button_dialog_inventory_details_equip));
-    	Font.set_typeface((Button)dialog_details.findViewById(R.id.button_dialog_inventory_details_unequip));
-    	Font.set_typeface((Button)dialog_details.findViewById(R.id.button_dialog_inventory_details_sell));
+        Font.set_typeface(getAssets(), (TextView)dialog_details.findViewById(R.id.dialog_inventory_details_message));
+    	Font.set_typeface(getAssets(), (Button)dialog_details.findViewById(R.id.button_dialog_inventory_details_ok));
+    	Font.set_typeface(getAssets(), (Button)dialog_details.findViewById(R.id.button_dialog_inventory_details_equip));
+    	Font.set_typeface(getAssets(), (Button)dialog_details.findViewById(R.id.button_dialog_inventory_details_unequip));
+    	Font.set_typeface(getAssets(), (Button)dialog_details.findViewById(R.id.button_dialog_inventory_details_sell));
     	
 		Button b=null;
 		

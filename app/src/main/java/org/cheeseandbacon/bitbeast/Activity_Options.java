@@ -33,7 +33,7 @@ public class Activity_Options extends AppCompatActivity {
         showDialog(DIALOG_ID_RESET);
         dismissDialog(DIALOG_ID_RESET);
         
-        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_options_holiday));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_options_holiday));
         Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_options_config));
         Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_options_records));
         Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_options_help));
@@ -41,6 +41,7 @@ public class Activity_Options extends AppCompatActivity {
         Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_options_credits));
         Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_options_reset));
         Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_options_exit));
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_options_dev));
         Font.set_typeface(getAssets(), (TextView)dialog_reset.findViewById(R.id.dialog_options_reset_message));
         Font.set_typeface(getAssets(), (Button)dialog_reset.findViewById(R.id.button_dialog_options_reset_yes));
         Font.set_typeface(getAssets(), (Button)dialog_reset.findViewById(R.id.button_dialog_options_reset_no));
@@ -80,7 +81,7 @@ public class Activity_Options extends AppCompatActivity {
     	
     	overridePendingTransition(R.anim.transition_in,R.anim.transition_out);
     	
-    	TextView tv=(TextView)findViewById(R.id.text_options_holiday);
+    	Button tv=(Button)findViewById(R.id.button_options_holiday);
     	if(Holiday.get()==Holiday.NONE){
     		tv.setVisibility(TextView.GONE);
     	}

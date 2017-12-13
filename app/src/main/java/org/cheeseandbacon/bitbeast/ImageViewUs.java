@@ -1,5 +1,8 @@
-package org.cheeseandbacon.bitbeast;
+/* Copyright (c) 2017 Cheese and Bacon Games, LLC */
+/* This file is licensed under the MIT License. */
+/* See the file development/LICENSE.txt for the full license text. */
 
+package org.cheeseandbacon.bitbeast;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -9,7 +12,6 @@ import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 
 public class ImageViewUs extends ImageView{
 	Activity_Battle ab;

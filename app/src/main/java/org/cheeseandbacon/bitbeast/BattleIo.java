@@ -107,7 +107,8 @@ public class BattleIo {
         bundle.putBoolean(context.getPackageName() + ".shadow", false);
         bundle.putInt(context.getPackageName() + ".our_seed", our_seed);
         bundle.putInt(context.getPackageName() + ".their_seed", their_seed);
-        bundle.putAll(them.write_bundle_battle_data(context.getPackageName()));
+        bundle.putAll(pet_status.write_bundle_battle_data(context.getPackageName() + ".us"));
+        bundle.putAll(them.write_bundle_battle_data(context.getPackageName() + ".them"));
 
         result.intent.putExtras(bundle);
 

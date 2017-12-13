@@ -87,7 +87,7 @@ public class Activity_Battle extends AppCompatActivity {
 	    	
 	    	us_at_start=new Pet_Status();
 	    	if(savedInstanceState.getString(getPackageName()+"type")!=null){
-	    		us_at_start.read_bundle_battle_data(getPackageName(),savedInstanceState);
+	    		us_at_start.read_bundle_battle_data(getPackageName() + ".us",savedInstanceState);
 	    	}
 	    	
 	    	bits_reward=savedInstanceState.getInt("bits_reward");
@@ -205,7 +205,7 @@ public class Activity_Battle extends AppCompatActivity {
         savedInstanceState.putString("text_result",tv.getText().toString());
         
         if(us_at_start!=null){
-        	savedInstanceState.putAll(us_at_start.write_bundle_battle_data(getPackageName()));
+        	savedInstanceState.putAll(us_at_start.write_bundle_battle_data(getPackageName() + ".us"));
         }
         
         savedInstanceState.putInt("bits_reward",bits_reward);
@@ -324,23 +324,21 @@ public class Activity_Battle extends AppCompatActivity {
         
         //If this is the initial battle.
         if(battle){
-        	//Load our pet data.
-        	us=new Pet_Status();
-        	StorageManager.load_pet_status(this,null,us);
-        	
-        	//Load our pet data into the initial pet data holder as well.
-        	us_at_start=new Pet_Status();
-            StorageManager.load_pet_status(this,null,us_at_start);
+            us=new Pet_Status();
+            us.read_bundle_battle_data(getPackageName() + ".us",bundle);
+
+            us_at_start=new Pet_Status();
+            us_at_start.read_bundle_battle_data(getPackageName() + ".us",bundle);
         }
         else{
         	//Transfer the relevant data from the initial pet data holder to our pet data holder for the battle.
         	Bundle temp_bundle=new Bundle();
-        	temp_bundle.putAll(us_at_start.write_bundle_battle_data(getPackageName()));
-        	us.read_bundle_battle_data(getPackageName(),temp_bundle);
+        	temp_bundle.putAll(us_at_start.write_bundle_battle_data(getPackageName() + ".us"));
+        	us.read_bundle_battle_data(getPackageName() + ".us",temp_bundle);
         }
         
         them=new Pet_Status();
-        them.read_bundle_battle_data(getPackageName(),bundle);
+        them.read_bundle_battle_data(getPackageName() + ".them",bundle);
         
         setTitle(us.name+" vs. "+them.name);
         
@@ -464,11 +462,12 @@ public class Activity_Battle extends AppCompatActivity {
 		Resources res=getResources();
 		
 		Bundle bundle=getIntent().getExtras();
-        
+
         us=new Pet_Status();
-        StorageManager.load_pet_status(this,null,us);
+        us.read_bundle_battle_data(getPackageName() + ".us",bundle);
+
         them=new Pet_Status();
-        them.read_bundle_battle_data(getPackageName(),bundle);
+        them.read_bundle_battle_data(getPackageName() + ".them",bundle);
         
         setTitle(us.name+" vs. "+them.name);
         

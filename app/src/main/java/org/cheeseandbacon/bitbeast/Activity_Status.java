@@ -72,7 +72,7 @@ public class Activity_Status extends AppCompatActivity{
     	
     	b=(Button)findViewById(R.id.button_status_spend);
     	Font.set_typeface(getAssets(), b);
-    	if(pet_status.stat_points>0){
+    	if(pet_status.age_tier!=Age_Tier.EGG && pet_status.age_tier!=Age_Tier.DEAD && pet_status.stat_points>0){
     		b.setVisibility(Button.VISIBLE);
     	}
     	else{

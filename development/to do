@@ -1,17 +1,5 @@
 Important for 1.1.0:
 
-A bit beast should use its pet data AS SENT when battling, not load it from storage in the battle activity
-
-After a battle, if you got an item and then sold it, it returns to the main screen, but it should return to the battle summary
-
-When you spend stat points, it should add the same amount to max and current
-
-When dead, do not allow stat screen button for spending points
-When dying, make sure the age is stopped where they died
-Carry over perma items when a new pet is made
-Chance to get sick seems too high
-Maybe also look at chance to die when I do this
-
 Looks like thought bubble need pics have wrong colors
 
 Test wi fi battles with same and different versions

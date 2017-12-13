@@ -37,7 +37,7 @@ public class Equipment{
 	static final double BUFF_POOP=1.75;
 	static final double BUFF_DIRTY=0.85;
 	static final double BUFF_WEIGHT=0.1;
-	static final double BUFF_SICK=5.0;
+	static final double BUFF_SICK=0.25;
 	static final double BUFF_HAPPY=4.0;
 	static final double BUFF_ENERGY_REGEN=0.2;
 	static final double BUFF_STRENGTH_REGEN=0.1;

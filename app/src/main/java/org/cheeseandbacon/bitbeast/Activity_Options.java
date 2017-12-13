@@ -12,11 +12,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Activity_Options extends AppCompatActivity {
 	static final int DIALOG_ID_RESET=0;
 	
 	AlertDialog dialog_reset;
+
+	private int dev_toggle_clicks;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState){
@@ -67,6 +70,8 @@ public class Activity_Options extends AppCompatActivity {
 	@Override
     protected void onResume(){
     	super.onResume();
+
+    	dev_toggle_clicks = 0;
     	
     	set_dialog_buttons();
     	
@@ -84,6 +89,8 @@ public class Activity_Options extends AppCompatActivity {
     		tv.setText(Holiday.get_string());
     		tv.setTextColor(Holiday.get_color(getResources()));
     	}
+
+    	updateDevButton();
     }
 	@Override
     protected void onPause(){
@@ -92,6 +99,15 @@ public class Activity_Options extends AppCompatActivity {
     	close_dialogs();
     	
     	overridePendingTransition(R.anim.transition_in,R.anim.transition_out);
+    }
+
+    private void updateDevButton () {
+        Button button = findViewById(R.id.button_options_dev);
+        if (Options.dev) {
+            button.setVisibility(View.VISIBLE);
+        } else {
+            button.setVisibility(View.GONE);
+        }
     }
 	
 	public void button_config(View view){
@@ -120,7 +136,6 @@ public class Activity_Options extends AppCompatActivity {
 	public void button_exit(View view){
     	setResult(RESULT_CANCELED);
     	this.finish();
-    	return;
     }
 	
 	public void close_dialogs(){
@@ -150,5 +165,25 @@ public class Activity_Options extends AppCompatActivity {
 			    }
 			}
 		});
+	}
+
+    public void button_dev_toggle (View view) {
+	    if (++dev_toggle_clicks >= 5) {
+	        dev_toggle_clicks = 0;
+
+	        Options.dev = !Options.dev;
+
+	        if (Options.dev) {
+                Toast.makeText(this, getString(R.string.options_dev_on), Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, getString(R.string.options_dev_off), Toast.LENGTH_SHORT).show();
+            }
+
+	        updateDevButton();
+        }
+    }
+
+	public void button_dev (View view) {
+		startActivity(new Intent(this, Activity_Dev.class));
 	}
 }

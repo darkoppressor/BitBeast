@@ -83,9 +83,12 @@ public class Activity_Spend_Stat_Points extends AppCompatActivity {
     public void button_spend_strength(View view){
     	if(pet_status.stat_points>0){
 			Sound_Manager.play_sound(Sound.SPEND_STAT_POINT);
-			
+
 			pet_status.strength_max+=Pet_Status.STAT_GAIN_SELECTION;
 			pet_status.strength_max_bound();
+
+			pet_status.strength+=Pet_Status.STAT_GAIN_SELECTION;
+			pet_status.strength_bound();
 			
 			pet_status.stat_points--;
 			
@@ -101,9 +104,12 @@ public class Activity_Spend_Stat_Points extends AppCompatActivity {
     public void button_spend_dexterity(View view){
     	if(pet_status.stat_points>0){
 			Sound_Manager.play_sound(Sound.SPEND_STAT_POINT);
-			
-			pet_status.dexterity_max+=Pet_Status.STAT_GAIN_SELECTION;
-			pet_status.dexterity_max_bound();
+
+            pet_status.dexterity_max+=Pet_Status.STAT_GAIN_SELECTION;
+            pet_status.dexterity_max_bound();
+
+            pet_status.dexterity+=Pet_Status.STAT_GAIN_SELECTION;
+            pet_status.dexterity_bound();
 			
 			pet_status.stat_points--;
 			
@@ -119,9 +125,12 @@ public class Activity_Spend_Stat_Points extends AppCompatActivity {
     public void button_spend_stamina(View view){
     	if(pet_status.stat_points>0){
 			Sound_Manager.play_sound(Sound.SPEND_STAT_POINT);
-			
-			pet_status.stamina_max+=Pet_Status.STAT_GAIN_SELECTION;
-			pet_status.stamina_max_bound();
+
+            pet_status.stamina_max+=Pet_Status.STAT_GAIN_SELECTION;
+            pet_status.stamina_max_bound();
+
+            pet_status.stamina+=Pet_Status.STAT_GAIN_SELECTION;
+            pet_status.stamina_bound();
 			
 			pet_status.stat_points--;
 			

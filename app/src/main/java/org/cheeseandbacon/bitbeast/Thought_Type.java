@@ -15,4 +15,31 @@ public class Thought_Type{
 	public static int get_sound_id(int type){
 		return Sound.THOUGHT;
 	}
+
+	public static String type_to_string (int type) {
+	    switch (type) {
+	        case HAPPY:
+	            return "happy";
+            case HOT:
+                return "hot";
+            case COLD:
+                return "cold";
+            case DIRTY:
+                return "dirty";
+            case SICK:
+                return "sick";
+            case HUNGRY:
+                return "hungry";
+            case THIRSTY:
+                return "thirsty";
+            case SAD:
+                return "sad";
+            case MUSIC:
+                return "music";
+            case POOP:
+                return "poop";
+            default:
+                return "";
+        }
+    }
 }

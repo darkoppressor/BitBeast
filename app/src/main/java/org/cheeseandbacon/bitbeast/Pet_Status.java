@@ -238,7 +238,7 @@ public class Pet_Status{
 	static final short BATH_MAX=99;
 	static final double WEIGHT_MIN=1.0;
 	static final double WEIGHT_START=1.0;
-	static final int BASE_SICK_CHANCE=33;
+	static final int BASE_SICK_CHANCE=15;
 	static final short BASE_HUNGER_RATE=5;
 	static final short BASE_THIRST_RATE=6;
 	static final short BASE_POOP_RATE_MIN=8;
@@ -298,8 +298,8 @@ public class Pet_Status{
 	//Sick chance decrease: Subtracts the buff from the base sick chance.
 	//Note that this is a 0-999 chance, not a standard 0-99.
 	static final int FOOD_BUFF_SECONDS_SICK=3600;
-	static final int FOOD_BUFF_SICK=8;
-	static final int ITEM_BUFF_WHEAT=10;
+	static final int FOOD_BUFF_SICK=4;
+	static final int ITEM_BUFF_WHEAT=8;
 	
 	//Happy regen increase: Buff is added to happy each tick.
 	static final int FOOD_BUFF_SECONDS_HAPPY=1800;
@@ -2151,7 +2151,7 @@ public class Pet_Status{
 	}
 	
 	public int get_sick_chance(){
-		double number=BASE_SICK_CHANCE;
+		int number=BASE_SICK_CHANCE;
 		
 		for(int i=Equipment.SLOT_BEGIN;i<Equipment.SLOT_END;i++){
 			if(equipment_slots.get(i)!=null){
@@ -2165,11 +2165,11 @@ public class Pet_Status{
 			number-=ITEM_BUFF_WHEAT;
 		}
 		
-		if(number<0){
-			number=0;
+		if(number<1){
+			number=1;
 		}
 		
-		return (int)number;
+		return number;
 	}
 	
 	public short get_hunger_rate(){

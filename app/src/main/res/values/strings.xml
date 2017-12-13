@@ -7,6 +7,7 @@
 
     <string name="name_name_entry">Bit Beast</string>
     <string name="name_status">Status</string>
+    <string name="name_dev">Developer\'s Corner</string>
     <string name="name_store_food">Shop - Food</string>
     <string name="name_store_drinks">Shop - Drinks</string>
     <string name="name_store_treatments">Shop - Remedies</string>
@@ -96,6 +97,8 @@
     <string name="button_text_item_get">Item acquired: </string>
     <string name="button_text_spend">Spend Stat Points</string>
 
+    <string name="button_text_refresh">Refresh</string>
+
     <string name="spend_stat_points_title">Select a stat to improve:</string>
 
     <string name="button_inventory_sell">Sell All Selected</string>
@@ -133,6 +136,10 @@
 
     <string name="button_options_reset">Reset</string>
     <string name="button_options_exit">Exit</string>
+    <string name="button_options_dev_toggle">     </string>
+    <string name="button_options_dev">Developer\'s Corner</string>
+    <string name="options_dev_on">Developer\'s Corner unlocked</string>
+    <string name="options_dev_off">Developer\'s Corner locked</string>
 
     <string name="button_help_how_to_play">How to play</string>
     <string name="button_help_pet">Bit Beast</string>

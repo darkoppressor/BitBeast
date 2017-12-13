@@ -60,6 +60,9 @@
             android:name=".Activity_Status"
             android:label="@string/name_status"/>
         <activity
+            android:name=".Activity_Dev"
+            android:label="@string/name_dev"/>
+        <activity
             android:name=".Activity_Store"
             android:label="@string/name_store_food"/>
         <activity

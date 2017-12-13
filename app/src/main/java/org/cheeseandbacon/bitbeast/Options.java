@@ -26,6 +26,8 @@ public class Options{
 	static Calendar last_sleep_time_change;
 	
 	static boolean show_stat_bars;
+
+	static boolean dev;
 	
 	private Options(){
 	}
@@ -70,6 +72,8 @@ public class Options{
 		last_sleep_time_change.add(Calendar.DAY_OF_YEAR,-1);
 		
 		show_stat_bars=true;
+
+		dev = false;
 	}
 	
 	public static synchronized void cleanup(){

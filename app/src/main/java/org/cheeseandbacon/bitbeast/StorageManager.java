@@ -163,7 +163,6 @@ public class StorageManager{
 		deleteFile(context, "pet");
 		deleteFile(context, "pet2");
 		deleteFile(context, "equipment");
-		deleteFile(context, "perma_items");
 	}
 
 	// Returns true if the pet status was saved successfully, else false
@@ -1050,6 +1049,8 @@ public class StorageManager{
 
 		data+=""+Options.show_stat_bars+"\n";
 
+		data+=""+Options.dev+"\n";
+
 		saveFile(context, "options2", data, false);
 	}
 	
@@ -1058,6 +1059,9 @@ public class StorageManager{
 
         if (data.size() > 0) {
             Options.show_stat_bars = Boolean.parseBoolean(data.get(0).trim());
+            data.remove(0);
+
+            Options.dev = Boolean.parseBoolean(data.get(0).trim());
             data.remove(0);
         }
 	}

@@ -265,8 +265,7 @@ public class Activity_Rewards extends AppCompatActivity {
     
     public void button_ok(View view){
     	finish();
-    	return;
-    }
+	}
     
     public void sell_item(){
     	Sound_Manager.play_sound(Sound.ITEM_SOLD);
@@ -275,10 +274,7 @@ public class Activity_Rewards extends AppCompatActivity {
 		pet_status.bits_bound();
 		
 		pet_status.equipment.remove(0);
-		
-		finish();
-		return;
-    }
+	}
     
     public void equip_item(){
     	Sound_Manager.play_sound(Sound.EQUIPPED);
@@ -293,14 +289,13 @@ public class Activity_Rewards extends AppCompatActivity {
 		else{
 			pet_status.equipment.add(0,pet_status.equipment_slots.get(Equipment.string_to_slot(slot)));
 			
-			pet_status.equipment_slots.set(Equipment.string_to_slot(slot),pet_status.equipment.get(0+1));
+			pet_status.equipment_slots.set(Equipment.string_to_slot(slot),pet_status.equipment.get(1));
 			
-			pet_status.equipment.remove(0+1);
+			pet_status.equipment.remove(1);
 		}
 		
 		finish();
-		return;
-    }
+	}
     
     public void close_dialogs(){
 		if(dialog_details.isShowing()){

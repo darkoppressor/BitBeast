@@ -1,4 +1,4 @@
-package com.example.kevin.myapplication;
+package org.cheeseandbacon.bitbeast;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

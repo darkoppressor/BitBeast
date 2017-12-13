@@ -94,6 +94,27 @@
 	        android:textSize="24dp"
 	        android:textColor="@color/font"
 	        android:background="@layout/button" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:onClick="button_dev_toggle"
+            android:text="@string/button_options_dev_toggle"
+            android:textSize="24dp"
+            android:textColor="@color/font"
+            android:background="@android:color/transparent" />
+
+		<Button
+			android:id="@+id/button_options_dev"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center_vertical|center_horizontal"
+			android:onClick="button_dev"
+			android:text="@string/button_options_dev"
+			android:textSize="24dp"
+			android:textColor="@color/font"
+			android:background="@layout/button" />
 	
 	</LinearLayout>
 	

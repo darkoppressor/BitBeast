@@ -1,4 +1,4 @@
-package com.example.kevin.myapplication;
+package org.cheeseandbacon.bitbeast;
 
 import org.junit.Test;
 

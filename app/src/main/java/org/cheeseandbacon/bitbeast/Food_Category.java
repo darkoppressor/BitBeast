@@ -11,7 +11,7 @@ public class Food_Category{
 	//UNUSED
 	static final int JUNK=6;
 	static final int END=7;
-	
+
 	public static int string_to_category(String string){
 		if(string.equals("none")){
 			return NONE;
@@ -36,6 +36,33 @@ public class Food_Category{
 		}
 		else{
 			return NONE;
+		}
+	}
+
+	public static String category_to_string(int category){
+		if(category == NONE){
+			return "none";
+		}
+		else if(category == FRUITS){
+			return "fruits";
+		}
+		else if(category == VEGETABLES){
+			return "vegetables";
+		}
+		else if(category == MEATS){
+			return "meats";
+		}
+		else if(category == BREADS){
+			return "breads";
+		}
+		else if(category == DAIRY){
+			return "dairy";
+		}
+		else if(category == JUNK){
+			return "junk";
+		}
+		else{
+			return "";
 		}
 	}
 }

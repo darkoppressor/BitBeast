@@ -53,7 +53,7 @@ public class Thought{
 	}
 	
 	public void reset_sprite(Image image,View view){
-		Sprite_Data sd=null;
+		Sprite_Data sd;
 		
 		sd=image.bubble_thought;
 		
@@ -98,7 +98,7 @@ public class Thought{
 		sprite_thought.Initialize(view,image,sd.bitmap.getWidth()/sd.frame_count,sd.bitmap.getHeight(),sd.bitmap,sd.animation_speed,sd.frame_count,sd.anim_fuzzy);
 	}
 	
-	public void set_position(View view,Pet pet){
+	private void set_position(View view, Pet pet){
 		x=pet.x+pet.w;
 		y=pet.y-h;
 		flip_x=false;
@@ -118,13 +118,8 @@ public class Thought{
 	//Returns false if the thought should be deleted
 	public boolean move(View view,Pet pet){
 		set_position(view,pet);
-		
-		if(--counter_length<=0){
-			return false;
-		}
-		else{
-			return true;
-		}
+
+		return --counter_length > 0;
 	}
 	
 	public void render(Canvas canvas,Resources res,Pet_Status pet_status){
@@ -146,7 +141,7 @@ public class Thought{
 				thought_y=7*(h/17);
 			}
 			
-			sprite_thought.draw(canvas,res,(int)(x+thought_x),(int)(y+thought_y),sprite_thought.get_width(),sprite_thought.get_height(),Direction.LEFT,pet_status.color,false,1.0f,1.0f);
+			sprite_thought.draw(canvas,res,(int)(x+thought_x),(int)(y+thought_y),sprite_thought.get_width(),sprite_thought.get_height(),Direction.LEFT,Color.WHITE,false,1.0f,1.0f);
 		}
 	}
 }

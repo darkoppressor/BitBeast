@@ -1,10 +1,6 @@
 Important for 1.1.0:
 
-Looks like thought bubble need pics have wrong colors
-
 Test wi fi battles with same and different versions
-
-Add license comments to source files
 
 Update readme.md
 Update permissions.txt and system requirements
@@ -15,11 +11,14 @@ The help pages need an overhaul. Wait until the new version is done though
 
 Not as important:
 
+Click or swipe poop to clean up individual poops?
+Little animation for cleaning up individual poop?
+
 Can text on action bar use custom font?
 
 Sometimes transitions seem slow
 
-Add support for the Android backup/restore system
+Add support for the Android backup/restore system?
 
 Can the store pages be all one activity and just scroll to the side via dragging?
 
@@ -55,7 +54,3 @@ Add a screen that the battle started waits on while the other person chooses whe
 When in battle screen, NFC to another device will auto pair them, regardless of whether second person is even running bit beast
 Battle screen should have explanation about NFC pairing stuff
 Help screens should explain pairing in case user needs to do it themselves, for instance if they don't have NFC
-
-Click or swipe poop to clean up individual poops?
-Sound effect half-volume yard cleaning sound?
-Little animation for cleaning up individual poop?

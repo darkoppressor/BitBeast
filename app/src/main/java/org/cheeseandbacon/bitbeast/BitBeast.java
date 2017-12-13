@@ -190,7 +190,6 @@ public class BitBeast extends Activity implements BitBeastDialogFragment.DialogV
     	game_view.reset_records();
     	
     	long ms_last_run=StorageManager.load_pet_status(BitBeast.this,(View)game_view,game_view.get_pet().get_status());
-    	setRequestedOrientation(Options.get_orientation(true));
     	Options.set_keep_screen_on(getWindow());
     	
     	StorageManager.load_records(BitBeast.this,game_view.get_records());
@@ -805,8 +804,6 @@ public class BitBeast extends Activity implements BitBeastDialogFragment.DialogV
     		case HANDLER_REWARDS:
     			if(!isFinishing()){
     				if(game_view!=null){
-    					StorageManager.save_pet_status(BitBeast.this,game_view.get_pet().get_status());
-    					
     					Bundle bundle=msg.getData();
     					int sound=bundle.getInt(getPackageName()+"sound");
     					bundle.remove(getPackageName()+"sound");
@@ -1286,7 +1283,8 @@ public class BitBeast extends Activity implements BitBeastDialogFragment.DialogV
 		bundle.putBoolean(getPackageName()+".shadow",true);
 		bundle.putInt(getPackageName()+".our_seed",RNG.random_range(0,Integer.MAX_VALUE));
 		bundle.putInt(getPackageName()+".their_seed",RNG.random_range(0,Integer.MAX_VALUE));
-		bundle.putAll(them.write_bundle_battle_data(getPackageName()));
+		bundle.putAll(game_view.get_pet().get_status().write_bundle_battle_data(getPackageName() + ".us."));
+		bundle.putAll(them.write_bundle_battle_data(getPackageName() + ".them."));
 
 		intent.putExtras(bundle);
 		startActivity(intent);

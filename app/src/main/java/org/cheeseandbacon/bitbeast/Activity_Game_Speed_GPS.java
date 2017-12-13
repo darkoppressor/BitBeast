@@ -123,7 +123,6 @@ public class Activity_Game_Speed_GPS extends AppCompatActivity implements Locati
     protected void onResume(){
     	super.onResume();
     	
-    	setRequestedOrientation(Options.get_orientation(false));
     	Options.set_keep_screen_on(getWindow());
     	
     	overridePendingTransition(R.anim.transition_in,R.anim.transition_out);

@@ -158,18 +158,10 @@
     <string name="config_vibrate">Allow vibration</string>
     <string name="config_show_stat_bars">Show stat bars</string>
     <string name="config_show_thermometer">Show thermometer</string>
-    <string name="config_screen_orientation">Screen orientation:</string>
     <string name="config_temp_units">Temperature units:</string>
     <string name="config_units">Units of measurement:</string>
     <string name="config_gps_update_time">GPS update frequency:</string>
     <string name="config_desired_sleep_time">"Bedtime: "</string>
-
-    <string-array name="screen_orientation">
-        <!-- Disabled -->
-        <!-- <item>Auto</item> -->
-        <item>Landscape</item>
-        <item>Portrait</item>
-    </string-array>
 
     <string-array name="temp_units">
         <item>Celsius</item>
@@ -248,6 +240,6 @@ copy of the Program in return for a fee.\n\nThird Party Licenses\n\nMersenneTwis
 
     <string name="about">What are we about? Cheese, bacon, or games? We believe that a company can be about all three. Here are some more things we believe in:\n\nWe believe in gameplay over snazzy graphics. We work to create games that will be enjoyable for years to come, not just until the next cool technology comes out. That is not to say that we dislike fancy graphics, awesome music, etc., but gameplay is our top priority.\n\nWe believe that a game doesn\'t have enough polish until you can see your reflection in it.\n\nWe believe in creating games that are fun for the whole family!</string>
 
-    <string name="credits">Cheese and Bacon Games, LLC\n\nDesign\nKevin Wells\nAneissa Wells\n\nProgramming\nKevin Wells\n\nArtwork\nKevin Wells\nAneissa Wells\n\nSound\nKevin Wells\n\nStory\nKevin Wells\n\nAdditional thanks to:\n\nThe free software community\n\nSpecial thanks to:\n\nAneissa Wells\n\nAll of the awesome people who helped test the game</string>
+    <string name="credits">Cheese and Bacon Games, LLC\n\nDesign\nKevin Wells\nAneissa Wells\n\nProgramming\nKevin Wells\n\nArtwork\nKevin Wells\nAneissa Wells\n\nSound\nKevin Wells\n\nStory\nKevin Wells\n\nAdditional thanks to:\n\nThe free software community\n\nSpecial thanks to:\n\nAneissa Wells\nFaith Christrup\n\nAll of the awesome people who helped test the game</string>
 
 </resources>

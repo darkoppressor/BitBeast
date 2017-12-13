@@ -27,7 +27,6 @@ import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -36,7 +35,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -49,6 +47,8 @@ public class Activity_Battle_Menu_Wifi extends AppCompatActivity implements Wifi
     private static final String RECORD_LISTEN_PORT = "listenPort";
     private static final String RECORD_VERSION = "version";
     private static final String RECORD_NAME = "name";
+
+    private static final int INVALID_VERSION_CODE = -1;
 
     public static final int MESSAGE_READ = 0;
     public static final int MESSAGE_RUNNABLE_READY = 1;
@@ -86,7 +86,7 @@ public class Activity_Battle_Menu_Wifi extends AppCompatActivity implements Wifi
 
             WifiP2pDevice device = devices.get(position).first;
 
-            TextView textView = (TextView) convertView.findViewById(R.id.list_item);
+            TextView textView = convertView.findViewById(R.id.list_item);
 
             if (textView != null) {
                 textView.setTypeface(Font.font1);
@@ -145,7 +145,6 @@ public class Activity_Battle_Menu_Wifi extends AppCompatActivity implements Wifi
     protected void onResume () {
         super.onResume();
 
-        setRequestedOrientation(Options.get_orientation(true));
         Options.set_keep_screen_on(getWindow());
 
         overridePendingTransition(R.anim.transition_in,R.anim.transition_out);
@@ -254,12 +253,13 @@ public class Activity_Battle_Menu_Wifi extends AppCompatActivity implements Wifi
     }
 
     private int getOurVersionCode () {
-        int ourVersionCode = -1;
+        int ourVersionCode = INVALID_VERSION_CODE;
 
         try {
             PackageInfo packageInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
             ourVersionCode = packageInfo.versionCode;
         } catch (PackageManager.NameNotFoundException e) {
+            // Do nothing
         }
 
         return ourVersionCode;
@@ -339,15 +339,14 @@ public class Activity_Battle_Menu_Wifi extends AppCompatActivity implements Wifi
             }
         });
 
-        ///QQQ is this the correct way to "clear" the listeners?
+        ///QQQ Is this the correct way to "clear" the listeners?
         manager.setDnsSdResponseListeners(channel, null, null);
     }
 
     private void discoverServices () {
-        WifiP2pManager.DnsSdTxtRecordListener txtRecordListener = new WifiP2pManager.DnsSdTxtRecordListener() {
-            @Override
-            public void onDnsSdTxtRecordAvailable (String fullDomain, Map<String, String> record, WifiP2pDevice device) {
-                if (fullDomain.equalsIgnoreCase(INSTANCE_NAME + "." + SERVICE_TYPE + ".local.") && record.containsKey(RECORD_VERSION)) {
+        WifiP2pManager.DnsSdTxtRecordListener txtRecordListener = (fullDomain, record, device) -> {
+            if (fullDomain.equalsIgnoreCase(INSTANCE_NAME + "." + SERVICE_TYPE + ".local.") && record.containsKey(RECORD_VERSION)) {
+                if (getOurVersionCode() != INVALID_VERSION_CODE) {
                     // If the service's game version matches our own
                     if (record.get(RECORD_VERSION).equals(String.valueOf(getOurVersionCode()))) {
                         nearbyDevices.put(device.deviceAddress, new BitBeastWifiData(record.get(RECORD_NAME), Integer.parseInt(record.get(RECORD_LISTEN_PORT))));
@@ -361,31 +360,33 @@ public class Activity_Battle_Menu_Wifi extends AppCompatActivity implements Wifi
                                 getOurVersionCode() + " and they have " + record.get(RECORD_VERSION));
                     }
                 } else {
-                    Log.d(TAG, "Unsupported Bonjour TXT record arrived: " + fullDomain + " (" + device.deviceName +
-                            ", MAC address: " + device.deviceAddress + ")");
+                    Log.d(TAG, "Supported Bonjour TXT record arrived: " + fullDomain + " (" +
+                            record.get(RECORD_NAME) + ", MAC address: " + device.deviceAddress + ", Port: " +
+                            record.get(RECORD_LISTEN_PORT) + ")" + ", but our version is invalid: we have " +
+                            getOurVersionCode());
                 }
+            } else {
+                Log.d(TAG, "Unsupported Bonjour TXT record arrived: " + fullDomain + " (" + device.deviceName +
+                        ", MAC address: " + device.deviceAddress + ")");
             }
         };
 
-        WifiP2pManager.DnsSdServiceResponseListener responseListener = new WifiP2pManager.DnsSdServiceResponseListener() {
-            @Override
-            public void onDnsSdServiceAvailable (String instanceName, String registrationType, WifiP2pDevice device) {
-                ///QQQ is it possible to get here without the device having arrived via the txtRecordListener first?
-                if (nearbyDevices.containsKey(device.deviceAddress)) {
-                    BitBeastWifiData wifiData = nearbyDevices.get(device.deviceAddress);
-                    device.deviceName = wifiData.getName();
+        WifiP2pManager.DnsSdServiceResponseListener responseListener = (instanceName, registrationType, device) -> {
+            ///QQQ Is it possible to get here without the device having arrived via the txtRecordListener first?
+            if (nearbyDevices.containsKey(device.deviceAddress)) {
+                BitBeastWifiData wifiData = nearbyDevices.get(device.deviceAddress);
+                device.deviceName = wifiData.getName();
 
-                    devices.add(new Pair<>(device, wifiData));
+                devices.add(new Pair<>(device, wifiData));
 
-                    updateAdapter();
+                updateAdapter();
 
-                    Log.d(TAG, "Bonjour service responded with corresponding entry in nearbyDevices: " + instanceName +
-                            "." + registrationType + " (" + device.deviceName + ", MAC address: " + device.deviceAddress + ", Port: " +
-                            wifiData.getPort() + ")");
-                } else {
-                    Log.d(TAG, "Bonjour service responded, but has no entry in nearbyDevices: " + instanceName + "." +
-                            registrationType + " (" + device.deviceName + ", MAC address: " + device.deviceAddress + ")");
-                }
+                Log.d(TAG, "Bonjour service responded with corresponding entry in nearbyDevices: " + instanceName +
+                        "." + registrationType + " (" + device.deviceName + ", MAC address: " + device.deviceAddress + ", Port: " +
+                        wifiData.getPort() + ")");
+            } else {
+                Log.d(TAG, "Bonjour service responded, but has no entry in nearbyDevices: " + instanceName + "." +
+                        registrationType + " (" + device.deviceName + ", MAC address: " + device.deviceAddress + ")");
             }
         };
 
@@ -443,19 +444,15 @@ public class Activity_Battle_Menu_Wifi extends AppCompatActivity implements Wifi
     }
 
     private void setupAdapter () {
-        ListView listView=(ListView)findViewById(R.id.list_view_battle_menu);
+        ListView listView= findViewById(R.id.list_view_battle_menu);
         listView.setDividerHeight(0);
         listView.setAdapter(new WifiDirectArrayAdapter(this, R.layout.list_item_battle_menu_wifi, devices));
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-                connect(devices.get(position).first);
-            }
-        });
+        listView.setOnItemClickListener((parent, view, position, id) -> connect(devices.get(position).first));
     }
 
     private void updateAdapter () {
-        ListView listView=(ListView)findViewById(R.id.list_view_battle_menu);
+        ListView listView= findViewById(R.id.list_view_battle_menu);
         ((WifiDirectArrayAdapter) listView.getAdapter()).notifyDataSetChanged();
     }
 
@@ -471,7 +468,7 @@ public class Activity_Battle_Menu_Wifi extends AppCompatActivity implements Wifi
 
         WifiP2pConfig config = new WifiP2pConfig();
         config.deviceAddress = deviceMacAddress;
-        ///QQQ am I sure about this line?
+        ///QQQ Am I sure about this line?
         config.wps.setup = WpsInfo.PBC;
 
         manager.connect(channel, config, new WifiP2pManager.ActionListener() {

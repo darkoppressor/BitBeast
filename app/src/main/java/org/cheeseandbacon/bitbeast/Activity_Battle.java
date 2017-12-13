@@ -91,7 +91,7 @@ public class Activity_Battle extends AppCompatActivity {
 	    	
 	    	us_at_start=new Pet_Status();
 	    	if(savedInstanceState.getString(getPackageName()+"type")!=null){
-	    		us_at_start.read_bundle_battle_data(getPackageName() + ".us",savedInstanceState);
+	    		us_at_start.read_bundle_battle_data(getPackageName() + ".us.",savedInstanceState);
 	    	}
 	    	
 	    	bits_reward=savedInstanceState.getInt("bits_reward");
@@ -119,7 +119,6 @@ public class Activity_Battle extends AppCompatActivity {
     protected void onResume(){
     	super.onResume();
     	
-    	setRequestedOrientation(Options.get_orientation(true));
     	Options.set_keep_screen_on(getWindow());
     	
     	overridePendingTransition(R.anim.transition_in,R.anim.transition_out);
@@ -209,7 +208,7 @@ public class Activity_Battle extends AppCompatActivity {
         savedInstanceState.putString("text_result",tv.getText().toString());
         
         if(us_at_start!=null){
-        	savedInstanceState.putAll(us_at_start.write_bundle_battle_data(getPackageName() + ".us"));
+        	savedInstanceState.putAll(us_at_start.write_bundle_battle_data(getPackageName() + ".us."));
         }
         
         savedInstanceState.putInt("bits_reward",bits_reward);
@@ -329,20 +328,20 @@ public class Activity_Battle extends AppCompatActivity {
         //If this is the initial battle.
         if(battle){
             us=new Pet_Status();
-            us.read_bundle_battle_data(getPackageName() + ".us",bundle);
+            us.read_bundle_battle_data(getPackageName() + ".us.",bundle);
 
             us_at_start=new Pet_Status();
-            us_at_start.read_bundle_battle_data(getPackageName() + ".us",bundle);
+            us_at_start.read_bundle_battle_data(getPackageName() + ".us.",bundle);
         }
         else{
         	//Transfer the relevant data from the initial pet data holder to our pet data holder for the battle.
         	Bundle temp_bundle=new Bundle();
-        	temp_bundle.putAll(us_at_start.write_bundle_battle_data(getPackageName() + ".us"));
-        	us.read_bundle_battle_data(getPackageName() + ".us",temp_bundle);
+        	temp_bundle.putAll(us_at_start.write_bundle_battle_data(getPackageName() + ".us."));
+        	us.read_bundle_battle_data(getPackageName() + ".us.",temp_bundle);
         }
         
         them=new Pet_Status();
-        them.read_bundle_battle_data(getPackageName() + ".them",bundle);
+        them.read_bundle_battle_data(getPackageName() + ".them.",bundle);
         
         setTitle(us.name+" vs. "+them.name);
         
@@ -395,9 +394,6 @@ public class Activity_Battle extends AppCompatActivity {
         weight_loss_this_session-=us.get_weight();
         
         us.sleeping_wake_up();
-        if(battle){
-        	StorageManager.save_pet_status(this,us);
-        }
         
         //The battle has been fought, and should not be fought again if the activity is restarted.
         battle=false;
@@ -468,10 +464,10 @@ public class Activity_Battle extends AppCompatActivity {
 		Bundle bundle=getIntent().getExtras();
 
         us=new Pet_Status();
-        us.read_bundle_battle_data(getPackageName() + ".us",bundle);
+        us.read_bundle_battle_data(getPackageName() + ".us.",bundle);
 
         them=new Pet_Status();
-        them.read_bundle_battle_data(getPackageName() + ".them",bundle);
+        them.read_bundle_battle_data(getPackageName() + ".them.",bundle);
         
         setTitle(us.name+" vs. "+them.name);
         

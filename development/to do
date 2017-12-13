@@ -1,5 +1,7 @@
 Important for 1.1.0:
 
+Possibly add extra cleanup/reloading code for the sound manager?
+
 Test wi fi battles with same and different versions
 
 Update readme.md
@@ -17,8 +19,6 @@ Little animation for cleaning up individual poop?
 Can text on action bar use custom font?
 
 Sometimes transitions seem slow
-
-Add support for the Android backup/restore system?
 
 Can the store pages be all one activity and just scroll to the side via dragging?
 

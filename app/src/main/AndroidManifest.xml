@@ -5,28 +5,26 @@
           android:installLocation="auto">
 
     <!-- Normal permissions -->
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.VIBRATE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <!-- Dangerous permissions -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="18" />
 
-    <uses-feature android:name="android.hardware.location" android:required="false"/>
-    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
-    <uses-feature android:name="android.hardware.microphone" android:required="false"/>
-    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="false"/>
-    <uses-feature android:name="android.hardware.screen.landscape" android:required="false"/>
-    <uses-feature android:name="android.hardware.screen.portrait" android:required="false"/>
-    <uses-feature android:name="android.hardware.faketouch" android:required="false"/>
-    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
-    <uses-feature android:name="android.hardware.wifi.direct" android:required="false"/>
-    <uses-feature android:name="android.software.app_widgets" android:required="false"/>
+    <uses-feature android:name="android.hardware.location" android:required="false" />
+    <uses-feature android:name="android.hardware.location.gps" android:required="false" />
+    <uses-feature android:name="android.hardware.microphone" android:required="false" />
+    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="false" />
+    <uses-feature android:name="android.hardware.screen.portrait" android:required="true" />
+    <uses-feature android:name="android.hardware.faketouch" android:required="false" />
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+    <uses-feature android:name="android.hardware.wifi.direct" android:required="false" />
 
     <supports-screens
         android:xlargeScreens="true"
@@ -37,6 +35,7 @@
     <application
         tools:ignore="GoogleAppIndexingWarning"
         android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_rules"
         android:description="@string/app_description"
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -46,82 +45,125 @@
         <activity
             android:name=".BitBeast"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.NoTitleBar">
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+
         </activity>
+
         <activity
             android:name=".Activity_Name"
-            android:label="@string/name_name_entry"/>
+            android:label="@string/name_name_entry"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Activity_Status"
-            android:label="@string/name_status"/>
+            android:label="@string/name_status"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Activity_Dev"
-            android:label="@string/name_dev"/>
+            android:label="@string/name_dev"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Activity_Store"
-            android:label="@string/name_store_food"/>
+            android:label="@string/name_store_food"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Activity_Game_RPS"
-            android:label="@string/name_game_rps"/>
+            android:label="@string/name_game_rps"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Activity_Game_Accel"
-            android:label="@string/name_game_accel"/>
+            android:label="@string/name_game_accel"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Activity_Game_GPS"
-            android:label="@string/name_game_gps"/>
+            android:label="@string/name_game_gps"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Activity_Game_Speed_GPS"
-            android:label="@string/name_game_speed_gps"/>
+            android:label="@string/name_game_speed_gps"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Activity_Battle_Menu_Wifi"
-            android:label="@string/name_battle_menu"/>
+            android:label="@string/name_battle_menu"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Activity_Battle"
-            android:label="@string/name_battle"/>
+            android:label="@string/name_battle"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Activity_Options"
-            android:label="@string/name_options"/>
+            android:label="@string/name_options"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Activity_Config"
-            android:label="@string/name_config"/>
+            android:label="@string/name_config"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Activity_Records"
-            android:label="@string/name_records"/>
+            android:label="@string/name_records"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Activity_Help"
-            android:label="@string/name_help"/>
+            android:label="@string/name_help"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Activity_Help_Page"
-            android:label="@string/name_help_how_to_play"/>
+            android:label="@string/name_help_how_to_play"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Activity_About"
-            android:label="@string/name_about"/>
+            android:label="@string/name_about"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Activity_Credits"
-            android:label="@string/name_credits"/>
+            android:label="@string/name_credits"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Activity_Spend_Stat_Points"
-            android:label="@string/name_spend"/>
+            android:label="@string/name_spend"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Activity_Rewards"
-            android:label="@string/name_rewards"/>
+            android:label="@string/name_rewards"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Activity_Inventory"
-            android:label="@string/name_inventory_all"/>
+            android:label="@string/name_inventory_all"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Activity_Equip"
-            android:label="@string/name_equip"/>
+            android:label="@string/name_equip"
+            android:screenOrientation="portrait" />
 
         <receiver
             android:name=".WiFiDirectReceiver"
             android:enabled="true"
-            android:exported="true">
-        </receiver>
+            android:exported="false" />
 
     </application>
 

@@ -28,6 +28,7 @@
 	        android:textColor="@color/font"
 	        android:layout_width="wrap_content"
 	    	android:layout_height="wrap_content"
+			android:buttonTint="@color/button_2"
 	    	android:onClick="button_pause" />
 	    
 	    <Button
@@ -57,6 +58,7 @@
 	        android:textColor="@color/font"
 	        android:layout_width="wrap_content"
 	    	android:layout_height="wrap_content"
+            android:buttonTint="@color/button_2"
 	    	android:onClick="button_keep_screen_on" />
 	    
 	    <CheckBox
@@ -66,20 +68,8 @@
 	        android:textColor="@color/font"
 	        android:layout_width="wrap_content"
 	    	android:layout_height="wrap_content"
+            android:buttonTint="@color/button_2"
 	    	android:onClick="button_vibrate" />
-	    
-	    <TextView
-	        android:id="@+id/text_config_screen_orientation"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:text="@string/config_screen_orientation"
-			android:textSize="24dp"
-	        android:textColor="@color/font" />
-	    <Spinner
-	        android:id="@+id/spinner_option_screen_orientation"
-	        android:layout_width="wrap_content"
-	    	android:layout_height="wrap_content"
-	    	android:prompt="@string/config_screen_orientation" />
 	    
 	    <TextView
 	        android:id="@+id/text_config_gps_update_time"
@@ -92,6 +82,7 @@
 	        android:id="@+id/spinner_option_gps_update_time"
 	        android:layout_width="wrap_content"
 	    	android:layout_height="wrap_content"
+            android:padding="@dimen/config_spinner_padding_size"
 	    	android:prompt="@string/config_gps_update_time" />
 	    
 	    <TextView
@@ -112,6 +103,7 @@
 	        android:textColor="@color/font"
 	        android:layout_width="wrap_content"
 	    	android:layout_height="wrap_content"
+            android:buttonTint="@color/button_2"
 	    	android:onClick="button_show_stat_bars" />
 	    
 	    <CheckBox
@@ -121,6 +113,7 @@
 	        android:textColor="@color/font"
 	        android:layout_width="wrap_content"
 	    	android:layout_height="wrap_content"
+            android:buttonTint="@color/button_2"
 	    	android:onClick="button_show_thermometer" />
 	    
 	    <TextView
@@ -134,6 +127,7 @@
 	        android:id="@+id/spinner_option_temp_units"
 	        android:layout_width="wrap_content"
 	    	android:layout_height="wrap_content"
+            android:padding="@dimen/config_spinner_padding_size"
 	    	android:prompt="@string/config_temp_units" />
 	    
 	    <TextView
@@ -147,6 +141,7 @@
 	        android:id="@+id/spinner_option_units"
 	        android:layout_width="wrap_content"
 	    	android:layout_height="wrap_content"
+            android:padding="@dimen/config_spinner_padding_size"
 	    	android:prompt="@string/config_units" />
 	
 	</LinearLayout>

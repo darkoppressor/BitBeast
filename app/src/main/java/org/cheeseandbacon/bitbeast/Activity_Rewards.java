@@ -70,7 +70,9 @@ public class Activity_Rewards extends AppCompatActivity {
 	//Call this from a game running in GameView, and it will pass things to BitBeast with a handler.
 	public static void give_rewards_handler(Context context,Handler handler,String package_name,Pet_Status status,int sound,String message_begin,String message_end,long experience_points,int bits,boolean add_bits,int equip_chance,int base_level){
 		Bundle bundle=rewards_bundle(context,package_name,status,sound,message_begin,message_end,experience_points,bits,add_bits,equip_chance,base_level);
-		
+
+        StorageManager.save_pet_status(context,status);
+
 		Message msg=handler.obtainMessage();
 		msg.what=BitBeast.HANDLER_REWARDS;
 		msg.setData(bundle);
@@ -191,7 +193,6 @@ public class Activity_Rewards extends AppCompatActivity {
     	
     	set_dialog_buttons();
     	
-    	setRequestedOrientation(Options.get_orientation(true));
     	Options.set_keep_screen_on(getWindow());
     	
     	overridePendingTransition(R.anim.transition_in,R.anim.transition_out);
@@ -278,6 +279,10 @@ public class Activity_Rewards extends AppCompatActivity {
 		pet_status.bits_bound();
 		
 		pet_status.equipment.remove(0);
+
+		Button b=(Button)findViewById(R.id.button_rewards_item);
+        b.setVisibility(Button.GONE);
+        ((TextView)findViewById(R.id.rewards_text_item)).setVisibility(TextView.GONE);
 	}
     
     public void equip_item(){
@@ -297,8 +302,10 @@ public class Activity_Rewards extends AppCompatActivity {
 			
 			pet_status.equipment.remove(1);
 		}
-		
-		finish();
+
+        Button b=(Button)findViewById(R.id.button_rewards_item);
+        b.setVisibility(Button.GONE);
+        ((TextView)findViewById(R.id.rewards_text_item)).setVisibility(TextView.GONE);
 	}
     
     public void close_dialogs(){

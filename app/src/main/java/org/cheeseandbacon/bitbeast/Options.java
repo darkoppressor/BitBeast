@@ -4,7 +4,6 @@
 
 package org.cheeseandbacon.bitbeast;
 
-import android.content.pm.ActivityInfo;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -16,7 +15,6 @@ public class Options{
 	static boolean pause;
 	static int temp_units;
 	static int units;
-	static int screen_orientation;
 	static boolean keep_screen_on;
 	static boolean vibrate;
 	static boolean show_thermometer;
@@ -41,24 +39,13 @@ public class Options{
 		init();
 	}
 	
-	public static synchronized Options get_instance(){
+	private static synchronized void get_instance(){
 		if(instance==null){
 			instance=new Options();
 		}
-		
-		return instance;
 	}
 	
-	public static synchronized void init(){
-		/**int orientation=res.getConfiguration().orientation;
-		if(orientation==Configuration.ORIENTATION_LANDSCAPE){
-			screen_orientation=Screen_Orientation.LANDSCAPE;
-		}
-		else{
-			screen_orientation=Screen_Orientation.PORTRAIT;
-		}*/
-		screen_orientation=Screen_Orientation.PORTRAIT;
-		
+	private static synchronized void init(){
 		pause=false;
 		temp_units=Temperature_Units.CELSIUS;
 		units=Units.SI;
@@ -92,45 +79,6 @@ public class Options{
 		else{
 			window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		}
-	}
-	
-	//This fixes screen orientation if it was saved using the old system where AUTO was an option.
-	public static synchronized int get_fake_orientation(){
-		if(screen_orientation==2){
-			screen_orientation--;
-		}
-		
-		return screen_orientation;
-	}
-	
-	public static synchronized int get_orientation(boolean change_allowed){
-		screen_orientation=get_fake_orientation();
-		
-		if(screen_orientation==Screen_Orientation.LANDSCAPE){
-			return ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
-		}
-		else if(screen_orientation==Screen_Orientation.PORTRAIT){
-			return ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
-		}
-		else{
-			return ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
-		}
-		/**else if(change_allowed){
-			if(screen_orientation==Screen_Orientation.AUTO){
-				return ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED;
-			}
-			else{
-				return ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED;
-			}
-		}
-		else{
-			if(screen_orientation==Screen_Orientation.AUTO){
-				return ActivityInfo.SCREEN_ORIENTATION_NOSENSOR;
-			}
-			else{
-				return ActivityInfo.SCREEN_ORIENTATION_NOSENSOR;
-			}
-		}*/
 	}
 	
 	public static synchronized long get_gps_update_time(){

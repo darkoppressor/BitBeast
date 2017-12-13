@@ -93,7 +93,6 @@ public class Activity_Game_Accel extends AppCompatActivity implements SensorEven
     protected void onResume(){
     	super.onResume();
     	
-    	setRequestedOrientation(Options.get_orientation(false));
     	Options.set_keep_screen_on(getWindow());
     	
     	overridePendingTransition(R.anim.transition_in,R.anim.transition_out);

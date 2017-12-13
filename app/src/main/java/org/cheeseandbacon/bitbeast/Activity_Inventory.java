@@ -160,7 +160,6 @@ public class Activity_Inventory extends AppCompatActivity {
     	
     	set_dialog_buttons();
     	
-    	setRequestedOrientation(Options.get_orientation(true));
     	Options.set_keep_screen_on(getWindow());
     	
     	if(move_direction==Direction.LEFT){

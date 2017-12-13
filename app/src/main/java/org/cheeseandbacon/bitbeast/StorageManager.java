@@ -981,7 +981,8 @@ public class StorageManager{
 
 		data+=""+Options.units+"\n";
 
-		data+=""+Options.screen_orientation+"\n";
+		// The screen orientation option was removed in 1.1.0
+		data+="-1\n";
 
 		data+=""+Options.keep_screen_on+"\n";
 
@@ -1017,7 +1018,8 @@ public class StorageManager{
             Options.units = Integer.parseInt(data.get(0).trim());
             data.remove(0);
 
-            Options.screen_orientation = Integer.parseInt(data.get(0).trim());
+            // The screen orientation option was removed in 1.1.0
+            int screen_orientation = Integer.parseInt(data.get(0).trim());
             data.remove(0);
 
             Options.keep_screen_on = Boolean.parseBoolean(data.get(0).trim());

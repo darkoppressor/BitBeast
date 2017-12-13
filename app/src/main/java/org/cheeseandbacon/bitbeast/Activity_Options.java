@@ -80,7 +80,6 @@ public class Activity_Options extends AppCompatActivity {
     	
     	set_dialog_buttons();
     	
-    	setRequestedOrientation(Options.get_orientation(true));
     	Options.set_keep_screen_on(getWindow());
     	
     	overridePendingTransition(R.anim.transition_in,R.anim.transition_out);

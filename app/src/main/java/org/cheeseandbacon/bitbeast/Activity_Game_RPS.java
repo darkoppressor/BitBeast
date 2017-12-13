@@ -101,7 +101,6 @@ public class Activity_Game_RPS extends AppCompatActivity {
         	dismissDialog(DIALOG_ID_GAME_DONE);
         }
     	
-    	setRequestedOrientation(Options.get_orientation(true));
     	Options.set_keep_screen_on(getWindow());
     	
     	overridePendingTransition(R.anim.transition_in,R.anim.transition_out);

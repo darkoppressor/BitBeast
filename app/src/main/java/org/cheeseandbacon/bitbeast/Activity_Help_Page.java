@@ -74,7 +74,6 @@ public class Activity_Help_Page extends AppCompatActivity {
     protected void onResume(){
     	super.onResume();
     	
-    	setRequestedOrientation(Options.get_orientation(true));
     	Options.set_keep_screen_on(getWindow());
     	
     	overridePendingTransition(R.anim.transition_in,R.anim.transition_out);

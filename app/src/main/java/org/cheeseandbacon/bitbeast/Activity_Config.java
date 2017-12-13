@@ -43,27 +43,21 @@ public class Activity_Config extends AppCompatActivity {
         
         Spinner spinner=null;
         ArrayAdapter<CharSequence> adapter=null;
-
-        spinner=(Spinner)findViewById(R.id.spinner_option_screen_orientation);
-        adapter=ArrayAdapter.createFromResource(this,R.array.screen_orientation,android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new Spinner_Listener_Screen_Orientation());
         
         spinner=(Spinner)findViewById(R.id.spinner_option_temp_units);
-        adapter=ArrayAdapter.createFromResource(this,R.array.temp_units,android.R.layout.simple_spinner_item);
+        adapter=ArrayAdapter.createFromResource(this,R.array.temp_units,R.layout.spinner_config);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(new Spinner_Listener_Temp_Units());
         
         spinner=(Spinner)findViewById(R.id.spinner_option_units);
-        adapter=ArrayAdapter.createFromResource(this,R.array.units,android.R.layout.simple_spinner_item);
+        adapter=ArrayAdapter.createFromResource(this,R.array.units,R.layout.spinner_config);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(new Spinner_Listener_Units());
         
         spinner=(Spinner)findViewById(R.id.spinner_option_gps_update_time);
-        adapter=ArrayAdapter.createFromResource(this,R.array.gps_update_time,android.R.layout.simple_spinner_item);
+        adapter=ArrayAdapter.createFromResource(this,R.array.gps_update_time,R.layout.spinner_config);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(new Spinner_Listener_Gps_Update_Time());
@@ -73,7 +67,6 @@ public class Activity_Config extends AppCompatActivity {
         Font.set_typeface(getAssets(), (CheckBox)findViewById(R.id.checkbox_config_vibrate));
         Font.set_typeface(getAssets(), (CheckBox)findViewById(R.id.checkbox_config_show_stat_bars));
         Font.set_typeface(getAssets(), (CheckBox)findViewById(R.id.checkbox_config_show_thermometer));
-        Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_config_screen_orientation));
         Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_config_temp_units));
         Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_config_units));
         Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_config_gps_update_time));
@@ -81,7 +74,7 @@ public class Activity_Config extends AppCompatActivity {
         Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_config_header_android));
         Font.set_typeface(getAssets(), (TextView)findViewById(R.id.text_config_header_display));
         Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_config_desired_sleep_time));
-        
+
         CheckBox cb=null;
         
         cb=(CheckBox)findViewById(R.id.checkbox_config_pause);
@@ -101,7 +94,6 @@ public class Activity_Config extends AppCompatActivity {
     protected void onResume(){
     	super.onResume();
     	
-    	setRequestedOrientation(Options.get_orientation(true));
     	Options.set_keep_screen_on(getWindow());
     	
     	overridePendingTransition(R.anim.transition_in,R.anim.transition_out);
@@ -123,10 +115,7 @@ public class Activity_Config extends AppCompatActivity {
     	
     	cb=(CheckBox)findViewById(R.id.checkbox_config_show_thermometer);
     	cb.setChecked(Options.show_thermometer);
-    	
-    	spinner=(Spinner)findViewById(R.id.spinner_option_screen_orientation);
-    	spinner.setSelection(Options.get_fake_orientation());
-    	
+
     	spinner=(Spinner)findViewById(R.id.spinner_option_temp_units);
     	spinner.setSelection(Options.temp_units);
     	
@@ -221,19 +210,7 @@ public class Activity_Config extends AppCompatActivity {
 			update_time_button();
 		}
 	};
-	
-	public class Spinner_Listener_Screen_Orientation implements OnItemSelectedListener{
-		public void onItemSelected(AdapterView<?> parent,View view,int pos,long id){
-			Options.screen_orientation=pos;
-			
-			StorageManager.save_options(Activity_Config.this);
-			
-			setRequestedOrientation(Options.get_orientation(true));
-		}
-		
-		public void onNothingSelected(AdapterView<?> parent){
-		}
-	}
+
 	public class Spinner_Listener_Temp_Units implements OnItemSelectedListener{
 		public void onItemSelected(AdapterView<?> parent,View view,int pos,long id){
 			Options.temp_units=pos;

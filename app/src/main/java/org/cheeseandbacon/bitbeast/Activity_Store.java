@@ -481,7 +481,6 @@ public class Activity_Store extends AppCompatActivity {
     protected void onResume(){
     	super.onResume();
     	
-    	setRequestedOrientation(Options.get_orientation(true));
     	Options.set_keep_screen_on(getWindow());
     	
     	if(move_direction==Direction.LEFT){

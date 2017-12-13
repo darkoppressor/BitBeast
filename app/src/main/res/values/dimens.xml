@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	
-	<dimen name="text_battle_menu">28sp</dimen>
+	<dimen name="battle_menu_text_size">28sp</dimen>
+
+	<dimen name="config_spinner_padding_size">10dp</dimen>
+	<dimen name="config_spinner_text_size">22sp</dimen>
 
 </resources>

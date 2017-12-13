@@ -56,7 +56,7 @@
  - Improved the variety of shadow opponents. They are also tougher now
  - Changed the way favorite food is stored in save data. Note that a Bit Beast from pre-1.1.0 will forget
    its favorite food because of this
- - Removed the Auto option for screen orientation
+ - Removed the screen orientation option
  - Fixed numerous bugs where an Android configuration change would cause loss of data
  - Balance tweaks
  - Fixed bug with evolution branch choosing code

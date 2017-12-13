@@ -191,8 +191,10 @@ public class Pet_Status{
 	static final int BIT_GAIN_BATTLE_MAX=48;
 	
 	static final double BIT_GAIN_BATTLE_LEVEL_SCALE_FACTOR=2.5;
-	
-	static final int ITEM_CHANCE_WORKOUT=40;
+
+    private static final int NEW_ITEM_MINIMUM_BITS = 5;
+
+    static final int ITEM_CHANCE_WORKOUT=40;
 	static final int ITEM_CHANCE_BONUS_WORKOUT_EASY=5;
 	static final int ITEM_CHANCE_BONUS_WORKOUT_NORMAL=10;
 	static final int ITEM_CHANCE_BONUS_WORKOUT_HARD=15;
@@ -1050,7 +1052,7 @@ public class Pet_Status{
 		return true_points_gained;
 	}
 	
-	public void level_up(){
+	private void level_up(){
 		experience-=experience_max;
 		
 		long max_gain=(long)Math.ceil(2.0*Math.sqrt(experience_max));
@@ -1291,7 +1293,7 @@ public class Pet_Status{
 		return (int)number;
 	}
 	
-	//Returns true if equipment was added, false otherwise.
+	// Returns a String containing the name of the new equipment if equipment was added, or an empty String otherwise
 	public String new_equipment(int chance,int base_level,String force_slot){
 		//Use the passed equipment find chance to determine if we found anything.
 		if(RNG.random_range(0,99)<chance){
@@ -1328,8 +1330,8 @@ public class Pet_Status{
 			
 			equipment.add(0,new Equipment());
 			
-			///For this release, I'm disabling uniques.
-			/**if(RNG.random_range(0,999)<5){
+			///QQQ For this release, I'm disabling uniques
+			/*if(RNG.random_range(0,999)<5){
 				//Select a random item with the slot.
 				int item_index=0;
 				do{
@@ -1448,6 +1450,10 @@ public class Pet_Status{
 				if(equipment.get(0).get_buff_names().size()>0){
 					equipment.get(0).bits=(int)Math.ceil((double)equipment.get(0).bits*(double)equipment.get(0).get_buff_names().size()*1.25);
 				}
+
+				if (equipment.get(0).bits < NEW_ITEM_MINIMUM_BITS) {
+                    equipment.get(0).bits = NEW_ITEM_MINIMUM_BITS;
+                }
 				
 				ArrayList<String> buff_names=equipment.get(0).get_buff_names();
 				String prefix_buff="";

@@ -1,0 +1,23 @@
+Asset format:
+
+Audio:
+Frequency: 44100 Hz
+Format: Signed 16-bit samples, in system byte order
+Channels: Stereo
+
+Asset creation:
+
+Sound Effects:
+
+Bfxr:
+Export as .wav, all default stuff
+Then, open in Audacity and export as ogg, default quality
+
+sfxr:
+Export as .wav, all default stuff
+Then, open in Audacity and export as ogg, default quality
+
+LMMS:
+Export as .ogg, samplerate 44100 Hz, bitrate 160 Kbits/s, depth 16 bit integer,
+interpolation Sinc Fastest, oversampling 1x (None), Export as loop
+Then, open in Audacity, cut out any silence at the end, and export as ogg, default quality

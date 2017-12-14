@@ -1,0 +1,96 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $DIR
+
+PROJECT_DIRECTORY="$DIR/.."
+
+SOURCE_PROJECT=""
+SOUND_DIRECTORY=""
+build_project_sounds () {
+	local directory=$1
+
+	for file in $directory/* ; do
+		if [ -f "$file" ]; then
+			if [[ $file =~ \.mmpz$ ]]; then
+				prefix=$SOURCE_PROJECT/
+				suffix=.mmpz
+				file_name=${file#$prefix}
+				file_name=${file_name%$suffix}
+				file_name="$file_name.ogg"
+
+				prefix=$directory/
+				plain_file_name=${file#$prefix}
+
+				prefix=$SOURCE_PROJECT/
+				sound_dir=${file#$prefix}
+				sound_dir=${sound_dir%$plain_file_name}
+
+				# If the sound does not already exist at the destination
+				if [ ! -e "$SOUND_DIRECTORY/$file_name" ]; then
+					mkdir -p "$SOUND_DIRECTORY/$sound_dir"
+
+					lmms --render "$file" --output "$SOUND_DIRECTORY/$file_name" --format 'ogg' --samplerate 44100 --bitrate 160 --interpolation 'sincfastest' --oversampling 1 --loop
+				fi
+			elif [[ $file =~ \.sfs$ ]]; then
+				prefix=$SOURCE_PROJECT/
+				suffix=.sfs
+				file_name=${file#$prefix}
+				file_name=${file_name%$suffix}
+				file_name="$file_name.ogg"
+
+				prefix=$directory/
+				plain_file_name=${file#$prefix}
+
+				prefix=$SOURCE_PROJECT/
+				sound_dir=${file#$prefix}
+				sound_dir=${sound_dir%$plain_file_name}
+
+				# If the sound does not already exist at the destination
+				if [ ! -e "$SOUND_DIRECTORY/$file_name" ]; then
+					mkdir -p "$SOUND_DIRECTORY/$sound_dir"
+
+					wav_file=$(echo "$file_name" | sed -e "s/.ogg$/.wav/")
+
+					/home/tails/build-server/sfxr-hacked/sfxr "$file" "$SOUND_DIRECTORY/$wav_file"
+
+					oggenc -q 5 "$SOUND_DIRECTORY/$wav_file" -o "$SOUND_DIRECTORY/$file_name"
+					rm -f "$SOUND_DIRECTORY/$wav_file"
+				fi
+			elif [[ $file =~ \.wav$ ]]; then
+				prefix=$SOURCE_PROJECT/
+				suffix=.wav
+				file_name=${file#$prefix}
+				file_name=${file_name%$suffix}
+				file_name="$file_name.ogg"
+
+				prefix=$directory/
+				plain_file_name=${file#$prefix}
+
+				prefix=$SOURCE_PROJECT/
+				sound_dir=${file#$prefix}
+				sound_dir=${sound_dir%$plain_file_name}
+
+				# If the sound does not already exist at the destination
+				if [ ! -e "$SOUND_DIRECTORY/$file_name" ]; then
+					mkdir -p "$SOUND_DIRECTORY/$sound_dir"
+
+					oggenc -q 5 "$file" -o "$SOUND_DIRECTORY/$file_name"
+				fi
+			fi
+		fi
+	done
+
+	for d in $directory/*/ ; do
+		if [ -d "$d" ]; then
+			build_project_sounds "$d"
+		fi
+	done
+}
+
+SOURCE_PROJECT="$PROJECT_DIRECTORY/development/sounds"
+SOUND_DIRECTORY="$PROJECT_DIRECTORY/app/src/main/res/raw"
+
+# Build all sounds in project source directory recursively
+
+build_project_sounds "$SOURCE_PROJECT"

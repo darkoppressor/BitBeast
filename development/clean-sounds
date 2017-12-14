@@ -1,0 +1,11 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $DIR
+
+PROJECT_DIRECTORY="$DIR/.."
+
+SOUND_DIRECTORY="$PROJECT_DIRECTORY/app/src/main/res/raw"
+
+# Remove all ogg files
+rm -rf $SOUND_DIRECTORY/*.ogg

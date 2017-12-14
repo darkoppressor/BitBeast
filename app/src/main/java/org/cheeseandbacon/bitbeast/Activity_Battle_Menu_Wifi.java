@@ -28,7 +28,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -71,6 +73,8 @@ public class Activity_Battle_Menu_Wifi extends AppCompatActivity implements Wifi
     private Handler handler = new Handler(this);
     private BlockingQueue<String> queue = new LinkedBlockingQueue<>();
     private Thread connectionThread;
+
+    private LinearLayout progressLayout;
 
     private class WifiDirectArrayAdapter extends ArrayAdapter<Pair<WifiP2pDevice, BitBeastWifiData>> {
         public WifiDirectArrayAdapter (Context context, int textViewResourceId, List<Pair<WifiP2pDevice, BitBeastWifiData>> objects) {
@@ -121,6 +125,8 @@ public class Activity_Battle_Menu_Wifi extends AppCompatActivity implements Wifi
         setContentView(R.layout.battle_menu_wifi);
 
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
+
+        progressLayout = findViewById(R.id.battleMenuWifiProgress);
 
         intentFilter = new IntentFilter();
         intentFilter.addAction(WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION);
@@ -230,6 +236,8 @@ public class Activity_Battle_Menu_Wifi extends AppCompatActivity implements Wifi
         int our_seed = RNG.random_range(0, Integer.MAX_VALUE);
 
         battleIo = new BattleIo(weAreServer, pet_status, our_seed);
+
+        progressLayout.setVisibility(View.VISIBLE);
     }
 
     public void stateToggled (boolean state) {
@@ -457,6 +465,8 @@ public class Activity_Battle_Menu_Wifi extends AppCompatActivity implements Wifi
     }
 
     private void resetBattleIo () {
+        progressLayout.setVisibility(View.GONE);
+
         battleIo = null;
     }
 

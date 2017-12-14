@@ -316,7 +316,7 @@ public class Activity_Equip extends AppCompatActivity {
     
     public void unequip_item(int position){
     	if(pet_status.equipment_slots.get(position)!=null){
-    		Sound_Manager.play_sound(Sound.UNEQUIPPED);
+    		Sound_Manager.play_sound(this, Sound.UNEQUIPPED);
     		
     		pet_status.equipment.add(0,pet_status.equipment_slots.get(position));
     		
@@ -328,7 +328,7 @@ public class Activity_Equip extends AppCompatActivity {
     
     public void sell_item(int position){
     	if(pet_status.equipment_slots.get(position)!=null){
-    		Sound_Manager.play_sound(Sound.ITEM_SOLD);
+    		Sound_Manager.play_sound(this, Sound.ITEM_SOLD);
     		
     		pet_status.bits+=pet_status.equipment_slots.get(position).bits;
     		pet_status.bits_bound();

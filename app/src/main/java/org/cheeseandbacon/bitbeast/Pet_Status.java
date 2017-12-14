@@ -4,6 +4,7 @@
 
 package org.cheeseandbacon.bitbeast;
 
+import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -1535,7 +1536,9 @@ public class Pet_Status{
 		return null;
 	}
 	
-	public boolean on_touch_event(MotionEvent event,Resources res){
+	public boolean on_touch_event(MotionEvent event, Context context){
+		Resources res = context.getResources();
+
 		boolean used=false;
 		
 		float x=event.getX();
@@ -1549,7 +1552,7 @@ public class Pet_Status{
 					if(Collision.check(perma_items.get(i).x,perma_items.get(i).y,perma_items.get(i).w,perma_items.get(i).h,x,y,Px.px(res,2),Px.px(res,2))){
 						perma_items.get(i).held=true;
 						
-						Sound_Manager.play_sound(Sound.PERMA_ITEM_GRAB);
+						Sound_Manager.play_sound(context, Sound.PERMA_ITEM_GRAB);
 						
 						used=true;
 						
@@ -1563,7 +1566,7 @@ public class Pet_Status{
 			if(get_held_item()!=null){
 				get_held_item().held=false;
 				
-				Sound_Manager.play_sound(Sound.PERMA_ITEM_DROP);
+				Sound_Manager.play_sound(context, Sound.PERMA_ITEM_DROP);
 				
 				used=true;
 			}

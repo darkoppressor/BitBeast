@@ -99,7 +99,7 @@ public class Evolution{
 				return false;
 			}
 			else if(sprite.frame!=frame_before && sprite.frame==3){
-				Sound_Manager.play_sound(Sound.EVOLUTION_2);
+				Sound_Manager.play_sound(view.getContext(), Sound.EVOLUTION_2);
 				
 				//Remember the dimensions of the previous type.
 				int old_w=old_pet_w;

@@ -89,7 +89,7 @@ public class Activity_Rewards extends AppCompatActivity {
 		bundle.remove(package_name+"sound");
 		
 		if(play_sound!=-1){
-			Sound_Manager.play_sound(play_sound);
+			Sound_Manager.play_sound(context, play_sound);
 		}
     	
     	Intent intent=new Intent(context,Activity_Rewards.class);
@@ -273,7 +273,7 @@ public class Activity_Rewards extends AppCompatActivity {
 	}
     
     public void sell_item(){
-    	Sound_Manager.play_sound(Sound.ITEM_SOLD);
+    	Sound_Manager.play_sound(this, Sound.ITEM_SOLD);
     	
     	pet_status.bits+=pet_status.equipment.get(0).bits;
 		pet_status.bits_bound();
@@ -286,7 +286,7 @@ public class Activity_Rewards extends AppCompatActivity {
 	}
     
     public void equip_item(){
-    	Sound_Manager.play_sound(Sound.EQUIPPED);
+    	Sound_Manager.play_sound(this, Sound.EQUIPPED);
     	
     	String slot=pet_status.equipment.get(0).get_template(this).slot;
     	

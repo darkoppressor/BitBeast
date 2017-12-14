@@ -6,7 +6,7 @@ package org.cheeseandbacon.bitbeast;
 
 public class Sound{
 	static final int IGNORE=0;
-	static final int BEGIN=1;
+	private static final int BEGIN=1;
 	static final int AC=BEGIN;
 	static final int BATHE=2;
 	static final int CLEAN=3;

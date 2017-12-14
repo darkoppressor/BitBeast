@@ -172,7 +172,7 @@ public class Object_Ball{
 				boolean paddle_hit=handle_collision(paddles.get(i).x,paddles.get(i).y,paddles.get(i).w,paddles.get(i).h,paddles.get(i).move_state,res);
 			
 				if(paddle_hit){
-					Sound_Manager.play_sound(Sound.GAME_HIT_PADDLE);
+					Sound_Manager.play_sound(view.getContext(), Sound.GAME_HIT_PADDLE);
 					
 					//If the player's paddle was hit.
 					if(i==0){
@@ -184,7 +184,7 @@ public class Object_Ball{
 		
 		//Keep the object in the screen bounds.
 		if(x<0){
-			Sound_Manager.play_sound(Sound.GAME_HIT_WALL);
+			Sound_Manager.play_sound(view.getContext(), Sound.GAME_HIT_WALL);
 			
 			x=0;
 			
@@ -195,7 +195,7 @@ public class Object_Ball{
 			}
 		}
 		if(x+w>view.getWidth()){
-			Sound_Manager.play_sound(Sound.GAME_HIT_WALL);
+			Sound_Manager.play_sound(view.getContext(), Sound.GAME_HIT_WALL);
 			
 			x=view.getWidth()-w;
 			
@@ -325,7 +325,7 @@ public class Object_Ball{
 			
 				//If the player's paddle was hit.
 				if(paddle_hit){
-					Sound_Manager.play_sound(Sound.GAME_HIT_PADDLE);
+					Sound_Manager.play_sound(view.getContext(), Sound.GAME_HIT_PADDLE);
 					
 					vibrate_hit(vibrator);
 				}
@@ -343,7 +343,7 @@ public class Object_Ball{
 			}
 			
 			if(brick_hit){
-				Sound_Manager.play_sound(Sound.GAME_HIT_BRICK);
+				Sound_Manager.play_sound(view.getContext(), Sound.GAME_HIT_BRICK);
 				
 				if(RNG.random_range(0,99)<POWERUP_CHANCE){
 					short type=(short)RNG.random_range(Object_Powerup.POWER_BEGIN,Object_Powerup.POWER_END-1);
@@ -356,7 +356,7 @@ public class Object_Ball{
 					float new_x=bricks.get(i).x;
 					float new_y=bricks.get(i).y;
 					
-					Sound_Manager.play_sound(Sound.POWERUP_SPAWN);
+					Sound_Manager.play_sound(view.getContext(), Sound.POWERUP_SPAWN);
 					
 					powerups.add(new Object_Powerup(image,view,type,new_x,new_y,speed_x,speed_y));
 				}
@@ -370,7 +370,7 @@ public class Object_Ball{
 		
 		//Keep the object in the screen bounds.
 		if(x<0){
-			Sound_Manager.play_sound(Sound.GAME_HIT_WALL);
+			Sound_Manager.play_sound(view.getContext(), Sound.GAME_HIT_WALL);
 			
 			x=0;
 			
@@ -381,7 +381,7 @@ public class Object_Ball{
 			}
 		}
 		if(x+w>view.getWidth()){
-			Sound_Manager.play_sound(Sound.GAME_HIT_WALL);
+			Sound_Manager.play_sound(view.getContext(), Sound.GAME_HIT_WALL);
 			
 			x=view.getWidth()-w;
 			
@@ -392,7 +392,7 @@ public class Object_Ball{
 			}
 		}
 		if(y<0){
-			Sound_Manager.play_sound(Sound.GAME_HIT_WALL);
+			Sound_Manager.play_sound(view.getContext(), Sound.GAME_HIT_WALL);
 			
 			y=0;
 			

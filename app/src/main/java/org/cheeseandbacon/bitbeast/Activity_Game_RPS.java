@@ -282,17 +282,17 @@ public class Activity_Game_RPS extends AppCompatActivity {
 		
 		String message="";
     	if(game_result==WIN){
-    		Sound_Manager.play_sound(Sound.GAME_WIN);
+    		Sound_Manager.play_sound(this, Sound.GAME_WIN);
     		
     		message="You won!";
     	}
     	else if(game_result==LOSE){
-    		Sound_Manager.play_sound(Sound.GAME_LOSS);
+    		Sound_Manager.play_sound(this, Sound.GAME_LOSS);
     		
     		message="You lost!";
     	}
-    	else if(game_result==DRAW){
-    		Sound_Manager.play_sound(Sound.GAME_DRAW);
+    	else {
+    		Sound_Manager.play_sound(this, Sound.GAME_DRAW);
     		
     		message="It was a draw!";
     	}

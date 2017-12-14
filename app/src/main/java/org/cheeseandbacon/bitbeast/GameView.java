@@ -522,7 +522,7 @@ class GameView extends SurfaceView implements SurfaceHolder.Callback{
 		boolean used=false;
 		
 		if(game_mode==Game_Mode.PET && !Options.pause){
-			used=pet.get_status().on_touch_event(event,res);
+			used=pet.get_status().on_touch_event(event,getContext());
 			
 			if(pet.get_status().age_tier!=Age_Tier.EGG){
 				if(!used && pet.get_status().age_tier!=Age_Tier.DEAD){
@@ -545,10 +545,10 @@ class GameView extends SurfaceView implements SurfaceHolder.Callback{
 							want_speech=!want_speech;
 							
 							if(want_speech){
-								Sound_Manager.play_sound(Sound.SPEECH_START);
+								Sound_Manager.play_sound(getContext(), Sound.SPEECH_START);
 							}
 							else{
-								Sound_Manager.play_sound(Sound.SPEECH_STOP);
+								Sound_Manager.play_sound(getContext(), Sound.SPEECH_STOP);
 							}
 						}
 						else{

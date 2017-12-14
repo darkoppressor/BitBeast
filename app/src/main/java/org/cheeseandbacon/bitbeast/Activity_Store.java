@@ -118,7 +118,7 @@ public class Activity_Store extends AppCompatActivity {
         	public void onItemClick(AdapterView<?> parent,View view,int position,long id){
         		if(Templates.get_food_list(section).get(position).perma_item.length()>0){
         			if(pet_status.bits<Templates.get_food_list(section).get(position).cost){
-        				Sound_Manager.play_sound(Sound.NO_STAT_POINTS);
+        				Sound_Manager.play_sound(Activity_Store.this, Sound.NO_STAT_POINTS);
         				
 	        			int bits_short=Templates.get_food_list(section).get(position).cost-pet_status.bits;
 	        			Toast.makeText(getApplicationContext(),"You are "+bits_short+" bits short!",Toast.LENGTH_SHORT).show();
@@ -140,39 +140,39 @@ public class Activity_Store extends AppCompatActivity {
     			}
         		else{
         			if(Templates.get_food_list(section).get(position).primary_effect.equals("hunger") && pet_status.hunger>=Age_Tier.get_hunger_max(pet_status.age_tier)){
-        				Sound_Manager.play_sound(Sound.NO_STAT_POINTS);
+        				Sound_Manager.play_sound(Activity_Store.this, Sound.NO_STAT_POINTS);
         				Toast.makeText(getApplicationContext(),pet_status.name+" doesn't look hungry.",Toast.LENGTH_SHORT).show();
 	        		}
 	        		else if(Templates.get_food_list(section).get(position).primary_effect.equals("happy") && pet_status.happy>=Pet_Status.HAPPY_MAX){
-	        			Sound_Manager.play_sound(Sound.NO_STAT_POINTS);
+	        			Sound_Manager.play_sound(Activity_Store.this, Sound.NO_STAT_POINTS);
 	        			Toast.makeText(getApplicationContext(),pet_status.name+" looks content.",Toast.LENGTH_SHORT).show();
 	        		}
 	        		else if(Templates.get_food_list(section).get(position).primary_effect.equals("water") && pet_status.is_max_watered()){
-	        			Sound_Manager.play_sound(Sound.NO_STAT_POINTS);
+	        			Sound_Manager.play_sound(Activity_Store.this, Sound.NO_STAT_POINTS);
 	        			Toast.makeText(getApplicationContext(),pet_status.name+" doesn't look thirsty.",Toast.LENGTH_SHORT).show();
 	        		}
 	        		else if(Templates.get_food_list(section).get(position).primary_effect.equals("energy") && pet_status.get_energy()>=pet_status.get_energy_max()){
-	        			Sound_Manager.play_sound(Sound.NO_STAT_POINTS);
+	        			Sound_Manager.play_sound(Activity_Store.this, Sound.NO_STAT_POINTS);
 	        			Toast.makeText(getApplicationContext(),pet_status.name+" seems energetic enough.",Toast.LENGTH_SHORT).show();
 	        		}
 	        		else if(Templates.get_food_list(section).get(position).primary_effect.equals("strength") && pet_status.get_strength()>=pet_status.get_strength_max()){
-	        			Sound_Manager.play_sound(Sound.NO_STAT_POINTS);
+	        			Sound_Manager.play_sound(Activity_Store.this, Sound.NO_STAT_POINTS);
 	        			Toast.makeText(getApplicationContext(),pet_status.name+" seems strong enough.",Toast.LENGTH_SHORT).show();
 	        		}
 	        		else if(Templates.get_food_list(section).get(position).primary_effect.equals("dexterity") && pet_status.get_dexterity()>=pet_status.get_dexterity_max()){
-	        			Sound_Manager.play_sound(Sound.NO_STAT_POINTS);
+	        			Sound_Manager.play_sound(Activity_Store.this, Sound.NO_STAT_POINTS);
 	        			Toast.makeText(getApplicationContext(),pet_status.name+" seems dexterous enough.",Toast.LENGTH_SHORT).show();
 	        		}
 	        		else if(Templates.get_food_list(section).get(position).primary_effect.equals("stamina") && pet_status.get_stamina()>=pet_status.get_stamina_max()){
-	        			Sound_Manager.play_sound(Sound.NO_STAT_POINTS);
+	        			Sound_Manager.play_sound(Activity_Store.this, Sound.NO_STAT_POINTS);
 	        			Toast.makeText(getApplicationContext(),pet_status.name+" seems hearty enough.",Toast.LENGTH_SHORT).show();
 	        		}
 	        		else if(Templates.get_food_list(section).get(position).primary_effect.equals("sick") && !pet_status.sick){
-	        			Sound_Manager.play_sound(Sound.NO_STAT_POINTS);
+	        			Sound_Manager.play_sound(Activity_Store.this, Sound.NO_STAT_POINTS);
 	        			Toast.makeText(getApplicationContext(),pet_status.name+" looks perfectly healthy.",Toast.LENGTH_SHORT).show();
 	        		}
 	        		else if(pet_status.bits<Templates.get_food_list(section).get(position).cost){
-	        			Sound_Manager.play_sound(Sound.NO_STAT_POINTS);
+	        			Sound_Manager.play_sound(Activity_Store.this, Sound.NO_STAT_POINTS);
 	        			
 	        			int bits_short=Templates.get_food_list(section).get(position).cost-pet_status.bits;
 	        			Toast.makeText(getApplicationContext(),"You are "+bits_short+" bits short!",Toast.LENGTH_SHORT).show();
@@ -209,21 +209,21 @@ public class Activity_Store extends AppCompatActivity {
 	        			}
 	        			
 	        			if(Templates.get_food_list(section).get(position).is_water){
-	        				Sound_Manager.play_sound(Sound.DRINK);
+	        				Sound_Manager.play_sound(Activity_Store.this, Sound.DRINK);
 	        				sound_played=true;
 	        				
 	        				pet_status.thirst=Pet_Status.THIRST_MAX;
 	        			}
 	        			
 	        			if(Templates.get_food_list(section).get(position).is_medicine){
-	        				Sound_Manager.play_sound(Sound.MEDICINE);
+	        				Sound_Manager.play_sound(Activity_Store.this, Sound.MEDICINE);
 	        				sound_played=true;
 	        				
 	        				pet_status.sick=false;
 	        			}
 	        			
 	        			if(!sound_played){
-	        				Sound_Manager.play_sound(Sound.EAT);
+	        				Sound_Manager.play_sound(Activity_Store.this, Sound.EAT);
 	        			}
 	        			
 	        			if(Templates.get_food_list(section).get(position).buff.equals("hunger")){

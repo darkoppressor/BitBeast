@@ -251,7 +251,7 @@ public class Object_Powerup{
 			boolean paddle_hit=handle_collision(paddles.get(i).x,paddles.get(i).y,paddles.get(i).w,paddles.get(i).h,paddles.get(i).move_state,res);
 		
 			if(paddle_hit){
-				Sound_Manager.play_sound(game_view.getContext(), Sound.POWERUP_GET);
+				Sound_Manager.playSound(game_view.getContext(), Sound.POWERUP_GET);
 				
 				activate_effect(GAME_MODE_WORKOUT,null,game_workout,game_view,pet_status,i,paddles,balls,new_balls,res);
 				
@@ -382,7 +382,7 @@ public class Object_Powerup{
 			
 			//If the player's paddle was hit.
 			if(paddle_hit){
-				Sound_Manager.play_sound(game_view.getContext(), Sound.POWERUP_GET);
+				Sound_Manager.playSound(game_view.getContext(), Sound.POWERUP_GET);
 				
 				activate_effect(GAME_MODE_BRICKS,game_bricks,null,game_view,pet_status,i,paddles,balls,new_balls,res);
 				

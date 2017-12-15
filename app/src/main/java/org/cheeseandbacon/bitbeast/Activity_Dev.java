@@ -166,25 +166,25 @@ public class Activity_Dev extends AppCompatActivity{
         data.add(thoughts);
 
         if (pet_status.equipment_slots.get(Equipment.SLOT_WEAPON) != null) {
-            data.add("Weapon equipment: " + pet_status.equipment_slots.get(Equipment.SLOT_WEAPON));
+            data.add("Weapon equipment: " + pet_status.equipment_slots.get(Equipment.SLOT_WEAPON).full_name);
         } else {
             data.add("Weapon equipment: None");
         }
 
         if (pet_status.equipment_slots.get(Equipment.SLOT_HEAD) != null) {
-            data.add("Head equipment: " + pet_status.equipment_slots.get(Equipment.SLOT_HEAD));
+            data.add("Head equipment: " + pet_status.equipment_slots.get(Equipment.SLOT_HEAD).full_name);
         } else {
             data.add("Head equipment: None");
         }
 
         if (pet_status.equipment_slots.get(Equipment.SLOT_CHEST) != null) {
-            data.add("Chest equipment: " + pet_status.equipment_slots.get(Equipment.SLOT_CHEST));
+            data.add("Chest equipment: " + pet_status.equipment_slots.get(Equipment.SLOT_CHEST).full_name);
         } else {
             data.add("Chest equipment: None");
         }
 
         if (pet_status.equipment_slots.get(Equipment.SLOT_FEET) != null) {
-            data.add("Feet equipment: " + pet_status.equipment_slots.get(Equipment.SLOT_FEET));
+            data.add("Feet equipment: " + pet_status.equipment_slots.get(Equipment.SLOT_FEET).full_name);
         } else {
             data.add("Feet equipment: None");
         }

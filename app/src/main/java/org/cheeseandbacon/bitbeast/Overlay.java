@@ -12,7 +12,7 @@ import android.view.View;
 public class Overlay{
 	private final static float MOVE_SPEED_HORIZONTAL=96;
 	private final static float MOVE_SPEED_VERTICAL=96;
-	static final int OVERLAY_LIMIT=6;
+	static final int OVERLAY_LIMIT=1;
 	
 	private AnimatedSprite sprite;
 	

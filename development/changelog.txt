@@ -1,4 +1,4 @@
-1.1.0 - 2016/11/30
+1.1.0 - 2017/12/14
  - Two new stats added: Dexterity and Stamina
    These each function kind of like one half of strength
    Strength is attack damage as well as health

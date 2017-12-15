@@ -417,7 +417,7 @@ public class Game_Bricks{
 				
 				//If the ball just left the screen.
 				if(!ball_in_play){
-					Sound_Manager.play_sound(game_view.getContext(), Sound.GAME_RESET_LOSS);
+					Sound_Manager.playSound(game_view.getContext(), Sound.GAME_RESET_LOSS);
 					
 					if(--lives<=0){
 						end_game(1,pet_status,game_view);
@@ -448,7 +448,7 @@ public class Game_Bricks{
 	
 			//If all balls were lost.
 			if(balls.size()==0){
-				Sound_Manager.play_sound(game_view.getContext(), Sound.GAME_RESET_LOSS);
+				Sound_Manager.playSound(game_view.getContext(), Sound.GAME_RESET_LOSS);
 				
 				float speed_x=Px.px(res,(float)RNG.random_range(Object_Ball.SPEED_MIN,Object_Ball.SPEED_MAX));
 				float speed_y=Px.px(res,(float)RNG.random_range(Object_Ball.SPEED_MIN,Object_Ball.SPEED_MAX));

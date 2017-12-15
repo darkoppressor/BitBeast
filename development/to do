@@ -1,7 +1,5 @@
 Important for 1.1.0:
 
-Possibly add extra cleanup/reloading code for the sound manager?
-
 Test wi fi battles with same and different versions
 
 Update readme.md
@@ -11,27 +9,10 @@ For the games with just info showing (gps games etc), maybe show some explanatio
 
 The help pages need an overhaul. Wait until the new version is done though
 
-Not as important:
-
-Click or swipe poop to clean up individual poops?
-Little animation for cleaning up individual poop?
-
-Can text on action bar use custom font?
-
-Sometimes transitions seem slow
-
-Can the store pages be all one activity and just scroll to the side via dragging?
-
-Brick game takes too long to complete
-More brick game templates?
-
-Increase fps to 60?
-
-Can you see your non consumable buffs summarized somewhere?
-
 Consider creating a base activity that most of the activities inherit from
+Fix compiler errors and warnings
 
-Take a look at how sounds are being done
+Not as important:
 
 Trying to play gps games without permission gives toast about not having a gps receiver
 
@@ -43,7 +24,15 @@ Can I prompt to enable wi fi?
 Show connection info in the activity
 I.e., show when connecting, show when transmitting battle data
 
+Click or swipe poop to clean up individual poops?
+Little animation for cleaning up individual poop?
+
+Brick game takes too long to complete
+More brick game templates?
+
 Some indication of the pet's desired temperature
+
+Can you see your non consumable buffs summarized somewhere?
 
 Battle menu should show nearby paired devices with bit beast running
 Battle requests can be sent to a bit beast regardless of whether it's on the battle screen
@@ -54,3 +43,9 @@ Add a screen that the battle started waits on while the other person chooses whe
 When in battle screen, NFC to another device will auto pair them, regardless of whether second person is even running bit beast
 Battle screen should have explanation about NFC pairing stuff
 Help screens should explain pairing in case user needs to do it themselves, for instance if they don't have NFC
+
+Can text on action bar use custom font?
+
+Sometimes transitions seem slow
+
+Can the store pages be all one activity and just scroll to the side via dragging?

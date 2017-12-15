@@ -545,10 +545,10 @@ class GameView extends SurfaceView implements SurfaceHolder.Callback{
 							want_speech=!want_speech;
 							
 							if(want_speech){
-								Sound_Manager.play_sound(getContext(), Sound.SPEECH_START);
+								Sound_Manager.playSound(getContext(), Sound.SPEECH_START);
 							}
 							else{
-								Sound_Manager.play_sound(getContext(), Sound.SPEECH_STOP);
+								Sound_Manager.playSound(getContext(), Sound.SPEECH_STOP);
 							}
 						}
 						else{

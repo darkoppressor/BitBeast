@@ -77,10 +77,10 @@ public class ImageViewThem extends ImageView{
             startAnimation(AnimationUtils.loadAnimation(ab,R.anim.battle_return_them));
             
             if(damage==0){
-            	Sound_Manager.play_sound(getContext(), Sound.BATTLE_MISS);
+            	Sound_Manager.playSound(getContext(), Sound.BATTLE_MISS);
             }
             else{
-            	Sound_Manager.play_sound(getContext(), Sound.BATTLE_HIT);
+            	Sound_Manager.playSound(getContext(), Sound.BATTLE_HIT);
             }
 		}
 		//If they just finished the return animation.
@@ -109,7 +109,7 @@ public class ImageViewThem extends ImageView{
 		        
 		        ab.winner=false;
 				
-				Sound_Manager.play_sound(getContext(), Sound.GAME_LOSS);
+				Sound_Manager.playSound(getContext(), Sound.GAME_LOSS);
 			}
 		}
 	}

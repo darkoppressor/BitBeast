@@ -221,7 +221,7 @@ public class Pet{
 	
 	public void evolve(Image image,View view,Context context,boolean play_sound,Handler handler){
 		if(play_sound){
-			Sound_Manager.play_sound(context, Sound.EVOLUTION_1);
+			Sound_Manager.playSound(context, Sound.EVOLUTION_1);
 		}
 		
 		Pet_Type old_type=status.type;
@@ -462,7 +462,7 @@ public class Pet{
 					if(status.poops.size()<10){
 						//Only allow the poop sound on the first poop.
 						if(poops_created==0){
-							Sound_Manager.play_sound(context, Sound.POOP);
+							Sound_Manager.playSound(context, Sound.POOP);
 						}
 						
 						poops_created++;
@@ -686,7 +686,7 @@ public class Pet{
 				
 				//If the thought just added is the only one.
 				if(thoughts.size()==1){
-					Sound_Manager.play_sound(view.getContext(), Thought_Type.get_sound_id(get_type));
+					Sound_Manager.playSound(view.getContext(), Thought_Type.get_sound_id(get_type));
 					
 					thought_vibration(vibrator);
 				}
@@ -700,7 +700,7 @@ public class Pet{
 			
 			//If the overlay just added is the only one.
 			if(overlays.size()==1){
-				Sound_Manager.play_sound(view.getContext(), Overlay_Type.get_sound_id(get_type));
+				Sound_Manager.playSound(view.getContext(), Overlay_Type.get_sound_id(get_type));
 				
 				overlay_vibration(vibrator);
 			}
@@ -998,7 +998,7 @@ public class Pet{
 				
 				//If there is still another thought.
 				if(thoughts.size()>0){
-					Sound_Manager.play_sound(view.getContext(), Thought_Type.get_sound_id(thoughts.get(0).type));
+					Sound_Manager.playSound(view.getContext(), Thought_Type.get_sound_id(thoughts.get(0).type));
 					
 					thought_vibration(vibrator);
 				}
@@ -1016,7 +1016,7 @@ public class Pet{
 				
 				//If there is still another overlay.
 				if(overlays.size()>0){
-					Sound_Manager.play_sound(view.getContext(), Overlay_Type.get_sound_id(overlays.get(0).type));
+					Sound_Manager.playSound(view.getContext(), Overlay_Type.get_sound_id(overlays.get(0).type));
 					
 					overlay_vibration(vibrator);
 				}

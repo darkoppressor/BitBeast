@@ -85,7 +85,7 @@ public class Activity_Spend_Stat_Points extends AppCompatActivity {
     
     public void button_spend_strength(View view){
     	if(pet_status.stat_points>0){
-			Sound_Manager.play_sound(this, Sound.SPEND_STAT_POINT);
+			Sound_Manager.playSound(this, Sound.SPEND_STAT_POINT);
 
 			pet_status.strength_max+=Pet_Status.STAT_GAIN_SELECTION;
 			pet_status.strength_max_bound();
@@ -98,7 +98,7 @@ public class Activity_Spend_Stat_Points extends AppCompatActivity {
 			update();
 		}
 		else{
-			Sound_Manager.play_sound(this, Sound.NO_STAT_POINTS);
+			Sound_Manager.playSound(this, Sound.NO_STAT_POINTS);
 			
 			Toast.makeText(getApplicationContext(),"Out of stat points!",Toast.LENGTH_SHORT).show();
 		}
@@ -106,7 +106,7 @@ public class Activity_Spend_Stat_Points extends AppCompatActivity {
     
     public void button_spend_dexterity(View view){
     	if(pet_status.stat_points>0){
-			Sound_Manager.play_sound(this, Sound.SPEND_STAT_POINT);
+			Sound_Manager.playSound(this, Sound.SPEND_STAT_POINT);
 
             pet_status.dexterity_max+=Pet_Status.STAT_GAIN_SELECTION;
             pet_status.dexterity_max_bound();
@@ -119,7 +119,7 @@ public class Activity_Spend_Stat_Points extends AppCompatActivity {
 			update();
 		}
 		else{
-			Sound_Manager.play_sound(this, Sound.NO_STAT_POINTS);
+			Sound_Manager.playSound(this, Sound.NO_STAT_POINTS);
 			
 			Toast.makeText(getApplicationContext(),"Out of stat points!",Toast.LENGTH_SHORT).show();
 		}
@@ -127,7 +127,7 @@ public class Activity_Spend_Stat_Points extends AppCompatActivity {
     
     public void button_spend_stamina(View view){
     	if(pet_status.stat_points>0){
-			Sound_Manager.play_sound(this, Sound.SPEND_STAT_POINT);
+			Sound_Manager.playSound(this, Sound.SPEND_STAT_POINT);
 
             pet_status.stamina_max+=Pet_Status.STAT_GAIN_SELECTION;
             pet_status.stamina_max_bound();
@@ -140,7 +140,7 @@ public class Activity_Spend_Stat_Points extends AppCompatActivity {
 			update();
 		}
 		else{
-			Sound_Manager.play_sound(this, Sound.NO_STAT_POINTS);
+			Sound_Manager.playSound(this, Sound.NO_STAT_POINTS);
 			
 			Toast.makeText(getApplicationContext(),"Out of stat points!",Toast.LENGTH_SHORT).show();
 		}

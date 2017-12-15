@@ -307,7 +307,7 @@ public class Activity_Inventory extends AppCompatActivity {
 	}
 	
 	public void equip_item(int position){
-		Sound_Manager.play_sound(this, Sound.EQUIPPED);
+		Sound_Manager.playSound(this, Sound.EQUIPPED);
 		
 		String slot=pet_status.equipment.get(equipment_indices.get(position).intValue()).get_template(this).slot;
 		
@@ -329,7 +329,7 @@ public class Activity_Inventory extends AppCompatActivity {
 	}
 	
 	public void sell_item(int position){
-		Sound_Manager.play_sound(this, Sound.ITEM_SOLD);
+		Sound_Manager.playSound(this, Sound.ITEM_SOLD);
 		
 		pet_status.bits+=pet_status.equipment.get(equipment_indices.get(position).intValue()).bits;
 		pet_status.bits_bound();
@@ -359,7 +359,7 @@ public class Activity_Inventory extends AppCompatActivity {
 		}
 		
 		if(items_sold>0){
-			Sound_Manager.play_sound(this, Sound.ITEM_SOLD_ALL);
+			Sound_Manager.playSound(this, Sound.ITEM_SOLD_ALL);
 			
 			pet_status.sell_equipment(sell_indices);
 			

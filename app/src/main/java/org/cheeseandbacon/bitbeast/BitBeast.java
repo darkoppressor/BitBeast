@@ -326,15 +326,15 @@ public class BitBeast extends Activity implements BitBeastDialogFragment.DialogV
     }
     
     public void deny_egg(){
-    	Sound_Manager.play_sound(this, Sound.NO_STAT_POINTS);
+    	Sound_Manager.playSound(this, Sound.NO_STAT_POINTS);
     	Toast.makeText(getApplicationContext(),game_view.get_pet().get_status().name+" is still just an egg!",Toast.LENGTH_SHORT).show();
     }
     public void deny_dead(){
-    	Sound_Manager.play_sound(this, Sound.NO_STAT_POINTS);
+    	Sound_Manager.playSound(this, Sound.NO_STAT_POINTS);
     	Toast.makeText(getApplicationContext(),game_view.get_pet().get_status().name+" is, unfortunately, dead!",Toast.LENGTH_SHORT).show();
     }
     public void deny_paused(){
-    	Sound_Manager.play_sound(this, Sound.NO_STAT_POINTS);
+    	Sound_Manager.playSound(this, Sound.NO_STAT_POINTS);
 		Toast.makeText(getApplicationContext(),"The game is paused!",Toast.LENGTH_SHORT).show();
     }
     
@@ -360,7 +360,7 @@ public class BitBeast extends Activity implements BitBeastDialogFragment.DialogV
     }
     public void button_clean(View view){
     	if(!Options.pause && game_view.get_pet().get_status().age_tier!=Age_Tier.EGG){
-			if(game_view.get_pet().overlays.size()<=Overlay.OVERLAY_LIMIT){
+			if(game_view.get_pet().overlays.size()<Overlay.OVERLAY_LIMIT){
 				if(image!=null){
 					game_view.get_pet().add_overlay(image,(View)game_view,(Vibrator)getSystemService(VIBRATOR_SERVICE),Overlay_Type.CLEAN_YARD,game_view.getWidth(),0,Direction.LEFT);
 				}
@@ -375,7 +375,7 @@ public class BitBeast extends Activity implements BitBeastDialogFragment.DialogV
     }
     public void button_bathe(View view){
     	if(!Options.pause && game_view.get_pet().get_status().age_tier!=Age_Tier.EGG && game_view.get_pet().get_status().age_tier!=Age_Tier.DEAD){
-	    	if(game_view.get_pet().overlays.size()<=Overlay.OVERLAY_LIMIT){
+	    	if(game_view.get_pet().overlays.size()<Overlay.OVERLAY_LIMIT){
 	    		if(image!=null){
 	    			game_view.get_pet().add_overlay(image,(View)game_view,(Vibrator)getSystemService(VIBRATOR_SERVICE),Overlay_Type.CLEAN_PET,0,0-image.overlay_clean_pet.bitmap.getHeight(),Direction.DOWN);
 	    		}
@@ -437,7 +437,7 @@ public class BitBeast extends Activity implements BitBeastDialogFragment.DialogV
 				dialog_battle = showDialogFragment(DIALOG_BATTLE, BitBeastDialogFragment.DIALOG_TYPE_ALERT, R.layout.dialog_main_battle, "");
     		}
     		else{
-    			Sound_Manager.play_sound(this, Sound.NO_STAT_POINTS);
+    			Sound_Manager.playSound(this, Sound.NO_STAT_POINTS);
     			int energy_short=Pet_Status.ENERGY_LOSS_BATTLE-game_view.get_pet().get_status().get_energy();
     			Toast.makeText(getApplicationContext(),game_view.get_pet().get_status().name+" needs "+energy_short+" more energy to battle!",Toast.LENGTH_SHORT).show();
     		}
@@ -453,7 +453,7 @@ public class BitBeast extends Activity implements BitBeastDialogFragment.DialogV
     	}
     }
     public void button_light(View view){
-    	Sound_Manager.play_sound(this, Sound.TOGGLE_LIGHT);
+    	Sound_Manager.playSound(this, Sound.TOGGLE_LIGHT);
     	
     	//Toggle the light.
     	game_view.get_pet().get_status().light=!game_view.get_pet().get_status().light;
@@ -809,7 +809,7 @@ public class BitBeast extends Activity implements BitBeastDialogFragment.DialogV
     					bundle.remove(getPackageName()+"sound");
     					
     					if(sound!=-1){
-    						Sound_Manager.play_sound(BitBeast.this, sound);
+    						Sound_Manager.playSound(BitBeast.this, sound);
     					}
 	    		    	
 	    		    	Intent intent=new Intent(BitBeast.this,Activity_Rewards.class);
@@ -880,7 +880,7 @@ public class BitBeast extends Activity implements BitBeastDialogFragment.DialogV
     			break;
     		case HANDLER_DIE:
     			if(!isFinishing()){
-    				Sound_Manager.play_sound(BitBeast.this, Sound.DIE);
+    				Sound_Manager.playSound(BitBeast.this, Sound.DIE);
     				
     				String name=msg.getData().getString("name");
     				
@@ -993,7 +993,7 @@ public class BitBeast extends Activity implements BitBeastDialogFragment.DialogV
 	}
 
 	public void dialogButtonTempAc () {
-		Sound_Manager.play_sound(this, Sound.AC);
+		Sound_Manager.playSound(this, Sound.AC);
 
 		game_view.get_pet().get_status().ac=true;
 		game_view.get_pet().get_status().heater=false;
@@ -1002,7 +1002,7 @@ public class BitBeast extends Activity implements BitBeastDialogFragment.DialogV
 	}
 
 	public void dialogButtonTempHeater () {
-		Sound_Manager.play_sound(this, Sound.HEATER);
+		Sound_Manager.playSound(this, Sound.HEATER);
 
 		game_view.get_pet().get_status().ac=false;
 		game_view.get_pet().get_status().heater=true;
@@ -1026,7 +1026,7 @@ public class BitBeast extends Activity implements BitBeastDialogFragment.DialogV
 			dismissDialogFragment(dialog_games);
 		}
 		else{
-			Sound_Manager.play_sound(this, Sound.NO_STAT_POINTS);
+			Sound_Manager.playSound(this, Sound.NO_STAT_POINTS);
 			int energy_short=Pet_Status.ENERGY_LOSS_WORKOUT-game_view.get_pet().get_status().get_energy();
 			Toast.makeText(getApplicationContext(),game_view.get_pet().get_status().name+" needs "+energy_short+" more energy to train!",Toast.LENGTH_SHORT).show();
 		}

@@ -434,7 +434,7 @@ public class Game_Workout{
 						float new_x=powerup_spawner.get(0).x;
 						float new_y=powerup_spawner.get(0).y;
 						
-						Sound_Manager.play_sound(game_view.getContext(), Sound.POWERUP_SPAWN);
+						Sound_Manager.playSound(game_view.getContext(), Sound.POWERUP_SPAWN);
 						
 						powerups.add(new Object_Powerup(image,game_view,type,new_x,new_y,speed_x,speed_y));
 					}
@@ -473,10 +473,10 @@ public class Game_Workout{
 				if(!check_for_winner(game_view,pet_status)){
 					//If the CPU was the scorer.
 					if(scorers.get(i)==1){
-						Sound_Manager.play_sound(game_view.getContext(), Sound.GAME_RESET_LOSS);
+						Sound_Manager.playSound(game_view.getContext(), Sound.GAME_RESET_LOSS);
 					}
 					else{
-						Sound_Manager.play_sound(game_view.getContext(), Sound.GAME_RESET_WIN);
+						Sound_Manager.playSound(game_view.getContext(), Sound.GAME_RESET_WIN);
 					}
 					
 					if(balls.size()==0){

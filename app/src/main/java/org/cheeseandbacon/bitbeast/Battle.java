@@ -186,10 +186,10 @@ public class Battle{
 		return damage;
 	}
 	
-	public static ArrayList<Battle_Turn> battle(Context context,Pet_Status us,Pet_Status them,boolean server,int our_seed,int their_seed,int bits_reward_them,int bit_level_diff_bonus_them,boolean shadow){
+	public static ArrayList<Battle_Turn> battle(Context context,Pet_Status local_us,Pet_Status us,Pet_Status them,boolean server,int our_seed,int their_seed,int bits_reward_them,int bit_level_diff_bonus_them,boolean shadow){
 		int seed=0;
 		
-		ArrayList<Pet_Status> stats=new ArrayList<Pet_Status>();
+		ArrayList<Pet_Status> stats= new ArrayList<>();
 		if(!server){
 			stats.add(us);
 			stats.add(them);
@@ -323,8 +323,8 @@ public class Battle{
         	}
 		}
 		
-		///
-		/**String log="Us: "+stats.get(our_pet).name+"\n";
+		///QQQ
+		/*String log="Us: "+stats.get(our_pet).name+"\n";
 		log+="Level: "+stats.get(our_pet).level+"\n";
 		log+="Strength: "+stats.get(our_pet).get_strength()+"/"+stats.get(our_pet).get_strength_max()+"\n";
 		log+="Dexterity: "+stats.get(our_pet).get_dexterity()+"/"+stats.get(our_pet).get_dexterity_max()+"\n";
@@ -337,80 +337,98 @@ public class Battle{
 		log+="Stamina: "+stats.get(their_pet).get_stamina()+"/"+stats.get(their_pet).get_stamina_max()+"\n";
 		StorageManager.log_add(context,"Battle",log);*/
 		///
-		
-		stats.get(winner).strength+=(short)Math.ceil((double)stats.get(winner).get_strength_max()*stats.get(winner).get_strength_regen_rate());
-		stats.get(winner).strength_bound();
-		
-		stats.get(winner).dexterity+=(short)Math.ceil((double)stats.get(winner).get_dexterity_max()*stats.get(winner).get_dexterity_regen_rate());
-		stats.get(winner).dexterity_bound();
-		
-		stats.get(winner).stamina+=(short)Math.ceil((double)stats.get(winner).get_stamina_max()*stats.get(winner).get_stamina_regen_rate());
-		stats.get(winner).stamina_bound();
-		
-		stats.get(loser).strength=0;
-		stats.get(loser).strength+=(short)Math.ceil((double)stats.get(loser).get_strength_max()*(stats.get(loser).get_strength_regen_rate()/2.0f));
-		stats.get(loser).strength_bound();
-		
-		stats.get(loser).dexterity+=(short)Math.ceil((double)stats.get(loser).get_dexterity_max()*(stats.get(loser).get_dexterity_regen_rate()/2.0f));
-		stats.get(loser).dexterity_bound();
-		
-		stats.get(loser).stamina+=(short)Math.ceil((double)stats.get(loser).get_stamina_max()*(stats.get(loser).get_stamina_regen_rate()/2.0f));
-		stats.get(loser).stamina_bound();
-		
-		stats.get(winner).energy-=Pet_Status.ENERGY_LOSS_BATTLE;
-		stats.get(winner).energy_bound();
-		
-		stats.get(loser).energy-=Pet_Status.ENERGY_LOSS_BATTLE;
-		stats.get(loser).energy_bound();
-		
-		if(!shadow){
-			stats.get(winner).battles_won++;
-		
-			stats.get(loser).battles_lost++;
-		}
-		else{
-			stats.get(winner).battles_won_sp++;
-			
-			stats.get(loser).battles_lost_sp++;
-		}
-		
-		stats.get(winner).queue_thought(Thought_Type.HAPPY);
-		stats.get(winner).happy+=Pet_Status.HAPPY_GAIN_BATTLE;
-		stats.get(winner).happy_bound();
-		
-		stats.get(loser).queue_thought(Thought_Type.SAD);
-		stats.get(loser).happy-=Pet_Status.HAPPY_LOSS_BATTLE;
-		stats.get(loser).happy_bound();
-		
-		if(our_pet!=winner){
-			stats.get(winner).bits+=bits_reward_them-bit_level_diff_bonus_them;
-			stats.get(winner).bits_bound();
-		}
-		
-		if(our_pet!=loser){
-			stats.get(loser).bits+=(int)Math.ceil((double)bits_reward_them/2.0);
-			stats.get(loser).bits_bound();
-		}
-		
-		if(RNG.random_range(RNG.BATTLE,0,99)<Pet_Status.CHANCE_SMALL){
-			stats.get(loser).death_counter--;
-			stats.get(loser).death_counter_bound();
-		}
-		else{
-			if(RNG.random_range(RNG.BATTLE,0,99)<Pet_Status.CHANCE_SMALL){
-				stats.get(loser).death_counter++;
-				stats.get(loser).death_counter_bound();
-			}
-		}
-		
-		if(RNG.random_range(RNG.BATTLE,0,99)<Pet_Status.CHANCE_SMALL){
-			stats.get(winner).death_counter++;
-			stats.get(winner).death_counter_bound();
-		}
-		
-		stats.get(loser).gain_weight(-(0.01*RNG.random_range(RNG.BATTLE,Pet_Status.WEIGHT_LOSS_BATTLE_MIN,Pet_Status.WEIGHT_LOSS_BATTLE_MAX)));
-		
-		stats.get(winner).gain_weight(-(0.01*RNG.random_range(RNG.BATTLE,Pet_Status.WEIGHT_LOSS_BATTLE_MIN,Pet_Status.WEIGHT_LOSS_BATTLE_MAX)));
+
+		// Create a mirror array of the stats for the local pet
+        ArrayList<Pet_Status> stats_local= new ArrayList<>();
+        if(!server){
+            stats_local.add(local_us);
+            stats_local.add(them);
+        }
+        else{
+            stats_local.add(them);
+            stats_local.add(local_us);
+        }
+
+        ArrayList<ArrayList<Pet_Status>> stat_lists = new ArrayList<>();
+        stat_lists.add(stats);
+        stat_lists.add(stats_local);
+
+        // This is a little convoluted due to how the code worked previously
+        // Use a second array of stats with us replaced with local_us to ensure that the local pet is updated as well
+        // as the throwaway "battle" version of the pet
+        for (ArrayList<Pet_Status> stats_to_update : stat_lists) {
+            stats_to_update.get(winner).strength += (short) Math.ceil((double) stats_to_update.get(winner).get_strength_max() * stats_to_update.get(winner).get_strength_regen_rate());
+            stats_to_update.get(winner).strength_bound();
+
+            stats_to_update.get(winner).dexterity += (short) Math.ceil((double) stats_to_update.get(winner).get_dexterity_max() * stats_to_update.get(winner).get_dexterity_regen_rate());
+            stats_to_update.get(winner).dexterity_bound();
+
+            stats_to_update.get(winner).stamina += (short) Math.ceil((double) stats_to_update.get(winner).get_stamina_max() * stats_to_update.get(winner).get_stamina_regen_rate());
+            stats_to_update.get(winner).stamina_bound();
+
+            stats_to_update.get(loser).strength = 0;
+            stats_to_update.get(loser).strength += (short) Math.ceil((double) stats_to_update.get(loser).get_strength_max() * (stats_to_update.get(loser).get_strength_regen_rate() / 2.0f));
+            stats_to_update.get(loser).strength_bound();
+
+            stats_to_update.get(loser).dexterity += (short) Math.ceil((double) stats_to_update.get(loser).get_dexterity_max() * (stats_to_update.get(loser).get_dexterity_regen_rate() / 2.0f));
+            stats_to_update.get(loser).dexterity_bound();
+
+            stats_to_update.get(loser).stamina += (short) Math.ceil((double) stats_to_update.get(loser).get_stamina_max() * (stats_to_update.get(loser).get_stamina_regen_rate() / 2.0f));
+            stats_to_update.get(loser).stamina_bound();
+
+            stats_to_update.get(winner).energy -= Pet_Status.ENERGY_LOSS_BATTLE;
+            stats_to_update.get(winner).energy_bound();
+
+            stats_to_update.get(loser).energy -= Pet_Status.ENERGY_LOSS_BATTLE;
+            stats_to_update.get(loser).energy_bound();
+
+            if (!shadow) {
+                stats_to_update.get(winner).battles_won++;
+
+                stats_to_update.get(loser).battles_lost++;
+            } else {
+                stats_to_update.get(winner).battles_won_sp++;
+
+                stats_to_update.get(loser).battles_lost_sp++;
+            }
+
+            stats_to_update.get(winner).queue_thought(Thought_Type.HAPPY);
+            stats_to_update.get(winner).happy += Pet_Status.HAPPY_GAIN_BATTLE;
+            stats_to_update.get(winner).happy_bound();
+
+            stats_to_update.get(loser).queue_thought(Thought_Type.SAD);
+            stats_to_update.get(loser).happy -= Pet_Status.HAPPY_LOSS_BATTLE;
+            stats_to_update.get(loser).happy_bound();
+
+            if (our_pet != winner) {
+                stats_to_update.get(winner).bits += bits_reward_them - bit_level_diff_bonus_them;
+                stats_to_update.get(winner).bits_bound();
+            }
+
+            if (our_pet != loser) {
+                stats_to_update.get(loser).bits += (int) Math.ceil((double) bits_reward_them / 2.0);
+                stats_to_update.get(loser).bits_bound();
+            }
+
+            if (RNG.random_range(RNG.BATTLE, 0, 99) < Pet_Status.CHANCE_SMALL) {
+                stats_to_update.get(loser).death_counter--;
+                stats_to_update.get(loser).death_counter_bound();
+            } else {
+                if (RNG.random_range(RNG.BATTLE, 0, 99) < Pet_Status.CHANCE_SMALL) {
+                    stats_to_update.get(loser).death_counter++;
+                    stats_to_update.get(loser).death_counter_bound();
+                }
+            }
+
+            if (RNG.random_range(RNG.BATTLE, 0, 99) < Pet_Status.CHANCE_SMALL) {
+                stats_to_update.get(winner).death_counter++;
+                stats_to_update.get(winner).death_counter_bound();
+            }
+
+            stats_to_update.get(loser).gain_weight(-(0.01 * RNG.random_range(RNG.BATTLE, Pet_Status.WEIGHT_LOSS_BATTLE_MIN, Pet_Status.WEIGHT_LOSS_BATTLE_MAX)));
+
+            stats_to_update.get(winner).gain_weight(-(0.01 * RNG.random_range(RNG.BATTLE, Pet_Status.WEIGHT_LOSS_BATTLE_MIN, Pet_Status.WEIGHT_LOSS_BATTLE_MAX)));
+        }
 		
 		return hits;
 	}

@@ -388,12 +388,21 @@ public class Activity_Battle extends AppCompatActivity {
         their_level=them.level;
         
         weight_loss_this_session=us.get_weight();
+
+        // We pass in a current copy of the real pet, to be updated with the results of the battle
+		Pet_Status local_us=new Pet_Status();
+		StorageManager.load_pet_status(this,null,local_us);
         
-        hits=Battle.battle(this,us,them,server,our_seed,their_seed,bits_reward_them,bit_level_diff_bonus_them,shadow);
+        hits=Battle.battle(this,local_us,us,them,server,our_seed,their_seed,bits_reward_them,bit_level_diff_bonus_them,shadow);
         
         weight_loss_this_session-=us.get_weight();
-        
+
+        local_us.sleeping_wake_up();
         us.sleeping_wake_up();
+
+        if (battle) {
+            StorageManager.save_pet_status(this, local_us);
+        }
         
         //The battle has been fought, and should not be fought again if the activity is restarted.
         battle=false;

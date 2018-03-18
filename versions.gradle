@@ -12,7 +12,7 @@ ext.build_versions = build_versions
 
 def versions = [:]
 versions.support = '27.0.2'
-versions.espresso = '2.2.2'
+versions.espresso = '3.0.1'
 versions.junit = '4.12'
 versions.android_gradle_plugin = '3.0.1'
 

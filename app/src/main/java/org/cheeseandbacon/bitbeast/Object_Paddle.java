@@ -173,12 +173,12 @@ public class Object_Paddle{
 			
 			target_x=x+w/2;
 			
-			Object_Powerup nearest_powerup=Distance.nearest_powerup(this,powerups);
+			Object_Powerup nearest_powerup=Distance.nearest_powerup(view.getHeight()/2,this,powerups);
 			if(nearest_powerup!=null){
 				target_x=nearest_powerup.x+nearest_powerup.w/2;
 			}
 			
-			Object_Ball nearest_ball=Distance.nearest_ball(this,balls);
+			Object_Ball nearest_ball=Distance.nearest_ball(view.getHeight()/2,this,balls);
 			if(nearest_ball!=null){
 				target_x=nearest_ball.x+nearest_ball.w/2;
 			}

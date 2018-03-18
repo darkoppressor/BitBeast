@@ -234,9 +234,11 @@ public class Game_Workout{
 		else if(random>=90 && random<100){
 			ai_diff=Object_Paddle.AI_DIFF_HARD;
 		}
+
+		int paddle_y_offset = image.object_paddle.get_height() * 2;
 		
-		paddles.add(new Object_Paddle(image,view,(view.getWidth()-image.object_paddle.get_width())/2,view.getHeight()-image.object_paddle.get_height(),pet_status.color,false,0.0f,0,0));
-		paddles.add(new Object_Paddle(image,view,(view.getWidth()-image.object_paddle.get_width())/2,0,res.getColor(R.color.game_white),true,ai_diff,0,0));
+		paddles.add(new Object_Paddle(image,view,(view.getWidth()-image.object_paddle.get_width())/2,view.getHeight()-image.object_paddle.get_height()-paddle_y_offset,pet_status.color,false,0.0f,0,0));
+		paddles.add(new Object_Paddle(image,view,(view.getWidth()-image.object_paddle.get_width())/2,paddle_y_offset,res.getColor(R.color.game_white),true,ai_diff,0,0));
 		
 		float speed_x=Px.px(res,(float)RNG.random_range(Object_Ball.SPEED_MIN,Object_Ball.SPEED_MAX));
 		float speed_y=-(Px.px(res,(float)RNG.random_range(Object_Ball.SPEED_MIN,Object_Ball.SPEED_MAX)));

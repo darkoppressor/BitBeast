@@ -11,13 +11,13 @@ public class Distance{
 	    return Math.sqrt(((x2-x1)*(x2-x1))+((y2-y1)*(y2-y1)));
 	}
 	
-	public static Object_Ball nearest_ball(Object_Paddle object,ArrayList<Object_Ball> objects){
+	public static Object_Ball nearest_ball(float world_midpoint_y,Object_Paddle object,ArrayList<Object_Ball> objects){
 		double nearest_distance=-1.0;
 		int nearest_object=-1;
 		
 		for(int i=0;i<objects.size();i++){
 			//As long as this ball is not moving away from the paddle.
-			if(!(object.y>0 && objects.get(i).move_speed_y<0) && !(object.y<=0 && objects.get(i).move_speed_y>0)){
+			if(!(object.y>=world_midpoint_y && objects.get(i).move_speed_y<0) && !(object.y<=world_midpoint_y && objects.get(i).move_speed_y>0)){
 				double x1=object.x+object.w/2;
 	            double y1=object.y+object.h/2;
 	            double x2=objects.get(i).x+objects.get(i).w/2;
@@ -40,14 +40,14 @@ public class Distance{
 		}
 	}
 	
-	public static Object_Powerup nearest_powerup(Object_Paddle object,ArrayList<Object_Powerup> objects){
+	public static Object_Powerup nearest_powerup(float world_midpoint_y,Object_Paddle object,ArrayList<Object_Powerup> objects){
 		double nearest_distance=-1.0;
 		int nearest_object=-1;
 		
 		for(int i=0;i<objects.size();i++){
 			if(objects.get(i).type!=Object_Powerup.BALL_SPEED_DOWN){
 				//As long as this powerup is not moving away from the paddle.
-				if(!(object.y>0 && objects.get(i).move_speed_y<0) && !(object.y<=0 && objects.get(i).move_speed_y>0)){
+				if(!(object.y>=world_midpoint_y && objects.get(i).move_speed_y<0) && !(object.y<=world_midpoint_y && objects.get(i).move_speed_y>0)){
 					double x1=object.x+object.w/2;
 		            double y1=object.y+object.h/2;
 		            double x2=objects.get(i).x+objects.get(i).w/2;

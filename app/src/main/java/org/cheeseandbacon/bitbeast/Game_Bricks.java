@@ -245,8 +245,10 @@ public class Game_Bricks{
 		lives=3;
 		
 		brick_count=0;
+
+		int paddle_y_offset = image.object_paddle.get_height() * 2;
 		
-		paddles.add(new Object_Paddle(image,view,(view.getWidth()-image.object_paddle.get_width())/2,view.getHeight()-image.object_paddle.get_height(),pet_status.color,false,0.0f,0,0));
+		paddles.add(new Object_Paddle(image,view,(view.getWidth()-image.object_paddle.get_width())/2,view.getHeight()-image.object_paddle.get_height()-paddle_y_offset,pet_status.color,false,0.0f,0,0));
 		
 		int bricks_horizontal=view.getWidth()/image.object_brick.get_width();
 		bricks_vertical=(view.getHeight()/2)/image.object_brick.get_height();

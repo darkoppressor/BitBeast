@@ -177,6 +177,8 @@ public class Activity_Options extends AppCompatActivity {
 
 	        Options.dev = !Options.dev;
 
+			StorageManager.save_options(this);
+
 	        if (Options.dev) {
                 Toast.makeText(this, getString(R.string.options_dev_on), Toast.LENGTH_SHORT).show();
             } else {

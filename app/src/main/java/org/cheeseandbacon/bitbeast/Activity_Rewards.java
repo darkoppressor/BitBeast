@@ -203,7 +203,7 @@ public class Activity_Rewards extends AppCompatActivity {
     	Button b=null;
     	
     	b=(Button)findViewById(R.id.button_rewards_spend);
-        if(levels_gained>0){
+        if(pet_status.stat_points > 0){
         	b.setVisibility(Button.VISIBLE);
         }
         else{

@@ -7,6 +7,8 @@ package org.cheeseandbacon.bitbeast;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
@@ -23,6 +25,8 @@ public class Activity_Dev extends AppCompatActivity{
         setContentView(R.layout.dev);
         
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
+
+        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_dev_restore_energy));
     }
     @Override
     protected void onDestroy(){
@@ -214,5 +218,14 @@ public class Activity_Dev extends AppCompatActivity{
 
         TextView textView = findViewById(R.id.text_dev_data);
         textView.setText(dataString);
+    }
+
+    public void pressRestoreEnergy(View view) {
+        pet_status.energy=pet_status.get_energy_max();
+        pet_status.energy_bound();
+
+        StorageManager.save_pet_status(this, pet_status);
+
+        update();
     }
 }

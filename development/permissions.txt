@@ -1,9 +1,9 @@
-*** Location ***
- - precise location (GPS and network-based): Access GPS location data for use in the GPS mini-games
-*** Microphone ***
- - record audio: Record speech for speech recognition
-*** Other ***
- - control vibration: Does what it says on the tin. Vibrate the device
- - pair with Bluetooth devices: Connect to another device via Bluetooth for the purpose of battling!
- - access Bluetooth settings: Also required for battling via Bluetooth
- - full network access: Send speech recognition data to the server and receive the result, so you can talk to your Bit Beast!
+INTERNET: Send speech recognition data to the server and receive the result, so you can talk to your Bit Beast!
+VIBRATE: Vibrate when things happen
+ACCESS_WIFI_STATE: WiFi battles!
+CHANGE_WIFI_STATE: WiFi battles!
+CHANGE_NETWORK_STATE: WiFi battles!
+ACCESS_NETWORK_STATE: WiFi battles!
+ACCESS_FINE_LOCATION: Access GPS location data for use in the GPS mini-games
+RECORD_AUDIO: Record speech for speech recognition
+WRITE_EXTERNAL_STORAGE: Previous versions of BitBeast stored save data on external storage. This permission is needed to check for that data

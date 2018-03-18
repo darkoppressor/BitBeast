@@ -1,22 +1,25 @@
 Important for 1.1.0:
 
-Test wi fi battles with same and different versions
+Do bits get added properly after Wifi battles?
 
-Update readme.md
-Update permissions.txt and system requirements
+Test wi fi battles with same and different versions
 
 For the games with just info showing (gps games etc), maybe show some explanation for how they work
 
 The help pages need an overhaul. Wait until the new version is done though
 
-Consider creating a base activity that most of the activities inherit from
-Fix compiler errors and warnings
-
 Not as important:
+
+Crash when just sitting on the main screen
+
+Crash on the food screen
 
 Trying to play gps games without permission gives toast about not having a gps receiver
 
 Test gps games
+
+Consider creating a base activity that most of the activities inherit from
+Fix compiler errors and warnings
 
 Wifi battle with no wifi gives an error about system being too busy
 Should say wifi is off or unavailable

@@ -191,7 +191,7 @@ public class Activity_Battle extends AppCompatActivity {
 			
 			pet_status.sleeping_wake_up();
 	    	
-			Activity_Rewards.give_rewards(this,getPackageName(),pet_status,sound,message_begin,message_end,experience_points,bits,false,item_chance,their_level);
+			Activity_Rewards.give_rewards(this,getPackageName(),pet_status,sound,message_begin,message_end,experience_points,bits,true,item_chance,their_level);
 		}
     }
     @Override

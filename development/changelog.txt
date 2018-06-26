@@ -1,4 +1,4 @@
-1.1.0 - 2018/03/18
+1.1.0 - 2018/06/26
  - Two new stats added: Dexterity and Stamina
    These each function kind of like one half of strength
    Strength is attack damage as well as health
@@ -57,6 +57,7 @@
  - Changed the way favorite food is stored in save data. Note that a Bit Beast from pre-1.1.0 will forget
    its favorite food because of this
  - Removed the screen orientation option
+ - Updated the Help screens
  - Fixed numerous bugs where an Android configuration change would cause loss of data
  - Balance tweaks
  - Fixed bug with evolution branch choosing code

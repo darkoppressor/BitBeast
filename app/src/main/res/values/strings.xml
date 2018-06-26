@@ -46,7 +46,6 @@
     <string name="name_help_train">Train</string>
     <string name="name_help_battle">Battle</string>
     <string name="name_help_speech_recognition">Speech Recognition</string>
-    <string name="name_help_app">Application</string>
     <string name="name_help_legal">Legal Mumbo Jumbo</string>
 
     <string name="name_label">Please enter your Bit Beast\'s name:\n(1&#8211;14 characters)</string>
@@ -145,7 +144,6 @@
     <string name="button_help_train">Train</string>
     <string name="button_help_battle">Battle</string>
     <string name="button_help_speech_recognition">Speech recognition</string>
-    <string name="button_help_app">Application</string>
     <string name="button_help_legal">Legal mumbo jumbo</string>
 
     <string name="config_header_pet">Bit Beast Settings</string>
@@ -188,10 +186,9 @@
     <string name="help_pet">As your Bit Beast grows up, he will evolve into different forms based on what you feed him, among other things. Be careful not to feed him too much junk food, or he will become fat!\n\nYou can view all of your Bit Beast\'s stats on the Status screen. The Food, Water, and Happy bars show your Bit Beast\'s current hunger, thirst, and happiness status, respectively. Fill the bars all the way to take proper care of your Bit Beast!\n\nThe Temperature bar shows the current temperature. Bit Beasts seem happiest at exactly 20 &#176;C.\n\nYour Bit Beast\'s strength is used when battling other Bit Beasts, and he needs energy to battle and train. To permanently raise your Bit Beast\'s strength, train him.</string>
     <string name="help_store">In the Shop, you can give your Bit Beast food, drinks, remedies, and more!\n\nWater is free, but everything else costs bits. You can earn bits by playing games with your Bit Beast. See the Help page on playing for more information.\n\nGive your Bit Beast a vitamin to restore his energy, medicine if he is sick, etc.\n\nWhen your Bit Beast becomes a child, he picks a favorite food. This is represented in the Shop by a star next to the food. Feeding your Bit Beast his favorite food makes him extra happy!</string>
     <string name="help_play">Playing Bricks or Rock-Paper-Scissors with your Bit Beast will increase its happiness. If you win, you will also earn some bits.\n\nShake It!, Journey!, and Go Go Go! make use of various Android features (if your device has them). These games allow you to earn bits.\n- To play Shake It!, just shake your device.\n- To play Journey!, turn on your GPS and earn bits based on how far you travel.\n- To play Go Go Go!, turn on your GPS and earn bits based on how fast you can move!</string>
-    <string name="help_train">To train your Bit Beast, you knock a ball back and forth against a computer opponent.\n\nThis requires energy, and will cause him to lose weight. If you win, he will also permanently gain strength.</string>
-    <string name="help_battle">You can connect to a Bit Beast on another device via Bluetooth to battle them!\n\nSimply connect to a device with another Bit Beast on it, and watch the battle play out!\n\nAdditionally, you can select the Shadow Battle option to have your Bit Beast face off against a computer opponent. Note that Shadow Battles do not count towards your Bit Beast\'s battle record.</string>
+    <string name="help_train">To train your Bit Beast, you knock a ball back and forth against a computer opponent.\n\nThis requires energy, and will cause him to lose weight.</string>
+    <string name="help_battle">You can connect to a Bit Beast on another device via Wi-Fi Direct to battle them!\n\nSimply connect to a device with another Bit Beast on it, and watch the battle play out!\n\nAdditionally, you can select the Shadow Battle option to have your Bit Beast face off against a computer opponent.</string>
     <string name="help_speech_recognition">By tapping on the screen when in the yard with your Bit Beast, you can toggle speech recognition mode. Your Bit Beast will then listen for keywords that he understands. Note that this uses Android\'s speech recognition system, so be sure to have it installed!\n\nYour Bit Beast understands the following voice commands:\n\n- His name.\n- Praise. Various phrases such as \"good boy\" will do.\n- Say the name of a button to \"press\" it.\n- Saying \"AC\", \"heater\", or \"neither\" will change the temperature setting.\n- Say the name of a game to play it.\n- Scolding. Various phrases such as \"bad boy\" will do.\n- Try asking your Bit Beast to sing you a song!\n- Say \"needs\" and your Bit Beast will tell you everything he needs.</string>
-    <string name="help_app">You can take a screenshot from anywhere in the app by pressing the Search key. Screenshots are saved to a folder called BitBeast located in the public Pictures folder on your external storage media.\n\nShould you, for any reason, want access to your save files, they are located in Android/data/org.cheeseandbacon.bitbeast/files on your external storage media.</string>
     <string name="help_legal">Bit Beast\n\nBit Beast Copyright © 2018 Cheese and Bacon Games, LLC\n\nAll rights reserved.\n\nThis software program, any documentation (whether printed or electronic), and all
 other related data files are the copyrighted work of Cheese and Bacon Games, LLC.\n\n0. Definitions.\n\n  "The Program" refers to all of the copyrighted materials listed above.\n\n1. Disclaimer of Warranty.\n\n  THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
 APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT

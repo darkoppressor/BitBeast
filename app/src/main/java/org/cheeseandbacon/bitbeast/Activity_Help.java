@@ -27,7 +27,6 @@ public class Activity_Help extends AppCompatActivity {
         Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_help_train));
         Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_help_battle));
         Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_help_speech_recognition));
-        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_help_app));
         Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_help_legal));
     }
 	@Override
@@ -85,11 +84,6 @@ public class Activity_Help extends AppCompatActivity {
 	public void button_help_speech_recognition(View view){
 		Intent intent=new Intent(this,Activity_Help_Page.class);
 		intent.putExtra(getPackageName()+".page",Help_Page.SPEECH_RECOGNITION);
-    	startActivity(intent);
-    }
-	public void button_help_app(View view){
-		Intent intent=new Intent(this,Activity_Help_Page.class);
-		intent.putExtra(getPackageName()+".page",Help_Page.APP);
     	startActivity(intent);
     }
 	public void button_help_legal(View view){

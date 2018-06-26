@@ -12,6 +12,5 @@ public class Help_Page{
 	static final int TRAIN=4;
 	static final int BATTLE=5;
 	static final int SPEECH_RECOGNITION=6;
-	static final int APP=7;
-	static final int LEGAL=8;
+	static final int LEGAL=7;
 }

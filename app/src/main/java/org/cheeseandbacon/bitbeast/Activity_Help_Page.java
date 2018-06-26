@@ -52,10 +52,6 @@ public class Activity_Help_Page extends AppCompatActivity {
         	setTitle(getResources().getString(R.string.name_help_speech_recognition));
         	tv.setText(getResources().getString(R.string.help_speech_recognition));
         }
-        else if(page==Help_Page.APP){
-        	setTitle(getResources().getString(R.string.name_help_app));
-        	tv.setText(getResources().getString(R.string.help_app));
-        }
         else if(page==Help_Page.LEGAL){
         	setTitle(getResources().getString(R.string.name_help_legal));
         	tv.setText(getResources().getString(R.string.help_legal));

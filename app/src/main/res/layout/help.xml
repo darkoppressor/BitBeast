@@ -88,17 +88,6 @@
 	        android:background="@layout/button" />
 	    
 	    <Button
-	        android:id="@+id/button_help_app"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:gravity="center_vertical|center_horizontal"
-	        android:onClick="button_help_app"
-	        android:text="@string/button_help_app"
-	        android:textSize="24dp"
-	        android:textColor="@color/font"
-	        android:background="@layout/button" />
-	    
-	    <Button
 	        android:id="@+id/button_help_legal"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"

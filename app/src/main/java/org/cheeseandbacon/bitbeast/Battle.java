@@ -269,7 +269,7 @@ public class Battle{
 					stats.get(defender).strength-=remaining_damage;
 				}
 				
-				stats.get(defender).stamina-=(short)Math.floor((double)stamina_lost*0.75);
+				stats.get(defender).stamina-=(short)Math.ceil((double)stamina_lost*0.75);
 				
 				hits.add(new Battle_Turn(damage,stats.get(attacker).get_strength(),stats.get(attacker).get_dexterity(),stats.get(attacker).get_stamina(),
 						stats.get(defender).get_strength(),stats.get(defender).get_dexterity(),stats.get(defender).get_stamina()));

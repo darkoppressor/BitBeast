@@ -1,6 +1,6 @@
 # BitBeast
 A game by Cheese and Bacon Games
-http://cheeseandbacon.org/
+https://cheeseandbacon.org/
 
 This is the source code for Bit Beast.
 

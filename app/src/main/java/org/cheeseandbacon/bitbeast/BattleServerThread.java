@@ -1,4 +1,4 @@
-/* Copyright (c) 2017 Cheese and Bacon Games, LLC */
+/* Copyright (c) Cheese and Bacon Games */
 /* This file is licensed under the MIT License. */
 /* See the file development/LICENSE.txt for the full license text. */
 
@@ -25,7 +25,7 @@ public class BattleServerThread extends Thread {
     private Handler handler;
     private BlockingQueue<String> queue;
 
-    public BattleServerThread (Handler handler, BlockingQueue<String> queue) {
+    public BattleServerThread(Handler handler, BlockingQueue<String> queue) {
         this.handler = handler;
         this.queue = queue;
 
@@ -41,10 +41,10 @@ public class BattleServerThread extends Thread {
     }
 
     private final ThreadPoolExecutor pool = new ThreadPoolExecutor(THREAD_COUNT, THREAD_COUNT, THREAD_KEEP_ALIVE_TIME,
-            TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>());
+                                                                   TimeUnit.SECONDS,
+                                                                   new LinkedBlockingQueue<Runnable>());
 
-    @Override
-    public void run () {
+    @Override public void run () {
         while (true) {
             try {
                 Socket clientSocket = serverSocket.accept();
@@ -93,8 +93,7 @@ public class BattleServerThread extends Thread {
             if (!serverSocket.isClosed()) {
                 try {
                     serverSocket.close();
-                } catch (IOException e) {
-                }
+                } catch (IOException e) {}
             }
 
             serverSocket = null;
@@ -106,8 +105,7 @@ public class BattleServerThread extends Thread {
             if (!socket.isClosed()) {
                 try {
                     socket.close();
-                } catch (IOException e) {
-                }
+                } catch (IOException e) {}
             }
         }
     }

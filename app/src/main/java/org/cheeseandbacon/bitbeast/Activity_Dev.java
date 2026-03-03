@@ -1,4 +1,4 @@
-/* Copyright (c) 2017 Cheese and Bacon Games, LLC */
+/* Copyright (c) Cheese and Bacon Games */
 /* This file is licensed under the MIT License. */
 /* See the file development/LICENSE.txt for the full license text. */
 
@@ -16,53 +16,48 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
-public class Activity_Dev extends AppCompatActivity{
-	private Pet_Status pet_status;
-	
-    @Override
-    public void onCreate(Bundle savedInstanceState){
+public class Activity_Dev extends AppCompatActivity {
+    private Pet_Status pet_status;
+
+    @Override public void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dev);
-        
+
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
 
-        Font.set_typeface(getAssets(), (Button)findViewById(R.id.button_dev_restore_energy));
+        Font.set_typeface(getAssets(), (Button) findViewById(R.id.button_dev_restore_energy));
     }
-    @Override
-    protected void onDestroy(){
-    	super.onDestroy();
-    	
-    	Drawable_Manager.unbind_drawables(findViewById(R.id.root_dev));
-    	System.gc();
+    @Override protected void onDestroy () {
+        super.onDestroy();
+
+        Drawable_Manager.unbind_drawables(findViewById(R.id.root_dev));
+        System.gc();
     }
-    @Override
-    protected void onResume(){
-    	super.onResume();
-    	
-    	Options.set_keep_screen_on(getWindow());
-    	
-    	overridePendingTransition(R.anim.transition_in,R.anim.transition_out);
-    	
-    	pet_status=new Pet_Status();
-    	StorageManager.load_pet_status(this,null,pet_status);
-    	
-    	update();
+    @Override protected void onResume () {
+        super.onResume();
+
+        Options.set_keep_screen_on(getWindow());
+
+        overridePendingTransition(R.anim.transition_in, R.anim.transition_out);
+
+        pet_status = new Pet_Status();
+        StorageManager.load_pet_status(this, null, pet_status);
+
+        update();
     }
-    @Override
-    protected void onPause(){
-    	super.onPause();
-    	
-    	overridePendingTransition(R.anim.transition_in,R.anim.transition_out);
+    @Override protected void onPause () {
+        super.onPause();
+
+        overridePendingTransition(R.anim.transition_in, R.anim.transition_out);
     }
-    
-    public void update(){
+
+    public void update () {
         final SimpleDateFormat simpleDateFormatTime = new SimpleDateFormat("HH:mm:ss zzz", Locale.US);
         final SimpleDateFormat simpleDateFormatDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss zzz", Locale.US);
-
         ArrayList<String> data = new ArrayList<>();
+        final long ms_since_last_tick = System.currentTimeMillis() - pet_status.last_tick;
+        final long seconds_until_next_tick = GameView.SECONDS_PER_TICK - (long) Math.floor(ms_since_last_tick / 1000);
 
-        final long ms_since_last_tick=System.currentTimeMillis()-pet_status.last_tick;
-        final long seconds_until_next_tick = GameView.SECONDS_PER_TICK-(long)Math.floor(ms_since_last_tick/1000);
         data.add("Time until next tick: " + seconds_until_next_tick + " seconds");
         data.add("\n");
 
@@ -77,11 +72,14 @@ public class Activity_Dev extends AppCompatActivity{
         data.add("Sleep time: " + simpleDateFormatTime.format(pet_status.sleep_time.getTime()));
         data.add("Should be sleeping: " + pet_status.sleeping);
         data.add("Awake during sleep time: " + pet_status.sleeping_woken_up);
+
         if (pet_status.sleeping_woken_up_time > -1L) {
-            data.add("Last wake up during sleep: " + simpleDateFormatDate.format(new Date(pet_status.sleeping_woken_up_time)));
+            data.add("Last wake up during sleep: " +
+                     simpleDateFormatDate.format(new Date(pet_status.sleeping_woken_up_time)));
         } else {
             data.add("Last wake up during sleep: N/A");
         }
+
         data.add("Light on: " + pet_status.light);
         data.add("\n");
         data.add("Happiness: " + pet_status.happy);
@@ -142,15 +140,18 @@ public class Activity_Dev extends AppCompatActivity{
         data.add("Magic find buff time remaining: " + pet_status.buff_magic_find + " seconds");
         data.add("\n");
 
-        for(int i=0;i<Food_Category.END;i++){
+        for (int i = 0; i < Food_Category.END; i++) {
             data.add("Amount of " + Food_Category.category_to_string(i) + " fed: " + pet_status.food_categories.get(i));
         }
+
         data.add("\n");
 
         String food_fed = "Foods fed:\n";
+
         for (String food : pet_status.food_fed) {
             food_fed += food + "\n";
         }
+
         data.add(food_fed);
 
         data.add("Poops: " + pet_status.poops.size());
@@ -158,15 +159,19 @@ public class Activity_Dev extends AppCompatActivity{
         data.add("\n");
 
         String perma_items = "Permanent items:\n";
+
         for (Perma_Item item : pet_status.perma_items) {
             perma_items += item.name + "\n";
         }
+
         data.add(perma_items);
 
         String thoughts = "Held thoughts:\n";
+
         for (Integer type : pet_status.thoughts) {
             thoughts += Thought_Type.type_to_string(type) + "\n";
         }
+
         data.add(thoughts);
 
         if (pet_status.equipment_slots.get(Equipment.SLOT_WEAPON) != null) {
@@ -196,9 +201,11 @@ public class Activity_Dev extends AppCompatActivity{
         data.add("\n");
 
         String items = "Other equipment:\n";
+
         for (Equipment equipment : pet_status.equipment) {
             items += equipment.full_name + "\n";
         }
+
         data.add(items);
 
         data.add("Well fed death counter changes allowed: " + pet_status.dc_well_fed);
@@ -217,11 +224,12 @@ public class Activity_Dev extends AppCompatActivity{
         }
 
         TextView textView = findViewById(R.id.text_dev_data);
+
         textView.setText(dataString);
     }
 
-    public void pressRestoreEnergy(View view) {
-        pet_status.energy=pet_status.get_energy_max();
+    public void pressRestoreEnergy (View view) {
+        pet_status.energy = pet_status.get_energy_max();
         pet_status.energy_bound();
 
         StorageManager.save_pet_status(this, pet_status);

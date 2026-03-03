@@ -1,59 +1,59 @@
-/* Copyright (c) 2017 Cheese and Bacon Games, LLC */
+/* Copyright (c) Cheese and Bacon Games */
 /* This file is licensed under the MIT License. */
 /* See the file development/LICENSE.txt for the full license text. */
 
 package org.cheeseandbacon.bitbeast;
 
-public class Sound{
-	static final int AC=0;
-	static final int BATHE=1;
-	static final int CLEAN=2;
-	static final int DRINK=3;
-	static final int EAT=4;
-	static final int EVOLUTION_1=5;
-	static final int EVOLUTION_2=6;
-	static final int GAME_HIT_BRICK=7;
-	static final int GAME_HIT_PADDLE=8;
-	static final int GAME_HIT_WALL=9;
-	static final int GAME_LOSS=10;
-	static final int GAME_WIN=11;
-	static final int HEATER=12;
-	static final int MEDICINE=13;
-	static final int POOP=14;
-	static final int THOUGHT=15;
-	static final int GAME_RESET_LOSS=16;
-	static final int TOGGLE_LIGHT=17;
-	static final int DIE=18;
-	static final int SPEECH_START=19;
-	static final int SPEECH_STOP=20;
-	static final int BATTLE_HIT=21;
-	static final int BATTLE_MISS=22;
-	static final int PERMA_ITEM_GRAB=23;
-	static final int PERMA_ITEM_DROP=24;
-	static final int LEVEL_UP=25;
-	static final int SPEND_STAT_POINT=26;
-	static final int NO_STAT_POINTS=27;
-	static final int GAME_DRAW=28;
-	static final int GAME_RESET_WIN=29;
-	static final int POWERUP_GET=30;
-	static final int POWERUP_SPAWN=31;
-	static final int ITEM_SOLD=32;
-	static final int EQUIPPED=33;
-	static final int UNEQUIPPED=34;
-	static final int ITEM_SOLD_ALL=35;
-	static final int END=36;
+public class Sound {
+    static final int AC = 0;
+    static final int BATHE = 1;
+    static final int CLEAN = 2;
+    static final int DRINK = 3;
+    static final int EAT = 4;
+    static final int EVOLUTION_1 = 5;
+    static final int EVOLUTION_2 = 6;
+    static final int GAME_HIT_BRICK = 7;
+    static final int GAME_HIT_PADDLE = 8;
+    static final int GAME_HIT_WALL = 9;
+    static final int GAME_LOSS = 10;
+    static final int GAME_WIN = 11;
+    static final int HEATER = 12;
+    static final int MEDICINE = 13;
+    static final int POOP = 14;
+    static final int THOUGHT = 15;
+    static final int GAME_RESET_LOSS = 16;
+    static final int TOGGLE_LIGHT = 17;
+    static final int DIE = 18;
+    static final int SPEECH_START = 19;
+    static final int SPEECH_STOP = 20;
+    static final int BATTLE_HIT = 21;
+    static final int BATTLE_MISS = 22;
+    static final int PERMA_ITEM_GRAB = 23;
+    static final int PERMA_ITEM_DROP = 24;
+    static final int LEVEL_UP = 25;
+    static final int SPEND_STAT_POINT = 26;
+    static final int NO_STAT_POINTS = 27;
+    static final int GAME_DRAW = 28;
+    static final int GAME_RESET_WIN = 29;
+    static final int POWERUP_GET = 30;
+    static final int POWERUP_SPAWN = 31;
+    static final int ITEM_SOLD = 32;
+    static final int EQUIPPED = 33;
+    static final int UNEQUIPPED = 34;
+    static final int ITEM_SOLD_ALL = 35;
+    static final int END = 36;
 
-	private int soundPoolId;
+    private int soundPoolId;
 
     Sound (int soundPoolId) {
-	    this.soundPoolId = soundPoolId;
+        this.soundPoolId = soundPoolId;
     }
 
-    public int getSoundPoolId() {
+    public int getSoundPoolId () {
         return soundPoolId;
     }
 
-    public void setSoundPoolId(int soundPoolId) {
+    public void setSoundPoolId (int soundPoolId) {
         this.soundPoolId = soundPoolId;
     }
 

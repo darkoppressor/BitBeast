@@ -1,4 +1,4 @@
-/* Copyright (c) 2017 Cheese and Bacon Games, LLC */
+/* Copyright (c) Cheese and Bacon Games */
 /* This file is licensed under the MIT License. */
 /* See the file development/LICENSE.txt for the full license text. */
 
@@ -24,15 +24,15 @@ public class BattleClientThread extends Thread {
     private InetAddress serverInetAddress;
     private int serverPort;
 
-    public BattleClientThread (Handler handler, BlockingQueue<String> queue, InetAddress serverInetAddress, int serverPort) {
+    public BattleClientThread(Handler handler, BlockingQueue<String> queue, InetAddress serverInetAddress,
+                              int serverPort) {
         this.handler = handler;
         this.queue = queue;
         this.serverInetAddress = serverInetAddress;
         this.serverPort = serverPort;
     }
 
-    @Override
-    public void run () {
+    @Override public void run () {
         Socket socket = new Socket();
 
         try {
@@ -45,7 +45,8 @@ public class BattleClientThread extends Thread {
                 return;
             }
 
-            Log.d(TAG, "Connection established to server socket: " + serverInetAddress.getHostAddress() + ":" + serverPort);
+            Log.d(TAG,
+                  "Connection established to server socket: " + serverInetAddress.getHostAddress() + ":" + serverPort);
 
             new Thread(new BattleIoRunnable(socket, handler, queue)).start();
         } catch (NullPointerException e) {
@@ -74,8 +75,7 @@ public class BattleClientThread extends Thread {
             if (!socket.isClosed()) {
                 try {
                     socket.close();
-                } catch (IOException e) {
-                }
+                } catch (IOException e) {}
             }
         }
     }

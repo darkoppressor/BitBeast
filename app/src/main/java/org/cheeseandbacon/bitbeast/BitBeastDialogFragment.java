@@ -1,4 +1,4 @@
-/* Copyright (c) 2017 Cheese and Bacon Games, LLC */
+/* Copyright (c) Cheese and Bacon Games */
 /* This file is licensed under the MIT License. */
 /* See the file development/LICENSE.txt for the full license text. */
 
@@ -13,24 +13,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 public class BitBeastDialogFragment extends DialogFragment {
-
     public interface DialogViewCallback {
         void onViewLoaded(int dialogLayout, String dialogMessage, View view);
     }
 
     public static final int DIALOG_TYPE_PROGRESS = 0;
     public static final int DIALOG_TYPE_ALERT = 1;
-
     int dialogType;
     int dialogLayout;
     String dialogMessage;
     DialogViewCallback callback;
 
-    public BitBeastDialogFragment () {
+    public BitBeastDialogFragment() {
         // Empty constructor required for dialog fragments
     }
 
-    public static BitBeastDialogFragment newInstance (int dialogType, int dialogLayout, String dialogMessage, DialogViewCallback callback) {
+    public static BitBeastDialogFragment newInstance (int dialogType, int dialogLayout, String dialogMessage,
+                                                      DialogViewCallback callback) {
         BitBeastDialogFragment dialogFragment = new BitBeastDialogFragment();
 
         dialogFragment.dialogType = dialogType;
@@ -41,8 +40,7 @@ public class BitBeastDialogFragment extends DialogFragment {
         return dialogFragment;
     }
 
-    @Override
-    public Dialog onCreateDialog (Bundle savedInstanceState) {
+    @Override public Dialog onCreateDialog (Bundle savedInstanceState) {
         if (dialogType == DIALOG_TYPE_PROGRESS) {
             ProgressDialog progressDialog = new ProgressDialog(getActivity());
 

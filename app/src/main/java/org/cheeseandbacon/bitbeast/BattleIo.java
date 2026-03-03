@@ -1,4 +1,4 @@
-/* Copyright (c) 2017 Cheese and Bacon Games, LLC */
+/* Copyright (c) Cheese and Bacon Games */
 /* This file is licensed under the MIT License. */
 /* See the file development/LICENSE.txt for the full license text. */
 
@@ -36,7 +36,7 @@ public class BattleIo {
         their_seed = 0;
     }
 
-    public void setQueue(BlockingQueue<String> queue) {
+    public void setQueue (BlockingQueue<String> queue) {
         this.queue = queue;
     }
 
@@ -46,7 +46,7 @@ public class BattleIo {
         if (rawData.length() > 0 && rawData.charAt(rawData.length() - 1) == END_OF_MESSAGE) {
             ArrayList<String> data = new ArrayList<>();
 
-            //Convert the bytes into strings
+            // Convert the bytes into strings
             String currentLine = "";
 
             for (int i = 0; i < rawData.length(); i++) {
@@ -72,8 +72,8 @@ public class BattleIo {
 
     private BattleIoDataResult processBattleData (Context context, ArrayList<String> data) {
         BattleIoDataResult result = new BattleIoDataResult();
-
         int battleExchangeStage = Integer.parseInt(data.get(0).trim());
+
         data.remove(0);
 
         their_seed = Integer.parseInt(data.get(0).trim());
@@ -107,6 +107,7 @@ public class BattleIo {
         result.intent = new Intent(context, Activity_Battle.class);
 
         Bundle bundle = new Bundle();
+
         bundle.putBoolean(context.getPackageName() + ".server", weAreServer);
         bundle.putBoolean(context.getPackageName() + ".shadow", false);
         bundle.putInt(context.getPackageName() + ".our_seed", our_seed);
